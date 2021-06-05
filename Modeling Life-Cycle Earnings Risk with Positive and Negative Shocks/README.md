@@ -1,5 +1,4 @@
-# Manuel-Antonio-Sanchez-Garcia
-Projects
+# Modeling Life-Cycle Earnings Risk with Positive and Negative Shocks
 
 Attached the replication files for the paper 'Modeling Life-Cycle Earnings Risk with Positive and Negative Shocks' which is joint work with Felix Wellschmied.
 

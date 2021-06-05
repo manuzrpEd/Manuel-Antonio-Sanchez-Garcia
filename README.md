@@ -1,2 +1,1 @@
-# Manuel-Antonio-Sanchez-Garcia
-Projects
+# Replication Files, PhD Research Manuel Antonio Sanchez Garcia

@@ -1,4 +1,0 @@
-\beamer@endinputifotherversion {3.36pt}
-\select@language {english}
-\beamer@sectionintoc {1}{Simple Benchmark Model}{2}{0}{1}
-\beamer@sectionintoc {2}{Multi-Member Households \& Gender Labor Market Outcomes}{16}{0}{2}

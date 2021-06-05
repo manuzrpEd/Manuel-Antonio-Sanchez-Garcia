@@ -1,0 +1,1942 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[german, english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{bbm}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{tablefootnote}
+\usepackage{footnote}
+\usepackage[bottom]{footmisc}
+\usepackage{graphicx}
+\usepackage[section]{placeins}
+\usepackage{apacite}
+\usepackage{pdflscape}
+\usepackage{booktabs,xcolor,siunitx}
+\newcommand\doubleRule{\toprule\toprule}
+\newcommand\doublerule{\toprule\specialrule{\heavyrulewidth}{\doublerulesep}{0.95em}}
+\definecolor{lightgray}{gray}{0.95}
+\usepackage{lmodern}
+\usepackage{babel,blindtext}
+%\usepackage{bookmark}
+%\usepackage{hyperref}
+\usepackage{hyperref}
+\PassOptionsToPackage{bookmarks={true},bookmarksopen=true}{hyperref}
+%\PassOptionsToPackage{draft}{hyperref}
+%\hypersetup{draft}
+%\usepackage{makeidx}
+
+
+%\hypersetup{pdfstartview={XYZ null null 1.00}}
+\makeatletter \setlength{\@fptop}{0pt} \makeatother
+\hypersetup{
+	colorlinks,
+	linkcolor={red!70!black},
+	citecolor={blue!70!black},
+	urlcolor={blue!80!black}
+}
+\usepackage[update]{epstopdf}
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1.5in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,amsfonts,dsfont,color}
+\usepackage[mathscr]{euscript}
+\usepackage{multirow}
+\usepackage{natbib}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[footnotesize,justification=centering,singlelinecheck=off]{caption}
+\usepackage{subcaption}
+\usepackage{ragged2e}
+\usepackage{cleveref}
+\usepackage{floatflt}
+\usepackage{subfloat}
+\usepackage{wrapfig}
+\usepackage{changepage}
+\usepackage{eurosym}
+\usepackage{lscape}
+\usepackage{threeparttable}
+\usepackage[utf8]{inputenc}
+\usepackage{authblk}
+\usepackage{parskip}
+\parskip 0pt
+\usepackage{titling}
+\setlength{\droptitle}{-2em}
+\usepackage{abstract}
+\setlength{\absleftindent}{0mm}
+\setlength{\absrightindent}{0mm}
+\usepackage[open]{bookmark}
+
+\usepackage[shortlabels]{enumitem}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+
+\newcommand{\ds}[1]{\par\noindent
+{\small{\em Keywords\/}: #1}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\renewcommand{\thefigure}{\Roman{figure}}
+%\renewcommand{\thesubfigure}{(\alph{subfigure})}
+%\hypersetup{bookmarksdepth=-2}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\titleformat{\paragraph}[runin]
+{\bfseries\scshape}{\theparagraph}{1em}{}
+
+\usepackage{placeins}
+
+\let\Oldsection\section
+\renewcommand{\section}{\FloatBarrier\Oldsection}
+
+\let\Oldsubsection\subsection
+\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
+
+\let\Oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection}
+
+\makeindex
+
+\begin{document}
+\date{\today}
+\begin{titlepage}
+
+
+\title{\textbf{Lifetime Earnings Inequality and Marginal Employment in Germany}}
+
+\author{Manuel Sanchez\thanks{
+Sanchez: University of Bristol, The Priory Road Complex, Bristol, UK BS8 1TU, +44 (0117)3310702, ms15072@bristol.ac.uk. This paper uses the Sample of Integrated Labour Market Biographies - Regional File 1975-2014, \textit{SIAB R 7514}. The data was provided via the Cornell Restricted Access Data Center, previous authorization of the Research Data Center of the German Federal Employment Agency at the Institute for Employment Research. I thank Annette Bergemann, Etienne Lal\'{e}, H\'{e}l\`{e}ne Turon, Sekyu Choi, Diego Lara de Andr\'{e}s and participants of the Economics Department at the University of Bristol for helpful comments and suggestions.}}
+\maketitle
+
+\vspace{-0.5 cm}
+\begin{abstract}
+\vspace{+0.5 cm}
+\noindent
+I estimate an earnings and job mobility model before and after the Hartz reforms in Germany. After the Hartz reforms, full-time work fell and part-time, marginal employment and concurrent employment rose. Wage inequality increases at the bottom of the distribution. This comes as a result of lower full-time wages for males and the rise of part-time work. With the empirical model I then simulate employment and earnings trajectories and obtain lifetime values of earnings. This estimation shows that there is an increase in the inequality of lifetime values stemming at the bottom of the distribution. Generally, both lower wages and a larger hazard of falling and remaining in part-time employment explain the lower lifetime earnings. However, for males, lower wages has twice the impact in the decrease of earnings than the new employment transitions after the Hartz reforms.
+
+\vspace{+0.5 cm}
+\textbf{Keywords}: Panel data, earnings dynamics, life-cycle, marginal employment, Germany, Hartz reforms.\\
+%\textbf{JEL}: C23; D91; E21; J31.\\
+%\textbf{Link}: \url{https://www.dropbox.com/s/p4d23jwi06trlma/ModellingOnline.pdf?dl=0}.
+\end{abstract}
+
+\thispagestyle{empty}
+\end{titlepage}
+
+\newpage
+\setcounter{page}{1}
+
+\setlength{\parindent}{10pt}
+%\section{Research Proposal R-SIAB 7514} 
+\section{Introduction}
+
+%This year, individuals entering the labour market in Germany are going to experience larger lifetime earnings inequality than their predecessors. \cite{BoCo15} document a striking secular rise of intergenerational inequality in lifetime earnings: West German men born in the early 1960s are likely to experience about 85\% more lifetime inequality than their fathers. This increase in lifetime earnings inequality has happened both at the upper tail and at the bottom tail of the earnings distribution, although the rise has been larger at the bottom. 
+
+During the second half of the XX$^{th}$ century, individuals entering the labour market in Germany experienced larger lifetime earnings inequality than their predecessors. \cite{BoCo15} document a striking secular rise of intergenerational inequality in lifetime earnings\footnote{As opposed to ``intragenerational'', which refers to \emph{within} a generation, ``intergenerational'' refers between generations. One generation after another.}: West German men born in the early 1960s were likely to experience about 85\% more lifetime inequality than their fathers.\footnote{Measured in Gini coefficients on lifetime earnings.} This increase in lifetime earnings inequality has happened both at the upper tail and at the bottom tail of the earnings distribution, although the rise has been larger at the bottom. 
+
+%A recent paper by
+
+%\sloppy{The greater amount of intragenerational inequality in lifetime earnings that prospect workers will endure matters for the social welfare of generations. Given the weight that earnings have in lifetime income, larger intragenerational inequality of lifetime earnings is indicative of larger inequality of permanent incomes. Since the standard of living depends more on lifetime income than on any given year's income, studies about inequality of the standard of living should focus on the distribution of lifetime income instead of relying on the distribution of cross sectional income.}
+
+In line with the dramatic rise of intragenerational inequality in lifetime earnings in Germany, there has been a rapid escalation of atypical work arrangements for newer cohorts entering the labour market: (i) the fraction of part-time employees has increased in a linear fashion from 11 percent in 1985 to 22 percent in 2010, (ii) the share of workers with working time accounts\footnote{The concept of flexible working time accounts (WTAs) is to establish labor-self accounts, and labors can save their working hours, just like saving money, into their own accounts. The working hours in their accounts are their assets, so that employers and workers both sides can increase or decrease the work required by each other without affecting the salaries and welfare. \cite{BurdaHunt11} argue that up to 40\% of the “missing” decline in employment in Germany for the recession period (2008-2009) can be largely explained by the WTAs. \cite{BalleerGehrkeMerkl2017} call into question that WTAs were the key driver of the unusually small increase in German unemployment in the Great Recession.} rose between 1998 to 2005 from 33 to 48 percent, and (iii) the number of marginal part-time work (`mini-jobs') has increased in recent years, reaching the second most important form of employment with around half of the establishments using some type of marginal employment.\footnote{OECD Data, \cite{Gro2006}, \cite{Bechmann10}, \cite{CarriTuRo15}, \cite{Galasi17}.} These changes in the labour market occurred after the implementation of the \emph{Hartz reforms}, named after Peter Hartz, the head of the committee which recommended changes to the German labour system. The reforms increased the efficiency of the job search process, cut unemployment benefits for long term unemployed (reducing reservation wages)\footnote{The reduction of reservation wages after a cut in unemployment benefits is the hypothesis of \cite{BurdaHunt11} and \cite{LiSchWie16}, among others. It is also consistent with the model estimation of \cite{Price16}.} and allowed more flexible forms of employment.
+
+%They argue that when the recession arrived, workers had built up large surpluses in these accounts, which would have had to be compensated at the overtime premium if the workers were then laid off. Alternatively, employers could have kept these workers employed at low hours until the accounts were drawn down to zero, and then laid them off, but by then the time until the expected upswing might not have been long enough to amortize the normal layoff and hiring costs that would have been incurred. However, the mechanism in which WTAs act as a firing cost is subject to discussion. In words of Michael W. L. Elsby, ``far from being an impediment to layoffs, WTAs would act as a boon to labor demand and hiring, as they allow firms to time increases in labor input to match increases in their productivity or product demand''
+
+%These reforms... is new
+
+%\begin{figure}[!t]
+%\centering
+%\begin{subfigure}[b]{0.32\linewidth}
+%	\centering
+%	\includegraphics[width=1\textwidth]{gini_West_AllYears.png}
+%	\subcaption{1975-2014}
+%	\label{fig:gini_1975}
+%\end{subfigure}
+%\begin{subfigure}[b]{0.32\linewidth}
+%	\centering
+%	\includegraphics[width=1\textwidth]{gini_males.png}
+%	\subcaption{Males}
+%	\label{fig:gini_males}
+%\end{subfigure}
+%\begin{subfigure}[b]{0.32\linewidth}
+%	\centering
+%	\includegraphics[width=1\textwidth]{gini_females.png}
+%	\subcaption{Females}
+%	\label{fig:gini_females}
+%\end{subfigure}
+%\footnotesize{
+%\\
+%\justify Notes: Gini coefficients of cross-sectional earnings and 5-Year earnings. All values are deflated using the CPI to 2010 values.\par}
+%\captionsetup{font=small,justification=raggedright}
+%\caption{Cross-Section and 5-Year Earnings Inequality}\label{fig:5year_earn_ineq}
+%\end{figure}
+
+%, which is prevalent in the German labour market,
+
+%removed as per Helene
+%\sloppy{The greater amount of inequality in lifetime earnings that recent generations experienced have implications for social welfare. Given the weight that earnings have in lifetime income, larger inequality of lifetime earnings is indicative of larger inequality of permanent incomes. Since the standard of living depends more on lifetime income than on any given year's income, studies about inequality of the standard of living should focus on the distribution of lifetime income instead of relying on the distribution of cross-sectional income.}
+
+In this paper, I study how more flexible forms of labour contracts affect the distribution of lifetime earnings. As opposed to cross-sectional studies, I opt for a cohort-based analysis of the mobility experienced over long panels as it helps to understand the consequences of introducing more flexible forms of employment. Thus, my goal is to develop a methodology targeting lifetime earnings using employment transitions and wage mobility in a model that captures positional earnings mobility, employment risk, and that allows for an assessment of how different forms of employment affect the degree of inequality in lifetime earnings.
+
+The expansion in alternative work arrangements has mixed implications for workers. On one hand, flexible working time contributes to the decentralization of employment relations on multiple levels, decreasing the bargaining power of workers and individualizing working conditions.\footnote{For empirical evidence that suggests those conclusions, see \cite{AddisonCotti15} and \cite{DuSpOe14}.} This is often seen as a more precarious and lower paid work than regular open-ended employment. On the other hand, flexible working time serves as an alternative to forced redundancies and can be used by employees as a mean to insure against unemployment and labour income risk. Workers under marginal employment can use their flexible working time to embark on training programs, having more time and being better prepared to search for stable jobs. Flexible work arrangements may thus act as as a stepping stone to permanent work.\footnote{\cite{Berg2008}, \cite{Seifert2006}, \cite{Caliendo2016}, \cite{Booth02}.}
+
+%In this way,
+
+%Flexible working time practices have the advantage of allowing for the substitution of future time off for immediate increases in pay. However, workers bear the loss of income for the expansion of hours without receiving the otherwise overtime pay premiums.
+
+%The decline of unionized workers is seen as a key driver of the growth of wage inequality at the bottom of the earnings distribution.
+
+%and labour supply shocks -immigration waves (East of Germany)-
+
+%and they find that 20\%-40\% of the rise of lifetime inequality can be attributed to an increase in the duration of unemployment. The rest is due to an increase of intragenerational wage inequality. 
+
+%Not much is known about the impact that new, flexible forms of employment have on lifetime earnings inequality. \cite{BoCo15} show that the increase in lifetime earnings inequality has been greater at the bottom of the distribution However, their data set does not contain information about the attachment of workers to the labour market, so they cannot distinguish between the role played by the inequality in wages and the one played by the inequality in hours worked. The way in which flexible employment statuses may enter an explanation of the rise of intragenerational lifetime earnings inequality is a priori unclear and merits an in-depth investigation.
+
+Not much is known about the impact that new, flexible forms of employment have on lifetime earnings inequality. \cite{BoCo15} show that the increase in lifetime earnings inequality in Germany has been greater at the bottom of the distribution. However, their data set does not contain information about the attachment of workers to the labour market, so they cannot distinguish between inequality in wages and inequality in hours worked. The way in which flexible employment status can explain the rise of intragenerational lifetime earnings inequality is \emph{a priori} unclear and merits an in-depth investigation.
+
+%Hence, it remains an open question whether flexible working arrangements generate larger lifetime earnings inequality
+
+%While lifetime earnings inequality has increased both at the bottom and at the top of the distribution, little is known about its sources.
+
+%In this paper, I study how more flexible forms of labour contracts affect the distribution of lifetime earnings. As opposed to cross-sectional studies, I opt for a cohort-based analysis of the mobility experienced over the long term as it helps to understand the consequences of introducing more flexible forms of work. Thus, my goal is to develop a methodology targeting lifetime earnings using employment transitions and wage mobility in a model that captures positional earnings mobility, employment risk, and that allows for an assessment of how different forms of employment affect the degree of inequality in lifetime earnings.
+
+%I use data from the German labour market, as it is the paradigm in introducing flexible forms of employment such as marginal employment.
+
+%and the ways in which labour markets have changed during the past decades
+
+Studies on lifetime earnings are scarce since only a few countries provide access to sufficiently long panel data sets. In this paper, I use the German \mbox{R-SIAB 7514} data set, which is one of those exceptions. The sample size is large and earnings are precisely measured (administrative records). The data set provides information on earnings for as long as an individual is subject to social security records. Individuals may appear from several days up to entire lifetime earnings. The data set also provides unique information regarding the intensity of attachment of workers to the labour market, as in full-time work, part-time work, marginal employment or unemployment spells, something that is key to quantify the contribution of employment status on lifetime earnings inequality. Finally, panels are sufficiently long, which is a necessary condition to avoid the bias that results from omitting unobserved heterogeneity in employment continuity.\footnote{See \cite{AddiSur08} and \cite{BowRo10}.} 
+
+%Thus, incorporating unobserved heterogeneity favors the distinction in the contribution to the rise in lifetime earnings inequality, since such inequality could come as an increase in the variability of wages both in the short and in the long run or the growing variability of the individual-specific components of earnings.
+
+%The data set provides actual information on lifetime earnings, along several birth cohorts, facilitating the construction of measures of lifetime earnings.
+
+In the data, I show that full-time employment, as a fraction of total \mbox{gender-specific} employment, decreases during the sample period. Male full-time employment decreased from 97\% in 1999 to 86\% in 2014. Female full-time employment decreased from around 65\% in 1999 to 47\% in 2014. Part-time, marginal employment and concurrent employment increase throughout the sample period. Concurrent employment appears as a new form of employment after the Hartz reforms in 2003. It is close to 0\% in 1999 and around 4\% (6\%) for male (female) workers in 2014. Also, there is significant heterogeneity between males and females: while males concentrate around full-time employment , females take more part-time employment.\footnote{Taxation, unemployment benefits and social assistance in Germany is means tested at the household level. In my analysis I can only look at individual earnings. In addition, I am unable to evaluate the interactions of these policy reforms at the household level.}
+
+%(around 90\% of employment stock)
+%(only between 50-60\% of full-time employment stock)
+
+%as their hazard and survival rate increase
+
+The empirical model that I estimate captures these employment dynamics, but also the different wage dynamics after the Hartz reforms. Wages in full-time decrease, earnings in marginal employment increase, and persistence in the earnings rank decreases, generating more transitions along the earnings distribution. Making use of the estimated model, I simulate employment and earnings trajectories and obtain lifetime values of earnings.\footnote{The sample before the Hartz reforms uses 4 years of data, while the sample after the Hartz reforms uses 5 years of data. When I construct lifetime values, I assume that the young person expects the old person's labour market from their corresponding sample.} This estimation shows that there is a shift to the left (lower earnings) in the distribution of lifetime values after the Hartz reforms, for both males and females. For females, both lower wages and a larger hazard of falling and remaining in flexible forms of employment explain the lower lifetime earnings. For males, the lower lifetime earnings comes as a result of significantly lower wages in full time employment. Because in the empirical model I have the contribution of the employment state and the wage separately, I am able to decompose the contribution that each factor has on lifetime earnings. In a counterfactual exercise I show that the new wage dynamics after the Hartz reforms have twice the impact in lower lifetime earnings than the expansion of marginal employment after the Hartz reforms.
+
+The findings of this paper contribute to the vast literature on marginal employment in Germany, but also to the less prolific literature in lifetime earnings inequality. \cite{BoCo15} show that lifetime earnings inequality has increased for male cohorts born in 1935-1969 in West Germany (using VSKT records). They use monthly wages observations for full-time employment. The rise in lifetime earnings inequality comes from both the bottom and the top of the distribution, but the rise has been stronger at the bottom. Their proximate causes are: 1. Longer unemployment spells of workers at the bottom of the distribution of younger cohorts contribute to explaining 20\%-40\% of the overall increase in lifetime
+earnings inequality, 2. 60\%-80\% of the overall increase is due to an increase of
+intragenerational wage inequality. The question they do not address is how part-time and marginal employment becoming more popular have affected long term earnings. I show that higher persistence of flexible forms of employment plus lower wages in full-time both contribute to the increase in bottom earnings inequality. 
+
+\cite{CaLaRo18} do the most comprehensive and extensive analysis on cross-sectional employment transitions after the Hartz reforms. They show that the increase in German total employment during the great financial recession comes as a result in the increase of part-time employment and concurrent employment. Mini jobs and full-time employment account for the majority of concurrent employment observations. A large part of the increase in marginal employment comes from full-timers taking up a marginal job as a secondary form of employment. The majority of workers in exclusive marginal employment have a non-participation to mini-job cycle (dead end). I make use of some their flow study and extend their work by putting a higher emphasis to wage dynamics, combining the earnings and mobility process into an empirical model and looking into the permanent lifetime earnings consequences of these different employment dynamics.
+
+Finally, I also contribute to the work of \cite{DuLuSc09}. They show that cross-sectional wage inequality increased between 1975-2004 in Germany. In particular, the decade of 1980 displays an increase in top inequality, while the decade of 1990 has both an increase in top and bottom inequality. They suggest technological change (polarization) is behind the increase in top inequality. On the contrary, supply shocks and labour market institutions (decrease in unionization) can explain the increase in bottom inequality. I show that the period 1999-2014 displays an increase in bottom inequality. Most of this increase in inequality happens at the bottom of the distribution for males in full-time.\footnote{As a matter of fact, \cite{DuSpOe14} document that bottom wage inequality has been increasing in Germany, although they do not disentangle the contribution by employment form.}
+
+
+%Literature
+%\vspace{5mm} %5mm vertical space
+%
+%\textbf{Related Literature - Layout, to be written}
+%
+%\vspace{5mm} %5mm vertical space
+%
+%a) Bonke et al. (2015)
+%Lifetime Earnings inequality in West Germany has increased
+%for male cohorts 1935-1969, VSKT records
+%monthly wages observations for full-time Employment
+%
+%Both at the bottom and at the top of the distribution, but the
+%rise has been stronger at the bottom
+%
+%Proximate causes:
+%1. Longer unemployment spells of workers at the bottom of
+%the distribution of younger cohorts contribute to
+%explaining 20\%-40\% of the overall increase in lifetime
+%earnings inequality.
+%2. 60\%-80\% of the overall increase is due to an increase of
+%intragenerational wage inequality
+%
+%Pending question: part-time and marginal employment have become more popular.
+%How more flexible forms of employment affect Long Time Earnings?
+%
+%Accounting exercise. With the Likelihood account for the increase in Long Term Earnings
+%by full-time and by the other forms of Employment (part-time, Mini Jobs, concurrent employment)
+%
+%b) Carrillo-Tudela et al. (2015/2018)
+%
+%1. Increase in German Total Employment = Increase in part-time Employment + concurrent employment
+%
+%2. Mini Jobs + full-time are the most part of concurrent employment
+%
+%3. A large part of the increase in marginal employment comes from full-timers taking up a marginal job as a secondary form of employment (More than Stepping Stone: Moonlighting)
+%
+%4. The majority of workers in exclusive marginal employment have a non-participation to mini-job cycle (Dead End)
+%
+%Method: 
+%
+%i) Descriptives, 
+%ii) Year by Year Multinomial logit
+%iii) Wage Regressions
+%iv) Causal Relation (wage moderation and Secondary Employment): OLS, FE, FE+IV
+%
+%c) Caliendo(2016)
+%
+%Analyze the unemployment dynamics of job seekers with and without marginal employment (2001-2004).
+%
+%They consider an inflow sample into unemployment and estimate multivariate
+%duration models with unemployment, marginal employment and full-time employment. 
+%
+%They find a decreased job finding probability of marginal employment at the beginning of the unemployment spell and an increased job finding probability for the long-term unemployed (Stepping Stone).
+%
+%Discuss the macro structural papers on before/after the reform and how they differ/complement with the reduced form approach here.
+%Literature
+
+
+
+%Bargaining decisions become more decentralized with a higher decline of union and employer association membership. 
+
+%alternative work arrangements and
+
+%\cite{Merkl13} show that about 1.5 million or 3.8\% of workers in Germany were on short-time work schemes at the peak of the Great Recession in May 2009. However, \cite{Boy10} show that this form of employment is enacted as a fiscal stabilizer and has virtually been used in a constant fraction of workers for every recession in Germany since 1960.
+
+%Manuel is currently working on a research proposal to extend his access to the German administrative dataset. The idea is to study the effects of marginal employment (the so-called minijobs) through the lens of a statistical model of the joint dynamics of earnings and employment. THis will be the basis of his second chapter (and perhaps job market paper).
+
+%\footnote{}.
+
+%The larger amount of intragenerational inequality of lifetime earnings that prospect workers will confront is important not only to the extent that individuals tend to compare their economic status against their age-specific peers\footnote{\cite{PeAs2011}.}. Given the prominence of earnings as a determinant of the lifetime resources available to agents, larger intragenerational inequality of lifetime earnings is suggestive of larger inequality of permanent incomes. In turn, larger inequality of permanent incomes speaks of larger consumption inequality and has implications to the social welfare of future generations.
+
+%
+
+%We exploit data on earnings biographies from social security records to shed light on the following issues: How does marginal employment affect intragenerational lifetime earnings inequality? To what extent is the rise in intragenerational inequality driven by hours worked? 
+
+There is, in fact, a vast literature studying the consequences of the Hartz reforms in Germany. \cite{KrauseUhlig12}, \cite{KrebsScheffer13}, \cite{LaunovWalde13a} and \cite{BradleyKugler2019} are among those who calibrate macroeconomic search models simulating the effect of the reforms with a focus on the effect on unemployment. \cite{FahrSunde09}, \cite{KlingerRothe12} and \cite{HertweckSigrist2012} show the improvement of the matching process after the Hartz I-III reforms by estimating matching functions. \cite{GehrkeLechthalerMerkl2019} analyze the role of different shocks and institutions during the Great Recession in Germany through the lens of an estimated dynamic stochastic general equilibrium model. \cite{EngbomDetragiacheRaei15} use a regression framework to identify the impact of the reforms on earnings, and \cite{GiannelliJaenichenRothe2013} use a similar interval regression model during 1998-2010 in Germany. The interaction between marginal employment, unemployment and full time employment transitions for different aspects of the Hartz reforms are studied through diverse microeconometric models in \cite{CaliendoWrohlick10}, \cite{Caliendo2016} and \cite{Price16}. The ``churning'' effect of the expansion of earnings subject to marginal employment status is studied in \cite{Galasi17}, \cite{Tazhitdinova2017} and \cite{GudgeonTrenkle2019}. Additionally, \cite{Moller2010}, \cite{BurdaHunt11}, \cite{DuSpOe14} and \cite{BellmannGernerLaible2016} address the `German labour market miracle' during the great recession.
+
+My paper contributes to the literature on marginal employment in Germany by looking at the long term effect in earnings of the Hartz reforms. The existing work on marginal employment earnings (\cite{DuLuSc09} and \cite{CaLaRo18}) has looked at the cross-sectional changes in earnings but it does not construct a measure of the long term impact. Hence, it is not clear whether the proliferation of marginal employment will lower long term earnings (as it is a form of low-pay employment) or if the new wage dynamics after the Hartz reforms are more important. With my empirical model, I am able to construct lifetime values and see the change in the long term distribution of earnings. In addition, I can account for which of the effects, either the new employment mobility or the new wage dynamics, is stronger in explaining the new lifetime earnings distribution. The results of my approach and the counterfactual exercises suggest that the new wage dynamics in full time employment (namely lower full time wages after the Hartz reforms) are behind the lower long term distribution of earnings.
+
+The rest of the paper is organized as follows. Section 2 describes the German data set. Section 3 presents the empirical model. Section 4 discusses the parameter estimates and model fit. Finally, Section 5 uses the model to construct lifetime values and performs a counterfactual exercise by changing the employment (wage) parameters of the model estimated before the Hartz reforms.
+
+\section{Data}\label{Sec:Data}
+
+\subsection{Institutional framework}\label{Sec:inst_framework}
+%\newpage
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=1\textwidth]{reforms.png}
+%\footnotesize{
+%\\
+%\justify Notes: Hartz Reforms during the sample period.\par}
+%\captionsetup{font=small,justification=raggedright}
+%\caption{Hartz Reforms}\label{fig:reforms}
+%\end{figure}
+
+During the sample period, a series of reforms in the labour market were implemented in Germany. The intention is to study the transitions and long term earnings before and after the implementations of these reforms. These reforms receive the name of \emph{Hartz reforms}, named after Peter Hartz, the head of the committee which recommended changes to the German labour system. The reforms increased the efficiency of the job search process, cut unemployment benefits for long term unemployed (reducing reservation wages) and allowed more flexible forms of employment. Worldwide, the Hartz reforms are known for the introduction of marginal employment, which partially explain the German labour market miracle during the Great Recession.\footnote{See \cite{BurdaHunt11} and \cite{DuSpOe14}.} I briefly summarize descriptions of the reforms that otherwise are plentiful in the literature. The work of \cite{CaLaRo18} provides one of the most recent and complete description of these reforms.\footnote{The literature has discussed in detail these series of reforms. See \cite{BurdaHunt11} and \cite{EngbomDetragiacheRaei15} for a general discussion of all the reforms. \cite{Fichtl15} for more in-depth discussion of the technical details of the reforms. \cite{Caliendo2016} for a discussion and an application on Hartz I-III reforms. \cite{LiSchWie16} and \cite{Price16} for a discussion and an application on the Hartz IV reform.}
+
+The creation of marginal employment in Germany goes back to the 1960s. Back then, marginal employment was envisaged to facilitate non-participants engage in some form of paid work. The labour contracts under marginal employment are designed for low-pay employment and have a cap on hours and pay. However, labour earnings under marginal employment are exempted from income tax and social security contributions. Likewise, these earnings do not contribute to the unemployment benefits and pension payments at retirement are reduced.\footnote{Before the implementations of the Hartz reforms, unemployed workers who received benefits were allowed to work in marginal employment to top up their benefits, as long as their jobs did not pay more than 165 euros per month.} Unemployment insurance in Germany consisted of three layers: unemployment benefits, unemployment assistance and social assistance (a means-tested lump-sum transfer designed for those workers that did not qualify for unemployment benefits or unemployment assistance). In April 1999, the German Federal Employment Agency set the wage cap to 325 euros per month with a working time restriction of 15 hours per week, and temporary employment contracts were restricted to a two-month maximum, or 50 working days by year. Employees were exempted from social security contributions and employers paid a fixed 22\% rate. In the following paragraphs, I briefly detail each implementation of the Hartz reforms.
+
+The Hartz reforms were implemented gradually and in different stages. Hartz I, which was introduced in January 1st, 2003, changed labour regulation in order to enhance temporary employment, implemented occupational training programmes, introduced subsistence payments on behalf of employment agencies, and created new forms of employment for elderly workers. It also introduced the setup of the Personel Service Agencies (PSAs). These were placement-oriented temporary employment agencies that increased the efficiency of the matching process. 
+
+Hartz II was introduced in different dates, on January 1st, 2003, and April 1st, 2003. This staged defined formally two types of labour contracts under marginal employment: mini-jobs and midi-jobs. Mini-jobs paid up to 400 euros per month (450 euros in 2013), while midi-jobs paid between 400 and 800 euros per month. Hartz II introduced three legal modifications: (i) it lifted the threshold for the minijobs' maximal wage to 400 euros, (ii) it eliminated the cap on 15 working hours per week, and (iii) it facilitated the adoption of marginal employment as a secondary form of employment by extending the income tax and social security exemptions for mini-jobs held as a secondary job. Hartz II also made it easier for firms to use marginal employment from an administrative point of view. It facilitated the adoption of marginal employment and the payments of the corresponding taxes and social security contributions.\footnote{The \emph{Minijobzentrale} was created to serve as a unique legal entity responsible for registering marginally employed workers. It also served to deal with all the tax and social security matters related to marginal employment.} The social security contribution of employers increased slightly to 23\%. Employees only paid 2\% income tax. For midi-jobs, employees paid higher income tax and social security contributions. The aim of the reform was to create incentives to take up marginal employment that led to regular employment and to reduce unregistered work. 
+
+Hartz III, introduced in January 1st, 2004, restructured the Federal Employment Agency as an entity improving the efficiency in job offer mediation to unemployed workers. The elements of Hartz III increased the efficiency in the matching process and also restructured hiring subsidies to incentivise employers to hire hard-to-place workers, such as older and disabled people.
+
+The Hartz IV reform, introduced in January 1st, 2005, tightened conditions on unemployment benefit recipients. In particular, it merged the long-term unemployment assistance benefits with social assistance benefits into one new transfer (ALG II). ALG II benefits became means-tested at the household level, affecting the eligibility of the long-term unemployed. On the contrary, unemployment benefits remained largely unmodified. In other words, most workers who qualified for unemployment assistance in the old system experienced a dramatic cut in benefits if they remained in unemployment. In addition, Hartz IV could potentially cut benefits by 30\% for 12 weeks if a person who was able to work refused to enter the activation program. It also cut benefits if a suitable offer of work proposed by the case worker was rejected by the worker. In practice, Hartz laws explicitly stated that about any work was then considered suitable. Hence, refusal to accept employment led to benefit cuts. Finally, the Hartz IV reform also introduced the so called One-Euro-jobs , which was a form of low pay employment intended to activate benefit recipients by taking up at least some employment in exchange for the ALG II benefits. These jobs paid one Euro per hour worked on top of the unemployment asistance, hoping to attract long term unemployed workers into regular employment.
+
+%After the implementation of the Hartz IV reform little has been modified regarding these particular aspects of the labour market in Germany. One of those exemptions is that the income level of 450 Euro was raised for mini-job employment in January 2013.
+
+\subsection{Data source}\label{Sec:data_source}
+
+My data source is the \emph{Sample of Integrated Labour Market Biographies (SIAB)} provided by the Institute for Employment Research (IAB) for the years 1975-2014. The SIAB is a 2\% random sample drawn from the Integrated Employment Biographies (IEB). The variables captured in this dataset include gender, year of birth, education, working spells recorded at the day level, unemployment benefits and gross daily wages pertaining to jobs covered by social security. Civil servants, self-employed and regular students are excluded from this dataset. East Germany observations appear after 1991. In total, the raw dataset has information on 1,707,228 individuals and 51,987,959 unique person-year records.
+
+The dataset reports employment observations from either full-time or part-time spells, but marginal employment is classified as a separate category since April 1999. This is why in my analysis I restrict the data to the period 1999-2014. The datasets provides employment spells with the starting and the ending date of the spell. Therefore, I am able to observe different employment transitions for the individual within a year. I then construct monthly job spells with the aggregate individual's earnings of the employment observations and deflate earnings using the German consumer price index of 2010.\footnote{\url{https://data.oecd.org/price/inflation-cpi.htm}} The primary source of analysis is daily earnings, which are top-coded by the limit liable to social security.\footnote{In the 1999-2002 (2005-2009) sample, 3\% (2.3\%) of the observations are top-coded.} I
+follow \cite{DaHrMa14} and impute daily earnings from an extrapolated Pareto density fitted to the non-top-coded upper-end of the observed distribution for each year, separately for year periods, gender, full-time and part-time observations. 
+
+%Administrative social security records have the advantage that are more accurate than survey data sets. It avoids errors in job spell duration and wage measurement error. However, 
+
+I keep workers with different employment status to allow for different attachment to the labour market among workers. I only drop from the sample workers in apprenticeships and partial retirement. Moreover, I consider different samples by gender. Furthermore, the age consideration is of some importance. While young workers may be using marginal employment to support their studies, elder workers may retire early due to generous unemployment benefits to high tenured workers.\footnote{See \cite{ArBo02}.} Therefore, I keep workers between 22 and 56 years old in the sample. Section \ref{Sec: samp_select} in the Appendix provides further details on the sample construction.
+
+Following \cite{CaLaRo18}, I categorize workers by their employment type. I use the following five categories: exclusive full-time, \emph{FT}, exclusive part-time, \emph{PT}, exclusive marginal employment, \emph{ME}, non-employment, \emph{NE}, and concurrent employment, \emph{CE}. Full-time and part-time spells are specified in the \emph{SIAB} data. The variable \emph{occupational status} distinguishes between full-time and part-time. The decisive factor is the ratio between the contracted hours and the usual working hours in the establishment.\footnote{To the best of my knowledge, there is no misclassification between full-time, part-time and marginal employment in the \emph{SIAB} data.} Also, marginal employment is specified for mini-jobs and midi-jobs (to be defined in the next subsection)\footnote{Technically, marginal employment relates to mini-jobs only. Mini-jobs are regulated in the Article 8, paragraph 1 in the German Social Code, Book IV midi-jobs are regulated in the Article 20 German Social Code, Book IV.}. For non-employment, I assign to this state workers receiving some form of unemployment benefit/assistance and those workers that are not observed in unemployment or registered employment (non-participants). With this sample selection, I can observe the transitions from non-employment to employment and whether the policy change of marginal employment across samples have had a significant impact on non-participants. Finally, concurrent employment are those employment observations where the worker holds a marginal employment as a secondary form of employment, together with a main full-time or part-time spell.
+
+\subsection{Descriptive statistics}\label{Sec:data_descriptives}
+
+One of the objectives of this paper is to estimate the separate contribution that wages, employment status and transitions have had on cross-sectional and lifetime earnings inequality in Germany before and after the Hartz I-IV reforms. The sample period comprises 16 years (1999-2014) and contains the Hartz reforms in the middle of the period (years 2003-2005), thus providing several year-observations \emph{before} and \emph{after} the change in policy. 
+
+\begin{figure}[!t]
+	\centering
+	\begin{flushleft}
+		\emph{Males:}\\
+	\end{flushleft}
+	\vspace{2mm}
+	\begin{minipage}[b]{0.32\textwidth}{Full-time}
+		\centering
+		\includegraphics[width=1\textwidth]{dev_perc_full.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth}{Part-time}
+		\centering
+		\includegraphics[width=1\textwidth]{dev_perc_part.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth}{Marginal employment}
+		\centering
+		\includegraphics[width=1\textwidth]{dev_perc_mg.png}
+	\end{minipage}\\
+	\vspace{2mm}
+	\begin{flushleft}
+		\emph{Females:}\\
+	\end{flushleft}
+	\vspace{2mm}
+	\begin{minipage}[b]{0.32\textwidth}{Full-time}
+		\centering
+		\includegraphics[width=1\textwidth]{dev_perc_full_fem.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth}{Part-time}
+		\centering
+		\includegraphics[width=1\textwidth]{dev_perc_part_fem.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth}{Marginal employment}
+		\centering
+		\includegraphics[width=1\textwidth]{dev_perc_mg_fem.png}
+	\end{minipage}
+	\footnotesize{
+		\justifying Notes: the figure displays percentiles of log real daily wage for full-time, part-time and marginal employment for male and female workers, deviated from the value of the same percentile in 1999 and multiplied by 100. The vertical red dashed lines denote years 2003-2005 where the Hartz reforms took place.\par}
+	\captionsetup{font=small,justification=raggedright}
+	%\captionsetup[figure]{position=bottom,justification=raggedright}
+	\caption{Real Log Daily Wage Inequality}\label{fig:daily_wage}
+\end{figure}
+
+I start the analysis by having a look at the trends in wage inequality during the sample period. I analyze changes in inequality at the bottom, the median and the top of the distribution. Figure \ref{fig:daily_wage} plots the wage growth (log deviations) of the 15th, 50th and 85th percentiles of the wage distribution relative to year 1999. I make a distinction by employment type and gender. For men, the 15th percentile of wages for full-time employment decreased reaching a low of -25\%. The ratio between the 85th percentile and the 15th percentile (P85/P15 gap) in wages widened to reach a 20\% increase at the end of the period. Meanwhile, median wages (50th percentile) for males in full-time remained stagnant. Part-time wages for males saw an increase at the bottom of the distribution. The bottom 15th percentile in part-time reached about a 30\% increase at the end of the period. In contrast, marginal employment saw an increase at the top of the distribution. Wages increased between 15-20\% for the 85th and the 50th percentile at 2003-2004 years when the Hartz reforms increased the maximum threshold for marginal employment. Thereafter, real wages in marginal employment started declining due to inflation.
+
+The picture is somewhat different for females. First, volatility is generally lower. Females in full-time show a P85/P15 gap that never exceeds 10\% during the period. Unlike men, women in full-time do not see an increase in bottom inequality: both the 15th and 50th percentiles in full-time remain around 0\% during the period. Only top inequality in full-time eventually increases to reach a 10\% increase at the end of the period, 5 points larger than the increase for males. The feature found for males, where there is an increase of bottom wages in part-time and an increase of top wages in marginal employment is also present for females. The 15th percentile for part-time wages increase around 15\% at the 2003-2004 years, together with an increase of 20\% for the 85th percentile of marginal employment wages. Only females present a widening of marginal employment wages. The bottom 15th percentile of wages in marginal employment see a total decrease around 10\%.
+
+The findings of widening bottom inequality in full-time for males are documented in \cite{CaHeKl13} for the 1996-2009 period.\footnote{Wage inequality is a larger, ongoing phenomenon in Germany. Also, wage flexibilization at the bottom of the distribution for full-time employment is discussed as one possible explanation for the German labour market miracle in the great recession (\cite{BurdaHunt11}). See \cite{DuLuSc09} for a wage inequality study for the 1975-2004 period.} I have extended the analysis for part-time and marginal employment and show that part-time wages concentrate as bottom wages increased during the period, while marginal employment wage inequality increases (for females).
+
+\begin{figure}[!t]
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{tstock_FT.png}
+		\subcaption{full-time}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{tstock_PT.png}
+		\subcaption{part-time}	
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{tstock_MJ.png}
+		\subcaption{marginal employment}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{tstock_CJ.png}
+		\subcaption{concurrent employment}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: the figure displays aggregate stocks of employed workers, separated by gender. The vertical blue lines denote years 2003-2005 where the Hartz reforms took place.\par}
+\captionsetup{font=small,justification=raggedright}
+%\captionsetup[figure]{position=bottom,justification=raggedright}
+\caption{Employment Stock}\label{fig:stock}
+\end{figure}
+
+Next, I turn to the stock of employment. The aim is to observe the changes in employment stock before and after the Hartz reforms. Figure \ref{fig:stock} plots the trend of the stocks of the different forms of employment: full-time, part-time, marginal employment and concurrent employment. The figure shows the different evolution of employment by gender. The chart has several takeaways:
+
+\begin{enumerate}
+\item Full-time employment, as a fraction of total employment, decreases during the sample period. Male full-time employment decreased from 97\% in 1999 to 86\% in 2014. Female full-time employment decreased from around 65\% in 1999 to 47\% in 2014.
+\item Part-time, marginal employment and concurrent employment increase throughout the sample period.
+\item Concurrent employment appears as a new form of employment after the Hartz reforms in 2003. It is close to 0\% in 1999 and around 4\% (6\%) for male (female) workers in 2014.
+\item There is significant heterogeneity between males and females: while males concentrate around full-time employment (around 90\% of employment stock), females take more flexible forms of employment (only between 50-60\% of full-time employment stock).
+\end{enumerate}
+
+As shown by \cite{Galasi17} and \cite{CaLaRo18}, part-time and marginal employment contracts are predominantly both a female and a low education phenomenon for prime age workers. Also, the closest group in worker characteristics to marginal employment workers are non participants. Taken together, the employment stock figure depicts a labour market that transits from a (close to) full-time labour market to a more flexible labour market after the implementation of the Hartz reforms.
+
+\begin{figure}[!t]
+	\centering
+	\begin{flushleft}
+		\emph{Males:}\\
+	\end{flushleft}
+	\vspace{2mm}
+	\begin{minipage}[b]{0.48\textwidth}{1999-2002}
+		\centering
+		\includegraphics[width=1\textwidth]{Flows_Males_19992002.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}{2005-2009}
+		\centering
+		\includegraphics[width=1\textwidth]{Flows_Males_20052009.png}
+	\end{minipage}\\
+	%\end{figure}
+	\vspace{2mm}
+	\begin{flushleft}
+		\emph{Females:}\\
+	\end{flushleft}
+	\vspace{2mm}
+	\begin{minipage}[b]{0.48\textwidth}{1999-2002}
+		\centering
+		\includegraphics[width=1\textwidth]{Flows_Females_19992002.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}{2005-2009}
+		\centering
+		\includegraphics[width=1\textwidth]{Flows_Females_20052009.png}
+	\end{minipage}
+	\footnotesize{
+		\justifying Notes: the figure displays monthly average transitions in and out of each of the employment states for selected sample years and by gender. For each table, rows correspond to the previous monthly employment state and columns correspond to the current monthly employment state. \par}
+	\captionsetup{font=small,justification=raggedright}
+	%\captionsetup[figure]{position=bottom,justification=raggedright}
+	\caption{Worker Flows}\label{fig:worker_flows}
+\end{figure}
+
+Another important aspect of the different labour market after the Hartz reforms is the transitions between employment types. Figure \ref{fig:worker_flows} depicts monthly worker flows in and out of each employment type, by gender and for different sample periods. I select years 1999-2002 to account for the labour market before the change in policies, and years 2005-2009 for the labour market after. Rows refer to the employment type of the worker during the previous month and columns refer to the destination state (current month). Each cell is an average for the corresponding sample period. For example, 98\%  of the males in the 1999-2002 sample that were in full-time ($FT_{t-1}$) the previous month remained in $FT_{t}$ the next month. Only 1\% of male workers in $FT_{t-1}$ in the previous month transited to non employment ($NE_{t}$).
+
+The tables illustrate the changes in labour market mobility before and after the policy change: 
+\begin{enumerate}[i)]
+\item Marginal employment becomes more persistent after the Hartz reforms. During the 1999-2002 year sample, 88\% (94\%) of male (female) workers in marginal employment continued in the same employment type next month. These rates increase to 89\% (95\%) for the 2005-2009 year sample. 
+\item Marginal employment to non-employment transitions decreased after the Hartz reforms. They go from 8\% (4\%) in years 1999-2002 to 6\% (3\%). More generally, there are lower flows into non-employment after the Hartz reforms. %After the Hartz reforms, there is a decrease in the transitions to non employment. %In other words, in terms of the \emph{dead-end} hypothesis it can be said that 
+\item There is more non-employent to marginal employment transitions after the Hartz reforms, while transitions out of non-employment to other types are similar. The transitions out of non-employment to marginal employment go from 1\% (3\%) in 1999-2002 years to 2\% (4\%) in 2005-2009 years for male (female) workers. Together with the previous results, this supports the \emph{stepping stone} hypothesis. 
+\end{enumerate} 
+
+Finally, I study the persistence of earnings across all flows of employment states. This informs of the correlation of workers' earnings across different employment status. For instance, it is not clear whether salaries in any of the flexible forms of employment will correlate with workers' earnings in full-time employment. This persistence of earnings between a worker's full-time job and other forms of employment should play a big role in shaping the worker's long term earnings, especially when flexible forms of employment become more popular and their likelihood increases.
+
+\begin{figure}[!t]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}{$FT_{t-1}$$\rightarrow$$FT_{t}$}
+		\centering
+		\includegraphics[width=1\textwidth]{FT_FT_20052009_male.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}{$PT_{t-1}$$\rightarrow$$FT_{t}$}
+		\centering
+		\includegraphics[width=1\textwidth]{PT_FT_20052009_male.png}
+	\end{minipage}\\
+	%\end{figure}
+	\vspace{5mm}
+	%\begin{figure}[!t]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}{$ME_{t-1}$$\rightarrow$$FT_{t}$}
+		\centering
+		\includegraphics[width=1\textwidth]{MJ_FT_20052009_male.png}
+	\end{minipage}
+	%\begin{minipage}[b]{0.32\textwidth}{$NE_{t-1}$$\rightarrow$$FT_{t}$}
+	%\centering
+	%\includegraphics[width=1\textwidth]{NE_FT_20052009_male.png}
+	%\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}{$CE_{t-1}$$\rightarrow$$FT_{t}$}
+		\centering
+		\includegraphics[width=1\textwidth]{CJ_FT_20052009_male.png}
+	\end{minipage}
+	\footnotesize{
+		\justifying Notes: The figure displays a scatter plot of log monthly earnings in the previous month (x-axis) against log monthly earnings in the current month (y-axis) for male workers during the 2005-2009 period. Employment states are defined in Section \ref{Sec:data_source}. For illustration purposes, only transitions into full-time are shown.\par}
+	\captionsetup{font=small,justification=raggedright}
+	%\captionsetup[figure]{position=bottom,justification=raggedright}
+	\caption{Autocorrelation, Male workers 2005-2009}\label{fig:autocorrelation_male_20052009}
+\end{figure}
+
+Figure \ref{fig:autocorrelation_male_20052009} plots selected scatter plots of log monthly earnings for different employment flows. The graph shows flows into full-time only for simplicity. The x-axis represents earnings in the previous month, and the y-axis earnings in the current month. The top-left graph shows log monthly earnings for male workers that remain in full-time between any two consecutive months during the 2005-2009 years. Figure \ref{fig:autocorrelation_female_20052009} in the Appendix shows the corresponding graph for females. As expected, the correlation of monthly earnings for full-time transitions is high: the coefficient is equal to 0.981.\footnote{This high correlation is in part by construction since in the SIAB data I observe working spells that last longer than a month. In these cases, since daily wages are averaged across the entire employment period, correlation should be 1.} Figure \ref{fig:autocorrelation_samples} in the Appendix shows that the autocorrelation of earnings for workers remaining in their employment type is generally high. It amounts to 0.980 for part-time flows, 0.938 for marginal employment, and 0.980 for concurrent employment.
+
+What is more interesting to observe is the correlation of earnings between other forms of employment and full-time employment. Figure \ref{fig:autocorrelation_male_20052009} illustrates that part-time to full-time transitions preserve a moderate persistence in earnings (0.681), marginal to full-time employment has the lowest persistence (0.303) and concurrent to full-time employment has highest persistence (0.899). The low correlation in earnings from marginal employment to full-time is expected given the tight nominal thresholds that marginal employment has. However, the high correlation between concurrent and full-time employment shows that earnings between these two employment states are not very different. \cite{CaLaRo18} show that workers at the medium/bottom of the earnings distribution use secondary earnings as a form of topping-up their main earnings stemming from full-time. They study a causal relationship and find evidence in favor of this ``moonlighting'' effect. Therefore, a similar distribution of earnings between full-time and concurrent employment is expected.
+
+%Beyond the correlation of earnings between states within 2 consecutive months, many factors are at play. It could be that 
+
+\section{Model}\label{Sec:Model}
+
+In this section, I present the empirical model that will be estimated. The model has a mobility process from which workers draw their employment state. Then there is a salary drawn from a bivariate normal distribution. Worker characteristics and unobserved heterogeneity affect both workers mobility and earnings. I follow \cite{PoTu05} and \cite{DiPoTu14} in building a likelihood function with contributions from the wage process, employment state and unobserved heterogeneity, but I consider a larger number of employment types.
+
+% They earn a salary Workers transit between different employment states while earning a salary drawn from a bivariate normal distribution, where the employment state and the wages are affected by worker observables and unobserved heterogeneity.
+
+\subsection{Main framework}\label{Sec:main_framework}
+
+I follow $N$ workers, indexed $i=1,...,N$ up to $T$ consecutive months\footnote{up to 48 months for the 1999-2002 sample, and up to 60 months for the 2005-2009 and  2010-2014 samples.}. My data has information on employment spells and unemployment benefits/assistance. Unfortunately, I lack information about the participation (labour force) decision at the worker level. That means I track workers from their first to their last employment spell that is observed in the sample. For each individual in the sample I observe the length of employment spells, earnings in that spell and worker characteristics. A typical observation for any individual $i$ will be represented as a vector $\textbf{x}_i=(\textbf{w}_i,\textbf{e}_i,\textbf{c}_i^v,c_i^u)$, where:
+\vspace{0.2 cm}
+\begin{itemize}
+\setlength{\itemsep}{0.2 cm}
+\item $\textbf{w}_i=(w_{i1},...,w_{iT})$ is the observed sequence of individual $i$'s log monthly real wage flows.
+\item $\textbf{e}_i=(e_{i1},...,e_{iT})$  is individual $i$'s observed sequence of employment states in the finite state space $E=\{FT,PT,ME,CE,NE\}$, where $FT$ stands for full-time, $PT$ stands for part-time, $ME$ stands for marginal employment, $CE$ stands for concurrent employment (multiple job holding), and $NE$ stands for non-employment. These employment states have been defined in Section \ref{Sec:data_source}. 
+\item $\textbf{c}_i^v = (c^v_{i1},...,c^v_{iT})$ is the observed varying sequence of individual $i$'s characteristics. In the model, I only consider labour market experience, $\textbf{c}_i^v = (\text{exp}_{i1},...,\text{exp}_{iT})$.
+\item $c_i^{u}$ is the observed set of individual $i$'s characteristics that are constant. I include education and labour market cohort\footnote{Labor market cohort is understood as the year in which the individual first entered the labour market. Therefore, $c_i^v$ is deterministic conditional on $c_i^u$.}.
+\end{itemize}
+\vspace{0.2 cm}
+
+%wages or
+%unemployment and employment, transitions between full-time, part-time and marginal employment, 
+
+In addition to the observed individual heterogeneity captured by $\textbf{c}_i^v$ and $c_i^{u}$, I allow for unobserved heterogeneity which may influence wages and/or the selection of employment states. I append a set $k_i$ of (time-invariant) unobserved characteristics. The goal is to estimate simultaneously transitions between different types of employment and earnings trajectories. I define the likelihood of $(\textbf{x}_i,k_i)$ as follows:
+
+%We assume that unobserved heterogeneity, $k_i$, only affects incomes through its impact on mobility
+
+\begin{align}\label{eq:Likelihood}
+\mathcal{L}_{i}(\textbf{x}_i,k_i)= & \ell_{i}(\textbf{w}_i|\textbf{e}_i,\textbf{c}_i^v,c_i^u,k^w_i) \cdot \ell_{i}(\textbf{e}_i|\textbf{c}_i^v,c_i^u,k^e_i)\cdot \ell_{i}(k_i|c_i^u)\cdot \ell_{i}(c_i^u).\\ \nonumber
+\end{align}
+
+%\Bigg( \frac{1}{\sqrt{2\pi \sigma_{w}^{2}}} \text{exp} \Big\{ -\frac{(\ln w_{i} - \widehat{\ln w_{i}})^{2}}{2\sigma_{w}^{2}} \Big\} \Bigg)
+
+%Before the last term, $\ell(c_i^v|c_i^u)$ represents the distribution of $c_i^v$, which may depend on $c_i^u$\footnote{For example, education may affect the distribution of individuals working in different sectors.}.
+
+The likelihood for the typical individual is decomposed into four terms. Starting from the right, $\ell (c_i^u)$ is the sample distribution of observed individual fixed (unvarying) characteristics. This distribution is observed in the data. Next, $\ell_{i}(k_i|c_i^u)$ is the distribution of unobserved heterogeneity given observed characteristics $c_i^u$. Next, $\ell_{i}(\textbf{e}_i|\textbf{c}_{i}^{v},c_{i}^{u},k^e_{i})$ is the contribution to the likelihood function from job spells. Finally, $\ell_{i}(\textbf{w}_i|\textbf{e}_i,\textbf{c}_i^v,c_i^u,k^w_i)$ is the likelihood contribution from a sequence of wage observations over job spells. Hence, individual $i$'s contribution to the complete likelihood comes from three components, pertaining to wage history, labour market status history and unobserved heterogeneity. The underlying assumption of the model is that dynamics of job spells are independent of the wage sequence, given $({c}_i^v,c_i^u,k_i)$. In the following subsections, I provide further details of each component of Equation \eqref{eq:Likelihood}.
+
+\subsection{Unobserved Heterogeneity}\label{Sec:unobs_het}
+
+I consider two types of unobserved heterogeneity, $k_i=(k_i^{e},k_i^w)$. The first type, $k_i^{e}$, relates to heterogeneity in terms of the propensity to be in each employment state (called mobility classes hereafter). In particular, $k_i^{e}$ is the unobserved factor that conditions the parameters relating to employment state history. The second type, $k_i^w$, relates to heterogeneity in terms of wage (called wage classes hereafter) through its impact on wage levels and wage dynamics. $k_i^w$ conditions the parameters relating to wage distribution.\footnote{This type of heterogeneity increases the persistence of income ranks, which is found to be underestimated otherwise. See \cite{Sh76}.} Both types of heterogeneity are time-invariant individual random effects, which are independent one from each other.
+
+I refer to wage and mobility classes as I use a finite mixture approach to
+model unobserved heterogeneity where an individual can belong to one of $K^{e}$ employment classes and $K^w$ wage classes. The probability of belonging to any latent class depends on observed individual heterogeneity $(\textbf{c}_i^v,c_i^u)$, as follows:
+
+\begin{align}\label{eq:prob_unobs_het}
+& \ell_{i}(k_i|c_i^u)=\text{Pr}\{k_i^w|c_i^u\}\cdot\text{Pr}\{k_i^e|c_i^u\}.
+\end{align}
+
+The previous two components are modeled as multinomial logits:
+
+%\begin{align}\label{eq:prob_unobs_het_multin}
+%\text{Pr}\{k_i^e=k_{p}^{e}|c_i^u\}=\frac{exp[\omega_{p}^{e}(c_{i}^{u})]}{\sum\limits_{p=1}^{k^e}exp[\omega_{p}^{e}(c_{i}^{u})]} \,\,\,\,\, \text{and} \,\,\,\,\, \text{Pr}\{k_i^w=k_{p}^{w}|c_i^u\}=\frac{exp[\omega_{p}^{w}(c_{i}^{u})]}{\sum\limits_{p=1}^{K^w}exp[\omega_{p}^{w}(c_{i}^{u})]}
+%\end{align}
+
+\begin{align}\label{eq:prob_unobs_het_multin}
+& \text{Pr}\{k_i^{e}=k_{p}^{e}|c_{i}^u\}=\frac{\text{exp}[c_{p,i}^{u}\omega_{p}^{e}]}{\sum\limits_{p=1}^{k^{e}}\text{exp}[c_{p,i}^{u}\omega_{p}^{e}]} \,\,\,\,\, \text{and} \,\,\,\,\, \text{Pr}\{k_i^w=k_{p}^{w}|c_i^u\}=\frac{\text{exp}[c_{p,i}^{u}\omega_{p}^{w}]}{\sum\limits_{p=1}^{K^w}\text{exp}[c_{p,i}^{u}\omega_{p}^{w}]}
+\end{align}
+
+%The total number of classes is $K=K^{e}\times K^{w}$ and
+
+with $(K^{e},K^w)$ outcomes.  $(k^{e}_1,k^w_1)$ are taken as the reference category; i.e. they are normalized to zero.
+
+\subsection{Labor Market States}\label{Sec:lab_market_states}
+
+%The multi-state feature of the model is represented as a set $\mathbb{S}$ of transition types, $\mathbb{S}=1,2,...,S$. For example, in the case of three labour market states $(FT, PT, NE)$, $s=1$ denotes a transition from $FT$ to $PT$, $s=2$ from $FT$ to $NE$, $s=3$ a transition from $PT$ to $FT$,..., up to $s=S=6$ a transition from $NE$ to $PT$\footnote{Our multi-state reduced-form model is similar to the model of \cite{KoopLuMon08} for credit rating transitions.}. 
+
+Transition probabilities between the five distinct labour market states are assumed to depend only on the individual's state at the previous month and on observed and unobserved heterogeneity - i.e. labour market states are assumed to follow a (conditional) first order Markov chain:
+
+\begin{align}
+& \ell_{i}(\textbf{e}_i|\textbf{c}_{i}^{v},c_{i}^{u},k^e_{i})=\ell_{i}(e_{i1}|c_{i1}^{v},c_{i}^{u},k^e_{i})\prod_{t=2}^{T} \ell_{i}(e_{it}|e_{it-1},c_{it}^{v},c_{i}^{u},k^e_{i}).
+\end{align}
+
+
+Specifically, the hazard rate for a worker to be in a employment state $j$ can be expressed by the following multinomial logit:
+
+\begin{align}
+& \ell_{i}(e_{it}|e_{it-1},c_{it}^v,c_i^u,k_i^{e})  = \frac{\pi_{j}}{\sum\limits_{j'}\pi_{j}}; \nonumber \\
+& \pi_{j} = \pi (e_{it}=l|e_{it-1}=j,c_{it}^v,c_i^u,k_i^{e})=\text{exp}\large[\beta_{j}+\alpha_{j}k_{i}^{e}+h(c_{it}^{v},c_{i}^{u})\gamma_{j}\large],
+\end{align} 
+
+%with 
+%
+%\begin{align}
+%
+%\end{align} 
+
+%$\theta_{s}$ is the hazard rate that depends on observed covariates $(c_{i}^{v},c_{i}^{u})$ and unobserved heterogeneity $k_{i}^{s}$.
+
+where $h(\cdot)$ is a function of the observed covariates and $\gamma_{j}$ is a conformable coefficient vector, $\beta_{j}$ is the hazard intercept and $\alpha_{j}k^{e}$ is the unobservable component specified as the product of the factor loading $\alpha_{j}$ and the fundamental unobserved factor $k^{e}$. $\ell_{i}(e_{i1}|c_{it}^v,c_i^u,k_i^e)$ is the initial condition of individual $i$'s labour market history, which is specified as a multinomial logit:
+
+%Given this setup, the likelihood contribution of an individual $i$, for given unobserved and observed characteristics $k_{i}^{s}$ and $(c_{i}^{v},c_{i}^{u})$ is given by:
+%
+%\begin{align}\label{eq:Likelihood_states}
+%\ell_{i}(\textbf{e}_i|\textbf{c}_i^v,c_i^u,k_i^{jl})  = &\,\,\, \ell_{i}(\textbf{e}_{i,1}|\textbf{c}_i^v,c_i^u,k_i^e)\,\,\, \times \\ \nonumber & \prod_{\tau=2}^{T_i} \prod_{s=1}^{S_{i,\tau}} \Big[1-\theta_{s}(\tau|c_i^v,c_i^u,k_{i}^{s})\Big] \Big(\frac{\theta_{s}(t_{i,\tau,s}|c_i^v,c_i^u,k_{i}^{s})}{1-\theta_{s}(t_{i,\tau,s}|c_i^v,c_i^u,k_{i}^{s})} \Big)^{d_{i,\tau,s}}, \\ \nonumber
+%\end{align}
+
+%\begin{align}\label{eq:Likelihood_states}
+%\ell_{jl}(\textbf{e}_i|\textbf{c}_i^v,c_i^u,k_i^e)  = & \prod_{m=1}^{M(T)} \prod_{i=1}^{N} \prod_{q=1}^{Q} \text{exp}\Big\{\mathbbm{1}_{i,t_m}\{q\} \text{ln}\{\lambda_{q,i}(t_m|c_i^v,c_i^u,k_i^e)\} \\ \nonumber
+%& - \int_{t_m-1}^{t_m}\lambda_{q,i}(t|c_i^v,c_i^u,k_i^e)dt \Big\}.\\ \nonumber
+%\end{align}
+
+%where $T_i$ is the number of cycles of person $i$, $S_{i,\tau}$ is the total number of possible origin-destination state pairs associated with person $i$'s $\tau^{\text{th}}$ cycle and $d_{i,\tau,s}$ is a censoring indicator that equals one if the observation period of person $i$ in cycle $\tau$ ends with a transition from the origin state to the destination state indexed by $s$\footnote{A similar model specification is that of \cite{Osi2012}, who investigates the differences of short-term and long-term training programs in terms of job stability and earnings.}. 
+
+\begin{align}\label{eq:prob_init_state}
+& \ell_{i}(e_{i1}|c_{i1}^v,c_i^u,k_i^e) =\frac{\text{exp}[h(c_{i1}^v,c_{i}^{u},k_i^e)\gamma_{e}]}{\sum\limits_{e=FT}^{NE}\text{exp}[h(c_{i1}^v,c_{i}^{u},k_i^e)\gamma_{e}]},
+\end{align}
+
+where $e=\{FT,PT,ME,CE,NE\}$\footnote{For the estimation of the 1999-2002 sample I do not include the \emph{CE} state since it was not possible to observe in the data given labour market institutions.}.
+
+%Conditional on the observed covariates and the unobserved determinants, the contribution to the likelihood function from a job spell can be written as:
+
+%We model the joint distribution of the unobservables, $\{v_{kl}: k \in \mathcal{K}\}$ with a discrete mass point distribution that in principle allows to approximate any arbitrary discrete or continuous distribution (Heckman and Singer, 1984). In particular, we adopt a factor loading specification with two independent underlying factors, $w_1$ and $w_2$:
+
+
+%The transition probabilities, \mbox{$p_{j,l}(s,s+t)=\text{Pr}(e_{s+t}=l|e_{s}=j)$}, are defined for any $s$ and $t \in \mathbb{R}^+$, and for any $j$ and $l \in E$. In addition, our Markov process is time homogeneous: $p_{j,l}(s,s+t)=p_{j,l}(0,t)=p_{j,l}(t)$. That is, the transition probability does not depend on the origin of the time set, but on the difference between the two dates $s$ and $(s+t)$\footnote{See \cite{FlFoMou07} for more details.}. 
+
+%Corresponding to each of these point processes $\textbf{e}_i$ we assume there is a finite stochastic intensity $\lambda_{j,l}^{i}(t)$, for all transitions between states $j,l \in E$. We allow for transitions in the same employment state for the four categories of labour market states; that is, we allow for job-to-job transitions in a given state. An example is a worker who jumps from one firm to another while she is in full-time employment. The previous intensity describes the instantaneous probability of individual $i$ experiencing a labour market transition from state $j$ to $l$ at time $t$ conditional on the information available before time $t$. We adopt a proportional hazard specification:
+%
+%\begin{align}
+%\lambda_{j,l}^{i}(t|c_i^v,c_i^u,k_i^e) = H_{j,l}(t)\cdot\text{exp}\{\beta' c_i^{v} + \gamma' c_i^u\}\cdot k_i^{e}.
+%\end{align} 
+%
+%The function $H_{j,k}(t)$ is the baseline hazard, that we assume to be constant; $H_{j,k}(t)=1$\footnote{Thus, our only source of duration dependence will be unobserved heterogeneity in mobility classes.}. The systematic part, $\text{exp}\{\beta' c_i^{v} + \gamma' c_i^u\}$, contains varying and unvarying covariates. Finally, $k_i^{e}$ represents a latent fixed factor.
+%
+%Define the multi-state feature of the model as a set $\mathbb{Q}$ of transition types $\mathbb{Q} = \{1,2,...,Q\}$ for all $j,l \in E$. For example, $q = 1$ denotes a $FT$ to $PT$ transition, $q = 2$ denotes a $FT$ to $ME$ transition, ..., $q = 6$ denotes a $PT$ to $FT$ transition, $q = 7$ denotes a $PT$ to $PT$ transition, ..., up to $q = \mathbb{Q} = 24$ that denotes a transition from $NE$ to $CE$.  The contribution to the likelihood function from a job spell conditional on the initial states, pre-sample event histories and heterogeneity can be written as
+%
+%\begin{align}\label{eq:Likelihood_states}
+%\ell(\textbf{e}_i|\textbf{c}_i^v,c_i^u,k_i^e)  = & \prod_{m=1}^{M(T)} \prod_{i=1}^{N} \prod_{q=1}^{Q} \text{exp}\Big\{\mathbbm{1}_{i,t_m}\{q\} \text{ln}\{\lambda_{q,i}(t_m|c_i^v,c_i^u,k_i^e)\} \\ \nonumber
+%& - \int_{t_m-1}^{t_m}\lambda_{q,i}(t|c_i^v,c_i^u,k_i^e)dt \Big\}.\\ \nonumber
+%\end{align}
+%
+%The likelihood function (\ref{eq:Likelihood_states}) has an intuitive interpretation: the likelihood contains the probability of survival of individual $i$ in its current state over each spell of the pooled point process if there is not a transition for this individual. When the transition $m$ takes place at the end of the spell of the pooled process for individual $i$, that is if $\mathbbm{1}_{i,t_m}\{s\}$, the survival probability is multiplied by the hazard rate to yield the probability density of the transition event.
+
+\subsection{Wage Process}\label{Sec:income_process}
+
+%Define the counting process $Q_{i}$. The process $Q_{i}$ makes a jump of unit size at each time there is a labour market transition for individual $i$ such that $q=1,...,Q_{i}$ is the sequence of labour market states for that individual. ++
+
+I consider log (real) wage $w_{it}$ both in employment and in non-employment\footnote{For non-employment, I consider as wage the unemployment benefits/assistance of the worker. Otherwise, if the worker is non-employed and does not receive unemployment benefits/assistance, the wage is set to missing.} and assume wage trajectories $w_i$ to be the realization of a first-order Markov process  of continuous random variables $W_t$. I use the terms \emph{wage} and \emph{monthly earnings} interchangeably, but it should be understood as the same measure of interest. The likelihood of a given wage trajectory over T periods will be written as:
+
+%If we denote by  the standardized residual component of wages, we can define a Markov process of order 1 for the unobserved heterogeneity in mean $\widehat{\ln w_{it}}$:
+
+\begin{align}\label{eq:Likelihood_wages}
+\ell_{i}(\textbf{w}_i|\textbf{e}_i,c_{it}^v,c_i^u,k^w_i) & =  \ell_{i}(w_{i1}|e_{i1},c_{i1}^v,c_i^u,k_i) \prod_{t=2}^{T} \ell_{i}(w_{it}|w_{it-1},e_{it},e_{it-1},c_{it}^v,c_i^u,k^w_i) \\ \nonumber
+& = \ell_{i}(w_{i1}|e_{i1},c_{i1}^v,c_i^u,k_i) \prod_{t=2}^{T} \frac{\ell_{i}(w_{it},w_{it-1}|e_{it},e_{it-1},c_{it}^v,c_i^u,k^w_i)}{\ell_{i}(w_{it-1}|e_{it-1},c_{it}^v,c_i^u,k^w_i)} , \\ \nonumber
+%& = \frac{\prod\limits_{t=2}^{T} \ell_{i}(w_{it},w_{it-1}|e_{it},e_{it-1},c_{it}^v,c_i^u,k_i)}{\prod\limits_{t=3}^{T} \ell_{i}(w_{it-1}|e_{it-1},c_{it}^v,c_i^u,k_i)} , \\ \nonumber
+\end{align}
+
+where $\ell_{i}(w_{it-1}|\cdot)$ follows a univariate standard normal and $\ell_{i}(w_{it},w_{it-1}|\cdot)$ follows a bivariate standard normal with correlation $\tau_{i,t,t-1}$ between employment states at dates $t$ and $t-1$.
+
+%\footnote{If a worker is at $t$ and $t-1$ dates within the same employment spell, then $w_{it}=w_{it-1}$ by construction. Therefore, $\tau_{i,t,t-1}$ is set equal to 1 in these cases.}
+
+%($j=e_{it}$ and $l=e_{it-1}$, respectively)
+
+%We assume wages to follow a first-order Markov processes. 
+
+I assume marginal wage distributions to be normal, conditional on observed and unobserved individual heterogeneity. That is, both mean and variance are allowed to depend on observed and unobserved heterogeneity as well as on current labour market status:
+
+\begin{align}
+& w_{it}  |c_{it}^{v},c_{i}^{u},e_{it},k^w \sim N(\mu_{it},\sigma_{it}^{2}),\\ \nonumber
+& \mu_{it} = \mu(c_{it}^{v},c_{i}^{u},e_{it},k_i^w)\,\,\,\, \text{and}\,\,\,\, \sigma_{it} =\sigma(c_{it}^{v},c_{i}^{u},e_{it},k_i^w), \\ \nonumber
+& \mu(c_{it}^{v},c_{i}^{u},e_{it},k_i^w) = c_i^{u}\mu_0+[c_{it}^{v}\ast e_{it}\ast k_{i}^w]\mu_1, \\ \nonumber
+& \sigma(c_{it}^{v},c_{i}^{u},e_{it},k_i^w) = \sqrt{\text{exp}\{c_i^{u}\sigma_0+[c_{it}^{v}\ast e_{it}\ast k_{i}^w]\sigma_1\}}, \\ \nonumber
+\end{align}
+
+where the notation $x\ast y$ stands for all main effects and interactions of variables $x$ and $y$ and both $\mu_1$ and $\sigma_1$ are conformable coefficient vectors. I force the variance of log wage to be positive by specifying it as an exponential.
+
+Next, I normalized log wages; $\tilde{w}_{it}=\frac{w_{it} - \hat{w}_{it}}{\hat{\sigma}_{it}}$. By doing so, the pair $(\tilde{w}_{it},\tilde{w}_{it-1})$ is a Gaussian vector with correlation matrix
+
+
+\begin{align}
+\Gamma =
+\left[ {\begin{array}{cc}
+1 & \tau_{i,t,t-1} \\
+\tau_{i,t,t-1} & 1 \\
+\end{array}} \right].
+\end{align}
+
+$\tau_{i,t,t-1}$ is allowed to vary with observed and unobserved heterogeneity and with employment status at dates $t$ and $t-1$:
+
+\begin{align}
+& \tau_{i,t,t-1} = \tau(c_{it}^{v},c_{i}^{u},e_{it},e_{it-1},k_i^w), \\ \nonumber
+& \tau(c_{it}^{v},c_{i}^{u},e_{it},e_{it-1},k_i^w) = \\ \nonumber
+& \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = -1 + 2\Lambda\Big\{c_{it}^{v}\ast k_{i}^{w}\cdot \xi_0+c_{it}^{u}\ast k_{i}^{w}\cdot \xi_1+e_{it}\ast k_{i}^{w}\cdot \xi_2+e_{it-1}\ast k_{i}^{w}\cdot \xi_3 \Big\}.
+\end{align}
+
+Letting $\Lambda[x]=(1+e^x)^{-1}$ designate the logistic cdf, I apply the transformation $-1+2\Lambda$ to constrain the correlation coefficient $\tau(\cdot)$ between $[-1,1]$. Temporarily omitting any conditioning variable, the likelihood of the typical individual's wage trajectory $w_i$ defined in Equation \eqref{eq:Likelihood_wages} becomes:
+
+\begin{align}\label{eq:Likelihood_wages_pair}
+\ell_{i}(\textbf{w}_i|\cdot) & = \Big(\prod_{t=1}^{T}\frac{1}{\sigma_{it}} \Big)\times\frac{\prod\limits_{t=2}^{T} \phi(\tilde{w}_{it},\tilde{w}_{it-1};\Gamma|\cdot)}{\prod\limits_{t=2}^{T} \phi(\tilde{w}_{it-1}|\cdot)} , \\ \nonumber
+\end{align}
+
+where $\phi(\cdot;\Gamma|\cdot)$ is the bivariate normal pdf with mean 0 and covariance matrix $\Gamma$.
+
+%We specify the following equation for the log real daily wage at the beginning of each monthly observation:
+%
+%\begin{align}
+%\ln w_{i} & = h(c_i^{v},c_i^u)\delta  + k_i^w + \epsilon_{i} .\\ \nonumber
+%\end{align}
+%
+%$h(\cdot)$ is a function of the observed covariates and $\delta$ is a conformable coefficient vector. $k_i^{w}$ is the unobserved heterogeneity which is assumed to be constant across repeated spells. $\epsilon_{i}$ is an error term assumed to be normally distributed with mean zero and unknown variance $\sigma_{\epsilon}^{2}$. In practice, we run regressions for each different employment state. That is, parameter estimates will differ across each state of the labour market.
+
+
+
+
+
+
+
+
+
+%\begin{align}\label{eq:Likelihood_wages}
+%\ell_{i}(\textbf{w}_i|\textbf{e}_i,\textbf{c}_i^v,c_i^u,k_i) & =  \ell_{i}(\textbf{w}_{i1}|e_{i1},c_{i1}^v,c_i^u,k_i) \prod_{q=2}^{Q_i} \ell_{i}(\textbf{w}_{i,q}|\textbf{w}_{i,q-1},\textbf{e}_{i},\textbf{c}_i^v,c_i^u,k_i) \\ \nonumber
+%& = \vartheta\Big(\frac{\ln w_{i}^{1}- \widehat{\ln w_{i}^{1}}}{\sigma_{t,\epsilon}}\Big) \prod_{q=2}^{Q_i} \vartheta\Big(\frac{\ln w_{i}^{q}- \widehat{\ln w_{i}^{q}}}{\sigma_{t,\epsilon}}\Big), \\ \nonumber
+%\end{align}
+
+%with $\sigma_{t,\epsilon}$ being the standard deviation of the idiosyncratic component, and $\vartheta$ the standard normal probability density function. Finally, the initial wage is specified without wage dependence:
+%
+%\begin{align}
+%\ln w_{i}^{1} & = \alpha' c_i^{v} + \delta' c_i^u + k_i^w + \epsilon_{i,t}^{j} .\\ \nonumber
+%\end{align}
+
+\subsection{Likelihood Maximization}\label{Sec:maximization}
+
+Since I do not know the unobserved characteristics for an individual $i$, the unconditional log-likelihood contribution corresponds to the weighted sum of contributions corresponding to the $(K^{e},K^{w})$ points of support. The sample log-likelihood is given by:
+
+\begin{align}\label{eq:Compl_likelihood}
+\ln \mathcal{L} = \sum_{i=1}^{N} \ln \sum_{k_i^e=1}^{k^e} \sum_{k_i^w=1}^{K^w} \mathcal{L}_{i}[\textbf{x}_i, (k_i^{e},k_i^{w})], 	\\ \nonumber
+\end{align}
+
+where individual random effects $k_i = (k_i^e,k_i^w)$ are integrated out of the complete likelihood of Equation \eqref{eq:Compl_likelihood}. I obtain parameter estimates by maximizing the above log-likelihood function.
+
+\section{Results}
+
+In this section I present the parameter estimates and discuss the model fit with respect to the data.
+
+%\subsection{Research Questions - Hypotheses}
+%
+%a) Descriptive.
+%
+%\vspace{5mm} %5mm vertical space
+%
+%Problem: Changes before/after Hartz II-IV. I can't take the whole sample. I should split it before and after. I don't have a stationary sample.
+%Problem: assumptions to take the labour market before/after Hartz II-IV?
+%
+%\vspace{5mm} %5mm vertical space
+%
+%b) How can I estimate how much the expansion of marginal employment has contributed to the increase/decrease of Long-Term (Life-Time) Earnings?
+%
+%\vspace{5mm} %5mm vertical space
+%
+%Estimate before/after Hartz II-IV and compare Lifetime Values?
+%
+%\vspace{5mm} %5mm vertical space
+%
+%c) How can I account for the weight of each component, say wage inequality alone, or more Non-Participation to marginal employment transitions, or higher Secondary Employment?
+%
+%How can I show Secondary Employment helps mitigate wage losses from primary employment in the Cross-Section and the Long Run?
+%
+%\vspace{5mm} %5mm vertical space
+%
+%d) Calibration for simulation of Lifetime Values, ask Helene or check in their paper.
+
+\subsection{Estimates}\label{Sec:Estimates}
+
+I start the discussion of parameter estimates with the parameters from the labour market status component, $\ell_{i}(\textbf{e}_i|\textbf{c}_{i}^{v},c_{i}^{u},k^e_{i})$. Table \ref{tab:states} displays parameter estimates for the sample before the Hartz reforms (years 1999-2002) and the sample after (years 2005-2009). The table displays parameter estimates separately by gender. Remember that in Section \ref{Sec:lab_market_states} I stated that the probability to belong to each employment state was modeled as a multinomial logit. The reference probability is the probability to be in full-time employment, hence I estimate parameters for the contribution of the remaining employment states, \{\emph{PT,ME,NE,CE}\}, whenever possible.\footnote{As discussed previously, the sample 1999-2002 does not consider concurrent employment.} Each column of the table correspond to the multinomial probability of current month's employment state. Rows correspond to the explanatory variables, where I control for labour market experience, education and previous month employment state.
+
+Looking at the constant parameters, the estimates show that part-time, marginal employment and non-employment are less likely than full-time employment since their sign is negative, both for males and females, for the 1999-2002 sample. Non-employment is the most likely labour market state after full-time (the constant parameter is highest among $\{PT,ME,NE\}$. This feature is sustained after the Hartz reforms in the 2005-2009 sample. After the reforms, concurrent employment appears as a new form of employment, but it is nevertheless the least likely state; its constant parameter estimate is the smallest among $\{PT,ME,NE,CE\}$.
+
+\begin{table}[!t]
+	\captionsetup{font=large}
+	\centering
+	\colorbox{lightgray}{%
+		\scalebox{0.92}{
+			\begin{threeparttable}
+				\caption{Labour Market State Estimates}
+				\label{tab:states}
+				\begin{tabular} {@{} l | c | c | c | c | c | c | c | c |  @{}} 
+					\doublerule
+					& \multicolumn{4}{c |}{Males}&\multicolumn{4}{c |}{Females}\\[1mm]
+					\underline{\emph{1999-2002}}&\textbf{PT}$_{t}$&\textbf{ME}$_{t}$&\textbf{NE}$_{t}$&\textbf{CE}$_{t}$&\textbf{PT}$_{t}$&\textbf{ME}$_{t}$&\textbf{NE}$_{t}$&\textbf{CE}$_{t}$\\[1mm]
+					\hline
+					Constant 	&-6.17&-5.74&-2.56	&-		&-6.18&-5.90&-3.05	&-\\[1mm]
+					Exper. ($\times$100)	&0.3&-5.8&-2.3	&-	&9.1&4.0&1.6	&-\\[1mm]
+					Exper.$^2$($\times$1000)		&0.2&1.5&0.7	&-	&-1.3&-0.5&-0.2	&-\\[1mm]
+					High-School &-4.74&-4.87&-3.68	&-		&-2.09&-3.45&-1.83	&-\\[1mm]
+					College 	&-4.26&-4.41&-3.54	&-		&-2.27&-3.88&-1.82	&-\\[1mm]
+					PT$_{t-1}$			&9.00&3.44&3.17	&-			&9.00&3.06&3.96	&-\\[1mm]
+					ME$_{t-1}$			&3.69&9.00&3.60	&-			&3.55&9.00&4.21	&-\\[1mm]
+					NE$_{t-1}$			&3.34&4.34&5.55	&-			&4.18&5.28&6.64	&-\\[1mm]
+					$k^{e} = 2 $&4.85&4.60&3.00	&-			&3.11&4.02&1.45	&-\\[1mm]
+					\hline
+					\underline{\emph{2005-2009}}& \multicolumn{4}{c |}{}&\multicolumn{4}{c |}{}\\[1mm]
+					\hline
+					Constant 	&-5.96&-5.24&-2.66&-6.04		&-5.49&-5.08&-2.76&-5.63\\[1mm]
+					Exper.($\times$100)			&-0.6&-6.8&-3.5&3.0		&4.3&-0.4&-0.7&1.0\\[1mm]
+					Exper.$^2$($\times$1000)		&0.4&1.6&0.9&-0.0		&-1.0&-0.3&-0.3&-0.0\\[1mm]
+					High-School &-4.00&-3.94&-3.07&-1.56		&-0.47&-1.11&-1.32&-0.19\\[1mm]
+					College 	&-3.60&-3.57&-2.93&-1.90		&-0.50&-1.24&-1.23&-0.42\\[1mm]
+					PT$_{t-1}$			&9.00&3.35&3.15&3.33			&9.00&2.99&3.89&4.20\\[1mm]
+					ME$_{t-1}$			&3.74&9.00&3.94&4.20			&3.56&9.00&4.26&4.35\\[1mm]
+					NE$_{t-1}$			&3.36&4.60&5.79&0.42			&4.22&5.13&6.77&1.19\\[1mm]
+					CE$_{t-1}$			&3.27&4.48&0.74&8.07			&3.96&4.11&1.27&8.62\\[1mm]
+					$k^{e} = 2 $&4.19&3.69&2.49&2.30			&2.93&3.28&2.31&2.39\\[1mm]
+					\hline
+				\end{tabular}
+				\begin{tablenotes}
+					\item {Notes: the table displays parameter estimates from the employment component of the model presented in Section \ref{Sec:lab_market_states}. The model is estimated separately by sample year and across gender. The omitted categories are workers high-school dropouts in full time. Additional parameter estimates of the initial state are displayed in Table \ref{tab:ini_state} in the Appendix.} 
+				\end{tablenotes}
+	\end{threeparttable}}}
+\end{table}
+
+Experience in the labour market is allowed to be quadratic to adopt non linearities over workers' life-cycle employment status. The estimates show, for example, that the likelihood of part-time for females is concave through the life-cycle, while marginal employment for males is convex, for both yearly samples. This denotes that female part-time likelihood reaches its peak in the middle of the life-cycle, while male marginal employment reaches its bottom.\footnote{Again, there could be household decisions that I am not able to observe in my analysis.} 
+
+
+
+With respect to education variables, it is worth highlighting two salient effects. First, For the 1999-2002 sample, higher educated males have a lower propensity to fall into any of the \{\emph{PT,ME,NE}\} states relative to females. This is shown comparing education parameter estimates across gender. Second, after the Hartz reforms (sample 2005-2009), and for both males and females, the effect that higher education has on any of these employment status diminishes. In other words, higher educated male and female workers have a relatively higher likelihood to adopt any of these employment states after the change in policy. This means that other employment status rather than full time become more likely for higher educated individuals.
+
+State dependence, which is denoted by controlling for each employment state \{\emph{PT,ME,NE,CE}\} at time \emph{t-1} with respect to the destination state at time \emph{t}, can be studied in the model. In the table, state dependence shows that remaining in the same state has the highest likelihood for each employment status. For example, $NE_{t-1}\rightarrow NE_{t}$ transitions for males in 2005-2009 have a parameter estimate of 5.79. This effect is larger than any other outflows from $NE_{t-1}$. To finalize with the parameters estimates for the mobility component, note that across all samples and gender, the factor for unobserved heterogeneity for the mobility class $k^e = 2$ is estimated with a positive sign, indicating that mobility class $k^e = 2$ has a higher likelihood to fall into any \{\emph{PT,ME,NE,CE}\} states and hence lower probability to experience $FT$ employment.
+
+Lastly, I discuss about the likelihood of finding full time employment coming from non-employment and marginal employment. This is important to discriminate between a \emph{stepping stone} argument and a \emph{dead-end} argument. Estimates comparisons before and after the Hartz reforms should be taken considering that after the Hartz reforms there is a new form of employment: concurrent employment. Looking at rows \{ME$_{t-1}$,NE$_{t-1}$\} estimates for the 1999-2002 and the 2005-2009 samples, it can be seen that there is barely no change within the estimates across states \{\textbf{PT}$_{t}$,\textbf{MJ}$_{t}$,\textbf{NE}$_{t}$\}. Namely, the model generates similar outflows from \{ME$_{t-1}$,NE$_{t-1}$\} states into \{\textbf{PT}$_{t}$,\textbf{MJ}$_{t}$,\textbf{NE}$_{t}$\} before and after the Hartz reforms for both males and females. What is new is that there are non-negligible outflows from ME$_{t-1}$ to \textbf{CE}$_{t}$ in the 2005-2009 sample. This means that the stepping stone argument from marginal employment is shared into outflows to \textbf{FT}$_{t}$ and \textbf{CE}$_{t}$. In other words, marginal employment after the Hartz reforms serves as a stepping stone to earn secondary earnings with another form of employment. Transitions from ME$_{t-1}$ to \textbf{CE}$_{t}$ are larger than to \textbf{NE}$_{t}$, which suggests that marginal employment has a stronger effect in engaging workers into the labour market by holding multiple forms of employment than by using marginal employment as a dead-end.  
+
+%It is worth to note that Females life-cycle probability to fall into any of \{\emph{PT,ME,NE}\}, together with corresponding higher constant estimates, suggest that Females are incorporating to \underline{full-time or concurrent employment}.
+
+\begin{table}[!t]
+\captionsetup{font=large}
+\centering
+\colorbox{lightgray}{%
+\scalebox{0.92}{
+\begin{threeparttable}
+\caption{Wage Distribution Estimates}
+\label{tab:wage_estimates}
+\begin{tabular} {@{} l | c | c | c | c | c | c |  @{}} 
+\doublerule
+& \multicolumn{3}{c |}{Males}&\multicolumn{3}{c |}{Females}\\[1mm]
+\emph{1999-2002}&\textbf{$\mu$}&\textbf{$\sigma$}&\textbf{$\tau$}&\textbf{$\mu$}&\textbf{$\sigma$}&\textbf{$\tau$}\\[1mm]
+\hline
+Constant 	 	&7.13&-0.50&-8.00		&7.03&-0.50&-7.97 		\\[1mm]
+High-School  	&0.22&-&-				&0.11&-&- 			\\[1mm]
+College 		&0.56&-&-				&0.40&-&- 			\\[1mm]
+Exper.($\times$100)			  	&3.4&-1.7&0.7	  	&2.7&-1.8&0.4		\\[1mm]
+Exper.$^2$($\times$1000)			&-1.0&-&-	  		&-0.0&-&-		\\[1mm]
+PT$_{t}$				&-0.43&-0.07&-			&-0.27&-0.22&- 		\\[1mm]
+ME$_{t}$				&-1.17&0.72&-			&-1.40&0.31&- 		\\[1mm]
+NE$_{t}$				&-0.92&0.20&-			&-0.94&0.52&-		\\[1mm]
+$k^{w} = 2 $	&0.04&0.22&-4.23		&0.09&0.18&-4.00		\\[1mm]
+%$k^{w} = 2 $	&-0.04&-0.22&4.23		&-0.09&-0.18&4.00		\\[1mm]%This is the original, but I change its sign only to have more consistent text
+\hline
+%PT$\rightarrow$FT	&-&-&-105.38&1.00		&-&-&906.32& -		\\[1mm]
+%ME$\rightarrow$FT	&-&-&2.91&0.56			&-&-&131.17& -		\\[1mm]
+%NE$\rightarrow$FT	&-&-&6.23&-0.77			&-&-&-10.29& -		\\[1mm]
+%CE$\rightarrow$FT	&-&-&0.05&0.97		&-&-&-0.65& -		\\[1mm]
+%\hline
+%FT$\rightarrow$CE	&-&-&-72.48&1.00			&-&-&954.86& -		\\[1mm]
+%PT$\rightarrow$CE	&-&-&4.57&-0.19		&-&-&306.34& -		\\[1mm]
+%ME$\rightarrow$CE	&-&-&-0.00&0.97		&-&-&-2464.29& -		\\[1mm]
+%NE$\rightarrow$CE	&-&-&4.56&-0.19		&-&-&4203.91& -		\\[1mm]
+%\hline
+\emph{2005-2009}&\multicolumn{3}{c |}{}&\multicolumn{3}{c |}{}\\[1mm]
+\hline
+Constant 	 	&6.74&-1.00&-3.83		&6.69&-1.15&-3.81 				\\[1mm]
+High-School  	&0.30&-&-				&0.24&-&- 						\\[1mm]
+College 		&0.60&-&-'				&0.43&-&- 						\\[1mm]
+Exper.($\times$100)			  	&3.6&0.2&-1.3	  	&2.2&0.5&-2.3				\\[1mm]
+Exper.$^2$($\times$1000)			&-1.0&-&-	  		&-0.0&-&-						\\[1mm]
+PT$_{t}$				&-0.45&0.23&-			&-0.17&0.27&- 					\\[1mm]
+ME$_{t}$				&-1.48&0.57&-			&-1.34&0.06&- 					\\[1mm]
+NE$_{t}$				&-0.85&1.11&-			&-0.88&1.23&-					\\[1mm]
+CE$_{t}$				&0.11&-0.20&-			&0.12&-0.17&-					\\[1mm]
+$k^{w} = 2 $	&0.28&-0.75&-3.37		&0.23&-0.38&-3.60 				\\[1mm]
+\hline
+%PT$\rightarrow$FT	&-&-&19.79&-1.00			&-&-&-48.55 &-		\\[1mm]
+%ME$\rightarrow$FT	&-&-&7.37&-0.91		&-&-&5.36 	&-	\\[1mm]
+%NE$\rightarrow$FT	&-&-&-2.33&1.00			&-&-&-0.07&- 		\\[1mm]
+%CE$\rightarrow$FT	&-&-&0.00&0.97			&-&-&0.04 &-		\\[1mm]
+%\hline
+%FT$\rightarrow$CE	&-&-&-21.97&1.00			&-&-&-82.10 &-		\\[1mm]
+%PT$\rightarrow$CE	&-&-&0.17&0.97		&-&-&1.28 &-		\\[1mm]
+%ME$\rightarrow$CE	&-&-&0.36&0.96			&-&-&16.47&- 		\\[1mm]
+%NE$\rightarrow$CE	&-&-&-13.73&1.00			&-&-&-5.74&- 		\\[1mm]
+%\hline
+\end{tabular}
+\begin{tablenotes}
+\item {Notes: the table displays parameter estimates from the wage component of the model presented in Section \ref{Sec:income_process}. The model is estimated separately by sample year and across gender. Additional parameter estimates from the autocorrelation function are displayed in Table \ref{tab:wage_estimates_additional} in the Appendix.} 
+\end{tablenotes}
+\end{threeparttable}}}
+\end{table}
+
+Table \ref{tab:wage_estimates} provides parameter estimates for the wage component of the model presented in section \ref{Sec:income_process}. Again, it is estimated separately by gender and before and after the Hartz reforms (years 1999-2002 and 2005-2009). Only looking at the constant parameter of mean earnings, the table shows the gender gap, 7.13 vs 7.03 and 6.74 vs 6.69 in average log monthly earnings estimated before and after the Hartz Reforms. Education parameters show that returns to higher education amplify the gender gap; the effect that higher education has on males has a greater impact on average monthly earnings for males relative to females.
+
+Earnings profiles are estimated to be concave in labour market experience as expected, and as can be observed by looking at the experience coefficients. Also, the effect that \{\emph{PT,ME,NE}\} have on wages is negative, with $ME$ having the lowest loss in earnings.\footnote{$ME$ actually pays less than $NE$, since earnings observed for non-employment come from unemployment benefits/assistance.} Noticeably, and in line with the findings of \cite{CaLaRo18}, $CE$ has a positive effect on earnings. They argue that concurrent employment is used as a form to top up a worker's earnings that is at the bottom of the distribution. My model reflects that $CE$ has a positive effect on earnings with the estimate on earnings being positive.
+
+In terms of volatility, before the Hartz reforms volatility decreases with age while after the reforms volatility increases with age. This effect is net of the contribution of the expansion of flexbile forms of employment, since I controlled for the contribution that each employment state has on the dispersion of earnings. For example, $\{ME,NE\}$ have larger dispersion on earnings both before and after the Hartz reforms and on both males and females. Part-time earnings become more volatile after the reforms, and the volatility of concurrent employment is relatively small.
+
+With regard to the autocorrelation of earnings, the life-cycle profile in the autocorrelation of earnings changes significantly before and after the reform. Before the Hartz reforms, earnings had a constant with high persistence (around 0.99 for both males and females) and it declined with labour market experience. Instead, after the Hartz reforms the constant is of lower persistence (around 0.90) and increases with experience. The contribution to the persistence from transitions among different employment states can be seen in Table \ref{tab:wage_estimates_additional} in the Appendix.
+
+Finally, with respect to unobserved heterogeneity factors, it should be noted that the wage class $k^w=2$ has a lower volatility in earnings across gender after the Hartz reforms. It also generates slightly higher mean wages for both males and females across samples. Also, this wage class $k^w=2$ also acts increasing persistence for both males and females across samples.
+
+In the Appendix, I present parameter estimates from unobserved heterogeneity in Table \ref{tab:unobs_heterogeneity} and from the composition of unobserved heterogeneity in Table \ref{tab:compos_hete}. Table \ref{Sec:unobs_het} shows that high-school and college individuals generally have a higher probability to belong to the mobility class $k^e=2$, across samples. Males with higher experience also have a higher probability to belong to this class. This is relevant since it has been shown that the mobility class $k^e=2$ has a higher probability to experience flexible forms of employment \{\emph{PT,ME,NE,CE}\}, as shown in Table \ref{tab:states}. 
+
+%Unobserved heterogeneity factors for wage classes is more ambiguous and sample dependent, meaning that they have a contribution to the likelihood but are specific to their samples. In the end, this speaks of different subgroups in the sample more prone to flexible forms of employment despite their similar worker characteristics (education and experience).
+
+Figure \ref{fig:estimation_wage_gap} in the Appendix shows the gender wage gap distribution for different samples. The figure shows the shift to the left (lower mean earnings) of the gender specific distributions as the mean parameter of the respective distributions have fallen after the Hartz reforms. This is reflected in the parameters estimates of the wage process from Table \ref{tab:wage_estimates}. Volatility has also increased in the cross-sectional distribution after the Hartz reforms. This is in part because experience profiles in volatility are increasing after the change in policy. Lastly, Figure \ref{fig:estimation_monthly_distribution} shows the model cross-sectional kernel density estimates of the distributions of log monthly earnings by employment state. The figure shows that there is larger dispersion within employment state after the Hartz reforms and as can be observed from parameter estimates of the wage process from Table \ref{tab:wage_estimates}.
+
+%\newpage
+%\subsection{Labor Market States}
+
+
+%\newpage
+%
+%\begin{figure}[htbp]
+%\begin{minipage}[b]{0.48\textwidth}{Males, 1999-2002}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_incomeprofiles_males19992002.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\textwidth}{Females, 1999-2002}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_incomeprofiles_males19992002.png}
+%\end{minipage}\\[2mm]
+%\begin{minipage}[b]{0.48\textwidth}{Males, 2005-2009}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_incomeprofiles_males19992002.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\textwidth}{Females, 2005-2009}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_incomeprofiles_males19992002.png}
+%\end{minipage}
+%\captionsetup{font=small}
+%\caption{Wage Profiles}
+%\label{fig:wage_profiles}
+%\end{figure}
+%
+%\begin{figure}[htbp]
+%\begin{minipage}[b]{0.48\textwidth}{Males, 1999-2002}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_incomeprofiles_males19992002.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\textwidth}{Females, 1999-2002}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_incomeprofiles_males19992002.png}
+%\end{minipage}\\[2mm]
+%\begin{minipage}[b]{0.48\textwidth}{Males, 2005-2009}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_incomeprofiles_males19992002.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\textwidth}{Females, 2005-2009}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_incomeprofiles_males19992002.png}
+%\end{minipage}
+%\captionsetup{font=small}
+%\caption{Wage Profiles by Wage Classes}
+%\label{fig:wage_profiles_wage_classes}
+%\end{figure}
+%
+%
+%\begin{figure}[htbp]
+%\begin{minipage}[b]{0.48\textwidth}{Males, 1999-2002}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_acvprofiles_males.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\textwidth}{Females, 1999-2002}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_acvprofiles_males.png}
+%\end{minipage}\\[2mm]
+%\begin{minipage}[b]{0.48\textwidth}{Males, 2005-2009}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_acvprofiles_males.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\textwidth}{Females, 2005-2009}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_acvprofiles_males.png}
+%\end{minipage}\\[2mm]
+%\captionsetup{font=small}
+%\label{fig:acr_profiles}
+%\caption{Autocorrelation Profiles}
+%\end{figure}
+%
+%\begin{figure}[htbp]
+%\begin{minipage}[b]{0.48\textwidth}{Males, 1999-2002}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_acvprofiles_males.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\textwidth}{Females, 1999-2002}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_acvprofiles_males.png}
+%\end{minipage}\\[2mm]
+%\begin{minipage}[b]{0.48\textwidth}{Males, 2005-2009}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_acvprofiles_males.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\textwidth}{Females, 2005-2009}
+%\centering
+%\includegraphics[width=1\textwidth]{pred_wage_class_acvprofiles_males.png}
+%\end{minipage}\\[2mm]
+%\captionsetup{font=small}
+%\label{fig:acr_profiles_wage_class}
+%\caption{Autocorrelation Profiles by Wage Class}
+%\end{figure}
+%\clearpage
+
+\subsection{Model Fit}
+
+\begin{figure}[!t]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}{1999-2002}
+		\centering
+		\includegraphics[width=1\textwidth]{dist_empstate_19992002.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}{2005-2009}
+		\centering
+		\includegraphics[width=1\textwidth]{dist_empstate_20052009.png}
+	\end{minipage}
+	\footnotesize{
+		\justifying Notes: the figure displays kernel density estimates of log monthly earnings simulated from the model. It displays kernel density estimates of each employment state for all workers, before and after the Hartz reforms.\par}
+	\captionsetup{font=small,justification=raggedright}
+	%\captionsetup[figure]{position=bottom,justification=raggedright}
+	\caption{Cross-sectional Log Monthly Earnings}\label{fig:estimation_monthly_distribution}
+\end{figure}
+
+In this subsection I simulate the model and compare against the data, in order to evaluate the fit of the model. Figure \ref{fig:worker_flows} in Section \ref{Sec:data_descriptives} presented employment transitions in the data, while Table \ref{tab:fit_state_transitions} presents the employment transitions from the model. I compare the three main takeaways from the data and the model that I summarize here:
+\begin{enumerate}[i)]
+	\item Marginal employment becomes more persistent after the Hartz reforms. In the data, $ME_{t-1}\rightarrow ME_{t}$ goes from 87 (93) to 88 (94) percent monthly transitions for males (females) before and after the Hartz reforms. In the model, these numbers are 85 (93) to 86 (93), close in levels and generating higher persistence in $ME$ after the reform (for males).
+	\item Marginal employment to non-employment transitions decreased after the Hartz reforms. More generally, there are lower flows into non-employment after the Hartz reforms. In the data, $ME_{t-1}\rightarrow NE_{t}$ goes from 10 (5) to 8 (4) percent monthly transitions for males (females) before and after the Hartz reforms. In the model, these numbers are 8 (4) to 6 (3), close in levels and generating lower $ME_{t-1}\rightarrow NE_{t}$ transitions after the reform.
+	\item There is more non employent to marginal employment transitions after the Hartz reforms. In the data, $NE_{t-1}\rightarrow ME_{t}$ goes from 1 (3) to 2 (3) percent monthly transitions for males (females) before and after the Hartz reforms. In the model, these numbers are 1 (3) to 2 (4), close in levels and generating higher $NE_{t-1}\rightarrow ME_{t}$ transitions after the reform.
+\end{enumerate} 
+
+%Then, a good evaluation of the model is to see whether it is capable to generate the same dynamics (and levels) in employment transitions. 
+
+
+\begin{table}[!t]
+	\captionsetup{font=large}
+	\centering
+	\colorbox{lightgray}{%
+		\scalebox{0.92}{
+			\begin{threeparttable}
+				\caption{Model Job Mobility}
+				\label{tab:fit_state_transitions}
+				\begin{tabular} {@{} l | c  c  c  c  c | c  c  c  c  c | c  c |  @{}} 
+					\doublerule
+					&\multicolumn{5}{c |}{Males}&\multicolumn{5}{c |}{Females}\\[1mm]
+					%\emph{Model}&\multicolumn{5}{c |}{}&\multicolumn{5}{c |}{\emph{t}}\\[1mm]
+					\underline{\emph{1999-2002}}& \textbf{FT$_{t}$} & \textbf{PT$_{t}$} & \textbf{ME$_{t}$} & \textbf{NE$_{t}$} & \textbf{CE$_{t}$}& \textbf{FT$_{t}$} & \textbf{PT$_{t}$} & \textbf{ME$_{t}$} & \textbf{NE$_{t}$} & \textbf{CE$_{t}$}\\[1mm]
+					\hline
+					FT$_{t-1}$	 	&98&0&0&1 & -		&97&0&0&2 & -\\[1mm]
+					PT$_{t-1}$  	&4&92&0&4 & -		&1&97&0&1 & -\\[1mm]
+					ME$_{t-1}$		&5&1&85&8 & -		&2&1&93&4 & -\\[1mm]
+					NE$_{t-1}$  	&8&1&1&89 & -		&5&2&3&89 & -\\[1mm]
+					\hline
+					%&\multicolumn{5}{c |}{}&\multicolumn{5}{c |}{}\\[1mm]
+					%\emph{Observed}&\multicolumn{5}{c |}{}&\multicolumn{5}{c |}{}\\[1mm]
+					%\hline
+					%\textbf{FT}	 	&98 &00 &00	&01	&00		&98 &00 &00 &02	&00\\[1mm]
+					%\textbf{PT}  	&01 &94 &00	&05	&00		&00 &97 &00	&02	&00\\[1mm]
+					%\textbf{ME}		&01	&00 &84	&13	&01		&00 &00 &91	&08	&00\\[1mm]
+					%\textbf{NE}  	&06 &00 &01	&92	&00		&04 &01 &02	&93	&00\\[1mm]
+					%\textbf{CE} 	&10 &03 &04	&01	&80		&07 &08 &07	&01	&76\\[1mm]
+					%\hline
+					&\multicolumn{5}{c |}{}&\multicolumn{5}{c |}{}\\[1mm]
+					\underline{\emph{2005-2009}}&  &  &  &  & &  &  &  &  & \\[1mm]
+					\hline
+					FT$_{t-1}$	 	&96&0&0&1&0		&96&0&0&1&0\\[1mm]
+					PT$_{t-1}$  	&3&92&0&2&1		&1&96&0&1&0\\[1mm]
+					ME$_{t-1}$		&4&1&86&6&1		&1&1&93&3&1\\[1mm]
+					NE$_{t-1}$  	&8&1&2&87&0		&4&2&4&88&0\\[1mm]
+					CE$_{t-1}$ 		&5&0&1&0&91		&3&2&1&0&92\\[1mm]
+					\hline
+					%&\multicolumn{5}{c |}{}&\multicolumn{5}{c |}{}\\[1mm]
+					%\emph{Observed}&\multicolumn{5}{c |}{}&\multicolumn{5}{c |}{}\\[1mm]
+					%\hline
+					%\textbf{FT}	 	&98 &00 &00	&02	&00		&98 &00 &00	&01	&00\\[1mm]
+					%\textbf{PT}  	&01 &94 &00	&03	&00		&00 &97 &00	&02	&00\\[1mm]
+					%\textbf{ME}		&01	&00 &87	&09	&01		&00 &00 &94	&05	&00\\[1mm]
+					%\textbf{NE}  	&06 &00 &01	&92	&00		&03 &01 &02	&93	&00\\[1mm]
+					%\textbf{CE} 	&05 &00 &01	&00	&92		&03 &02 &02	&00	&93\\[1mm]
+					%\hline
+				\end{tabular}
+				\begin{tablenotes}
+					\item {Notes: the table displays employment transitions (in percentage $\times$100) simulated from the model, across different year samples and by gender. The data counterpart is shown in Figure \ref{fig:worker_flows}.} 
+				\end{tablenotes}
+	\end{threeparttable}}}
+\end{table}
+
+
+In general, the likelihood component of employment status is very flexible in matching the data. The model is very close to the data. It matches the high persistence of any given employment state, but also matches transitions to other employment status. A key element to obtain this good fit is state dependence; namely, having as a factor in the likelihood the worker's last month employment status. The model generates high persistence of a worker's current employment status by giving more weight to the worker last month's employment status. And when there is a transition, the different weights to fall in each employment status generate the transition outflows similar to the data. This goodness of fit is generated for all samples and gender. How state dependence has changed before and after the Hartz reforms -how parameters have changed from one labour market to another- is key in making the model replicate the data.
+
+% Comment general fit.
+
+%A key element to obtain this match of the transition matrices between the model and the data was the incorporation of state dependence in the employment component of the likelihood. 
+
+\begin{table}[htbp]
+\captionsetup{font=large}
+\centering
+\colorbox{lightgray}{%
+\scalebox{0.92}{
+\begin{threeparttable}
+\caption{Fit to Income Mobility}
+\label{tab:fit_income_mobility}
+\begin{tabular} {@{} l | c  c  c  c  c | c  c  c  c  c | c | c |  @{}} 
+\doublerule
+&\multicolumn{5}{c |}{Males}& \multicolumn{5}{c |}{Females}\\[1mm]
+\underline{\emph{1999-2002}}&\multicolumn{5}{c |}{}& \multicolumn{5}{c |}{}\\[1mm]
+\emph{Model}&$Q_{1,t}$&$Q_{2,t}$&$Q_{3,t}$&$Q_{4,t}$&$Q_{5,t}$&$Q_{1,t}$&$Q_{2,t}$&$Q_{3,t}$&$Q_{4,t}$&$Q_{5,t}$\\[1mm]
+\hline
+							 $Q_{1,t-1}$&91&2&1&1&1	&92&2&1&1&0\\[1mm]
+							 $Q_{2,t-1}$&2&93&2&1&1	&2&93&2&1&1\\[1mm]
+							 $Q_{3,t-1}$&1&2&93&2&1	&1&2&92&2&1\\[1mm]
+							 $Q_{4,t-1}$&1&1&2&93&2	&1&1&2&93&2\\[1mm]
+							 $Q_{5,t-1}$&0&0&1&2&95	&0&0&1&2&95\\[1mm]
+\hline
+&\multicolumn{5}{c |}{}& \multicolumn{5}{c |}{}\\[1mm]
+\emph{Data}    & \multicolumn{5}{c |}{\emph{}}& \multicolumn{5}{c |}{\emph{}}\\[1mm]
+\hline
+							 $Q_{1,t-1}$&90 &6  &1 &0 &0	&90 &5  &1 &1 &0\\[1mm]
+							 $Q_{2,t-1}$&6 &90  &1 &0 &0 	&6 &89  &2 &1 &00\\[1mm]
+							 $Q_{3,t-1}$&1 &2  &96 &1 &0 	&1 &3  &94 &1 &00\\[1mm]
+							 $Q_{4,t-1}$&0 &1  &1 &97 &1 	&0 &1  &1 &96 &01\\[1mm]
+							 $Q_{5,t-1}$&0 &0  &0 &1 &99 	&0 &0  &0 &1 &98\\[1mm]
+\hline
+\underline{\emph{2005-2009}}&\multicolumn{5}{c |}{}& \multicolumn{5}{c |}{}\\[1mm]
+\emph{Model}&\multicolumn{5}{c |}{\emph{}}&\multicolumn{5}{c |}{\emph{}}\\[1mm]
+\hline
+							 $Q_{1,t-1}$&91&3&1&1&0				&93&2&1&1&0\\[1mm]
+							 $Q_{2,t-1}$&2&92&2&1&1			&1&93&2&1&0\\[1mm]
+							 $Q_{3,t-1}$&1&2&92&2&1		 	&1&2&92&2&1\\[1mm]
+							 $Q_{4,t-1}$&1&1&2&93&2			&1&1&2&92&3\\[1mm]
+							 $Q_{5,t-1}$&0&0&1&2&95 			&0&0&1&2&95\\[1mm]
+\hline
+&\multicolumn{5}{c |}{}& \multicolumn{5}{c |}{}\\[1mm]
+\emph{Data}    & \multicolumn{5}{c |}{\emph{}}& \multicolumn{5}{c |}{\emph{}}\\[1mm]
+\hline
+							 $Q_{1,t-1}$&90 &6  &1 &1 &0	&91 &5  &2 &1 &00\\[1mm]
+							 $Q_{2,t-1}$&07 &89  &02 &1 &0 	&05 &89  &3 &1 &00\\[1mm]
+							 $Q_{3,t-1}$&01 &2  &94 &1 &0 	&2 &3  &93 &2 &00\\[1mm]
+							 $Q_{4,t-1}$&0 &1  &1 &96 &1 	&1 &1  &1 &95 &01\\[1mm]
+							 $Q_{5,t-1}$&0 &0  &0 &1 &98 	&0 &0  &0 &1 &98\\[1mm]
+\hline
+\end{tabular}
+\begin{tablenotes}
+\item {Notes: the table displays quantile transitions within the earnings distribution simulated from the model and in the data, across different year samples and by gender.} 
+\end{tablenotes}
+\end{threeparttable}}}
+\end{table}
+
+Next, I turn to earnings dynamics. Table \ref{tab:fit_income_mobility} displays data quantiles transitions from the monthly earnings distribution and the corresponding simulation from the model, across different year samples and by gender. I compare two main takeaways from the data and the model that I summarize here:
+\begin{enumerate}[I)]
+	\item Persistence in the position of the ranking of workers' earnings is increasing with the level of earnings (especially for the 1999-2002 sample). The model is close the levels in the data and generates the increasing pattern in the persistence of earnings.
+%	In the data, the diagonal of the quantile matrix for males (females) in the 1999-2002 sample is \{90,90,96,97,99\} (\{90,89,94,96,98\}). In the model, these numbers are \{91,93,93,93,95\} (\{92,93,92,93,95\}), close in levels and generating the increasing pattern in the persistence of earnings.
+	\item After the Hartz reforms, persistence in the earnings rank decreases, generating more transitions across the earnings distribution. The model generates lower persistence for males across the entire distribution. For females, it generates lower persistence of earnings at the top of the distribution.
+%	In the data, the diagonal of the quantile matrix for males (females) in the 2005-2009 sample is \{90,89,94,96,98\} (\{91,89,93,95,98\}). In the model, these numbers are \{91,92,92,93,95\} (\{93,93,92,92,95\}).
+	%\item After the Hartz reforms, the bottom of the earnings distribution became more relatively more persistent. In the data, the first three elements of the diagonal of the quantile matrix for males (females) across yearly samples are \{90,90,96\} $\rightarrow$ \{90,89,94\} (\{90,89,94\} $\rightarrow$ \{91,89,93\}). In the model, these numbers are \{91,93,93\} $\rightarrow$ \{91,92,92\} (\{92,93,92\} $\rightarrow$ \{93,93,92\}), showing that the persistence at the bottom of the distribution has increased relative to the rest of the distribution.
+\end{enumerate} 
+
+%Again, a good evaluation of the model is to see whether it is capable to generate the same dynamics (and levels) in the transitions of the ranking in the earnings distribution. Table \ref{tab:fit_income_mobility} presents the earnings rank transitions separately by gender and samples. 
+
+In general, the model fits well the mean log monthly earnings at the cross-section and separated by employment state, for all samples and gender (see Figure \ref{fig:wage_fit} in the Appendix). The variance of log monthly earnings is, however, the most difficult moment to match with the data. While the model is not far from the data, it is difficult to approximate. This is possibly due to the distributional normality assumption in the model and the existence of outliers/noise in the data. Finally, the persistence of earnings across states is generally satisfactory (see Figure \ref{fig:autocorrelation_samples} in the Appendix). It matches best persistence for earnings across the same employment status and it is somewhat less close to the data for transitions across employment states, also possibly due to the existence of outliers/noise and a relatively smaller number of observations. 
+
+%\underline{Comment general fit. Comment on need for higher order Markov vs added model complexity.}
+
+Two elements in the model help to generate the persistence of earnings: the autocorrelation component and the latent factors of the unobserved heterogeneity component. While the model does not have shocks depending on the position in the ranking of earnings, it is capable of approximating the levels and the dynamics of earnings persistence along the ranking distribution. For example, the observed high persistence of earnings at the top of the distribution in the data are generated in the model from the realization of high earnings drawn from the bivariate normal distribution. These high earnings realizations, together with a close to permanent autocorrelation parameter,  accumulate over time and are carried over to the successive periods. The high persistence of earnings at the top of the distribution comes from workers who are in full-time and remain in that state. This is because full-time employment has the highest mean earnings in the model. Also, the less persistent earnings in the middle and at the bottom of the distribution come as a result of having more transitions within employment states, with less persistence in earnings carried over to the next period. 
+
+With the already satisfactory model fit, I did not further explore the possibility of using a Markov process of higher order. Alternatively, I have neither explored adding more unobserved heterogeneity, given that it would add model complexity.
+
+%\clearpage
+\section{Lifetime Values}
+
+In this section, I adopt a life-cycle approach to the labour market changes before and after the Hartz reforms. To this end, I construct lifetime values before and after the Hartz reforms. The goal is to analyze the differences in the distribution of lifetime values decomposing the employment and wage effects. In order to do so, I will perform a series of counterfactual exercises. 
+
+The measure of lifetime value that I will use is simply the present discounted sum of future earnings flows, taking into account labour market trajectories. This would be be the relevant measure if one assumes that individuals are risk neutral and can perfectly insure. I further assume that the environment is the same, before and after Hartz reforms. Since samples are unbalanced, I assume that workers that are unobserved for a certain number of years in the sample will follow the same process as those who are observed. Making use of the estimated parameters for the wage distribution, employment status and unobserved heterogeneity, I simulate employment and earnings trajectories for the individuals in the different samples along the working age. The lifetime value at experience level $t$ of an individual's simulated future earnings trajectory $\textbf{w}_{s\geq t}$ is denoted as:
+
+\begin{align}\label{eq:LT_Values}
+V_{t} \big(\textbf{w}_{s\geq t} \big) = \sum_{s=t}^{T} \beta^{s-t} \,\, \text{exp}(w_s) , 	\\ \nonumber
+\end{align}
+
+where $\beta \in (0,1)$ is a discount factor, $\text{exp}(w_s)$ is the earnings flow that the individual receives at experience level $s$ and the individual retires at period $T$. Remember that $w_s$ is conditional on the individual's characteristics and labour market state as specified in Section \ref{Sec:Model}. In this context, the only parameter to be calibrated is $\beta$, which I set to 1.00 to give equal weight to all years through the life-cycle\footnote{Unlike \cite{PoTu05} and \cite{DiPoTu14}, I do not discount future income flows to construct present discounted lifetime values in this exercise. By setting $\beta$=1.00, I give equal weight to all income streams to make a steady-state comparison of two different stationary worlds: the labour market before and after the Hartz reforms. For a comparison of present discounted lifetime values, see Figure \ref{fig:estimation_LT_disc} in the Appendix which uses counterfactuals introduced in the next subsection. Results are qualitatively similar.}. 
+
+I assume the environment to be stationary. That is, individuals anticipate their life cycle path and receive their earnings and changes to their labour market status given their current state, but do not expect any of the parameters to be changed over the rest of their working life. This assumption is most credible if the sample period from which I obtained the estimates of the model is representative of an average state of the business cycle and the change in policy could not be anticipated. As explained in Section \ref{Sec:Data}, I took a sufficient number of years before and after the change in policy to approximate such average state of the business cycle.
+
+\begin{figure}[!t]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}{Males}
+		\centering
+		\includegraphics[width=1\textwidth]{dist_LT_male_beforeafter.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}{Females}
+		\centering
+		\includegraphics[width=1\textwidth]{dist_LT_female_beforeafter.png}
+	\end{minipage}
+	\footnotesize{
+		\justifying Notes: the figure displays kernel density estimates of lifetime earnings, across different year samples and by gender.\par}
+	\captionsetup{font=small,justification=raggedright}
+	%\captionsetup[figure]{position=bottom,justification=raggedright}
+	\caption{Lifetime Values Distributions}\label{fig:estimation_LT}
+\end{figure}
+
+Figure \ref{fig:estimation_LT} displays the histogram of the lifetime values before and after the Hartz reforms by gender. In general, it can be seen that there is a shift to the left in the distribution of lifetime values after the Hartz reforms. The mean of lifetime values goes from 1.24 (0.79) to 1.10 (0.69) million \euro \, for males (females) before and after the Hartz reforms.\footnote{Figure \ref{fig:estimation_LT_0510} in the Appendix compares the 2005-2009 lifetime values against the same model estimated and simulated for the 2010-2014 sample. The figure shows that the lifetime values from the model in 2005-2009 and 2010-2014 differ little. If any, the right tail for female values expands in 2010-2014.}
+
+Another noticeable aspect of the distributions is that females before the Hartz reforms have a bimodal distribution, with the highest density concentrating around 0.5 million \euro. This is expected given that the employment stocks in Figure \ref{fig:stock} showed that the female sample is more fragmented between those working in full-time and those in part-time, relative to males. For males, the concentration of earnings around 0.5 million \euro \, is significantly lower relative to females. After the Hartz reforms, the distribution of lifetime values for females somewhat concentrates around its mean conforming a less bimodal distribution and closer to a unimodal distribution. Therefore, the dispersion of lifetime values decreases for females after the Hartz reforms. The standard deviation of female log lifetime values goes from 0.4848 to 0.4698. For males, the dispersion of lifetime values increases after the Hartz reforms from a measure of 0.3508 to 0.3564.\footnote{Figure \ref{fig:estimation_LT_0510} in the appendix shows that for years 2010-2014, lifetime values desities are unimodal for Females.}
+
+While for females the distribution of lifetime values is positively skewed both before and after the Hartz reforms (with a skewness of 0.3564 vs 0.2749), male skewness changes its sign. Before the Hartz reforms the distribution of lifetime earnings concentrates around 1.5 million \euro, with a small left tail making the distribution negatively skewed (-0.6402). Instead, after the Hartz reforms lifetime values shift to the left concentrating around 1 million \euro, and the distribution becomes slightly positively skewed (0.0876).
+
+In the model, I have two components that can rationalize the shift to the left in the distribution of lifetime values: wage dynamics and employment transitions. The estimation of the model in Section \ref{Sec:Estimates} after the Hartz reforms shows that
+\begin{itemize}
+	\item lower wages
+	\item lower full-time incidence
+	\item higher persistence in marginal employment
+	\item less inflows into non employment
+	\item higher outflows from non employment
+\end{itemize} 
+
+can explain the shift to the left in lifetime values. Therefore, it remains to assess the contribution that each factor has had to generate the lower lifetime earnings. In other words, I want to know if the expansion in marginal employment is what is driving long term earnings down, or if, by contrary, lower wages play a bigger role. I try to address these questions in the following subsection.
+
+
+\subsection{Counterfactual Exercise: Wage vs Employment}
+
+\begin{figure}[!t]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}{Males}
+		\centering
+		\includegraphics[width=1\textwidth]{mean_wage_beforeafter_male.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}{Females}
+		\centering
+		\includegraphics[width=1\textwidth]{mean_wage_beforeafter_female.png}
+	\end{minipage}
+	\footnotesize{
+		\justifying Notes: the figure displays life-cycle monthly earnings simulated from the model before and after the Hartz reforms, separated by gender. ``Counterfactual - Employment'' uses the estimation from the 1999-2002 sample with the employment parameters from the model estimated for the 2005-2009 sample. ``Counterfactual - Wage'' uses the estimation from the 1999-2002 sample with the wage parameters from the model estimated for the 2005-2009 sample.\par}
+	\captionsetup{font=small,justification=raggedright}
+	%\captionsetup[figure]{position=bottom,justification=raggedright}
+	\caption{Life-cycle Earnings Profiles}\label{fig:earnings_profiles}
+\end{figure}
+
+Firstly, I start having a look at the estimated earnings profiles over the life cycle by sample and gender. On Figure \ref{fig:earnings_profiles} I show the model's estimated monthly average life cycle earnings profiles before and after the Hartz reforms, separated by gender. The figure displays the usual concave pattern in earnings, with the feature that for the 1999-2002 sample this concave pattern is somewhat flatter. The comparison between the 1999-2002 and 2005-2009 samples shows that after the Hartz reforms the average profiles are shifted down for both males and females. This means that earnings are generally lower after the Hartz reforms, as previously shown for lifetime earnings in Figure \ref{fig:estimation_LT}. Most of the lower earnings occur between the beginning and the middle of the life-cycle. Elder workers before and after the Hartz reforms somewhat keep similar earnings trajectories. Together with the lifetime values displayed in Figure \ref{fig:estimation_LT}, the pronounced decline in earnings profiles was to be expected. 
+
+The question that I can address with the estimation of the model is how much of the relative contribution to the decrease in lifetime earnings comes from changes in employment trajectories or changes in wage dynamics given the old employment trajectories. In order to address this, I will perform a counterfactual exercise. I use the 1999-2002 estimated model as the baseline, with all wage, employment and unobserved heterogeneity components estimated from the 1999-2002 sample. Then, I replace the wage (employment) component using the 2005-2009 estimated model. Put differently, I swap parameter estimates between models to see the partial response that each component has on life cycle earnings. This counterfactual exercise can be informative of the wage (employment) relative contribution to the estimated decline in lifetime earnings. I assume, again, the environment to be stationary, and that the only change in the labour market comes from the different parameter estimates of the respective component.
+
+%The idea is to replace the parameters from the corresponding 1999-2002 model component for the 2005-2009 one to see how the life-cycle earnings profiles respond.
+
+Figure \ref{fig:counterfactual_profiles} displays the counterfactual exercise. The solid blue line presents the estimated life cycle earnings profile for the sample 1999-2002. The dashed cyan line presents the 1999-2002 model with the employment component parameters of the model estimated for the sample 2005-2009. The dotted magenta line presents the 1999-2002 model with the wage component parameters of the model estimated for the sample 2005-2009. Both counterfactuals lie below the 1999-2002 estimated model, which means that the changes in employment transitions and wage dynamics have both negatively affected life cycle earnings profiles for males and females. The difference across gender lies in the relative importance of each factor. While for females the employment and the wage component have a similar impact in the decrease of lifetime values (both counterfactuals shift down very closely), for males, the contribution of the wage component has a larger effect. If I compute the average monthly loss in earnings between each counterfactual and the 1999-2002 estimation, I obtain that for females the wage (employment) loss is of 140.87 (163.63) \euro/monthly. For males, these numbers are 256.13 (138.41) \euro/monthly. This indicates that the introduction of the Hartz reforms had a similar effect in decreasing long term earnings for females stemming from both the wage and the mobility component. However, for males, the different wage distribution (in particular, lower mean wages) after the Hartz reforms had around two times the impact in lowering long term earnings than the changes in the new employment transitions stemming from the Hartz reforms.
+
+\begin{figure}[!t]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}{Males}
+		\centering
+		\includegraphics[width=1\textwidth]{counterfactual_whole_male_beforeafter.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}{Females}
+		\centering
+		\includegraphics[width=1\textwidth]{counterfactual_whole_female_beforeafter.png}
+	\end{minipage}
+	\footnotesize{
+		\justifying Notes: the figure displays life-cycle monthly earnings counterfactuals separated by gender.\par}
+	\captionsetup{font=small,justification=raggedright}
+	%\captionsetup[figure]{position=bottom,justification=raggedright}
+	\caption{Wage and Employment State counterfactuals}\label{fig:counterfactual_profiles}
+\end{figure}
+
+\section{Conclusion}
+
+In this paper, I have studied how more flexible forms of labour contracts affect the distribution of lifetime earnings. I used a change in policy (the Hartz reforms) that transformed the labour market in Germany and expanded the adoption of marginal employment. At the estimation of the empirical processes, I take a sufficient number of years in order to capture the stationary labour market before and after the Hartz reforms. The empirical models reflect lower incidence of full time employment, higher propensity to use marginal employment (exclusive or as a secondary job), lower full time earnings and less persistence in the position in the ranking of earnings at the bottom of the distribution, after the Hartz reforms. Assuming at each sample that the young person anticipates the old person's labour market, I am able to construct lifetime employment and earnings trajectories. I construct lifetime values and show that the distribution has shifted to the left, hence generating lower long term earnings. In a counterfactual exercise I use the estimation of the model for the 1999-2002 sample as a baseline and input the employment (wage) parameters from the estimation of the model in the 2005-2009 sample for both males and females. This exercise shows that both the new employment and the wage dynamics contribute to the lower long term earnings after the Hartz reforms. However, for males, the effect is twice larger for the wage component relative to the employment one. In other words, the decrease in wages has a higher impact in long term earnings than the new employment dynamics.
+
+The findings of this paper contribute to the ongoing debate on the German labour market miracle during the great recession. In particular, the importance of the wage component in lowering long term earnings adds to the arguments of \cite{BurdaHunt11} who argue that wage flexibilization at the bottom of the distribution for full time employment is discussed as one possible explanation for the German labour market miracle in the great recession. In addition, the findings of this paper also contribute to the argument developed in \cite{DuSpOe14}. Specifically, the Hartz reforms have contributed to the continued increase in wage inequality at the lower end of the distribution, but the specific governance structure of the German system of industrial relations is what paved the way for the exceptional decentralization of the wage formation from the industry level to the level of the single firm or the single worker. The unprecedented decentralization of the wage-setting process from the industry level to the firm level in Germany could have been the mechanism that allowed for wage restraints and the dramatic decrease in real wages at the lower end of the distribution after the Hartz reforms.
+
+%\begin{figure}[!t]
+%	\centering
+%	\begin{minipage}[b]{1\textwidth}{}
+%		\centering
+%		\includegraphics[width=1\textwidth]{counterfactual_profiles_male_beforeafter.png}
+%	\end{minipage}
+%	\footnotesize{
+%		\justifying Notes:\par}
+%	\captionsetup{font=small}
+%	%\captionsetup[figure]{position=bottom,justification=raggedright}
+%	\caption{Wage and Employment State counterfactuals}\label{fig:profiles_males}
+%\end{figure}
+
+%\begin{figure}[!t]
+%\centering
+%\begin{minipage}[b]{1\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{counterfactual_profiles_male_beforeafter.png}
+%\end{minipage}
+%\footnotesize{
+%\justifying Notes:\par}
+%\captionsetup{font=small}
+%%\captionsetup[figure]{position=bottom,justification=raggedright}
+%\caption{Wage and Employment State counterfactuals}\label{fig:profiles_males}
+%\end{figure}
+
+
+
+%\begin{figure}[!ht]
+%\begin{minipage}[b]{0.48\textwidth}{FT, Males}
+%\centering
+%\includegraphics[width=1\textwidth]{kernel_FT_males.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\textwidth}{FT, Females}
+%\centering
+%\includegraphics[width=1\textwidth]{kernel_FT_males.png}
+%\end{minipage}\\[2mm]
+%\begin{minipage}[b]{0.48\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{kernel_PT_males.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{kernel_PT_males.png}
+%\end{minipage}\\[2mm]
+%\begin{minipage}[b]{0.48\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{kernel_ME_males.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{kernel_ME_males.png}
+%\end{minipage}\\[2mm]
+%\begin{minipage}[b]{0.48\textwidth}{CE}
+%\centering
+%\includegraphics[width=1\textwidth]{kernel_CE_males.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\textwidth}{CE}
+%\centering
+%\includegraphics[width=1\textwidth]{kernel_CE_males.png}
+%\end{minipage}\\[2mm]
+%\captionsetup{font=small}
+%\caption{Wage Densities, 2005-2009}
+%\label{fig:wage_dens}
+%\end{figure}
+
+
+\newpage
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{apalike}
+%\bibliographystyle{ecta}
+\bibliography{References} 
+
+\newpage
+\setcounter{section}{0}
+\renewcommand{\thesection}{\Alph{section}} 
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\section{Appendix\label{Sec: Preliminary}}
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
+
+\subsection{Sample Selection\label{Sec: samp_select}}
+
+Unfortunately, some discretionary decisions are necessary to be implemented for the classification of employment spells into the five employment categories that I construct. I perform the following sample restrictions:
+\begin{itemize}
+\item  I assign an employment spell to the sample if they do not fully overlap with a spell in unemployment. Otherwise it will be categorized as a non-employment spell.
+\item A employment spell(s) below 15 natural days in total within the month is classified as a non employment spell. 
+\item In the, unlikely, but possible event of two or more working events within a month, I assign the category which employment days are larger than two times the sum of the remaining working spells. Therefore, if a person has different working spells, but one category does not exceed in days two times the other, is classified as concurrent employment. 
+\item Non employment are coded either if the worker is registered unemployed, earn wages below the minimum subsistence level or are out of the labour force. This implies that some of the non employed workers receive earnings within their months while receiving zero earnings. For the estimation section, I keep track of the person's employment record and I predict their likelihood to receive non employment earnings based on an OLS regression on education, gender, lag employment, lag unemployment benefits and year of birth for the different yearly samples.\footnote{A probit specification was also considered with, quantitatively, similar results.}
+\item A worker enters the sample if the working spell in any of the yearly samples is at least of 12 months. 
+\item To delete miscoded employment records, I delete working spells that are repeated, employment spells below 3 working days and daily real earnings below 5 \euro.
+\item With special relevance for this paper, I drop marginal employment earnings above their maximum legislative threshold.
+\end{itemize}
+
+
+\newpage
+\subsection{Additional Tables\label{Sec: add_tables}}
+\begin{table}[htbp]
+	\captionsetup{font=large}
+	\centering
+	\colorbox{lightgray}{%
+		\scalebox{0.92}{
+			\begin{threeparttable}
+				\caption{Initial Labour Market State Estimates}
+				\label{tab:ini_state}
+				\begin{tabular} {@{} l | c  c  c  c | c  c  c  c |  @{}} 
+					\doublerule
+					& \multicolumn{4}{c |}{Males}&\multicolumn{4}{c |}{Females}\\[1mm]
+					\underline{\emph{1999-2002}}&\textbf{PT}$_{t}$&\textbf{ME}$_{t}$&\textbf{NE}$_{t}$&\textbf{CE}&\textbf{PT}$_{t}$&\textbf{ME}$_{t}$&\textbf{NE}$_{t}$&\textbf{CE}$_{t}$\\[1mm]
+					\hline
+Constant 	 	&-3.14&-4.80&0.60	&-	&-2.73&-3.90&0.68	&- 		\\[1mm]
+Age			  	&0.015&-0.080&-0.014&-	&0.079&0.011&0.014	&-		\\[1mm]
+High-School  	&-4.92&-3.51&-5.02 	&-	&-3.06&-3.08&-3.28	&- 		\\[1mm]
+College 		&-3.56&-2.37&-4.32 	&-	&-3.20&-3.09&-3.09	&-		\\[1mm]
+$k^{e} = 2 $	&5.00&5.00&4.17 	&-	&5.00&5.00&3.07	&- 		\\[1mm]
+					\hline
+					& \multicolumn{4}{c |}{}&\multicolumn{4}{c |}{}\\[1mm]
+					\underline{\emph{2005-2009}}&\multicolumn{4}{c |}{}&\multicolumn{4}{c |}{}\\[1mm]
+					\hline
+Constant 	 	&-3.19&-1.78&0.50&-3.92		&-2.15&-0.67&1.14&-2.76		\\[1mm]
+Age			  	&0.024&-0.019&-0.015&0.02	&0.013&-0.028&-0.045&-0.01		\\[1mm]
+High-School  	&-4.72&-5.00&-4.32&-2.61	&-0.70&-1.87&-2.13&-0.54 		\\[1mm]
+College 		&-3.57&-3.92&-3.65&-3.01	&-0.43&-1.60&-1.50&-0.84		\\[1mm]
+$k^{e} = 2 $	&5.00&4.90&3.62&4.02		&5.00&5.00&3.79&3.92 		\\[1mm]
+					\hline
+				\end{tabular}
+				\begin{tablenotes}
+					\item {Notes: the table displays parameter estimates of the initial state from the employment component of the model presented in Section \ref{Sec:lab_market_states}. The model is estimated separately by sample year and across gender.} 
+				\end{tablenotes}
+	\end{threeparttable}}}
+\end{table}
+
+\begin{table}[!htbp]
+	\captionsetup{font=large}
+	\centering
+	\colorbox{lightgray}{%
+		\scalebox{0.92}{
+			\begin{threeparttable}
+				\caption{Additional Wage Distribution Estimates, Autocorrelation $\tau$}
+				\label{tab:wage_estimates_additional}
+				\begin{tabular} {@{} l | c  c | l | c  c | @{}} 
+					\doublerule
+					\emph{1999-2002}&{Males}&{Females}& & {Males}&{Females}\\[1mm]
+					\hline
+PT$_{t-1}$$\rightarrow$FT$_{t}$&4.1758	&4.6768 &FT$_{t-1}$$\rightarrow$PT$_{t}$	&4.1525	&4.8218		\\[1mm]
+ME$_{t-1}$$\rightarrow$FT$_{t}$&4.7544	&4.9320	&ME$_{t-1}$$\rightarrow$PT$_{t}$	&4.6063	&5.0000		\\[1mm]
+NE$_{t-1}$$\rightarrow$FT$_{t}$&4.4025	&4.7585	&NE$_{t-1}$$\rightarrow$PT$_{t}$	&4.4218	&4.8682		\\[1mm]
+CE$_{t-1}$$\rightarrow$FT$_{t}$&-		&-	&CE$_{t-1}$$\rightarrow$PT$_{t}$	&-	&-		\\[1mm]
+\hline
+FT$_{t-1}$$\rightarrow$NE$_{t}$&4.3173		&-	&FT$_{t-1}$$\rightarrow$ME$_{t}$	&4.5870	&4.5982	\\[1mm]
+PT$_{t-1}$$\rightarrow$NE$_{t}$&4.4741		&-	&PT$_{t-1}$$\rightarrow$ME$_{t}$	&4.3782	&5.0000	\\[1mm]
+ME$_{t-1}$$\rightarrow$NE$_{t}$&4.5193		&-	&NE$_{t-1}$$\rightarrow$ME$_{t}$	&4.5990	&4.5796	\\[1mm]
+CE$_{t-1}$$\rightarrow$NE$_{t}$&-			&-	&CE$_{t-1}$$\rightarrow$ME$_{t}$	&-	&-	\\[1mm]
+\hline
+\emph{2005-2009}&&&&&\\[1mm]
+\hline
+PT$_{t-1}$$\rightarrow$FT$_{t}$&4.8489	&4.7008 &FT$_{t-1}$$\rightarrow$PT$_{t}$	&5.0000	&4.9579		\\[1mm]
+ME$_{t-1}$$\rightarrow$FT$_{t}$&5.0000	&5.0000&ME$_{t-1}$$\rightarrow$PT$_{t}$	&5.0000	&5.0000		\\[1mm]
+NE$_{t-1}$$\rightarrow$FT$_{t}$&4.8197	&5.0000&NE$_{t-1}$$\rightarrow$PT$_{t}$	&5.0000	&5.0000		\\[1mm]
+CE$_{t-1}$$\rightarrow$FT$_{t}$&2.9492	&3.4885&CE$_{t-1}$$\rightarrow$PT$_{t}$	&4.7261	&4.4711		\\[1mm]
+\hline
+FT$_{t-1}$$\rightarrow$NE$_{t}$&4.5692	&4.9124&FT$_{t-1}$$\rightarrow$ME$_{t}$	&5.0000	&5.0000		\\[1mm]
+PT$_{t-1}$$\rightarrow$NE$_{t}$&4.9602	&5.0000&PT$_{t-1}$$\rightarrow$ME$_{t}$	&4.9348	&5.0000		\\[1mm]
+ME$_{t-1}$$\rightarrow$NE$_{t}$&4.8876	&5.0000&NE$_{t-1}$$\rightarrow$ME$_{t}$	&4.9226	&5.0000	\\[1mm]
+NE$_{t-1}$$\rightarrow$NE$_{t}$&2.8586	&2.2715&CE$_{t-1}$$\rightarrow$ME$_{t}$	&2.2867	&3.1397	\\[1mm]
+					\hline
+FT$_{t-1}$$\rightarrow$CE$_{t}$&2.3727	&3.0213	&&&	\\[1mm]
+PT$_{t-1}$$\rightarrow$CE$_{t}$&4.6905	&3.9962	&&&	\\[1mm]
+ME$_{t-1}$$\rightarrow$CE$_{t}$&4.9839	&5.0000	&&&	\\[1mm]
+NE$_{t-1}$$\rightarrow$CE$_{t}$&5.0000	&5.0000	&&&	\\[1mm]
+\hline
+				\end{tabular}
+				\begin{tablenotes}
+					\item {Notes: the table displays parameter estimates of the autocorrelation function from the wage component of the model presented in Section \ref{Sec:income_process}. In particular, it displays the estimates of the persistence component of wages when there are transitions across employment states. The model is estimated separately by sample year and across gender.} 
+				\end{tablenotes}
+	\end{threeparttable}}}
+\end{table}
+
+\begin{table}[htbp]
+	\captionsetup{font=large}
+	\centering
+	\colorbox{lightgray}{%
+		\scalebox{0.92}{
+			\begin{threeparttable}
+				\caption{Unobserved Heterogeneity Estimates}
+				\label{tab:unobs_heterogeneity}
+				\begin{tabular} {@{} l | c  c | c  c | @{}} 
+					\doublerule
+					& \multicolumn{2}{c |}{Males}&\multicolumn{2}{c |}{Females}\\[1mm]
+					\emph{1999-2002} &\textbf{$k^e = 2$}&\textbf{$k^w = 2$}&\textbf{$k^e = 2$}    &\textbf{$k^w = 2$} \\[1mm]
+					\hline
+					Constant 	 	&-5.0000&1.2470			&-3.3026&1.1119  	 	\\[1mm]
+					Year of Birth	&0.0650&0.0200			&0.0053&0.0272  		\\[1mm]
+					High-School  	&3.2815&-2.1167			&3.2367&-2.1855  	 	\\[1mm]
+					College 		&3.4400&-1.3575			&3.1015&-1.7222  	 	\\[1mm]
+					\hline
+					\emph{2005-2009} &\multicolumn{2}{c |}{}&\multicolumn{2}{c |}{}\\[1mm]
+					\hline
+					Constant 	 	&-4.2006&-1.0887		&0.1904&-0.6683  	 	\\[1mm]
+					Year of Birth	&0.0627&-0.0289			&-0.0421&-0.0407  		\\[1mm]
+					High-School  	&2.7927&1.7900			&0.1962&1.4938 	 	\\[1mm]
+					College 		&2.8163&1.1281			&-0.1597&1.1715  	 	\\[1mm]
+					\hline
+				\end{tabular}
+				\begin{tablenotes}
+					\item {Notes: the table displays parameter estimates from the unobserved heterogeneity component of the model presented in Section \ref{Sec:unobs_het}. The model is estimated separately by sample year and across gender.} 
+				\end{tablenotes}
+	\end{threeparttable}}}
+\end{table}
+
+\begin{table}[htbp]
+\captionsetup{font=large}
+\centering
+\colorbox{lightgray}{%
+\scalebox{0.92}{
+\begin{threeparttable}
+\caption{Composition of Unobserved Heterogeneity}
+\label{tab:compos_hete}
+\begin{tabular} {@{} l | c  c  c  c  c  c | c  c  c  c  c  c | c  c  @{}} 
+\doublerule
+\underline{\emph{1999-2002}}&\multicolumn{6}{c |}{Males}&\multicolumn{6}{c |}{Females}\\[1mm]
+\emph{Mobility}    & CO & HS & DO & Exp & $k^w = 1$ & $k^w = 2$& CO & HS & DO & Exp & $k^e = 1$ & $k^e = 2$\\[1mm]
+\hline
+$k^e = 1$	&16&68&15&24&53&46				&13&75&11&24&54&45	\\[1mm]
+$k^e = 2$  	&21&77&00&17&56&43				&19&80&00&17&56&43	\\[1mm]
+\hline
+\emph{Wage}    & CO & HS & DO & Exp & $k^e = 1$ & $k^e = 2$& CO & HS & DO & Exp & $k^e = 1$ & $k^e = 2$\\[1mm]
+\hline
+$k^w = 1$	&14&82&03&22&63&36				&11&86&02&22&62&37\\[1mm]
+$k^w = 2$  	&22&59&18&20&65&34				&19&66&14&20&63&36\\[1mm]
+\hline
+\underline{\emph{2005-2009}}&\multicolumn{6}{c |}{}&\multicolumn{6}{c |}{}\\[1mm]
+\emph{Mobility}    & CO & HS & DO & Age & $k^w = 1$ & $k^w = 2$& CO & HS & DO & Age & $k^e = 1$ & $k^e = 2$\\[1mm]
+\hline
+$k^e = 1$	&19&67&12&25&51&48		&22&70&06&20&53&46	\\[1mm]
+$k^e = 2$  	&23&75&01&18&52&47		&15&78&06&26&48&51	\\[1mm]
+\hline
+\emph{Wage}    & CO & HS & DO & Age & $k^e = 1$ & $k^e = 2$& CO & HS & DO & Age & $k^e = 1$ & $k^e = 2$\\[1mm]
+\hline
+$k^w = 1$	&25&61&12&21&58&41		&22&67&09&20&63&36\\[1mm]
+$k^w = 2$  	&17&80&02&24&59&40		&17&80&02&25&57&42\\[1mm]
+\hline
+\end{tabular}
+\begin{tablenotes}
+\item {Notes: the table displays the composition of unobserved heterogeneity simulated from the model, across different year samples and by gender.} 
+\end{tablenotes}
+\end{threeparttable}}}
+\end{table}
+
+%\begin{table}[htbp]
+%	\captionsetup{font=small}
+%	\centering
+%	\colorbox{lightgray}{%
+%		\scalebox{0.92}{
+%			\begin{threeparttable}
+%				\caption{Mobility Classes}
+%				\label{tab:mobility_classes}
+%				\begin{tabular} {@{} l | c | c | c | c | c | c | c | c | c | c | c | c |  @{}} 
+%					\doublerule
+%					&\multicolumn{3}{c |}{Males}&\multicolumn{3}{c |}{Females}\\[1mm]
+%					\underline{\emph{1999-2002}}&\multicolumn{3}{c |}{}&\multicolumn{3}{c |}{}\\[1mm]
+%					\emph{State Composition}    & $k^{e} = 1$ & $k^{e} = 2$&  &$k^{e} = 1$ & $k^{e} = 2$  &\\[1mm]
+%					\hline
+%					\textbf{Sample}	&61&39   	&	&48&52   	&\\[1mm]
+%					\textbf{FT}	 	&76&76   	&	&52&47   	&\\[1mm]
+%					\textbf{PT}  	&2&2	  	&	&23&20   	&\\[1mm]
+%					\textbf{ME}		&1&1 		&	&7&6   		&\\[1mm]
+%					\textbf{NE}  	&20&20  	&	&19&27   	&\\[1mm]
+%					\textbf{CE} 	&0&0 		&	&0&0	   	&\\[1mm]
+%					\hline
+%					&\multicolumn{3}{c |}{}&\multicolumn{3}{c |}{}\\[1mm]
+%					\emph{Class Composition}    &$k^{e} = 1$&$k^{e} = 2$ &\textbf{Sample}&$k^{e} = 1$&$k^{e} = 2$ &\textbf{Sample}\\[1mm]
+%					\hline
+%					\textbf{FT}	 	&60&40&76		&52&48&49\\[1mm]
+%					\textbf{PT}  	&61&39&2		&53&47&21\\[1mm]
+%					\textbf{ME}		&63&37&1		&51&49&7\\[1mm]
+%					\textbf{NE}  	&61&39&20		&40&60&24\\[1mm]
+%					\textbf{CE} 	&67&33&0		&54&46&0\\[1mm]
+%					\hline
+%					&\multicolumn{3}{c |}{}&\multicolumn{3}{c |}{}\\[1mm]
+%					\underline{\emph{2005-2009}}&\multicolumn{3}{c |}{}&\multicolumn{3}{c |}{}\\[1mm]
+%					\emph{State Composition}    & $k^{e} = 1$ & $k^{e} = 2$&  &$k^{e} = 1$ & $k^{e} = 2$  &\\[1mm]
+%					\hline
+%					\textbf{Sample}	&50&50		   	&	&53&47   	&\\[1mm]
+%					\textbf{FT}	 	&72&72		   	&	&42&42   	&\\[1mm]
+%					\textbf{PT}  	&3&3		  	&	&22 	&22   	&\\[1mm]
+%					\textbf{ME}		&3&3		 	&	&11 	&11   	&\\[1mm]
+%					\textbf{NE}  	&18&19		  	&	&20 	&21   	&\\[1mm]
+%					\textbf{CE} 	&3&3		 	&	&04 	&04   	&\\[1mm]
+%					\hline
+%					&\multicolumn{3}{c |}{}&\multicolumn{3}{c |}{}\\[1mm]
+%					\emph{Class Composition}    &$k^{e} = 1$&$k^{e} = 2$ &\textbf{Sample}&$k^{e} = 1$&$k^{e} = 2$ &\textbf{Sample}\\[1mm]
+%					\hline
+%					\textbf{FT}	 	&50&50&72		&53&47&42\\[1mm]
+%					\textbf{PT}  	&53&47&3		&53&47&21\\[1mm]
+%					\textbf{ME}		&51&49&3		&52&48&11\\[1mm]
+%					\textbf{NE}  	&49&51&19		&52&48&21\\[1mm]
+%					\textbf{CE} 	&49&51&3		&52&48&4\\[1mm]
+%					\hline
+%				\end{tabular}
+%				\begin{tablenotes}
+%					\item {Notes.} 
+%				\end{tablenotes}
+%	\end{threeparttable}}}
+%\end{table}
+
+
+%\begin{table}[htbp]
+%	\captionsetup{font=small}
+%	\centering
+%	\colorbox{lightgray}{%
+%		\scalebox{0.92}{
+%			\begin{threeparttable}
+%				\caption{Wage Classes}
+%				\label{tab:wage_classes}
+%				\begin{tabular} {@{} l | c | c | c | c |  @{}} 
+%					\doublerule
+%					&\multicolumn{2}{c |}{Males}&\multicolumn{2}{c |}{Females} \\[1mm]
+%					\emph{1999-2002}&\textbf{$k^w = 1$}&\textbf{$k^w = 2$}&\textbf{$k^w = 1$}&\textbf{$k^w = 2$} \\[1mm]
+%					\hline
+%					\% of Sample 	 	&20&80				&17&83  	 	\\[1mm]
+%					\hline&\multicolumn{2}{c |}{}&\multicolumn{2}{c |}{}\\[1mm]
+%					\emph{2005-2009}&\multicolumn{2}{c |}{}&\multicolumn{2}{c |}{} \\[1mm]
+%					\hline
+%					\% of Sample 	 	&21&79				&22&78  	 	\\[1mm]
+%					\hline
+%				\end{tabular}
+%				\begin{tablenotes}
+%					\item {Notes.} 
+%				\end{tablenotes}
+%	\end{threeparttable}}}
+%\end{table}
+%
+
+
+%\begin{table}[htbp]
+%\captionsetup{font=small}
+%\centering
+%\colorbox{lightgray}{%
+%\scalebox{0.92}{
+%\begin{threeparttable}
+%\caption{Labour Market State Transitions}
+%\label{tab:state_transitions}
+%\begin{tabular} {@{} l | c | c | c | c | c | c | c | c | c | c | c | c  @{}} 
+%\doublerule
+%&\multicolumn{5}{c |}{Males}&\multicolumn{5}{c |}{Females}\\[1mm]
+%\underline{\emph{1999-2002}}&\multicolumn{5}{c |}{}&\multicolumn{5}{c |}{}\\[1mm]
+%%\emph{Sample}    & FT & PT & ME & NE & CE& FT & PT & ME & NE & CE\\[1mm]
+%%\hline
+%%\textbf{FT}	 &98&0&0&2&0			&98 &00  &00 &01 &00\\[1mm]
+%%\textbf{PT}  &1&94&0&5&0			&0&97&0&2&0\\[1mm]
+%%\textbf{ME}	 &1&0&85&13&0			&0&0&91&8&0\\[1mm]
+%%\textbf{NE}  &6&0&1&92&0			&4&1&2&93&0\\[1mm]
+%%\textbf{CE}  &11&3&4&1&80			&7&8&7&1&76s\\[1mm]
+%%\hline
+%&&&&&\\[1mm]
+%\emph{$k^{e} = 1$}   & FT & PT & ME & NE & CE& FT & PT & ME & NE & CE\\[1mm]
+%\hline
+%\textbf{FT}	 &98&0&0&2&0			&98&0&0&1&0\\[1mm]
+%\textbf{PT}  &1&94&0&5&0			&0&98&0&2&0\\[1mm]
+%\textbf{ME}	 &1&0&85&13&0			&0&0&91&8&0\\[1mm]
+%\textbf{NE}  &6&0&1&93&0			&5&2&2&92&0\\[1mm]
+%\textbf{CE}  &9&3&4&1&82			&7&8&6&1&78\\[1mm]
+%\hline
+%&&&&&\\[1mm]
+%\emph{$k^{e} = 2$}    & FT & PT & ME & NE & CE& FT & PT & ME & NE & CE\\[1mm]
+%\hline
+%\textbf{FT}	 &98&0&0&2&0			&7&8&6&1&78\\[1mm]
+%\textbf{PT}  &1&94&0&4&0			&0&97&0&2&0\\[1mm]
+%\textbf{ME}	 &2&0&84&14&0			&0&0&90&9&0\\[1mm]
+%\textbf{NE}  &7&0&1&92&0			&3&1&1&94&0\\[1mm]
+%\textbf{CE}  &14&4&4&2&76			&8&8&9&2&74\\[1mm]
+%\hline
+%\underline{\emph{2005-2009}}&\multicolumn{5}{c |}{}&\multicolumn{5}{c |}{}\\[1mm]
+%%\emph{Sample}    & FT & PT & ME & NE & CE& FT & PT & ME & NE & CE\\[1mm]
+%%\hline
+%%\textbf{FT}	 &98&0&0&1&0			&98 &00  &00 &01 &00\\[1mm]
+%%\textbf{PT}  &1&95&0&3&0			&00 &97  &00 &02 &00\\[1mm]
+%%\textbf{ME}	 &1&0&88&10&1			&00 &00  &94 &05 &00\\[1mm]
+%%\textbf{NE}  &6&0&1&92&0			&03 &01  &02 &93 &00\\[1mm]
+%%\textbf{CE}  &6&1&1&0&92			&03 &02  &02 &00 &93\\[1mm]
+%%\hline
+%&&&&&\\[1mm]
+%\emph{$k^{e} = 1$}   & FT & PT & ME & NE & CE& FT & PT & ME & NE & CE\\[1mm]
+%\hline
+%\textbf{FT}	 &98&0&0&1&0			&98 &00  &00 &01 &00\\[1mm]
+%\textbf{PT}  &1&95&0&3&0			&00 &97  &00 &02 &00\\[1mm]
+%\textbf{ME}	 &1&0&88&10&1			&00 &00  &94 &05 &00\\[1mm]
+%\textbf{NE}  &6&0&1&92&0			&03 &01  &02 &93 &00\\[1mm]
+%\textbf{CE}  &5&1&1&0&92			&03 &02  &02 &00 &93\\[1mm]
+%\hline
+%&&&&&\\[1mm]
+%\emph{$k^{e} = 2$}    & FT & PT & ME & NE & CE& FT & PT & ME & NE & CE\\[1mm]
+%\hline
+%\textbf{FT}	 &98&0&0&2&0		 	&98 &00  &00 &01 &00\\[1mm]
+%\textbf{PT}  &1&95&0&3&0		 	&00 &97  &00 &02 &00\\[1mm]
+%\textbf{ME}	 &1&0&87&10&1		 	&00 &00  &94 &05 &00\\[1mm]
+%\textbf{NE}  &6&0&1&92&0		 	&03 &01  &02 &93 &00\\[1mm]
+%\textbf{CE}  &6&1&1&0&92		 	&03 &02  &02 &00 &93\\[1mm]
+%\hline
+%\end{tabular}
+%\begin{tablenotes}
+%\item {Notes.} 
+%\end{tablenotes}
+%\end{threeparttable}}}
+%\end{table}
+
+\newpage
+%\subsection{Wage Classes}
+
+%\begin{table}[htbp]
+%\captionsetup{font=small}
+%\centering
+%\colorbox{lightgray}{%
+%\scalebox{0.92}{
+%\begin{threeparttable}
+%\caption{Income Mobility, Quantiles}
+%\label{tab:income_mobility}
+%\begin{tabular} {@{} l | c | c | c | c | c | c | c | c | c | c |  @{}} 
+%\doublerule
+%& \multicolumn{5}{c |}{Males}& \multicolumn{5}{c |}{Females}\\[1mm]
+%\underline{\emph{1999-2002}}& \multicolumn{5}{c |}{}& \multicolumn{5}{c |}{}\\[1mm]
+%%\emph{Sample}& \multicolumn{5}{c |}{\emph{t}}& \multicolumn{5}{c |}{\emph{t}}\\[1mm]
+%%\hline
+%%\multirow{5}{*}{\emph{t-1}}	 &91&6&1&0&0			 &90 &05 &01 &01 &00\\[1mm]
+%%							 &6&90&2&1&0			 &06 &89 &02 &01 &00\\[1mm]
+%%							 &1&2&96&1&0			 &01 &03 &94 &01 &00\\[1mm]
+%%							 &0&1&1&97&1			 &00 &01 &01 &96 &01\\[1mm]
+%%							 &0&0&0&1&99			 &00 &00 &00 &01 &98\\[1mm]
+%%\hline
+%\emph{$k^{w} = 1$}&\multicolumn{5}{c |}{}&\multicolumn{5}{c |}{}\\[1mm]
+%\hline
+%\multirow{5}{*}{\emph{t-1}}	 &91&5&1&0&0	 		 &91 &05 &01 &01 &00\\[1mm]
+%							 &6&91&1&0&0			 &05 &90 &02 &01 &00\\[1mm]
+%							 &1&2&96&1&0			 &01 &03 &95 &01 &00\\[1mm]
+%							 &0&1&1&97&1			 &00 &01 &01 &96 &01\\[1mm]
+%							 &0&0&0&1&99			 &00 &00 &00 &01 &98\\[1mm]
+%\hline
+%\emph{$k^{w} = 2$}&\multicolumn{5}{c |}{}&\multicolumn{5}{c |}{}\\[1mm]
+%\hline
+%\multirow{5}{*}{\emph{t-1}}	 &87&9&2&0&0			 &88 &06 &02 &01 &00\\[1mm]
+%							 &10&86&2&1&0			 &07 &87 &03 &01 &01\\[1mm]
+%							 &1&3&94&1&0			 &01 &04 &91 &02 &00\\[1mm]
+%							 &0&1&1&97&1			 &00 &01 &02 &95 &01\\[1mm]
+%							 &0&0&0&1&98			 &00 &00 &01 &01 &98\\[1mm]
+%\hline
+%& \multicolumn{5}{c |}{}& \multicolumn{5}{c |}{}\\[1mm]
+%\underline{\emph{2005-2009}}& \multicolumn{5}{c |}{}& \multicolumn{5}{c |}{}\\[1mm]
+%%\emph{Sample}& \multicolumn{5}{c |}{\emph{}}& \multicolumn{5}{c |}{\emph{}}\\[1mm]
+%%\hline
+%%\multirow{5}{*}{\emph{t-1}}	 &90&6&1&1&0			 &91 &05 &02 &01 &00\\[1mm]
+%%							 &7&89&2&1&0			 &05 &89 &03 &01 &00\\[1mm]
+%%							 &1&2&95&1&0			 &02 &03 &93 &02 &00\\[1mm]
+%%							 &0&1&1&97&1			 &01 &01 &01 &95 &01\\[1mm]
+%%							 &0&0&0&1&98	 		 &00 &00 &00 &01 &98\\[1mm]
+%%\hline
+%\emph{$k^{w} = 1$}&\multicolumn{5}{c |}{}&\multicolumn{5}{c |}{}\\[1mm]
+%\hline
+%\multirow{5}{*}{\emph{t-1}}	 &90&6&1&1&0			 &91 &05 &02 &01 &00\\[1mm]
+%							 &7&90&2&1&0			 &05 &89 &03 &01 &00\\[1mm]
+%							 &1&2&95&1&0			 &02 &03 &92 &02 &00\\[1mm]
+%							 &0&1&1&97&1			 &01 &01 &02 &95 &01\\[1mm]
+%							 &0&0&0&1&98			 &00 &00 &00 &01 &98\\[1mm]
+%\hline
+%\emph{$k^{w} = 2$}&\multicolumn{5}{c |}{}&\multicolumn{5}{c |}{}\\[1mm]
+%\hline
+%\multirow{5}{*}{\emph{t-1}}	 &91&5&1&0&0			 &91 &05 &02 &01 &00\\[1mm]
+%							 &7&87&4&1&0			 &05 &90 &02 &01 &00\\[1mm]
+%							 &1&5&92&1&0			 &02 &03 &93 &01 &00\\[1mm]
+%							 &0&1&1&96&1			 &01 &01 &01 &96 &01\\[1mm]
+%							 &0&0&0&1&98			 &00 &00 &00 &01 &98\\[1mm]
+%\hline
+%\end{tabular}
+%\begin{tablenotes}
+%\item {Notes.} 
+%\end{tablenotes}
+%\end{threeparttable}}}
+%\end{table}
+\newpage
+\subsection{Additional Figures\label{Sec: add_figs}}
+
+\begin{figure}[!htbp]
+	\centering
+	\begin{minipage}[b]{1\textwidth}{Males}
+		\centering
+		\includegraphics[width=1\textwidth]{Males_Wage_Fit.png}
+	\end{minipage}\\
+\vspace{5mm}
+	\begin{minipage}[b]{1\textwidth}{Females}
+		\centering
+		\includegraphics[width=1\textwidth]{Females_Wage_Fit.png}
+	\end{minipage}
+	\footnotesize{
+\justifying Notes: The figure displays the mean and standard deviation of log monthly earnings in the data and the model, at the cross-section and for all employment states.\par}
+	\captionsetup{font=small,justification=raggedright}
+	%\captionsetup[figure]{position=bottom,justification=raggedright}
+	\caption{Wage Fit}\label{fig:wage_fit}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}{Males}
+		\centering
+		\includegraphics[width=1\textwidth]{dist_beforeafter_male.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}{Females}
+		\centering
+		\includegraphics[width=1\textwidth]{dist_beforeafter_female.png}
+	\end{minipage}
+	\footnotesize{
+		\justifying Notes: the figure displays kernel density estimates of log monthly earnings simulated from the model. It displays kernel density estimates of the whole distribution of earnings before and after the Hartz reforms, by gender.\par}
+	\captionsetup{font=small,justification=raggedright}
+	%\captionsetup[figure]{position=bottom,justification=raggedright}
+	\caption{Cross-sectional Wage Gap Distribution}\label{fig:estimation_wage_gap}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\begin{minipage}[b]{0.48\textwidth}{$FT_{t-1}$$\rightarrow$$FT_{t}$}
+\centering
+\includegraphics[width=1\textwidth]{FT_FT_20052009_female.png}
+\end{minipage}
+\begin{minipage}[b]{0.48\textwidth}{$PT_{t-1}$$\rightarrow$$FT_{t}$}
+\centering
+\includegraphics[width=1\textwidth]{PT_FT_20052009_female.png}
+\end{minipage}\\
+%\end{figure}
+\vspace{5mm}
+%\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.32\textwidth}{$ME_{t-1}$$\rightarrow$$FT_{t}$}
+\centering
+\includegraphics[width=1\textwidth]{MJ_FT_20052009_female.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{$NE_{t-1}$$\rightarrow$$FT_{t}$}
+\centering
+\includegraphics[width=1\textwidth]{NE_FT_20052009_female.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{$CE_{t-1}$$\rightarrow$$FT_{t}$}
+\centering
+\includegraphics[width=1\textwidth]{CJ_FT_20052009_female.png}
+\end{minipage}
+\footnotesize{
+\justifying Notes: The figure displays a scatter plot of log monthly earnings in the previous month (x-axis) against log monthly earnings in the current month (y-axis) for female workers during the 2005-2009 period. For illustration purposes, only transitions into full-time are shown.\par}
+\captionsetup{font=small,justification=raggedright}
+%\captionsetup[figure]{position=bottom,justification=raggedright}
+\caption{Autocorrelation, Female workers 2005-2009}\label{fig:autocorrelation_female_20052009}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\begin{minipage}[b]{0.32\textwidth}{1999-2002}
+\centering
+\includegraphics[width=1\textwidth]{ACR_19992002.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{2005-2009}
+\centering
+\includegraphics[width=1\textwidth]{ACR_20052009.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{2010-2014}
+\centering
+\includegraphics[width=1\textwidth]{ACR_20102014.png}
+\end{minipage}
+\footnotesize{
+\justifying Notes: The figure displays the correlation of log monthly earnings in the previous month (t-1) against log monthly earnings in the current month (t) for all employment types by gender and different yearly samples.\par}
+\captionsetup{font=small,justification=raggedright}
+%\captionsetup[figure]{position=bottom,justification=raggedright}
+\caption{Data Wage autocorrelation}\label{fig:autocorrelation_samples}
+\end{figure}
+
+%\begin{figure}[!t]
+%\centering
+%%\begin{minipage}[b]{0.48\textwidth}{Gini}
+%%\centering
+%%\includegraphics[width=1\textwidth]{LT_Bonke.png}
+%%\end{minipage}
+%%\begin{minipage}[b]{0.32\textwidth}{Employment Stocks}
+%%\centering
+%%\includegraphics[width=1\textwidth]{Employment_Stock_Series.png}
+%%\end{minipage}
+%\end{figure}
+
+\begin{figure}[!htbp]
+%\begin{minipage}[b]{0.32\textwidth}{Gini}
+%\centering
+%\includegraphics[width=1\textwidth]{UpToX.png}
+%\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part-Time Work}
+	\centering
+	\includegraphics[width=1\textwidth]{tstock_part_time_unc.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part-Time - Males}
+\centering
+\includegraphics[width=1\textwidth]{tstock_part_time_males.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part-Time - Females}
+\centering
+\includegraphics[width=1\textwidth]{tstock_part_time_females.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Labour Force}
+\centering
+\includegraphics[width=1\textwidth]{Employment_Stock_Series.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Males}
+\centering
+\includegraphics[width=1\textwidth]{Employment_Stock_Series_Males.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Females}
+\centering
+\includegraphics[width=1\textwidth]{Employment_Stock_Series_Females.png}
+\end{minipage}
+\footnotesize{
+	\justifying Notes: the figure displays aggregate, and gender specific, stocks of part-time employment (top panel) and labour force participation (bottom panel) in the sample data.\par}
+\captionsetup{font=small,justification=raggedright}
+%\captionsetup[figure]{position=bottom,justification=raggedright}
+\caption{Part-Time and Labour Force trends}\label{fig:parttime_trend}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}{Males}
+		\centering
+		\includegraphics[width=1\textwidth]{dist_LT_male_0510.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}{Females}
+		\centering
+		\includegraphics[width=1\textwidth]{dist_LT_female_0510.png}
+	\end{minipage}
+	\footnotesize{
+		\justifying Notes: the figure displays kernel density estimates of lifetime earnings, across different year samples and by gender.\par}
+	\captionsetup{font=small,justification=raggedright}
+	%\captionsetup[figure]{position=bottom,justification=raggedright}
+	\caption{Lifetime Values Distributions, 2010-2014}\label{fig:estimation_LT_0510}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}{Males}
+		\centering
+		\includegraphics[width=1\textwidth]{dist_LT_male_beforeafter_disc.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}{Females}
+		\centering
+		\includegraphics[width=1\textwidth]{dist_LT_female_beforeafter_disc.png}
+	\end{minipage}
+	\footnotesize{
+		\justifying Notes: the figure displays kernel density estimates of present discounted ($\beta=0.99$) earnings, for the 1999-2002 sample (blue density). The earnings are projected for workers entering the sample for their out-of-sample years until retirement age, assuming their path follows parameters of the 1999-2002 estimated sample. The red and yellow densities display kernel density estimates of present discounted ($\beta=0.99$) earnings, for workers in the 1999-2002 sample using the estimated parameters of the mobility component of the 2005-2009 sample and the wage component, respectively.\par}
+	\captionsetup{font=small,justification=raggedright}
+	%\captionsetup[figure]{position=bottom,justification=raggedright}
+	\caption{Lifetime Values Distributions, $\beta=0.99$}\label{fig:estimation_LT_disc}
+\end{figure}
+
+
+
+
+\end{document}

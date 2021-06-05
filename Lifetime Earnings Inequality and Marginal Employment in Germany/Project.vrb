@@ -1,0 +1,41 @@
+\frametitle{Variance Decomposition, Females - GSOEP8415}
+\begin{figure}
+\centering
+\begin{minipage}[b]{0.4\textwidth}{1999}
+\begin{Verbatim}[fontsize=\tiny]
+Gr        Regressor |       Coef.      Std.Err.   P>|t|  Std.Coef. Shapley %R2
+--------------------+---------------------------------------------------------
+ 1             full |    960.0605 ***  123.1434   0.000     0.3534     41.0523
+ 2             mini |   -457.2471 ***  165.9626   0.006    -0.0979     10.5690
+ 3       educ_years |     153.102 ***  19.92849   0.000     0.2525     23.2956
+ 4             aage |    8.413111      22.29532   0.706     0.0526      0.5280
+ 5            aage2 |    .0795458      .6213005   0.898     0.0177      0.4199
+ 6     weekly_hours |      10.435 **   4.194195   0.013     0.1142     24.1352
+ -        Intercept |   -1010.749      314.9242   0.001
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+.
+\end{minipage}
+\end{figure}
+\begin{figure}
+\centering
+\begin{minipage}[b]{0.4\textwidth}{2005}
+\begin{Verbatim}[fontsize=\tiny]
+Gr        Regressor |       Coef.      Std.Err.   P>|t|  Std.Coef. Shapley %R2
+--------------------+---------------------------------------------------------
+ 1             full |    812.4744 ***  149.6084   0.000     0.3068     31.2044
+ 2             mini |   -510.3435 ***  175.3939   0.004    -0.1208     14.3674
+ 3       educ_years |    154.4459 ***  20.48708   0.000     0.2697     20.4919
+ 4             aage |     81.6197 ***  19.72909   0.000     0.5852      2.8052
+ 5            aage2 |   -1.945478 ***  .5674484   0.001    -0.4833      2.0134
+ 6     weekly_hours |    16.80501 ***  5.396344   0.002     0.1860     29.1178
+ -        Intercept |   -1627.451      322.8173   0.000
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}
+\begin{Verbatim}[fontsize=\tiny]
+.
+\end{Verbatim}
+\end{minipage}
+\end{figure}

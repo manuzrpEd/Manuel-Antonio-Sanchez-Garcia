@@ -1,0 +1,971 @@
+\documentclass[handout]{beamer}
+%handout disables the animations (visible)
+%\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+\setbeamertemplate{footline}[frame number]
+} 
+
+\newcommand{\itemset}{\setlength{\itemsep}{1.5ex}}
+
+\newcommand*\MyPitem{%
+  \item[\color{green}\scalebox{1.1}{+}]}
+\newcommand*\MyCitem{%
+  \item[\color{red}\scalebox{1.3}{-}]}
+
+\newcommand\doubleRule{\toprule\toprule}
+\newcommand\doublerule{\toprule\specialrule{\heavyrulewidth}{\doublerulesep}{0.95em}}
+
+\mode<presentation>
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{threeparttable} %allows for table notes
+\usepackage{multirow}
+\usepackage{tablefootnote} 
+\usepackage{hyperref}
+\usepackage[center]{caption}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{color}
+\usepackage[space]{grffile}
+\usepackage{graphicx}
+\usepackage{dsfont}
+%\usepackage{footnote}
+
+\hypersetup{
+%	colorlinks,
+%	linkcolor={green!70!black},
+	citecolor={blue!70!black},
+	urlcolor={blue!80!black}
+}
+
+\let\oldcite=\cite                                                   
+\renewcommand{\cite}[1]{\textcolor[rgb]{.0,.2,.7}{\oldcite{#1}}}
+
+\title{Lifetime Earnings Inequality and Flexible Working Time Arrangements}
+%\author{Manuel Sanchez and Felix Wellschmied}
+%\institute{University of Bristol \\ PhD Economics Seminar}
+\author[Short Name (U ABC)]{%
+  \texorpdfstring{%
+    \begin{columns}
+      \column{.5\linewidth}
+      \centering
+     %Manuel Sanchez \\ \scriptsize{University of Bristol}
+Manuel Sanchez
+      %\column{.5\linewidth}
+      %\centering
+      %Felix Wellschmied \\ \scriptsize{Universidad Carlos III de Madrid}
+    \end{columns}
+ }
+ %{Author 1, Author 2}
+{Author 1}
+}
+%\institute[short]{XXII WORKSHOP ON DYNAMIC MACROECONOMICS}
+\institute{University of Bristol}
+%\date{July 4-6, 2017}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\begin{frame}{Data Set: R-SIAB 7514}
+German Administrative dataset for Social Security\\
+
+\vfill
+\begin{itemize}
+\vfill
+\item Large sample size (1.594.466 individuals)
+\vfill
+\item Individuals aged 17-62
+\vfill
+\item Years: 1975-2014
+\vfill
+\item Top Coded, Bottom Coded, Marginal Employment (1999-2014)
+\vfill
+\item No public workers or self-employed
+\vfill
+\item Representative of 80\% of the total labor market
+\end{itemize}
+\note{One of the few large administrative datasets.
+2\% random sample of workers that are liable to social security records.
+No public workers.
+No self-employed.
+Example: in 2010, TC wages above 180€.}
+\end{frame}
+
+%\item One of the few available "big data" sets: long panel and precisely measured.
+
+\section{Cross Sectional Moments}
+\subsection{}
+
+\begin{frame}
+\center{\Huge{Cross Sectional Moments}}
+\end{frame}
+
+%---MALES 
+%\iffalse
+%\begin{frame}{Males, West Germany - Daily Wages}
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[b]{0.22\textwidth}{$\mathbb{E}[log(w_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_emp.png}
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[b]{0.22\textwidth}{$Var[log(w_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{sd_emp.png}
+%\end{minipage}}
+%\visible<3->{
+%\begin{minipage}[b]{0.22\textwidth}{$Skew[log(w_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{skew_emp.png}
+%\end{minipage}}
+%\visible<4->{
+%\begin{minipage}[b]{0.22\textwidth}{$Kurt[log(w_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{kurt_emp.png}
+%\end{minipage}}
+%\end{figure}
+%\begin{itemize}
+%\setlength{\itemsep}{0.7 cm}
+%\visible<1->{
+%\item Stagnant real daily wages in mean}
+%\visible<2->{
+%\item Increase in the volatility of full time wages}
+%\visible<3->{
+%\item Full time wages becoming less negatively skewed}
+%\visible<4->{
+%\item Fat tail risk (Kurtsosis) becoming less present in full time wages}
+%\end{itemize}
+%\end{frame}
+
+
+%\begin{frame}{Males, West Germany - Daily Wages Kernel Density}
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[b]{0.3\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_full_time.png}
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[b]{0.3\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_exc_part_time.png}
+%\end{minipage}}
+%\visible<3->{
+%\begin{minipage}[b]{0.3\textwidth}{Mini Jobs}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_marginal_employment.png}
+%\end{minipage}}
+%\end{figure}
+%\begin{itemize}
+%\setlength{\itemsep}{0.7 cm}
+%\visible<1->{
+%\item Positive innovations are rare early in life}
+%\visible<2->{
+%\item Positive innovations are large early in life}
+%\visible<3->{
+%\item Negative innovations are small early in life}
+%\end{itemize}
+%\end{frame}
+
+
+\begin{frame}{Males, West Germany - Employment Earnings}
+\begin{figure}[!t]
+\centering
+\visible<1->{
+\begin{minipage}[b]{0.22\textwidth}{$\mathbb{E}[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{mean_emp_form.png}
+\end{minipage}}
+\visible<2->{
+\begin{minipage}[b]{0.22\textwidth}{$Var[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{sd_emp_form.png}
+\end{minipage}}
+\visible<3->{
+\begin{minipage}[b]{0.22\textwidth}{$Skew[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{skew_emp_form.png}
+\end{minipage}}
+\visible<4->{
+\begin{minipage}[b]{0.22\textwidth}{$Kurt[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{kurt_emp_form.png}
+\end{minipage}}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.4 cm}
+\visible<1->{
+\item Full time jobs average log earnings remaining constant}
+\vfill
+Q: Why is it? Stagnant wages, higher unemployment...?
+\visible<2->{
+\item Full time jobs log earnings dispersion increasing}
+\vfill
+Q: Why is it? Higher wage variability, unemployment...?
+\visible<3->{
+\item Full time jobs log earnings experiencing lower downward risk}
+\vfill
+Q: Why is it?
+\visible<4->{
+\item Full time jobs log earnings suffering lower fat tail risk}
+\vfill
+Q: Is it lower upper or bottom tail risk? And why?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Males, West Germany - Employment Earnings}
+\begin{figure}[!t]
+\centering
+\visible<1->{
+\begin{minipage}[b]{0.22\textwidth}{$\mathbb{E}[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{mean_emp.png}
+\end{minipage}}
+\visible<2->{
+\begin{minipage}[b]{0.22\textwidth}{$Var[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{sd_emp.png}
+\end{minipage}}
+\visible<3->{
+\begin{minipage}[b]{0.22\textwidth}{$Skew[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{skew_emp.png}
+\end{minipage}}
+\visible<4->{
+\begin{minipage}[b]{0.22\textwidth}{$Kurt[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{kurt_emp.png}
+\end{minipage}}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.4 cm}
+\visible<1->{
+\item Full Time wages in mean track closely stagnant log earnings}
+\visible<2->{
+\item Part Time and Mini Jobs wages variation lower than hours variation}
+\visible<3->{
+\item Wages Skewness lower than Earnings}
+\visible<4->{
+\item Wages Kurtosis lower than Earnings}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Males, West Germany - Employment Earnings Kernel Density}
+\begin{figure}[!t]
+\centering
+\visible<1->{
+\begin{minipage}[b]{0.3\textwidth}{$Gini[Earnings]$}
+\centering
+\includegraphics[width=1\textwidth]{gini_form.png}
+\end{minipage}}
+\visible<2->{
+\begin{minipage}[b]{0.3\textwidth}{$\mathbb{E}[\# \,\, Days_{Empl.}]$}
+\centering
+\includegraphics[width=1\textwidth]{mean_days_epi.png}
+\end{minipage}}
+\visible<3->{
+\begin{minipage}[b]{0.3\textwidth}{$Fraction$}
+\centering
+\includegraphics[width=1\textwidth]{fract_contr.png}
+\end{minipage}}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\visible<1->{
+\item $\uparrow$ \% of Mini Jobs, $\downarrow$ \% of Full Time jobs}
+\visible<2->{
+\item Full Time jobs becoming more short-lived}
+\visible<3->{
+\item Higher number of Job Contracts}
+\end{itemize}
+\end{frame}
+
+%\begin{frame}
+%\begin{minipage}[b]{0.48\textwidth}{$\mathbb{E}[log (earn_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_emp_form.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\textwidth}{$\mathbb{E}[log (w_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_emp.png}
+%\end{minipage}
+%\begin{itemize}
+%\item Full time jobs average log earnings remaining constant
+%\vfill
+%Q: Why is it? Stagnant wages, higher unemployment...?
+%\vfill
+%Stagnant wages
+%\vfill
+%Must be higher use of part time and mini jobs
+%\end{itemize}
+%\end{frame}
+
+%\begin{frame}{Males, West Germany - Employment Earnings Kernel Density}
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[b]{0.3\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_full_time_form.png}
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[b]{0.3\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_exc_part_time_form.png}
+%\end{minipage}}
+%\visible<3->{
+%\begin{minipage}[b]{0.3\textwidth}{Mini Jobs}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_marginal_employment_form.png}
+%\end{minipage}}
+%\end{figure}
+%\begin{itemize}
+%\setlength{\itemsep}{0.7 cm}
+%\visible<1->{
+%\item Positive innovations are rare early in life}
+%\visible<2->{
+%\item Positive innovations are large early in life}
+%\visible<3->{
+%\item Negative innovations are small early in life}
+%\end{itemize}
+%\end{frame}
+
+\begin{frame}{Males, West Germany - Employment Earnings Kernel Density}
+\begin{figure}[!t]
+\centering
+\visible<1->{
+\begin{minipage}[b]{0.3\textwidth}{$\frac{Emp_{t,j}}{TotEmp_{t}}$}
+\centering
+\includegraphics[width=1\textwidth]{fract_emp.png}
+\end{minipage}}
+\visible<2->{
+\begin{minipage}[b]{0.3\textwidth}{$\mathbb{E}[\# \,\, Days_{Empl.}]$}
+\centering
+\includegraphics[width=1\textwidth]{mean_days_epi.png}
+\end{minipage}}
+\visible<3->{
+\begin{minipage}[b]{0.3\textwidth}{$Fraction$}
+\centering
+\includegraphics[width=1\textwidth]{fract_contr.png}
+\end{minipage}}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\visible<1->{
+\item $\uparrow$ \% of Mini Jobs, $\downarrow$ \% of Full Time jobs}
+\visible<2->{
+\item Full Time jobs becoming more short-lived}
+\visible<3->{
+\item Higher number of Job Contracts}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Females, West Germany - Employment Earnings}
+\begin{figure}[!t]
+\centering
+\visible<1->{
+\begin{minipage}[b]{0.22\textwidth}{$\mathbb{E}[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{mean_emp_form_fem.png}
+\end{minipage}}
+\visible<2->{
+\begin{minipage}[b]{0.22\textwidth}{$Var[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{sd_emp_form_fem.png}
+\end{minipage}}
+\visible<3->{
+\begin{minipage}[b]{0.22\textwidth}{$Skew[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{skew_emp_form_fem.png}
+\end{minipage}}
+\visible<4->{
+\begin{minipage}[b]{0.22\textwidth}{$Kurt[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{kurt_emp_form_fem.png}
+\end{minipage}}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.4 cm}
+\visible<1->{
+\item Full time jobs average log earnings remaining constant}
+\vfill
+Q: Why is it? Stagnant wages, higher unemployment...?
+\visible<2->{
+\item Full time jobs log earnings dispersion increasing}
+\vfill
+Q: Why is it? Higher wage variability, unemployment...?
+\visible<3->{
+\item Full time jobs log earnings experiencing lower downward risk}
+\vfill
+Q: Why is it?
+\visible<4->{
+\item Full time jobs log earnings suffering lower fat tail risk}
+\vfill
+Q: Is it lower upper or bottom tail risk? And why?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Females, West Germany - Employment Earnings}
+\begin{figure}[!t]
+\centering
+\visible<1->{
+\begin{minipage}[b]{0.22\textwidth}{$\mathbb{E}[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{mean_emp_fem.png}
+\end{minipage}}
+\visible<2->{
+\begin{minipage}[b]{0.22\textwidth}{$Var[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{sd_emp_fem.png}
+\end{minipage}}
+\visible<3->{
+\begin{minipage}[b]{0.22\textwidth}{$Skew[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{skew_emp_fem.png}
+\end{minipage}}
+\visible<4->{
+\begin{minipage}[b]{0.22\textwidth}{$Kurt[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{kurt_emp_fem.png}
+\end{minipage}}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.4 cm}
+\visible<1->{
+\item Full Time wages in mean track closely stagnant log earnings}
+\visible<2->{
+\item Part Time and Mini Jobs wages variation lower than hours variation}
+\visible<3->{
+\item Wages Skewness lower than Earnings}
+\visible<4->{
+\item Wages Kurtosis lower than Earnings}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Females, West Germany - Employment Earnings Kernel Density}
+\begin{figure}[!t]
+\centering
+\visible<1->{
+\begin{minipage}[b]{0.3\textwidth}{$\frac{Emp_{t,j}}{TotEmp_{t}}$}
+\centering
+\includegraphics[width=1\textwidth]{fract_emp_fem.png}
+\end{minipage}}
+\visible<2->{
+\begin{minipage}[b]{0.3\textwidth}{$\mathbb{E}[\# \,\, Days_{Empl.}]$}
+\centering
+\includegraphics[width=1\textwidth]{mean_days_epi_fem.png}
+\end{minipage}}
+\visible<3->{
+\begin{minipage}[b]{0.3\textwidth}{$Fraction$}
+\centering
+\includegraphics[width=1\textwidth]{fract_contr_fem.png}
+\end{minipage}}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\visible<1->{
+\item $\uparrow$ \% of Mini Jobs, $\downarrow$ \% of Full Time jobs}
+\visible<2->{
+\item Full Time jobs becoming more short-lived}
+\visible<3->{
+\item Higher number of Job Contracts}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Males, West \& East Germany - Employment Earnings}
+\begin{figure}[!t]
+\centering
+\visible<1->{
+\begin{minipage}[b]{0.22\textwidth}{$\mathbb{E}[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{mean_emp_form_east.png}
+\end{minipage}}
+\visible<2->{
+\begin{minipage}[b]{0.22\textwidth}{$Var[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{sd_emp_form_east.png}
+\end{minipage}}
+\visible<3->{
+\begin{minipage}[b]{0.22\textwidth}{$Skew[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{skew_emp_form_east.png}
+\end{minipage}}
+\visible<4->{
+\begin{minipage}[b]{0.22\textwidth}{$Kurt[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{kurt_emp_form_east.png}
+\end{minipage}}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.4 cm}
+\visible<1->{
+\item Full time jobs average log earnings remaining constant}
+\vfill
+Q: Why is it? Stagnant wages, higher unemployment...?
+\visible<2->{
+\item Full time jobs log earnings dispersion increasing}
+\vfill
+Q: Why is it? Higher wage variability, unemployment...?
+\visible<3->{
+\item Full time jobs log earnings experiencing lower downward risk}
+\vfill
+Q: Why is it?
+\visible<4->{
+\item Full time jobs log earnings suffering lower fat tail risk}
+\vfill
+Q: Is it lower upper or bottom tail risk? And why?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Males, West \& East Germany - Employment Earnings}
+\begin{figure}[!t]
+\centering
+\visible<1->{
+\begin{minipage}[b]{0.22\textwidth}{$\mathbb{E}[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{mean_emp_east.png}
+\end{minipage}}
+\visible<2->{
+\begin{minipage}[b]{0.22\textwidth}{$Var[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{sd_emp_east.png}
+\end{minipage}}
+\visible<3->{
+\begin{minipage}[b]{0.22\textwidth}{$Skew[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{skew_emp_east.png}
+\end{minipage}}
+\visible<4->{
+\begin{minipage}[b]{0.22\textwidth}{$Kurt[log (earn_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{kurt_emp_east.png}
+\end{minipage}}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.4 cm}
+\visible<1->{
+\item Full Time wages in mean track closely stagnant log earnings}
+\visible<2->{
+\item Part Time and Mini Jobs wages variation lower than hours variation}
+\visible<3->{
+\item Wages Skewness lower than Earnings}
+\visible<4->{
+\item Wages Kurtosis lower than Earnings}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Males, West \& East Germany - Employment Earnings Kernel Density}
+\begin{figure}[!t]
+\centering
+\visible<1->{
+\begin{minipage}[b]{0.3\textwidth}{$\frac{Emp_{t,j}}{TotEmp_{t}}$}
+\centering
+\includegraphics[width=1\textwidth]{fract_emp_east.png}
+\end{minipage}}
+\visible<2->{
+\begin{minipage}[b]{0.3\textwidth}{$\mathbb{E}[\# \,\, Days_{Empl.}]$}
+\centering
+\includegraphics[width=1\textwidth]{mean_days_epi_east.png}
+\end{minipage}}
+\visible<3->{
+\begin{minipage}[b]{0.3\textwidth}{$Fraction$}
+\centering
+\includegraphics[width=1\textwidth]{fract_contr_east.png}
+\end{minipage}}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\visible<1->{
+\item $\uparrow$ \% of Mini Jobs, $\downarrow$ \% of Full Time jobs}
+\visible<2->{
+\item Full Time jobs becoming more short-lived}
+\visible<3->{
+\item Higher number of Job Contracts}
+\end{itemize}
+\end{frame}
+
+%\begin{frame}{Males, West Germany - Employment Status}
+%\centering
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[t]{0.45\textwidth}{$\frac{Emp_{j}}{Tot. Emp.}$}
+%\centering
+%\includegraphics[width=1\textwidth]{fract_emp.png} \\
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[t]{0.45\textwidth}{$U_i$}
+%\centering
+%\includegraphics[width=1\textwidth]{fract_unemp.png} \\
+%\end{minipage}}
+%\vfill
+%\footnotesize
+%Figure \ref{fig:kurt} displays the kurtosis of residual earnings growth by age. The black dashed line displays the predicted kurtosis of a normal distribution. Figure \ref{fig:outbound} displays the fraction of residual earnings growth larger than 5\% by age.
+%\end{figure}
+%\end{frame}
+%\fi
+
+
+%---FEMALES 
+%\iffalse
+%\begin{frame}{Females, West Germany - Daily Wages}
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[b]{0.22\textwidth}{$\mathbb{E}[log(w_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_emp_fem.png}
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[b]{0.22\textwidth}{$Var[log(w_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{sd_emp_fem.png}
+%\end{minipage}}
+%\visible<3->{
+%\begin{minipage}[b]{0.22\textwidth}{$Skew[log(w_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{skew_emp_fem.png}
+%\end{minipage}}
+%\visible<4->{
+%\begin{minipage}[b]{0.22\textwidth}{$Kurt[log(w_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{kurt_emp_fem.png}
+%\end{minipage}}
+%\end{figure}
+%\begin{itemize}
+%\setlength{\itemsep}{0.7 cm}
+%\visible<1->{
+%\item Positive innovations rare early in life}
+%\visible<2->{
+%\item Positive innovations large early in life}
+%\visible<3->{
+%\item Negative innovations small early in life}
+%\visible<4->{
+%\item Negative innovations small early in life}
+%\end{itemize}
+%\end{frame}
+
+%\begin{frame}{Females, West Germany - Daily Wages Kernel Density}
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[b]{0.3\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_full_time_fem.png}
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[b]{0.3\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_exc_part_time_fem.png}
+%\end{minipage}}
+%\visible<3->{
+%\begin{minipage}[b]{0.3\textwidth}{Marginal Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_marginal_employment_fem.png}
+%\end{minipage}}
+%\end{figure}
+%\begin{itemize}
+%\setlength{\itemsep}{0.7 cm}
+%\visible<1->{
+%\item Positive innovations are rare early in life}
+%\visible<2->{
+%\item Positive innovations are large early in life}
+%\visible<3->{
+%\item Negative innovations are small early in life}
+%\end{itemize}
+%\end{frame}
+%\fi
+
+
+%\begin{frame}{Females, West Germany - Employment Earnings}
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[b]{0.22\textwidth}{$\mathbb{E}[log (earn_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_emp_form_fem.png}
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[b]{0.22\textwidth}{$Var[log (earn_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{sd_emp_form_fem.png}
+%\end{minipage}}
+%\visible<3->{
+%\begin{minipage}[b]{0.22\textwidth}{$Skew[log (earn_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{skew_emp_form_fem.png}
+%\end{minipage}}
+%\visible<4->{
+%\begin{minipage}[b]{0.22\textwidth}{$Kurt[log (earn_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{kurt_emp_form_fem.png}
+%\end{minipage}}
+%\end{figure}
+%\begin{itemize}
+%\setlength{\itemsep}{0.7 cm}
+%\visible<1->{
+%\item Positive innovations rare early in life}
+%\visible<2->{
+%\item Positive innovations large early in life}
+%\visible<3->{
+%\item Negative innovations small early in life}
+%\visible<4->{
+%\item Negative innovations small early in life}
+%\end{itemize}
+%\end{frame}
+
+%\begin{frame}{Females, West Germany - Employment Earnings Kernel Density}
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[b]{0.3\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_full_time_form_fem.png}
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[b]{0.3\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_exc_part_time_form_fem.png}
+%\end{minipage}}
+%\visible<3->{
+%\begin{minipage}[b]{0.3\textwidth}{Marginal Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_marginal_employment_form_fem.png}
+%\end{minipage}}
+%\end{figure}
+%\begin{itemize}
+%\setlength{\itemsep}{0.7 cm}
+%\visible<1->{
+%\item Positive innovations are rare early in life}
+%\visible<2->{
+%\item Positive innovations are large early in life}
+%\visible<3->{
+%\item Negative innovations are small early in life}
+%\end{itemize}
+%\end{frame}
+
+%\begin{frame}{Females, West Germany - Employment Status}
+%\centering
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[t]{0.45\textwidth}{$\frac{Emp_{j}}{Tot. Emp.}$}
+%\centering
+%\includegraphics[width=1\textwidth]{fract_emp_fem.png} \\
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[t]{0.45\textwidth}{$U_i$}
+%\centering
+%\includegraphics[width=1\textwidth]{fract_unemp_fem.png} \\
+%\end{minipage}}
+%\vfill
+%\end{figure}
+%\end{frame}
+
+%---Weast&East 
+
+
+%\iffalse
+%\begin{frame}{Males, West \& West \& East Germany - Daily Wages}
+
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[b]{0.22\textwidth}{$\mathbb{E}[log(w_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_emp_east.png}
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[b]{0.22\textwidth}{$Var[log(w_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{sd_emp_east.png}
+%\end{minipage}}
+%\visible<3->{
+%\begin{minipage}[b]{0.22\textwidth}{$Skew[log(w_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{skew_emp_east.png}
+%\end{minipage}}
+%\visible<4->{
+%\begin{minipage}[b]{0.22\textwidth}{$Kurt[log(w_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{kurt_emp_east.png}
+%\end{minipage}}
+%\end{figure}
+%\begin{itemize}
+%\setlength{\itemsep}{0.7 cm}
+%\visible<1->{
+%\item Positive innovations rare early in life}
+%\visible<2->{
+%\item Positive innovations large early in life}
+%\visible<3->{
+%\item Negative innovations small early in life}
+%\visible<4->{
+%\item Negative innovations small early in life}
+%\end{itemize}
+%\end{frame}
+
+%\begin{frame}{Males, West \& West \& East Germany - Daily Wages Kernel Density}
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[b]{0.3\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_full_time_east.png}
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[b]{0.3\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_exc_part_time_east.png}
+%\end{minipage}}
+%\visible<3->{
+%\begin{minipage}[b]{0.3\textwidth}{Marginal Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_marginal_employment_east.png}
+%\end{minipage}}
+%\end{figure}
+%\begin{itemize}
+%\setlength{\itemsep}{0.7 cm}
+%\visible<1->{
+%\item Positive innovations are rare early in life}
+%\visible<2->{
+%\item Positive innovations are large early in life}
+%\visible<3->{
+%\item Negative innovations are small early in life}
+%\end{itemize}
+%\end{frame}
+%\fi
+
+
+%\begin{frame}{Males, West \& West \& East Germany - Employment Earnings}
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[b]{0.22\textwidth}{$\mathbb{E}[log (earn_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_emp_form_east.png}
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[b]{0.22\textwidth}{$Var[log (earn_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{sd_emp_form_east.png}
+%\end{minipage}}
+%\visible<3->{
+%\begin{minipage}[b]{0.22\textwidth}{$Skew[log (earn_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{skew_emp_form_east.png}
+%\end{minipage}}
+%\visible<4->{
+%\begin{minipage}[b]{0.22\textwidth}{$Kurt[log (earn_i)]$}
+%\centering
+%\includegraphics[width=1\textwidth]{kurt_emp_form_east.png}
+%\end{minipage}}
+%\end{figure}
+%\begin{itemize}
+%\setlength{\itemsep}{0.7 cm}
+%\visible<1->{
+%\item Positive innovations rare early in life}
+%\visible<2->{
+%\item Positive innovations large early in life}
+%\visible<3->{
+%\item Negative innovations small early in life}
+%\visible<4->{
+%\item Negative innovations small early in life}
+%\end{itemize}
+%\end{frame}
+
+%\begin{frame}{Males, West \& West \& East Germany - Employment Earnings Kernel Density}
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[b]{0.3\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_full_time_form_east.png}
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[b]{0.3\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_exc_part_time_form_east.png}
+%\end{minipage}}
+%\visible<3->{
+%\begin{minipage}[b]{0.3\textwidth}{Marginal Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{kdens_marginal_employment_form_east.png}
+%\end{minipage}}
+%\end{figure}
+%\begin{itemize}
+%\setlength{\itemsep}{0.7 cm}
+%\visible<1->{
+%\item Positive innovations are rare early in life}
+%\visible<2->{
+%\item Positive innovations are large early in life}
+%\visible<3->{
+%\item Negative innovations are small early in life}
+%\end{itemize}
+%\end{frame}
+
+%\begin{frame}{Males, West \& West \& East Germany - Employment Status}
+%\centering
+%\begin{figure}[!t]
+%\centering
+%\visible<1->{
+%\begin{minipage}[t]{0.45\textwidth}{$\frac{Emp_{j}}{Tot. Emp.}$}
+%\centering
+%\includegraphics[width=1\textwidth]{fract_emp_east.png} \\
+%\end{minipage}}
+%\visible<2->{
+%\begin{minipage}[t]{0.45\textwidth}{$U_i$}
+%\centering
+%\includegraphics[width=1\textwidth]{fract_unemp_east.png} \\
+%\end{minipage}}
+%\vfill
+%\end{figure}
+%\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{frame}<0>
+%\addtocounter{framenumber}{-1} 
+%\scriptsize
+%\bibliographystyle{ecta}
+%\bibliography{References}
+%\end{frame}
+%\bibliographystyle{ecta}
+%\bibliography{References}
+%\begin{appendix}
+
+%\end{appendix}
+
+\end{document}

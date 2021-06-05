@@ -1,0 +1,162 @@
+\documentclass[hyperref={bookmarks=false}]{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+\setbeamertemplate{footline}[frame number]
+} 
+
+\newcommand{\itemset}{\setlength{\itemsep}{1.5ex}}
+
+\newcommand*\MyPitem{%
+  \item[\color{green}\scalebox{1.1}{+}]}
+\newcommand*\MyCitem{%
+  \item[\color{red}\scalebox{1.3}{-}]}
+
+\newcommand\doubleRule{\toprule\toprule}
+\newcommand\doublerule{\toprule\specialrule{\heavyrulewidth}{\doublerulesep}{0.95em}}
+
+\mode<presentation>
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{threeparttable} %allows for table notes
+\usepackage{multirow}
+\usepackage{tablefootnote} 
+\usepackage{hyperref}
+\usepackage[center]{caption}
+\usepackage{amsmath}
+\usepackage{apacite}
+\usepackage{natbib}
+\usepackage{color}
+\usepackage[space]{grffile}
+\usepackage{graphicx}
+\usepackage{dsfont}
+\usepackage{fancyvrb}
+\usepackage{eurosym}
+\captionsetup[table]{aboveskip=0pt}
+\captionsetup[table]{belowskip=-10pt}
+%\usepackage{footnote}
+
+\usepackage{enumitem}
+\setenumerate[1]{label=\arabic*.}
+\newcounter{ResumeEnumerate}
+
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+  \usebeamertemplate{itemize item}}
+
+\hypersetup{
+%	colorlinks,
+%	linkcolor={green!70!black},
+	citecolor={blue!70!black},
+	urlcolor={blue!80!black}
+}
+
+\let\oldcite=\cite                                                   
+\renewcommand{\cite}[1]{\textcolor[rgb]{.0,.2,.7}{\oldcite{#1}}}
+
+\title{Long-term Earnings Inequality and Part-Time Work in Germany}
+%\author{Manuel Sanchez and Felix Wellschmied}
+%\institute{University of Bristol \\ PhD Economics Seminar}
+\author[Short Name (U ABC)]{%
+  \texorpdfstring{%
+    \begin{columns}
+      \column{.5\linewidth}
+      \centering
+     %Manuel Sanchez \\ \scriptsize{University of Bristol}
+Manuel Sanchez
+      %\column{.5\linewidth}
+      %\centering
+      %Felix Wellschmied \\ \scriptsize{Universidad Carlos III de Madrid}
+    \end{columns}
+ }
+ %{Author 1, Author 2}
+{Author 1}
+}
+%\institute[short]{XXII WORKSHOP ON DYNAMIC MACROECONOMICS}
+\institute{University of Bristol}
+%\date{July 4-6, 2017}
+\date{\today}
+
+\begin{document}
+
+%\begin{frame}
+%  \titlepage
+%\end{frame}
+
+
+\section{Literature Review}
+\subsection{}
+
+\begin{frame}
+\center{\Huge{Literature Review}}
+\end{frame}
+
+\begin{frame}{Literature Review - Lifetime Earnings Inequality}
+\cite{BoCo15}
+\begin{itemize}
+\item Lifetime Earnings inequality in West Germany has increased for male cohorts 1935-1969, VSKT records
+\item Both at the bottom and at the top of the distribution, but the rise has been
+stronger at the bottom
+\item Proximate causes:
+\begin{enumerate}
+\item Longer unemployment spells of workers at the bottom of the
+distribution of younger cohorts contribute to explaining 20\%–40\%
+of the overall increase in lifetime earnings inequality.
+\item 60\%–80\%
+of the overall increase is due to an increase of intragenerational wage inequality
+\end{enumerate}
+\end{itemize}
+\textbf{What I do:} ``The question they do not address is how part-time and marginal employment becoming more popular have affected long time earnings. I show that
+higher persistence of flexible forms of employment, plus lower wages in full-time,
+both contribute to the increase in bottom earnings inequality.''
+\end{frame}
+
+\begin{frame}{Literature Review - Full Time Wage Inequality}
+\cite{DuLuSc09}
+\begin{itemize}
+\item Wage inequality in West Germany has increased over
+1975-2004, RSIAB7504 records, Cross-section
+\item 1980: $\uparrow$ Top Inequality
+\item 1990: $\uparrow$ Top + Bottom Inequality
+\item Top Inequality $\leftarrow$ Technological Change (Polarization)
+\item Bottom Inequality $\leftarrow$ Supply Shocks + Labor Market Institutions ($\downarrow$ Unionization)
+\item GSOEP lower inequality than RSIAB
+\item Method: Decomposition Analysis
+\end{itemize}
+\textbf{What I do:}``I show that the period 1999-2014 displays
+an increase in bottom inequality. Most of this increase in inequality happens at
+the bottom of the distribution for males in full-time.''
+\end{frame}
+
+
+\begin{frame}{Literature Review - Marginal Employment, Worker Flows}
+\cite{CarriTuRo15}
+\begin{itemize}
+\item $\uparrow$ Total Employment = $\uparrow$ Part Time Employment + $\uparrow$ Concurrent Employment 
+\item Mini Jobs + Full Time = $\uparrow$ in concurrent employment
+\item $\uparrow$ Marginal Employment = Full Timers taking up a marginal job as a secondary form of employment
+\item The majority of workers in exclusive Marginal Employment have a non-participation to mini-job cycle
+\item Method: Descriptives + Multinomial logit
+\end{itemize}
+\textbf{What I do:}``I extend their work by putting a higher emphasis to wage dynamics, combining the earnings and mobility process into an empirical model and looking into the permanent lifetime earnings consequences of these different employment dynamics.''
+\end{frame}
+
+
+\begin{frame}<0>
+\addtocounter{framenumber}{-1} 
+\scriptsize
+\bibliographystyle{apalike}
+\bibliography{References}
+\end{frame}
+
+\end{document}

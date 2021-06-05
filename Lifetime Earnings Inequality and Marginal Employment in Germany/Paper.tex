@@ -1,0 +1,817 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[german, english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{bbm}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{tablefootnote} 
+\usepackage{footnote}
+\usepackage[bottom]{footmisc}
+\usepackage{graphicx}
+\usepackage[section]{placeins}
+\usepackage{apacite}
+\usepackage{pdflscape}
+\usepackage{booktabs,xcolor,siunitx}
+\newcommand\doubleRule{\toprule\toprule}
+\newcommand\doublerule{\toprule\specialrule{\heavyrulewidth}{\doublerulesep}{0.95em}}
+\definecolor{lightgray}{gray}{0.95}
+\usepackage{lmodern}
+\usepackage{babel,blindtext}
+\usepackage{hyperref}
+%\PassOptionsToPackage{bookmarks={false}}{hyperref}
+%\PassOptionsToPackage{draft}{hyperref}
+%\hypersetup{draft}
+
+\hypersetup{pdfstartview={XYZ null null 1.00}}
+\makeatletter \setlength{\@fptop}{0pt} \makeatother
+\hypersetup{
+	colorlinks,
+	linkcolor={red!70!black},
+	citecolor={blue!70!black},
+	urlcolor={blue!80!black}
+}
+\usepackage[update]{epstopdf}
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1.5in]{geometry}\usepackage{amsmath,amssymb,amsthm,amsfonts,dsfont,color}
+\usepackage[mathscr]{euscript}
+\usepackage{multirow}
+\usepackage{natbib}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[footnotesize,justification=centering,singlelinecheck=off]{caption}
+\usepackage{subcaption}
+\usepackage{ragged2e}
+\usepackage{cleveref}
+\usepackage{floatflt}
+\usepackage{subfloat}
+\usepackage{wrapfig}
+\usepackage{changepage}
+\usepackage{eurosym}
+\usepackage{lscape}
+\usepackage{threeparttable}
+\usepackage[utf8]{inputenc}
+\usepackage{authblk}
+\usepackage{parskip}
+\parskip 0pt
+\usepackage{titling}
+\setlength{\droptitle}{-2em}
+\usepackage{abstract}
+\setlength{\absleftindent}{0mm}
+\setlength{\absrightindent}{0mm}
+\usepackage[capposition=top]{floatrow}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+
+\newcommand{\Keywords}[1]{\par\noindent
+{\small{\em Keywords\/}: #1}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\renewcommand{\thefigure}{\Roman{figure}}
+%\renewcommand{\thesubfigure}{(\alph{subfigure})}
+\hypersetup{bookmarksdepth=-2}
+
+\begin{document}
+\date{\today}
+\begin{titlepage}
+
+
+\title{\textbf{Lifetime Earnings Inequality and Flexible Working Time Arrangements}}
+
+\author{Manuel Sanchez\\
+Preliminary\thanks{
+Sanchez: University of Bristol, The Priory Road Complex, Bristol, UK BS8 1TU, +44 (0117)3310702, ms15072@bristol.ac.uk.}.}
+
+\maketitle
+
+\vspace{-0.5 cm}
+\begin{abstract}
+\vspace{+0.5 cm}
+\noindent
+To be written.
+
+\vspace{+0.5 cm}
+\textbf{Keywords}: Panel data, life-cycle, earnings dynamics, unobserved heterogeneity.\\
+%\textbf{JEL}: C23; D91; E21; J31.\\
+%\textbf{Link}: \url{https://www.dropbox.com/s/p4d23jwi06trlma/ModellingOnline.pdf?dl=0}.
+\end{abstract}
+
+\thispagestyle{empty}
+\end{titlepage}
+
+\newpage
+\setcounter{page}{1}
+
+\setlength{\parindent}{10pt}
+\section{Research Proposal R-SIAB 7514} 
+
+This year, individuals entering the labor market in Germany are going to experience larger lifetime earnings inequality than their predecessors. \cite{BoCo15} document a striking secular rise of intergenerational inequality in lifetime earnings: West German men born in the early 1960s are likely to experience about 85\% more lifetime inequality than their fathers. This increase in lifetime earnings inequality has happened both at the upper tail and at the bottom tail of the earnings distribution, although the rise has been larger at the bottom. 
+
+%A recent paper by
+
+\sloppy{The greater amount of intragenerational inequality in lifetime earnings that prospect workers will endure matters for the social welfare of generations. Given the weight that earnings have in lifetime income, larger intragenerational inequality of lifetime earnings is indicative of larger inequality of permanent incomes. Since the standard of living depends more on lifetime income than on any given year's income, studies about inequality of the standard of living should focus on the distribution of lifetime income instead of relying on the distribution of cross sectional income.}
+
+In line with the dramatic rise of intragenerational inequality in lifetime earnings in Germany, there has been a rapid escalation of atypical work arrangements for newer cohorts entering the labor market: (i) the fraction of part-time employees has increased in a linear fashion from 11 percent in 1985 to 22 percent in 2010, (ii) the share of workers with working time accounts rose between 1998 to 2005 from 33 to 48 percent, and (iii) the number of marginal part-time work (`mini-jobs') has increased in recent years, reaching the second most important form of employment with around half of the establishments using some type of marginal employment\footnote{OECD Data, \cite{Gro2006}, \cite{Bechmann10}, \cite{CarriTuRo15}, \cite{Galasi16}.}.
+
+%, which is prevalent in the German labor market,
+
+This growth in alternative work arrangements has mixed implications for workers. On one hand, flexible working time contributes to the decentralization of employment relations on multiple levels, decreasing the bargaining power of workers and individualizing working conditions. This is often seen as a more precarious and lower paid work than regular open-ended employment\footnote{\cite{AddisonCotti15}, \cite{DuSpOe14}.}. On the other hand, flexible working time serves as an alternative to forced redundancies and can be used by employees as a mean to insure against unemployment and labor income risk. Workers under marginal employment can use their flexible working time to embark on training programs, having more time and being better prepared to search for stable jobs. In this way, flexible work arrangements would act as as a stepping stone to permanent work\footnote{\cite{Berg2008}, \cite{Seifert2006}, \cite{Caliendo2016}, \cite{Booth02}.}.
+
+%Flexible working time practices have the advantage of allowing for the substitution of future time off for immediate increases in pay. However, workers bear the loss of income for the expansion of hours without receiving the otherwise overtime pay premiums.
+
+%The decline of unionized workers is seen as a key driver of the growth of wage inequality at the bottom of the earnings distribution.
+
+%and labor supply shocks -immigration waves (East of Germany)-
+
+At the moment, not much is known about the impact that new, flexible forms of employment have on lifetime earnings inequality.  \cite{BoCo15} show that the increase has been stronger at the bottom of the distribution and they find that 20\%-40\% of the rise of lifetime inequality can be attributed to an increase in the duration of unemployment. The rest is due to an increase of intragenerational wage inequality. However, their data set does not contain information about the attachment of workers to the labor market, so they cannot distinguish between the role played by the inequality in hourly wages and the one played by the inequality in hours worked. The way in which flexible employment statuses may enter an explanation of the rise of intragenerational lifetime earnings inequality is a priori unclear and merits an in-depth investigation.
+
+%Hence, it remains an open question whether flexible working arrangements generate larger lifetime earnings inequality
+
+%While lifetime earnings inequality has increased both at the bottom and at the top of the distribution, little is known about its sources.
+
+We want to study how more flexible forms of labor contracts affect the distribution of lifetime earnings. For that, we aim at targeting the German labor market, as it is a paradigm in introducing flexible forms of employment such as marginal employment. As opposed to cross sectional studies, we want to opt for a cohort-based analysis of the mobility experienced over the life-cycle as it can help understand the consequences of introducing more flexible forms of work. Thus, our goal is to develop a methodology targeting actual lifetime earnings using an employment transition and wage mobility model that captures positional earnings mobility, employment risk, and that allows for an assessment of how different forms of employment affect the degree of inequality in lifetime earnings.
+
+%and the ways in which labor markets have changed during the past decades
+
+Studies on lifetime earnings are scarce since only a few countries provide access to sufficiently long panel data sets. The German R-SIAB 7514 data set is one of those exceptions. The sample size is considerably large and earnings are precisely measured. The data set provides actual information on lifetime earnings for prime aged workers, along several birth cohorts, facilitating the construction of measures of lifetime earnings and reducing the necessity of simulating lifetime values. It also provides unique information regarding the intensity of attachment of workers to the labor market, as in full-time work, part-time work, marginal employment or unemployment spells, something that is key to quantify the contribution of employment statuses on the propagation of lifetime earnings inequality. Finally, panels are sufficiently long, which is a necessary condition to avoid the bias that results from omitting unobserved heterogeneity in employment continuity\footnote{\cite{AddiSur08}, \cite{BowRo10}.}. Thus, incorporating unobserved heterogeneity favors the distinction in the contribution to the rise in lifetime earnings inequality of the increase in the variability of wages both in the short and in the long run or the growing variability of the individual-specific components of earnings.
+
+We obtain the following findings...
+
+%Bargaining decisions become more decentralized with a higher decline of union and employer association membership. 
+
+%alternative work arrangements and
+
+%\cite{Merkl13} show that about 1.5 million or 3.8\% of workers in Germany were on short-time work schemes at the peak of the Great Recession in May 2009. However, \cite{Boy10} show that this form of employment is enacted as a fiscal stabilizer and has virtually been used in a constant fraction of workers for every recession in Germany since 1960.
+
+%Manuel is currently working on a research proposal to extend his access to the German administrative dataset. The idea is to study the effects of marginal employment (the so-called minijobs) through the lens of a statistical model of the joint dynamics of earnings and employment. THis will be the basis of his second chapter (and perhaps job market paper).
+
+%\footnote{}.
+
+%The larger amount of intragenerational inequality of lifetime earnings that prospect workers will confront is important not only to the extent that individuals tend to compare their economic status against their age-specific peers\footnote{\cite{PeAs2011}.}. Given the prominence of earnings as a determinant of the lifetime resources available to agents, larger intragenerational inequality of lifetime earnings is suggestive of larger inequality of permanent incomes. In turn, larger inequality of permanent incomes speaks of larger consumption inequality and has implications to the social welfare of future generations.
+
+%
+
+%We exploit data on earnings biographies from social security records to shed light on the following issues: How does marginal employment affect intragenerational lifetime earnings inequality? To what extent is the rise in intragenerational inequality driven by hours worked? 
+
+\subsection{Literature Review}
+
+\textbf{The increase of lifetime earnings inequality is a common trend:} The rise in inequality of lifetime earnings is not an exclusive feature of the German labor market. \cite{Kopczuk2010} find that measures of longer term earnings have increased steadily and continuously since the mid 1950s in the US.
+
+\textbf{Automation-Computerization-Robotization:} A pattern that has emerged across Europe in recent years is that automation reduces the number of employees in occupations that have been in the middle of the income distribution, both in industrial and service jobs. Instead, we see an increase in high-income jobs and more low-paying service jobs, in areas such as hotels, restaurants and household services. See \cite{DuSpOe14}, \cite{SpOe06} for Germany, and \cite{AceRes17} for the US.
+
+\textbf{What is Marginal Employment?:} Marginal employment is defined as employment below a certain income level or as temporary employment for a fixed period, and is subject to reduced social security contributions. Technically speaking, marginal employment relates to “mini” jobs only. The so-called “mini” jobs had an income threshold of 325.00\euro \, up to March $31^{st}$, 2003, and has been increased to 450.00\euro \, as of January $1^{st}$, 2013\footnote{\cite{Fichtl15}}. By January 1, 2015, the time limit for short-term employment was raised to three months or 70 working days. The so-called “midi” jobs were introduced in 2003 Germany to attenuate the transition from marginal employment to regular employment subject to social insurance contribution. As of January, 2013, the earnings threshold for employment in the progressive contribution wage band of “midi” jobs lies between 450.00-850.00\euro\footnote{Since 1999, the concept of marginal employment was restricted to a maximum of 325.00\euro \, per month, combined with a working time restriction of 15 hours per week, and temporary employment contracts were restricted to a maximum of two months or 50 working days per year. While employees have been exempted from social security contributions, employers paid only a fixed rate of 22\%. In 2003, the income threshold increased from 325.00\euro \, to 400.00\euro \, per month, the working time restriction of 15 hours per week was abolished, and the social security contribution paid by the employer increased slightly to 23\%. It is important to note that the mini-job reform in 2003 had no impact on the situation of unemployed workers. The conditions for additional earnings during the receipt of unemployment benefits, i.e., the exemption rate of 165.00\euro \, and working time restrictions of 15 hours per week, remained unchanged across the reform in 2003.}.
+
+The literature refers to these jobs as “marginal” employment as opposed to “regular” employment (defined by higher earnings and full social security contributions). “Mini” jobs have generally been exempted from social insurance contributions paid by the employee. Gross and net earnings are not affected with respect to regular employment. Contributions to social security and income tax for “mini” jobs are generally paid by the employer alone as a lump-sum contribution\footnote{Usually in Germany social insurance contributions are jointly paid by the employers and employees. Currently, the contribution rates (referring to the gross wage of the employees) amount to 18.7\% for the statutory pension insurance, to 14.6\% for statutory health insurance, to 3\% for unemployment insurance and to 2.35\% for long-term care insurance (each shared 50:50 for employees and employers, amounts to 19.325\%).}. Workers pay 2\% income tax only, without any social security contribution. Firms pay contributions to health insurance, pension and labor tax. There is no restriction in hours. For “midi” jobs, workers pay higher income tax and do contribute to social security. Firms pay contributions to health insurance, pension and labor tax. There is also no restriction in hours.
+
+“Mini” job employees have generally made contributions to the public pension system on a  voluntary basis. As of January 1, 2013, the opting-in rule was replaced by an opting-out rule. Hence, employees had to pay pension contributions by default. However, they are obliged only to pay the small rate necessary to fill the gap between the lump-sum employer`s contribution and the full pension contribution rate\footnote{In 2013 and 2014 the gap was 3.9\%, in 2015 it is 3.7\%.}.
+
+Before 2003, no tax liability existed if an exemption certificate was awarded. Otherwise the employee had to pay regular income tax depending on his gross wage and his individual taxation characteristics or the employer paid 20\% lump-sum tax. After 2003, a general tax liability was introduced and the possibility of exemption
+abolished. Since 2003 a mini-jobber pays regular income tax depending on his gross wage and his individual taxation characteristics or the employer pays 2\% lump-sum tax.
+
+It can be summarized that unemployed workers in Germany are allowed to earn additional income while receiving unemployment benefits, and that the concept of marginal employment sets an additional incentive for the unemployed to work for few hours given the reduced pay-roll tax.
+
+\textbf{Facts on Regular and Marginal Employment in Germany}
+
+The German economy has had an extraordinary performance during the 2000's. Evidence of this performance is the large increase in labor market participation and total employment\footnote{See \cite{BurdaHunt11}.}. However, the large increase in total employment did not come from an increase in full-time employment sector. It came from a large increase in part-time employment sector.
+
+\cite{Galasi16} show that workers holding a marginal job represent approximately 25\% of total employment in the private sector in 2010.  Although marginal employment is not restricted to unemployed individuals, it is heavily used by them as the combination of the reduced social security contributions with the mini-job and the possibility of earnings exemptions within the unemployment insurance system sets a clear incentive for unemployed job seekers. For 2010 the Federal Employment Agency reports about 7.3 million “mini-jobs”, where around two-thirds of these jobs are held by individuals who do not have a regular job (including unemployed workers).
+
+\begin{figure}[!h]
+\captionsetup{font=large}
+\centering
+\caption{}
+	\begin{minipage}[b]{0.45\textwidth} 
+		\centering
+%		\subcaption{$Var[g_{i,h}]$}
+		\label{fig:var_lc}
+		\includegraphics[width=1\textwidth]{FractionRegMarg.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.45\textwidth}
+		\centering
+%		\subcaption{$Var[g_{i,h}|g_{i,h} \gtrless 0]$}
+		\label{fig:cond_var}
+		\includegraphics[width=1\textwidth]{Marg.png}
+	\end{minipage}
+\floatfoot{
+Source: Federal Employment Agency, Employment Statistics Register and \cite{Fichtl15}.} 
+\end{figure}
+
+In absolute numbers, most mini-jobbers are occupied in the occupational area of “Traffic, logistics, safety and security” (2,460,133), followed by the area “Occupations in commercial services, trading, sales, the hotel business and tourism” (1,708,464) and “Occupations in business organization, accounting, law and administration” (1,086,118). There was a large spike in the creation of marginal jobs in manufacturing and services in 2003\footnote{\cite{CarriTuRo15}.}.
+
+Most exclusive marginal employees are nonparticipants, females and part timers\footnote{\cite{CarriTuRo15}.}. These workers are typically females and low educated with hourly wages that are no different (after controlling for observables) from other forms of part-time work. For concurrent marginal workers, most of the sustained and large increase in marginal employment is due to employed
+workers taking additional work as marginal jobs. These workers are much similar to full-time workers, although somewhat less educated. There is large labor supply elasticity for these workers.
+
+\textbf{Did the Hartz reforms reduce unemployment?}
+
+a) Calibrated Macro Models: 
+
+\cite{KrebsScheffer13} study the Hartz IV law, which resulted in a significant cut in the unemployment benefits for the long-term unemployed. Their paper develops a macroeconomic model with search and incomplete markets, calibrates the model economy to German data and institutions, and uses the calibrated model economy to simulate the effects of the Hartz reforms, and in particular Hartz IV, on the German labor market. The paper finds that the Hartz IV reform reduced the noncyclical unemployment rate in Germany by 1.4 percentage points. It further finds that the Hartz I–III reforms reduced the noncyclical unemployment rate in Germany by 1.5 percentage points.
+
+\cite{KrauseUhlig12} develop a search and matching model with heterogeneous skills to explore the role of structural and cyclical policies of the so-called Hartz IV reforms around 2005. Calibrating unemployment benefits to approximate legislation before and after the reforms, they find a large reduction in unemployment and its duration.
+
+\cite{LaunovWalde13a} perform a structural estimation using German microdata, which allows them to discuss the effects of the Hartz IV unemployment benefit reform. The reform reduced unemployment by less than 0.1 percentage points. Contrary to general beliefs, the net wage for most skill and regional groups increased. Taking the insurance effect of unemployment benefits into account, however, the reform is welfare reducing for 76\% of workers. In a follow-up study, \cite{LaunovWalde13b} use the Hartz IV labor market reform in Germany as background and find that the role of unemployment benefit reduction for the reduction of unemployment is very modest (7\% of the observed decline).
+
+b) Reduced-form models of labor market transitions:
+
+\cite{FahrSunde09} perform an analysis that is conceptually rooted in the flow-based view underlying the Hartz I-III reforms, estimating the structural features of the matching process. The results indicate that the reforms indeed had an impact in making the labor market more dynamic and accelerating the matching process.
+
+\cite{KlingerRothe12} analyze the impact of the labor market reforms between 2003 and 2005 and its coincidence with an economic expansion on the efficiency of matching out of unemployment. Especially focusing on searcher heterogeneity, they estimate a system of stock-flow matching functions for short-term and long-term unemployment (three-stage least squares) on the basis of administrative data. In sum, the reforms increased matching efficiency for both groups, but the effect was larger for the long-term unemployed.
+
+\cite{HertweckSigrist2012} quantify the impact of the Hartz reforms on matching efficiency, using monthly SOEP gross worker flows (1983-2009). They show that, until the early 2000s, close to 60\% of changes in the unemployment rate are due to changes in the inflow rate (job separation). On the contrary, since the implementation of the reforms in the mid-2000s, the importance of the outflow rate (job finding) has been steadily increasing. This indicates that matching efficiency has improved substantially in recent years. Results from an estimated matching function — pointing to efficiency gains of more than 20\% — corroborate this finding.
+
+\cite{BargainCaliendoHaanOrsini10} perform an ex-ante evaluation, using microsimulations. They find a long-term moderate increase in participation and a decrease in hours worked.
+
+\cite{CaliendoWrohlick10} carry out an ex-post evaluation to identify the short-run effects of the mini job reform in Germany. Descriptives show that there is a post-reform increase in the number of mini-jobs. However, they show that this increase cannot be causally related to the reform, since the short-run effects are very limited. Only single men seem to react immediately and increase secondary job holding.
+
+\cite{CarriTuRo15} Most of the workers leaving unemployment tend to go either to full-time job or to unregistered non-employment. Negligible share leaves unemployment to take a mini-job. Hartz II has no influence on unemployed workers taking up marginal jobs (unlike Hartz IV afterwards).
+
+\cite{Price16} analyzes Germany's 2005 Hartz IV reform, which reduced the generosity of long-term unemployment insurance (UI) available once short-term benefits ran out. Using administrative data on UI claimants, he exploits cross-worker and cross-cohort heterogeneity in the timing of Hartz IV's effective onset to estimate how long-term benefit reductions affect jobless durations, subsequent wages, and job characteristics. The hazard rate of reemployment rises steadily in the months before the cuts take effect, culminating in a much larger spike in job-finding at benefit exhaustion than was evident before the reform. His estimates imply that the new benefit schedule reduced the probability of experiencing a one-year jobless spell by 12.4 percent. Conditional on completed jobless duration, workers who accept jobs after exhausting short-term benefits earn 4 to 8 percent lower wages than they would have absent the reform. Averaging across completed durations, and accounting for offsetting wage gains due to shorter spells, he concludes that UI reform reduced mean reemployment wages by 1.9 percent. Hartz IV diverted claimants from low-paid mini jobs that often supplement UI receipt. Net employment gains are driven by full-time jobs.
+
+\cite{EngbomDetragiacheRaei15} use a large confidential data set from the
+German social security administration, and find that the reforms in 2003–05 in Germany were associated with a fall in the earnings of workers returning to work from short-term unemployment relative to workers in long-term employment of about 10 percent. They interpret this as evidence that the reforms strengthened incentives to return to work but, in doing so, they adversely affected post re-entry earnings.
+
+%This magnitude is relevant when compared to other forms of atypical employment such as temporary jobs, which amount to 10\%.
+
+\textbf{The contribution of Mini-jobs (Hartz II)}
+
+a) Stepping stone or dead end?
+
+New, flexible employment opportunities and the regulation of formerly informal employment relationships increased output, social security contributions and the tax base, which could positively affected growth and thus reduced unemployment indirectly. Apart from that, the specific way of raising social security contributions for marginally employed workers ensured that incentives are not too distorted while marginally employed workers accumulate, for instance, at least some entitlements towards the pension system. As long as marginal employment does not replace regular employment, this is a win-win situation. Flexible working arrangements poses the threat of detrimental effects for the labor market if it increases the amount of lifetime earnings inequality, through lower human capital accumulation and an increase in inequality to the social security pensions.
+
+Regarding the transition of marginally employed workers into regular employment, two effects are conceivable from the theoretical perspective. First, stepping-stone effects can appear in case marginal employment serves as a bridge into regular employment. This is due to the fact that marginal employment limits human capital deterioration and generates positive network effects. Employers could use fixed-term marginal employment at the beginning and transform the job into regular employment later. Further, the earnings from a mini-job can stabilize the household income and reduce the pressure to accept unsuitable jobs. Instead, the unemployed can search more intensively for better and more stable jobs. From a long-term perspective this could decrease the risk of re-entering unemployment.
+
+On the other hand, dead end effects are possible: mini-jobs might lead to higher reservation wages and therefore lead to a prolongation of unemployment. \cite{Caliendo2012} and \cite{FreierSteiner07b} investigate whether marginal employment is a stepping-stone or a dead end. A common empirical strategy to evaluate this question is to compare the development of mini-job employment with the employment development of workers without mini-jobs. All in all, mini-jobs are not seen as a success story regarding the bridge function. On the contrary, substitution effects in the sense of replacing regular jobs by mini-jobs could emerge.
+
+\cite{FreierSteiner07b} use a large panel data set and statistical matching techniques to analyze the effects of marginal employment on future individual outcome variables such as unemployment, regular employment and earnings. In addition to average treatment effects, they calculate dynamic and cumulative treatment effects accounting for total time spent in various labor market states and related earnings over a period of three years. They find that marginal employment (i) does not affect time spent in regular employment within a three years observation period, (ii) reduces future unemployment, (iii) slightly increases cumulated future earnings, on average, and (iv) is associated with a small negative cumulative earnings effect for older workers in west Germany.
+
+\cite{Caliendo2012} evaluate the impact of marginal employment on unemployment duration and subsequent job quality, considering a sample of fresh entries into unemployment. Their results suggest that marginal employment leads to more stable post-unemployment jobs, has no impact on wages, and increases the job-finding probability if it is related to previous sectoral experience of the unemployed worker. They find evidence for time-varying treatment effects: whilst there is no significant impact during the first twelve months of unemployment, job finding probabilities increase after one year and the impact on job stability is stronger if the jobs are taken up later within the unemployment spell.
+
+\cite{Caliendo2016} analyze the unemployment dynamics of job seekers with and without marginal employment. They consider an inflow sample into unemployment and estimate multivariate duration models. While they do not find any significant impact on the job finding probability in a model with homogeneous effects, models allowing for time-varying coefficients indicate a decreased job finding probability of marginal employment at the beginning of the unemployment spell and an increased job finding probability for the long-term unemployed. Their results suggest that job seekers with marginal employment find more stable post-unemployment jobs, and they find some evidence that the relationship between marginal employment and wages and employment stability varies with respect to skill levels, sector and labor market tightness.
+
+b) Substitution Effects?
+
+\cite{FreierSteiner07a} compute own-wage and cross-wage elasticity’s for
+heterogeneous labor in a similar fashion. They distinguish labour demand into eight
+categories, skilled full-time, unskilled full-time, part-time and marginal employment, each examined separately by gender. Using a structural multi-factor labor demand model, they estimate heterogeneous labor demand elasticity’s with respect to the number of workers and total working hours. The estimated own-wage elasticity’s are of substantial size for most labor categories. In contrast, cross-wage elasticity’s are rather small, except for skilled workers in full-time employment and West-German women in marginal employment. In those categories, labor displacement effects due to a substitution of regular employment by subsidized marginal employment can be observed.
+
+\cite{CarriTuRo15} suggest that the large drop in annual hours comes from the drop in hours of full-time workers. The re-bounce arises from the increased importance of part-time and marginal employment. The marginal sector has largely contributed in explaining the dynamics of total hours worked per worker. Growth in the exclusive part-time and concurrent employment categories explain the increase in total employment. Marginal jobs and full-time employment is the main reason of the increase in concurrent employment. The number of workers with a mini-job as a secondary employment were essentially zero in 2002 and jumped to 1.15 million in 2003, increasing to 2.36 million in 2010. Marginal employment is thus roughly 70\% exclusive and 30\% concurrent. There seems to be a weak increase in transitions to full-time and part-time jobs. There is instead a strong increase in outflow to multiple jobs of which some are multiple marginal jobs and some others are full-time and marginal employment. There is a strong expansion of marginal employment in capacity of secondary employment to already existing full-time and part-time jobs. There seems to be a strong decline in outflow to non-employment. Transitions from full-time and part-time jobs are unchanged. The expansion of the marginal employment sector has been due to already full-time employed workers taking up a marginal job as a secondary form of employment (moonlighting). Exclusive marginal workers have a no-pay to mini-job cycle, with little chances of moving to full-time work. Concurrent marginal workers have a moonlighting cycle. Wages from primary (secondary) job make 87\% (9\%) of wages earned by full timers only. Wages from primary (secondary) job make 79\% (15\%) of wages earned by part timers only. With respect to wage inequality (top to median, gross nominal daily), no change can be associated with Hartz II reform, i.e., no effect on inequality trend at the top is found. There is a polarization at the bottom of the wage distribution (median to bottom gross nominal daily): $\frac{\mathbb{P}_{50}}{\mathbb{P}_{15}}$ increases, while $\frac{\mathbb{P}_{50}}{\mathbb{P}_{10}}$ and $\frac{\mathbb{P}_{50}}{\mathbb{P}_{05}}$ decrease with marginal jobs. 
+
+\section{Data}\label{sec:Data}
+
+\subsection{Males, West Germany}
+
+\begin{figure}[!h]
+\captionsetup{font=large}
+\caption{Cross Sectional Employment}
+%	\begin{minipage}[b]{0.32\textwidth} 
+%		\centering
+%		\includegraphics[width=1\textwidth]{marg.png}
+%		\subcaption{Marginal Employment}
+%		\label{fig:marg_emp}
+%	\end{minipage}
+%	\begin{minipage}[b]{0.32\textwidth} 
+%		\centering
+%		\includegraphics[width=1\textwidth]{OECD_part_time.png}
+%		\subcaption{Part Time Employment}
+%		\label{fig:part_time}
+%	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{fract_emp.png}
+		\subcaption{Fraction of each employment}
+		\label{fig:fract_emp}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{fract_unemp.png}
+		\subcaption{Some Unemployment}
+		\label{fig:fract_unemp}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: Figure \ref{fig:fract_emp} displays the fraction of different forms of employment out of total employment for the \emph{SIAB-R 7514} data set. \par} 
+\end{figure}
+
+%\begin{figure}[!h]
+%\captionsetup{font=large}
+%\caption{Cross Sectional Unemployment}
+%	\begin{minipage}[b]{0.48\textwidth} 
+%		\centering
+%		\includegraphics[width=1\textwidth]{OECD_unemp.png}
+%		\subcaption{Unemployment}
+%		\label{fig:unemp}
+%	\end{minipage}
+
+%\footnotesize{
+%\justifying Notes: \par} 
+%\end{figure}
+
+\begin{figure}[!h]
+\captionsetup{font=large}
+\caption{Cross Sectional Distributional Moments - Daily Wage}
+	\begin{minipage}[b]{0.48\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{mean_emp.png}
+		\subcaption{Mean}
+		\label{fig:mean_emp}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{sd_emp.png}
+		\subcaption{Std. Deviation}
+		\label{fig:var_emp}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{skew_emp.png}
+		\subcaption{Skewness}
+		\label{fig:skew_emp}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{kurt_emp.png}
+		\subcaption{Kurtosis}
+		\label{fig:kurt_emp}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: \par} 
+\end{figure}
+
+\begin{figure}[!h]
+\captionsetup{font=large}
+\caption{Kernel - Daily Wage}
+	\begin{minipage}[b]{0.32\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_full_time.png}
+		\subcaption{Full-Time}
+		\label{fig:kdens_full_time}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_exc_part_time.png}
+		\subcaption{Exclusive Part-Time}
+		\label{fig:kdens_exc_part_time}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_marginal_employment.png}
+		\subcaption{Marginal-Employment}
+		\label{fig:kdens_marginal_employment}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: \par} 
+\end{figure}
+
+\begin{figure}[!h]
+\captionsetup{font=large}
+\caption{Cross Sectional Distributional Moments - Employment Earnings}
+	\begin{minipage}[b]{0.48\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{mean_emp_form.png}
+		\subcaption{Mean}
+		\label{fig:mean_emp_form}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{sd_emp_form.png}
+		\subcaption{Std. Deviation}
+		\label{fig:var_emp_form}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{skew_emp_form.png}
+		\subcaption{Skewness}
+		\label{fig:skew_emp_form}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{kurt_emp_form.png}
+		\subcaption{Kurtosis}
+		\label{fig:kurt_emp_form}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: \par} 
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\captionsetup{font=large}
+\caption{Kernel - Employment Earnings}
+	\begin{minipage}[b]{0.32\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_full_time_form.png}
+		\subcaption{Full-Time}
+		\label{fig:kdens_full_time_form}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_exc_part_time_form.png}
+		\subcaption{Exclusive Part-Time}
+		\label{fig:kdens_exc_part_time_form}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_marginal_employment_form.png}
+		\subcaption{Marginal-Employment}
+		\label{fig:kdens_marginal_employment_form}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: \par} 
+\end{figure}
+
+%Should write Figure 8, Band19 Statistics Report, for different years, to see the evolution.
+
+%Page 8 $p_wsi$.
+
+%Figure 2 Garloff 2016
+
+%Muller 2010
+
+%Figure 4 Gerhard 2015
+
+%There is no minimum wage up to 2015 (Eurostat data). There is union coverage, see paper of Dustmann Journal of Economic Perspectives.
+
+%Trainees to be part time and not full time?
+
+%Second job: \url{https://www.eurofound.europa.eu/de/observatories/eurwork/articles/working-and-employment-conditions-in-germany}
+
+\clearpage
+\subsection{Females, West Germany}
+
+\begin{figure}[!h]
+\captionsetup{font=large}
+\caption{Cross Sectional Employment}
+%	\begin{minipage}[b]{0.32\textwidth} 
+%		\centering
+%		\includegraphics[width=1\textwidth]{marg.png}
+%		\subcaption{Marginal Employment}
+%		\label{fig:marg_emp}
+%	\end{minipage}
+%	\begin{minipage}[b]{0.32\textwidth} 
+%		\centering
+%		\includegraphics[width=1\textwidth]{OECD_part_time.png}
+%		\subcaption{Part Time Employment}
+%		\label{fig:part_time}
+%	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{fract_emp_fem.png}
+		\subcaption{Fraction of each employment}
+		\label{fig:fract_emp_fem}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{fract_unemp_fem.png}
+		\subcaption{Some Unemployment}
+		\label{fig:fract_unemp_fem}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: Figure \ref{fig:fract_emp_fem} displays the fraction of different forms of employment out of total employment for the \emph{SIAB-R 7514} data set. \par} 
+\end{figure}
+
+%\begin{figure}[!h]
+%\captionsetup{font=large}
+%\caption{Cross Sectional Unemployment}
+%	\begin{minipage}[b]{0.48\textwidth} 
+%		\centering
+%		\includegraphics[width=1\textwidth]{OECD_unemp.png}
+%		\subcaption{Unemployment}
+%		\label{fig:unemp}
+%	\end{minipage}
+
+%\footnotesize{
+%\justifying Notes: \par} 
+%\end{figure}
+
+\begin{figure}[!h]
+\captionsetup{font=large}
+\caption{Cross Sectional Distributional Moments - Daily Wage}
+	\begin{minipage}[b]{0.48\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{mean_emp_fem.png}
+		\subcaption{Mean}
+		\label{fig:mean_emp_fem}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{sd_emp_fem.png}
+		\subcaption{Std. Deviation}
+		\label{fig:var_emp_fem}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{skew_emp_fem.png}
+		\subcaption{Skewness}
+		\label{fig:skew_emp_fem}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{kurt_emp_fem.png}
+		\subcaption{Kurtosis}
+		\label{fig:kurt_emp_fem}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: \par} 
+\end{figure}
+
+\begin{figure}[!h]
+\captionsetup{font=large}
+\caption{Kernel - Daily Wage}
+	\begin{minipage}[b]{0.32\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_full_time_fem.png}
+		\subcaption{Full-Time}
+		\label{fig:kdens_full_time_fem}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_exc_part_time_fem.png}
+		\subcaption{Exclusive Part-Time}
+		\label{fig:kdens_exc_part_time_fem}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_marginal_employment_fem.png}
+		\subcaption{Marginal-Employment}
+		\label{fig:kdens_marginal_employment_fem}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: \par} 
+\end{figure}
+
+\begin{figure}[!h]
+\captionsetup{font=large}
+\caption{Cross Sectional Distributional Moments - Employment Earnings}
+	\begin{minipage}[b]{0.48\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{mean_emp_form_fem.png}
+		\subcaption{Mean}
+		\label{fig:mean_emp_form_fem}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{sd_emp_form_fem.png}
+		\subcaption{Std. Deviation}
+		\label{fig:var_emp_form_fem}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{skew_emp_form_fem.png}
+		\subcaption{Skewness}
+		\label{fig:skew_emp_form_fem}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{kurt_emp_form_fem.png}
+		\subcaption{Kurtosis}
+		\label{fig:kurt_emp_form_fem}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: \par} 
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\captionsetup{font=large}
+\caption{Kernel - Employment Earnings}
+	\begin{minipage}[b]{0.32\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_full_time_form_fem.png}
+		\subcaption{Full-Time}
+		\label{fig:kdens_full_time_form_fem}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_exc_part_time_form_fem.png}
+		\subcaption{Exclusive Part-Time}
+		\label{fig:kdens_exc_part_time_form_fem}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_marginal_employment_form_fem.png}
+		\subcaption{Marginal-Employment}
+		\label{fig:kdens_marginal_employment_form_fem}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: \par} 
+\end{figure}
+
+\clearpage
+\subsection{Males, West $\&$ East Germany}
+
+\begin{figure}[!h]
+\captionsetup{font=large}
+\caption{Cross Sectional Employment}
+%	\begin{minipage}[b]{0.32\textwidth} 
+%		\centering
+%		\includegraphics[width=1\textwidth]{marg.png}
+%		\subcaption{Marginal Employment}
+%		\label{fig:marg_emp}
+%	\end{minipage}
+%	\begin{minipage}[b]{0.32\textwidth} 
+%		\centering
+%		\includegraphics[width=1\textwidth]{OECD_part_time.png}
+%		\subcaption{Part Time Employment}
+%		\label{fig:part_time}
+%	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{fract_emp_east.png}
+		\subcaption{Fraction of each employment}
+		\label{fig:fract_emp_east}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{fract_unemp_east.png}
+		\subcaption{Some Unemployment}
+		\label{fig:fract_unemp_east}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: Figure \ref{fig:fract_emp_fem} displays the fraction of different forms of employment out of total employment for the \emph{SIAB-R 7514} data set. \par} 
+\end{figure}
+
+%\begin{figure}[!h]
+%\captionsetup{font=large}
+%\caption{Cross Sectional Unemployment}
+%	\begin{minipage}[b]{0.48\textwidth} 
+%		\centering
+%		\includegraphics[width=1\textwidth]{OECD_unemp.png}
+%		\subcaption{Unemployment}
+%		\label{fig:unemp}
+%	\end{minipage}
+
+%\footnotesize{
+%\justifying Notes: \par} 
+%\end{figure}
+
+\begin{figure}[!h]
+\captionsetup{font=large}
+\caption{Cross Sectional Distributional Moments - Daily Wage}
+	\begin{minipage}[b]{0.48\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{mean_emp_east.png}
+		\subcaption{Mean}
+		\label{fig:mean_emp_east}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{sd_emp_east.png}
+		\subcaption{Std. Deviation}
+		\label{fig:var_emp_east}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{skew_emp_east.png}
+		\subcaption{Skewness}
+		\label{fig:skew_emp_east}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{kurt_emp_east.png}
+		\subcaption{Kurtosis}
+		\label{fig:kurt_emp_east}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: \par} 
+\end{figure}
+
+\begin{figure}[!h]
+\captionsetup{font=large}
+\caption{Kernel - Daily Wage}
+	\begin{minipage}[b]{0.32\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_full_time_east.png}
+		\subcaption{Full-Time}
+		\label{fig:kdens_full_time_east}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_exc_part_time_east.png}
+		\subcaption{Exclusive Part-Time}
+		\label{fig:kdens_exc_part_time_east}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_marginal_employment_east.png}
+		\subcaption{Marginal-Employment}
+		\label{fig:kdens_marginal_employment_east}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: \par} 
+\end{figure}
+
+\begin{figure}[!h]
+\captionsetup{font=large}
+\caption{Cross Sectional Distributional Moments - Employment Earnings}
+	\begin{minipage}[b]{0.48\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{mean_emp_form_east.png}
+		\subcaption{Mean}
+		\label{fig:mean_emp_form_east}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{sd_emp_form_east.png}
+		\subcaption{Std. Deviation}
+		\label{fig:var_emp_form_east}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{skew_emp_form_east.png}
+		\subcaption{Skewness}
+		\label{fig:skew_emp_form_east}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{kurt_emp_form_east.png}
+		\subcaption{Kurtosis}
+		\label{fig:kurt_emp_form_east}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: \par} 
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\captionsetup{font=large}
+\caption{Kernel - Employment Earnings}
+	\begin{minipage}[b]{0.32\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_full_time_form_east.png}
+		\subcaption{Full-Time}
+		\label{fig:kdens_full_time_form_east}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_exc_part_time_form_east.png}
+		\subcaption{Exclusive Part-Time}
+		\label{fig:kdens_exc_part_time_form_east}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth} 
+		\centering
+		\includegraphics[width=1\textwidth]{kdens_marginal_employment_form_east.png}
+		\subcaption{Marginal-Employment}
+		\label{fig:kdens_marginal_employment_form_east}
+	\end{minipage}
+\footnotesize{
+\justifying Notes: \par} 
+\end{figure}
+
+\section{Model}\label{sec:Model}
+
+\subsection{Main framework}
+
+We follow $N$ workers, indexed $i=1,...,N$, over $T_i$ consecutive years. Each year we observe employment states and labor earnings. Our data also contains information about worker characteristics. A typical observation for any individual $i=1,...,N$ will be represented as a vector $\textbf{x}_i=(\textbf{y}_i,\textbf{e}_i,\textbf{f}_i,\textbf{p}_i,\textbf{m}_i,c_i^v,c_i^u)$, where:
+\vspace{0.2 cm}
+\begin{itemize}
+\setlength{\itemsep}{0.2 cm}
+\item $\textbf{y}_i=(y_{i,1},...,y_{i,T_i})$ is the observed sequence of individual $i$'s log income flows.
+\item $\textbf{e}_i=(e_{i,1},...,e_{i,T_i})$ is the observed sequence of individual $i$'s employment spells. In particular, $e_{i,t}=0$ if individual $i$ is unemployed in period $t$, and 1 otherwise.
+\item $\textbf{f}_i=(f_{i,1},...,f_{i,T_i})$ is the observed sequence of individual $i$'s full-time employment spells. In particular, $f_{i,t}=1$ if individual $i$ is under full-time in period $t$, and 0 otherwise.
+\item $\textbf{p}_i=(p_{i,1},...,p_{i,T_i})$ is the observed sequence of individual $i$'s part-time employment spells. In particular, $p_{i,t}=1$ if individual $i$ is under part-time in period $t$, and 0 otherwise.
+\item $\textbf{m}_i=(m_{i,1},...,m_{i,T_i})$ is the observed sequence of individual $i$'s marginal employment spells. In particular, $m_{i,t}=1$ if individual $i$ is under marginal employment in period $t$, and 0 otherwise.
+$c_i^v=(c_{i,1}^v,...,c_{i,T_i}^v)$ is the observed sequence of individual $i$'s characteristics. We consider the level of requirement of the job, tenure, region, traineeships and economic sector.
+$c_i^{u}=(c_{i,1}^u,...,c_{i,T_i}^u)$ is the observed fixed set of individual $i$'s characteristics. We include the highest academic qualification, gender, birth cohort and labor market entry.
+\end{itemize}
+\vspace{0.2 cm}
+
+Note that $f_{i,t}, p_{i,t}$ and $m_{i,t}$ are only defined if $e_{i,t}=1$. In addition to the observed individual heterogeneity captured by $c_i^v$ and $c_i^{u}$, we allow for unobserved heterogeneity which may influence wages or selection of employment spells. Hence, we append a set $k_i$ of (time-invariant) unobserved characteristics. Our goal is to estimate simultaneously transitions between unemployment and employment, transitions between full-time, part-time and marginal employment, and earnings biographies within and between employment states. In order to do so, we define the likelihood of $(\textbf{x}_i,k_i)$ as follows:
+
+\begin{align}\label{eq:Likelihood}
+\mathcal{L}_{i}(\textbf{x}_i,k_i)=&\ell(\textbf{y}_i|\textbf{e}_i,\textbf{f}_i,\textbf{p}_i,\textbf{m}_i,c_i^v,c_i^u,k_i)\cdot \ell(\textbf{e}_i,\textbf{f}_i,\textbf{p}_i,\textbf{m}_i|c_i^v,c_i^u,k_i)\cdot \ell(k_i|c_i^v,c_i^u)\\ \nonumber
+&\cdot \ell(c_i^v|c_i^u)\cdot \ell (c_i^u)
+\end{align}
+
+The above likelihood for the typical individual is decomposed into five terms. Starting from the right, $\ell (c_i^u)$ is the sample distribution of observed individual fixed characteristics. This distribution is observed and independent of any parameter. Before the last term, $\ell(c_i^v|c_i^u)$ represents the distribution of $c_i^v$, which may depend on $c_i^u$. Next, $\ell(k_i|c_i^v,c_i^u)$ is the distribution of unobserved heterogeneity given observed characteristics $(c_i^u,c_i^v)$. Finally, we decompose the likelihood of labor market states, $\ell(\textbf{e}_i,\textbf{f}_i,\textbf{p}_i,\textbf{m}_i|\textbf{c}_i^v,c_i^u,k_i)$, and the likelihood of earnings, $\ell(\textbf{y}_i|\textbf{e}_i,\textbf{f}_i,\textbf{p}_i,\textbf{m}_i,\textbf{c}_i^v,c_i^u,k_i)$. In the next subsections, we provide further details of each component of Equation \ref{eq:Likelihood}.
+
+\subsection{Heterogeneity}
+
+We consider two types of unobserved heterogeneity, $k_i = (k^s_i, k^y_i)$. The first type, $k^s_i$, relates to heterogeneity in terms of propensity to be unemployed or to work in employment states (called mobility classes hereafter). The second type, $k^y_i$ , relates to heterogeneity in terms of income (called income classes hereafter) through its impact on both income levels and income mobility. $k^s_i$ conditions the parameters relating to employment and state history, while $k^y_i$ conditions the parameters relating to income distribution and income mobility. Both types of heterogeneity are time-invariant individual random effects, which we allow to be correlated in an arbitrary fashion.
+
+We refer to income and state classes because we use a finite mixture approach to
+model unobserved heterogeneity where an individual can belong to one of $K^s$ classes of mobility and $K^y$ income classes. The total number of classes is hence $K^s \times K^y$. The probability of belonging to any given class is
+
+\begin{align}\label{eq:unobserved_heterogeneity}
+\text{Pr}\{k_i^s,k_i^y|z_i^v,z_i^u\}=\text{Pr}\{k_i^y|k_i^s,z_i^v,z_i^u\}\cdot\text{Pr}\{k_i^s|z_i^v,z_i^u\},
+\end{align}
+
+which depends on observed individual heterogeneity $(z_i^v,z_i^u)$. Both components of Equation \ref{eq:unobserved_heterogeneity} are modeled as multinomial logits, with respectively $K^y$ and $K^m$ outcomes. 
+
+
+
+\newpage
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{apalike}
+%\bibliographystyle{ecta}
+\bibliography{References} 
+
+\newpage
+\setcounter{section}{0}
+\renewcommand{\thesection}{\Alph{section}} 
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\section{Appendix\label{Sec: Preliminary}}
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
+
+
+
+\end{document}

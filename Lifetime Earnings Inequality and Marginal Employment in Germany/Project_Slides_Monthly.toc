@@ -1,0 +1,9 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {2}{Appendix}{2}{1}{1}
+\beamer@sectionintoc {3}{Long-Term Earnings Inequality}{2}{1}{2}
+\beamer@sectionintoc {4}{Wage Inequality}{5}{1}{3}
+\beamer@sectionintoc {5}{Worker Flows}{9}{1}{4}
+\beamer@sectionintoc {6}{Shorter Employment Spells}{19}{1}{5}
+\beamer@sectionintoc {7}{Long-term Earnings Inequality by Form of Employment}{21}{1}{6}
+\beamer@sectionintoc {8}{Inequality \& ME by Earnings/Wage Ranking}{30}{1}{7}
+\beamer@sectionintoc {9}{Gender Wage, Earnings \& Long-Term Earnings Heterogeneity}{43}{1}{8}

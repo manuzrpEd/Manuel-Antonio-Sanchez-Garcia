@@ -1,0 +1,3072 @@
+\documentclass[hyperref={bookmarks=false}]{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+\setbeamertemplate{footline}[frame number]
+} 
+
+\newcommand{\itemset}{\setlength{\itemsep}{1.5ex}}
+
+\newcommand*\MyPitem{%
+  \item[\color{green}\scalebox{1.1}{+}]}
+\newcommand*\MyCitem{%
+  \item[\color{red}\scalebox{1.3}{-}]}
+
+\newcommand\doubleRule{\toprule\toprule}
+\newcommand\doublerule{\toprule\specialrule{\heavyrulewidth}{\doublerulesep}{0.95em}}
+
+\mode<presentation>
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{threeparttable} %allows for table notes
+\usepackage{multirow}
+\usepackage{tablefootnote} 
+\usepackage{hyperref}
+\usepackage[center]{caption}
+\usepackage{amsmath}
+\usepackage{apacite}
+\usepackage{natbib}
+\usepackage{color}
+\usepackage[space]{grffile}
+\usepackage{graphicx}
+\usepackage{dsfont}
+\usepackage{fancyvrb}
+\usepackage{eurosym}
+\captionsetup[table]{aboveskip=0pt}
+\captionsetup[table]{belowskip=-10pt}
+%\usepackage{footnote}
+
+\usepackage{enumitem}
+\setenumerate[1]{label=\arabic*.}
+\newcounter{ResumeEnumerate}
+
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+  \usebeamertemplate{itemize item}}
+
+\hypersetup{
+%	colorlinks,
+%	linkcolor={green!70!black},
+	citecolor={blue!70!black},
+	urlcolor={blue!80!black}
+}
+
+\let\oldcite=\cite                                                   
+\renewcommand{\cite}[1]{\textcolor[rgb]{.0,.2,.7}{\oldcite{#1}}}
+
+\title{Long-term Earnings Inequality and Part-Time Work in Germany}
+%\author{Manuel Sanchez and Felix Wellschmied}
+%\institute{University of Bristol \\ PhD Economics Seminar}
+\author[Short Name (U ABC)]{%
+  \texorpdfstring{%
+    \begin{columns}
+      \column{.5\linewidth}
+      \centering
+     %Manuel Sanchez \\ \scriptsize{University of Bristol}
+Manuel Sanchez
+      %\column{.5\linewidth}
+      %\centering
+      %Felix Wellschmied \\ \scriptsize{Universidad Carlos III de Madrid}
+    \end{columns}
+ }
+ %{Author 1, Author 2}
+{Author 1}
+}
+%\institute[short]{XXII WORKSHOP ON DYNAMIC MACROECONOMICS}
+\institute{University of Bristol}
+%\date{July 4-6, 2017}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+
+\begin{frame}<0>
+\addtocounter{framenumber}{-1} 
+\scriptsize
+\bibliographystyle{apalike}
+\bibliography{References}
+\end{frame}
+
+\begin{appendix}
+
+\section{Appendix}
+\subsection{}
+
+
+\section{Long-Term Earnings Inequality}
+\subsection{}
+\begin{frame}
+\center{\Huge{Long-Term Earnings Inequality}}\label{EI}
+\end{frame}
+
+\begin{frame}{Long Term Earnings Inequality RSIAB7514 - 5 years}
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.3\textwidth}{CS}
+\centering
+\includegraphics[width=1\textwidth]{var_work_males_cs.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{5years}
+\centering
+\includegraphics[width=1\textwidth]{var_work_5y_males_cs.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{5year by age}
+	\centering
+	\includegraphics[width=1\textwidth]{var_work_5y_males_ages.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item $\uparrow$ Long Term Earnings Inequality for all working ages over time \cite{BoCo15}
+\item the increase is similar for all age groups; inequality is larger at a later age
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Females}
+\begin{figure}[!t]
+	\centering
+	\begin{minipage}[b]{0.3\textwidth}{CS}
+		\centering
+		\includegraphics[width=1\textwidth]{var_work_females_cs.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\textwidth}{5years}
+		\centering
+		\includegraphics[width=1\textwidth]{var_work_5y_females_cs.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\textwidth}{5year by age}
+		\centering
+		\includegraphics[width=1\textwidth]{var_work_5y_females_ages.png}
+	\end{minipage}
+\end{figure}
+\begin{itemize}
+	\setlength{\itemsep}{0.7 cm}
+	\item $\uparrow$ Long Term Earnings Inequality for all working ages over time \cite{BoCo15}
+	\item the increase is similar for all age groups; inequality is larger at a later age
+\end{itemize}
+\end{frame}
+
+
+
+\section{Wage Inequality}
+\subsection{}
+
+\begin{frame}
+\center{\Huge{Wage Inequality}}\label{WINEQ}
+\end{frame}
+
+\begin{frame}{Daily Wage Inequality, West German Men}
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.32\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{dev_perc_full_males.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{dev_perc_part_males.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Marginal Employment}
+\centering
+\includegraphics[width=1\textwidth]{dev_perc_mini_males.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item from 1999 on, $\uparrow$ Bottom Wage Inequality for Full Time
+\item  Part Time bottom wages disappear while Mini Jobs top wages increase
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Females}
+\begin{figure}[!t]
+	\centering
+	\begin{minipage}[b]{0.32\textwidth}{Full Time}
+		\centering
+		\includegraphics[width=1\textwidth]{dev_perc_full_females.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth}{Part Time}
+		\centering
+		\includegraphics[width=1\textwidth]{dev_perc_part_females.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth}{Marginal Employment}
+		\centering
+		\includegraphics[width=1\textwidth]{dev_perc_mini_females.png}
+	\end{minipage}
+\end{figure}
+\begin{itemize}
+	\setlength{\itemsep}{0.7 cm}
+	\item from 1999 on, $\uparrow$ Bottom Wage Inequality for Full Time
+	\item  Part Time bottom wages disappear while Mini Jobs top wages increase
+\end{itemize}
+\end{frame}
+
+\begin{frame}{CS Earnings Inequality}
+West Germany
+\begin{figure}[!t]
+\begin{minipage}[b]{0.32\textwidth}{$Var[log(w_i)]$}
+\centering
+\includegraphics[width=1\textwidth]{var_full_males_cs_7514.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Males}
+\centering
+\includegraphics[width=1\textwidth]{var_full_males_5year_7510.png}
+\end{minipage}
+\end{figure}
+Females
+\begin{figure}[!t]
+	\begin{minipage}[b]{0.32\textwidth}{$Var[log(w_i)]$}
+		\centering
+		\includegraphics[width=1\textwidth]{var_full_females_cs_7514.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.32\textwidth}{Males}
+		\centering
+		\includegraphics[width=1\textwidth]{var_full_females_5year_7510.png}
+	\end{minipage}
+\end{figure}
+\begin{itemize}
+\item  Larger $\uparrow$ in Full Time Wage Inequality historically \hyperlink{DATA}{\beamergotobutton{Back}}
+\end{itemize}
+\end{frame}
+
+\section{Worker Flows}
+\subsection{}
+
+\begin{frame}
+\center{\Huge{Worker Flows}}\label{WFLOW}
+\end{frame}
+
+\begin{frame}{Employment Stock}
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.4\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{tstock_FT_unc.png}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{tstock_PT_unc.png}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}{Marginal Employment}
+\centering
+\includegraphics[width=1\textwidth]{tstock_MJ_unc.png}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}{Concurrent Employment}
+\centering
+\includegraphics[width=1\textwidth]{tstock_CJ_unc.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item $\uparrow$ Part Time, Marginal Employment and Concurrent Employment \cite{CarriTuRo15} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Employment Stock, Males}
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.4\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{tstock_FT_male.png}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{tstock_PT_male.png}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}{Marginal Employment}
+\centering
+\includegraphics[width=1\textwidth]{tstock_MJ_male.png}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}{Concurrent Employment}
+\centering
+\includegraphics[width=1\textwidth]{tstock_CJ_male.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item $\uparrow$ Part Time, Marginal Employment and Concurrent Employment \cite{CarriTuRo15} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Employment Stock, Females}
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.4\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{tstock_FT_female.png}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{tstock_PT_female.png}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}{Marginal Employment}
+\centering
+\includegraphics[width=1\textwidth]{tstock_MJ_female.png}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}{Concurrent Employment}
+\centering
+\includegraphics[width=1\textwidth]{tstock_CJ_female.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item $\uparrow$ Part Time, Marginal Employment and Concurrent Employment \cite{CarriTuRo15} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Employment Stock All}
+\begin{figure}[!t]
+	\centering
+	\begin{minipage}[b]{0.4\textwidth}{Full Time}
+		\centering
+		\includegraphics[width=1\textwidth]{stock_FT_unc.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.4\textwidth}{Part Time}
+		\centering
+		\includegraphics[width=1\textwidth]{stock_PT_unc.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\textwidth}{Marginal Employment}
+		\centering
+		\includegraphics[width=1\textwidth]{stock_MJ_unc.png}
+	\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{NE}
+	\centering
+	\includegraphics[width=1\textwidth]{stock_NE_unc.png}
+\end{minipage}
+	\begin{minipage}[b]{0.3\textwidth}{Concurrent Employment}
+		\centering
+		\includegraphics[width=1\textwidth]{stock_CJ_unc.png}
+	\end{minipage}
+\end{figure}
+\begin{itemize}
+	\setlength{\itemsep}{0.7 cm}
+	\item $\uparrow$ Part Time, Marginal Employment and Concurrent Employment \cite{CarriTuRo15} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Employment Stock All, Males}
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.4\textwidth}{Full Time}
+	\centering
+	\includegraphics[width=1\textwidth]{stock_FT_male.png}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}{Part Time}
+	\centering
+	\includegraphics[width=1\textwidth]{stock_PT_male.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{Marginal Employment}
+	\centering
+	\includegraphics[width=1\textwidth]{stock_MJ_male.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{NE}
+	\centering
+	\includegraphics[width=1\textwidth]{stock_NE_male.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{Concurrent Employment}
+	\centering
+	\includegraphics[width=1\textwidth]{stock_CJ_male.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item $\uparrow$ Part Time, Marginal Employment and Concurrent Employment \cite{CarriTuRo15} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Employment Stock All, Females}
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.4\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{stock_FT_female.png}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{stock_PT_female.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{Marginal Employment}
+\centering
+\includegraphics[width=1\textwidth]{stock_MJ_female.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{NE}
+	\centering
+	\includegraphics[width=1\textwidth]{stock_NE_female.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{Concurrent Employment}
+\centering
+\includegraphics[width=1\textwidth]{stock_CJ_female.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item $\uparrow$ Part Time, Marginal Employment and Concurrent Employment \cite{CarriTuRo15} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Concurrent Employment Inflows, Outflow \& Hazard}
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.3\textwidth}{FT}
+\centering
+\includegraphics[width=1\textwidth]{outflows_FT_unc.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{PT}
+	\centering
+	\includegraphics[width=1\textwidth]{outflows_PT_unc.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{ME}
+	\centering
+	\includegraphics[width=1\textwidth]{outflows_ME_unc.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{NE}
+	\centering
+	\includegraphics[width=1\textwidth]{outflows_NE_unc.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{CJ}
+	\centering
+	\includegraphics[width=1\textwidth]{outflows_CJ_unc.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item Permanent Concurrent State for a small fraction of workers \cite{CarriTuRo15}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Concurrent Employment Inflows, Outflow \& Hazard}
+\begin{figure}[!t]
+	\centering
+	\begin{minipage}[b]{0.3\textwidth}{FT}
+		\centering
+		\includegraphics[width=1\textwidth]{outflows_FT_male.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\textwidth}{PT}
+		\centering
+		\includegraphics[width=1\textwidth]{outflows_PT_male.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\textwidth}{ME}
+		\centering
+		\includegraphics[width=1\textwidth]{outflows_ME_male.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\textwidth}{NE}
+		\centering
+		\includegraphics[width=1\textwidth]{outflows_NE_male.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\textwidth}{CJ}
+		\centering
+		\includegraphics[width=1\textwidth]{outflows_CJ_male.png}
+	\end{minipage}
+\end{figure}
+\begin{itemize}
+	\setlength{\itemsep}{0.7 cm}
+	\item Permanent Concurrent State for a small fraction of workers \cite{CarriTuRo15}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Concurrent Employment Inflows, Outflow \& Hazard}
+\begin{figure}[!t]
+	\centering
+	\begin{minipage}[b]{0.3\textwidth}{FT}
+		\centering
+		\includegraphics[width=1\textwidth]{outflows_FT_female.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\textwidth}{PT}
+		\centering
+		\includegraphics[width=1\textwidth]{outflows_PT_female.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\textwidth}{ME}
+		\centering
+		\includegraphics[width=1\textwidth]{outflows_ME_female.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\textwidth}{NE}
+		\centering
+		\includegraphics[width=1\textwidth]{outflows_NE_female.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.3\textwidth}{CJ}
+		\centering
+		\includegraphics[width=1\textwidth]{outflows_CJ_female.png}
+	\end{minipage}
+\end{figure}
+\begin{itemize}
+	\setlength{\itemsep}{0.7 cm}
+	\item Permanent Concurrent State for a small fraction of workers \cite{CarriTuRo15}
+\end{itemize}
+\end{frame}
+
+
+
+\section{Shorter Employment Spells}
+\subsection{}
+
+\begin{frame}
+\center{\Huge{Shorter Employment Spells}}\label{SES}
+\end{frame}
+
+\begin{frame}{Days per contract}
+\begin{itemize}
+\item  Unconditional:
+\end{itemize}
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.3\textwidth}{$\mathbb{E}[\# \,\, Days_{Empl.}]$}
+\centering
+\includegraphics[width=1\textwidth]{mean_month_unc.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{Males}
+\centering
+\includegraphics[width=1\textwidth]{mean_month_male.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{Females}
+\centering
+\includegraphics[width=1\textwidth]{mean_month_female.png}
+\end{minipage}
+\end{figure}
+\end{frame}
+
+\section{Long-term Earnings Inequality by Form of Employment}
+\subsection{}
+
+\begin{frame}
+\center{\Huge{Long-term Earnings Inequality by Form of Employment}}\label{EIF}
+\end{frame}
+
+
+\begin{frame}{Earnings Inequality}
+East+West Germany
+\begin{figure}[!t]
+\begin{minipage}[b]{0.32\textwidth}{$Var[log(Earnings_t)]$}
+\centering
+\includegraphics[width=1\textwidth]{var_form_unc_cs.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Male}
+\centering
+\includegraphics[width=1\textwidth]{var_form_male_cs.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Female}
+\centering
+\includegraphics[width=1\textwidth]{var_form_female_cs.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\item Increase in Cross-Section Full Time Earnings Inequality
+\end{itemize}
+\end{frame}
+
+%here
+
+\begin{frame}{5-Year Earnings Inequality}
+Average 5-Year Yearly Earnings
+\begin{figure}[!t]
+\begin{minipage}[b]{0.32\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_full.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_part.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_mini.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\item Decrease in Average Earnings for Full Time workers
+%\item Increase in Average Earnings for Part Time \& Marg. Employment after Hartz II
+\end{itemize}
+\end{frame}
+
+\begin{frame}{5-Year Earnings Inequality}
+Average 5-Year Yearly Earnings, Male/Female
+\begin{figure}[!t]
+\begin{minipage}[b]{0.32\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_full.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_part.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_mini.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_full.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_part.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_mini.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\item $\downarrow$ in Earnings for Males in Part Time \& Marg. Employment 
+\end{itemize}
+\end{frame}
+
+%\begin{frame}{5-Year Earnings Inequality, U30}
+%Average 5-Year Yearly Earnings, Male/Female
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.32\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_full_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_part_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_mini_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_full_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_part_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_mini_below30.png}
+%\end{minipage}
+%\end{figure}
+%\begin{itemize}
+%\item Trends in PT+ME come from older females 
+%\end{itemize}
+%\end{frame}
+
+
+\begin{frame}{5-Year Earnings Inequality}
+Dispersion 5-Year Yearly Earnings, $\frac{\mathbb{P}_{85}[Earnings_t]}{\mathbb{P}_{15}[Earnings_t]}$:
+\begin{figure}[!t]
+\begin{minipage}[b]{0.32\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_unc_full.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_unc_part.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_unc_mini.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\item The long term dispersion for Full Time workers increases the most
+\item The long term dispersion for Marg. Employed decreases
+%\item Marginal Employment as Second Job reduces dispersion
+\end{itemize}
+\end{frame}
+
+%\begin{frame}{5-Year Earnings Inequality - Residual}
+%Dispersion 5-Year Yearly Earnings:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.32\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_full_unc.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_part_unc.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_mini_unc.png}
+%\end{minipage}
+%\end{figure}
+%\begin{itemize}
+%\item The long term dispersion for Full Time takers increases the most
+%\item The long term dispersion for Marg. Employed decreases
+%%\item Marginal Employment as Second Job reduces dispersion
+%\end{itemize}
+%\end{frame}
+
+
+\begin{frame}{5-Year Earnings Inequality, by Gender}
+Dispersion 5-Year Yearly Earnings, $\frac{\mathbb{P}_{85}[Earnings_t]}{\mathbb{P}_{15}[Earnings_t]}$ , Male/Female:
+\begin{figure}[!t]
+\begin{minipage}[b]{0.32\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_male_full.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_male_part.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_male_mini.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_female_full.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_female_part.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_female_mini.png}
+\end{minipage}
+\end{figure}
+%\begin{itemize}
+%%\item Only Part Time different for Males
+%\end{itemize}
+\end{frame}
+
+%\begin{frame}{5-Year Earnings Inequality - Residual, by Gender}
+%Dispersion 5-Year Yearly Earnings, Male/Female:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.32\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_full_male.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_part_male.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_mini_male.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_full_female.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_part_female.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_mini_female.png}
+%\end{minipage}
+%\end{figure}
+%%\begin{itemize}
+%%\item Only Part Time different for Males
+%%\end{itemize}
+%\end{frame}
+
+
+%\begin{frame}{5-Year Earnings Inequality, U30}
+%Dispersion 5-Year Yearly Earnings, $\frac{\mathbb{P}_{85}[Earnings_t]}{\mathbb{P}_{15}[Earnings_t]}$, Male/Female:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.32\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_male_full_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_male_part_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_male_mini_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_female_full_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_female_part_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_5yearly_female_mini_below30.png}
+%\end{minipage}
+%\end{figure}
+%\begin{itemize}
+%\item Trends in PT+ME come from older males/females
+%\end{itemize}
+%\end{frame}
+
+%\begin{frame}{5-Year Earnings Inequality - Residual, U30}
+%Dispersion 5-Year Yearly Earnings, Male/Female:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.32\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_full_male_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_part_male_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_mini_male_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_full_female_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_part_female_below30.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{mincer_regs_mini_female_below30.png}
+%\end{minipage}
+%\end{figure}
+%\begin{itemize}
+%\item Trends in PT+ME come from older males/females
+%\end{itemize}
+%\end{frame}
+
+\begin{frame}{5 Years Employment}
+Fraction of Days in a 5-Year Period:
+\begin{figure}[!t]
+\begin{minipage}[b]{0.32\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_full_shares_days.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_part_shares_days.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_mini_shares_days.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\item FT$\rightarrow$PT+ME
+\item PT$\rightarrow$ME
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{5 Years Employment, Males}
+Fraction of Days in a 5-Year Period:
+\begin{figure}[!t]
+\begin{minipage}[b]{0.32\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_full_shares_days.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_part_shares_days.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_mini_shares_days.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\item FT$\rightarrow$ME
+\item PT$\rightarrow$ME
+\end{itemize}
+\end{frame}
+
+\begin{frame}{5 Years Employment, Females}
+Fraction of Days in a 5-Year Period:
+\begin{figure}[!t]
+\begin{minipage}[b]{0.32\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_full_shares_days.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_part_shares_days.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_mini_shares_days.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\item FT$\rightarrow$PT+ME
+\item PT$\rightarrow$ME
+\end{itemize}
+\hyperlink{DATA}{\beamergotobutton{Back}}
+\end{frame}
+
+%\begin{frame}{5 Years Employment, Males U30}
+%Fraction of Days in a 5-Year Period:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.32\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_5years_male_full_shares_below30_days.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_5years_male_part_shares_below30_days.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_5years_male_mini_shares_below30_days.png}
+%\end{minipage}
+%\end{figure}
+%\begin{itemize}
+%\item Similar for Young Workers
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{5 Years Employment, Females U30}
+%Fraction of Days in a 5-Year Period:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.32\textwidth}{Full Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_5years_female_full_shares_below30_days.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Part Time}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_5years_female_part_shares_below30_days.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_5years_female_mini_shares_below30_days.png}
+%\end{minipage}
+%\end{figure}
+%\begin{itemize}
+%\item Similar for Young Workers
+%\end{itemize}
+%
+%\end{frame}
+
+\section{Inequality \& ME by Earnings/Wage Ranking}
+\subsection{}
+
+\begin{frame}
+\center{\Huge{Inequality \& ME by Earnings/Wage Ranking}}\label{RANK}
+\end{frame}
+
+\begin{frame}{5-Year Earnings Inequality - Ranking}
+Average 5-Year, 5-Year Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+\begin{figure}[!t]
+\begin{minipage}[b]{0.15\textwidth}{FT}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_full_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{PT}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_part_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{ME}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_mini_r1.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_full_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_part_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_mini_r2.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_full_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_part_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_mini_r3.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_full_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_part_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_mini_r4.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_full_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_part_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_unc_mini_r5.png}
+\end{minipage}\\
+\end{figure}
+\begin{itemize}
+\item Decrease in Average Earnings for Full Time workers
+\end{itemize}
+\end{frame}
+
+\begin{frame}{5-Year Earnings Inequality - Ranking}
+Dispersion 5-Year, 5-Year Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+\begin{figure}[!t]
+\begin{minipage}[b]{0.15\textwidth}{FT}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_full_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{PT}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_part_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{ME}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_mini_r1.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_full_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_part_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_mini_r2.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_full_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_part_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_mini_r3.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_full_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_part_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_mini_r4.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_full_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_part_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_unc_mini_r5.png}
+\end{minipage}\\
+\end{figure}
+\end{frame}
+
+\begin{frame}{5-Year Employment - Ranking}
+Fraction of Days in a 5-Year Period:
+\begin{figure}[!t]
+\begin{minipage}[b]{0.15\textwidth}{FT}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_full_shares_days_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{PT}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_part_shares_days_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{ME}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_mini_shares_days_r1.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_full_shares_days_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_part_shares_days_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_mini_shares_days_r2.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_full_shares_days_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_part_shares_days_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_mini_shares_days_r3.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_full_shares_days_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_part_shares_days_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_mini_shares_days_r4.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_full_shares_days_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_part_shares_days_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_unc_mini_shares_days_r5.png}
+\end{minipage}\\
+\end{figure}
+\end{frame}
+
+\begin{frame}{5-Year Employment - Ranking}
+Percentiles in Log Deviations Normalized to 1999:
+\begin{figure}[!t]
+\begin{minipage}[b]{0.3\textwidth}{FT}
+\centering
+\includegraphics[width=1\textwidth]{perce_5years_full_unc.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{PT}
+\centering
+\includegraphics[width=1\textwidth]{perce_5years_part_unc.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{ME}
+\centering
+\includegraphics[width=1\textwidth]{perce_5years_mini_unc.png}
+\end{minipage}\\
+\end{figure}
+\end{frame}
+
+\begin{frame}{5-Year Earnings Inequality - Ranking, Males}
+Average 5-Year, 5-Year Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+\begin{figure}[!t]
+\begin{minipage}[b]{0.15\textwidth}{FT}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_full_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{PT}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_part_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{ME}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_mini_r1.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_full_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_part_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_mini_r2.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_full_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_part_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_mini_r3.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_full_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_part_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_mini_r4.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_full_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_part_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_male_mini_r5.png}
+\end{minipage}\\
+\end{figure}
+\begin{itemize}
+\item Decrease in Average Earnings for Full Time workers
+\end{itemize}
+\end{frame}
+
+\begin{frame}{5-Year Earnings Inequality - Ranking, Males}
+Dispersion 5-Year, 5-Year Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+\begin{figure}[!t]
+\begin{minipage}[b]{0.15\textwidth}{FT}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_full_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{PT}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_part_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{ME}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_mini_r1.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_full_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_part_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_mini_r2.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_full_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_part_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_mini_r3.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_full_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_part_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_mini_r4.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_full_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_part_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_male_mini_r5.png}
+\end{minipage}\\
+\end{figure}
+\end{frame}
+
+\begin{frame}{5-Year Employment - Ranking, Males}
+Fraction of Days in a 5-Year Period:
+\begin{figure}[!t]
+\begin{minipage}[b]{0.15\textwidth}{FT}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_full_shares_days_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{PT}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_part_shares_days_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{ME}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_mini_shares_days_r1.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_full_shares_days_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_part_shares_days_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_mini_shares_days_r2.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_full_shares_days_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_part_shares_days_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_mini_shares_days_r3.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_full_shares_days_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_part_shares_days_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_mini_shares_days_r4.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_full_shares_days_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_part_shares_days_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_male_mini_shares_days_r5.png}
+\end{minipage}\\
+\end{figure}
+\end{frame}
+
+\begin{frame}{5-Year Employment - Ranking, Males}
+Percentiles in Log Deviations Normalized to 1999:
+\begin{figure}[!t]
+\begin{minipage}[b]{0.3\textwidth}{FT}
+\centering
+\includegraphics[width=1\textwidth]{perce_5years_full_male.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{PT}
+\centering
+\includegraphics[width=1\textwidth]{perce_5years_part_male.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{ME}
+\centering
+\includegraphics[width=1\textwidth]{perce_5years_mini_male.png}
+\end{minipage}\\
+\end{figure}
+\end{frame}
+
+\begin{frame}{5-Year Earnings Inequality - Ranking, Females}
+Average 5-Year, 5-Year Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+\begin{figure}[!t]
+\begin{minipage}[b]{0.15\textwidth}{FT}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_full_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{PT}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_part_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{ME}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_mini_r1.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_full_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_part_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_mini_r2.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_full_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_part_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_mini_r3.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_full_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_part_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_mini_r4.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_full_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_part_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_work_1999_5yearly_female_mini_r5.png}
+\end{minipage}\\
+\end{figure}
+\end{frame}
+
+\begin{frame}{5-Year Earnings Inequality - Ranking, Females}
+Dispersion 5-Year, 5-Year Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+\begin{figure}[!t]
+\begin{minipage}[b]{0.15\textwidth}{FT}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_full_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{PT}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_part_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{ME}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_mini_r1.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_full_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_part_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_mini_r2.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_full_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_part_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_mini_r3.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_full_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_part_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_mini_r4.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_full_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_part_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{perc8515_work_1999_ltcs_female_mini_r5.png}
+\end{minipage}\\
+\end{figure}
+\end{frame}
+
+\begin{frame}{5-Year Employment - Ranking, Females}
+Fraction of Days in a 5-Year Period:
+\begin{figure}[!t]
+\begin{minipage}[b]{0.15\textwidth}{FT}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_full_shares_days_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{PT}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_part_shares_days_r1.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{ME}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_mini_shares_days_r1.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_full_shares_days_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_part_shares_days_r2.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_mini_shares_days_r2.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_full_shares_days_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_part_shares_days_r3.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_mini_shares_days_r3.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_full_shares_days_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_part_shares_days_r4.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_mini_shares_days_r4.png}
+\end{minipage}\\
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_full_shares_days_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_part_shares_days_r5.png}
+\end{minipage}
+\begin{minipage}[b]{0.15\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{mean_5years_female_mini_shares_days_r5.png}
+\end{minipage}\\
+\end{figure}
+\end{frame}
+
+\begin{frame}{5-Year Employment - Ranking, Females}
+Percentiles in Log Deviations Normalized to 1999:
+\begin{figure}[!t]
+\begin{minipage}[b]{0.3\textwidth}{FT}
+\centering
+\includegraphics[width=1\textwidth]{perce_5years_full_female.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{PT}
+\centering
+\includegraphics[width=1\textwidth]{perce_5years_part_female.png}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}{ME}
+\centering
+\includegraphics[width=1\textwidth]{perce_5years_mini_female.png}
+\end{minipage}\\
+\end{figure}
+\hyperlink{DATA2}{\beamergotobutton{Back}}
+\end{frame}
+
+%Yearly Ranking:
+
+%\begin{frame}{Earnings Inequality - Ranking}
+%Cross Sectional Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_full_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_part_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_mini_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_full_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_part_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_mini_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_full_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_part_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_mini_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_full_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_part_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_mini_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_full_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_part_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_unc_mini_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\begin{itemize}
+%\item Decrease in Average Earnings for Full Time workers
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{5-Year Earnings Inequality - Ranking}
+%Dispersion 5-Year, Cross Sectional Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_full_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_part_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_mini_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_full_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_part_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_mini_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_full_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_part_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_mini_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_full_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_part_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_mini_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_full_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_part_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_unc_mini_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Employment - Ranking}
+%Fraction of Days in a 5-Year Period:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_full_shares_days_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_part_shares_days_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_mini_shares_days_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_full_shares_days_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_part_shares_days_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_mini_shares_days_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_full_shares_days_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_part_shares_days_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_mini_shares_days_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_full_shares_days_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_part_shares_days_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_mini_shares_days_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_full_shares_days_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_part_shares_days_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_unc_mini_shares_days_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Employment - Ranking}
+%Cross Sectional Percentiles in Log Deviations Normalized to 1999:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.3\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_ltcs_full_unc.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.3\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_ltcs_part_unc.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.3\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_ltcs_mini_unc.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Earnings Inequality - Ranking, Males}
+%Average 5-Year, Cross Sectional Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_full_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_part_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_mini_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_full_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_part_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_mini_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_full_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_part_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_mini_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_full_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_part_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_mini_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_full_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_part_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_male_mini_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\begin{itemize}
+%\item Decrease in Average Earnings for Full Time workers
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{5-Year Earnings Inequality - Ranking, Males}
+%Dispersion 5-Year, Cross Sectional Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_full_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_part_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_mini_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_full_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_part_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_mini_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_full_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_part_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_mini_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_full_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_part_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_mini_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_full_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_part_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_male_mini_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Employment - Ranking, Males}
+%Fraction of Days in a 5-Year Period:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_full_shares_days_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_part_shares_days_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_mini_shares_days_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_full_shares_days_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_part_shares_days_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_mini_shares_days_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_full_shares_days_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_part_shares_days_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_mini_shares_days_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_full_shares_days_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_part_shares_days_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_mini_shares_days_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_full_shares_days_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_part_shares_days_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_male_mini_shares_days_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Employment - Ranking, Males}
+%Cross Sectional Percentiles in Log Deviations Normalized to 1999:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.3\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_ltcs_full_male.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.3\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_ltcs_part_male.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.3\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_ltcs_mini_male.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Earnings Inequality - Ranking, Females}
+%Average 5-Year, Cross Sectional Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_full_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_part_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_mini_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_full_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_part_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_mini_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_full_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_part_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_mini_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_full_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_part_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_mini_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_full_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_part_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cs_female_mini_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Earnings Inequality - Ranking, Females}
+%Dispersion 5-Year, Cross Sectional Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_full_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_part_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_mini_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_full_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_part_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_mini_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_full_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_part_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_mini_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_full_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_part_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_mini_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_full_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_part_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cs_female_mini_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Employment - Ranking, Females}
+%Fraction of Days in a 5-Year Period:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_full_shares_days_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_part_shares_days_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_mini_shares_days_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_full_shares_days_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_part_shares_days_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_mini_shares_days_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_full_shares_days_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_part_shares_days_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_mini_shares_days_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_full_shares_days_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_part_shares_days_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_mini_shares_days_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_full_shares_days_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_part_shares_days_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cs_female_mini_shares_days_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Employment - Ranking, Female}
+%Cross Sectional Percentiles in Log Deviations Normalized to 1999:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.3\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_ltcs_full_female.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.3\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_ltcs_part_female.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.3\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_ltcs_mini_female.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%% Yearly Wage Ranking
+%
+%
+%\begin{frame}{5-Year Earnings Inequality - Ranking}
+%Average 5-Year, Cross Sectional Wage Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_full_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_part_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_mini_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_full_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_part_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_mini_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_full_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_part_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_mini_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_full_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_part_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_mini_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_full_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_part_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_unc_mini_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\begin{itemize}
+%\item Decrease in Average Earnings for Full Time workers
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{5-Year Earnings Inequality - Ranking}
+%Dispersion 5-Year, Cross Sectional Wage Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_full_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_part_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_mini_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_full_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_part_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_mini_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_full_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_part_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_mini_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_full_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_part_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_mini_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_full_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_part_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_unc_mini_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Employment - Ranking}
+%Fraction of Days in a 5-Year Period:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_full_shares_days_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_part_shares_days_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_mini_shares_days_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_full_shares_days_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_part_shares_days_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_mini_shares_days_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_full_shares_days_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_part_shares_days_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_mini_shares_days_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_full_shares_days_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_part_shares_days_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_mini_shares_days_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_full_shares_days_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_part_shares_days_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_unc_mini_shares_days_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Employment - Ranking}
+%Wage Percentiles in Log Deviations Normalized to 1999:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.3\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_cswage_full_unc.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.3\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_cswage_part_unc.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.3\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_cswage_mini_unc.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Earnings Inequality - Ranking, Males}
+%Average 5-Year, Cross Sectional Wage Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_full_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_part_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_mini_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_full_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_part_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_mini_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_full_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_part_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_mini_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_full_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_part_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_mini_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_full_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_part_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_male_mini_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\begin{itemize}
+%\item Decrease in Average Earnings for Full Time workers
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{5-Year Earnings Inequality - Ranking, Males}
+%Dispersion 5-Year, Cross Sectional Wage Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_full_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_part_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_mini_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_full_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_part_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_mini_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_full_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_part_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_mini_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_full_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_part_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_mini_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_full_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_part_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_male_mini_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Employment - Ranking, Males}
+%Fraction of Days in a 5-Year Period:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_full_shares_days_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_part_shares_days_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_mini_shares_days_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_full_shares_days_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_part_shares_days_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_mini_shares_days_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_full_shares_days_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_part_shares_days_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_mini_shares_days_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_full_shares_days_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_part_shares_days_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_mini_shares_days_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_full_shares_days_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_part_shares_days_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_male_mini_shares_days_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Employment - Ranking}
+%Wage Percentiles in Log Deviations Normalized to 1999:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.3\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_cswage_full_male.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.3\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_cswage_part_male.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.3\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_cswage_mini_male.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Earnings Inequality - Ranking, Females}
+%Average 5-Year, Cross Sectional Wage Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_full_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_part_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_mini_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_full_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_part_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_mini_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_full_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_part_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_mini_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_full_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_part_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_mini_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_full_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_part_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_work_1999_cswage_female_mini_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Earnings Inequality - Ranking, Females}
+%Dispersion 5-Year, Cross Sectional Wage Ranking ($\mathbb{P}_{20}-\mathbb{P}_{40}-\mathbb{P}_{60}-\mathbb{P}_{80}$)
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_full_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_part_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_mini_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_full_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_part_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_mini_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_full_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_part_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_mini_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_full_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_part_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_mini_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_full_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_part_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{perc8515_work_1999_cswage_female_mini_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Employment - Ranking, Females}
+%Fraction of Days in a 5-Year Period:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.15\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_full_shares_days_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_part_shares_days_r1.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_mini_shares_days_r1.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_full_shares_days_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_part_shares_days_r2.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_mini_shares_days_r2.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_full_shares_days_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_part_shares_days_r3.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_mini_shares_days_r3.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_full_shares_days_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_part_shares_days_r4.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_mini_shares_days_r4.png}
+%\end{minipage}\\
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_full_shares_days_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_part_shares_days_r5.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.15\textwidth}{}
+%\centering
+%\includegraphics[width=1\textwidth]{mean_cswage_female_mini_shares_days_r5.png}
+%\end{minipage}\\
+%\end{figure}
+%\end{frame}
+%
+%\begin{frame}{5-Year Employment - Ranking}
+%Wage Percentiles in Log Deviations Normalized to 1999:
+%\begin{figure}[!t]
+%\begin{minipage}[b]{0.3\textwidth}{FT}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_cswage_full_female.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.3\textwidth}{PT}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_cswage_part_female.png}
+%\end{minipage}
+%\begin{minipage}[b]{0.3\textwidth}{ME}
+%\centering
+%\includegraphics[width=1\textwidth]{perce_cswage_mini_female.png}
+%\end{minipage}\\
+%\end{figure}
+%\hyperlink{DATA}{\beamergotobutton{Back}}
+%\end{frame}
+
+%here
+
+\section{Gender Wage, Earnings \& Long-Term Earnings Heterogeneity}
+\subsection{}
+
+\begin{frame}
+\center{\Huge{Gender Wage, Earnings \& Long-Term Earnings Heterogeneity}}\label{FEMHET}
+\end{frame}
+
+\begin{frame}{Wage Densities}
+1999-2014
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.32\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{kdens_wage.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item Wage Distributions have 2 Modes, one that is low
+\item More density of higher wages for Males
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Wage Densities by Form of Employment}
+1999-2014
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.32\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{kdens_wage_full.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{kdens_wage_part.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+\centering
+\includegraphics[width=1\textwidth]{kdens_wage_mini.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item More density of higher wages for Males in Full Time employment
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cross Sectional Earnings Densities}
+1999-2014, Yearly
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.32\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{kdens_earnings.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item More density of higher cross sectional earnings for Males
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cross Sectional Earnings Densities by Form of Employment}
+1999-2014, Yearly
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.32\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{kdens_earnings_full.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{kdens_earnings_part.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+\centering
+\includegraphics[width=1\textwidth]{kdens_earnings_mini.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item Males have higher earnings in Full Time
+\item Females have more concentrated Earnings in Part Time and Marg. Employment
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{5-Year Earnings Densities}
+1999-2014
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.32\textwidth}{}
+\centering
+\includegraphics[width=1\textwidth]{kdens_log_sum_earnings_long_term_work.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item Males have higher long-term earnings
+\end{itemize}
+\end{frame}
+
+\begin{frame}{5-Year Earnings Densities by Form of Employment}
+1999-2014
+\begin{figure}[!t]
+\centering
+\begin{minipage}[b]{0.32\textwidth}{Full Time}
+\centering
+\includegraphics[width=1\textwidth]{kdens_log_sum_earnings_long_term_full.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Part Time}
+\centering
+\includegraphics[width=1\textwidth]{kdens_log_sum_earnings_long_term_part.png}
+\end{minipage}
+\begin{minipage}[b]{0.32\textwidth}{Marg. Employment}
+\centering
+\includegraphics[width=1\textwidth]{kdens_log_sum_earnings_long_term_mini.png}
+\end{minipage}
+\end{figure}
+\begin{itemize}
+\setlength{\itemsep}{0.7 cm}
+\item Different Densities for Marginal Employment by Gender
+\end{itemize}
+\hyperlink{DATA5}{\beamergotobutton{Back}}
+\end{frame}
+
+
+
+\end{appendix}
+
+%\begin{frame}<0>
+%\addtocounter{framenumber}{-1} 
+%\scriptsize
+%\bibliographystyle{ecta}
+%\bibliography{References}
+%\end{frame}
+%\bibliographystyle{ecta}
+%\bibliography{References}
+
+\end{document}

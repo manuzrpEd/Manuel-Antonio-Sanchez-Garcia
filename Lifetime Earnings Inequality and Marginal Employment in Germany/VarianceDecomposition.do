@@ -1,8 +1,8 @@
 clear
 set more off
 *set memory 16g
-*use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *keep if persnr<1000
@@ -210,14 +210,12 @@ keep if counter_month==1
 *bysort year: gen count_year=_n
 *keep if count_year==1
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_variance_decomposition.dta", replace
-
-*saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_monthly.dta", replace
+saveold "\Preliminars_variance_decomposition.dta", replace
 
 
 *** FEMALES:
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *keep if persnr<1000
@@ -421,11 +419,4 @@ drop counter_month
 bysort persnr year month_begepi: gen counter_month=_n
 keep if counter_month==1
 
-
-
-*bysort year: gen count_year=_n
-*keep if count_year==1
-
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_variance_decomposition_fem.dta", replace
-
-*saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_monthly.dta", replace
+saveold "\Preliminars_variance_decomposition_fem.dta", replace

@@ -1,9 +1,9 @@
 clear
 **set memory 16g
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes",clear
-*use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\siab_r_7514_v1.dta", clear
-*cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+cd ""
+use "",clear
+*use "\siab_r_7514_v1.dta", clear
+*cd ""
 set more off
 
 *this is to keep the original person number in case I want to trace his past/future records:
@@ -153,7 +153,7 @@ qui replace thuringen=0 if thuringen==.
 qui gen west=1 if region>=1000 & region<11000
 qui replace west=0 if region>=11000 & region<17000
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_east.dta", replace
+save "\Preliminars_east.dta", replace
 
 bysort persnr: egen sum_west=sum(west)
 qui drop if sum_west==0
@@ -1149,7 +1149,7 @@ sort persnr year begepi endepi source form
 order persnr female counter_spell begepi endepi year age days_epi days_year source reason_notif part_time employment_status midi_jobs counter_diff_estab_id daily_wage west requirement german year_birth school_qualification occupation
 sum persnr
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", replace
+saveold "\Preliminars.dta", replace
 
 *do Preliminars_east.do
 do moments_cross_section.do

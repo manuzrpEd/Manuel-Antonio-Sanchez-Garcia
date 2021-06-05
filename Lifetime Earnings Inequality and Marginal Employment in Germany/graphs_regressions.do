@@ -3,9 +3,9 @@ set more off
 
 *** all
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months.dta",clear
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months_fem.dta"
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_months.dta",clear
+append using "\Preliminars_months_fem.dta"
+cd ""
 
 drop if age==.
 
@@ -95,8 +95,8 @@ graph export ave_MJ_age_2005.png, replace
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_2.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen_2.dta", clear
+cd ""
 label language EN
 *drop if civil_servant==1
 keep if sample==21 | sample==23
@@ -163,9 +163,9 @@ cls
 set more off
 *** Variance Decomposition
 *net from http://research.uni-leipzig.de/*rego
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months.dta",clear
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months_fem.dta"
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_months.dta",clear
+append using "\Preliminars_months_fem.dta"
+cd ""
 
 ***gen monthly income
 
@@ -265,9 +265,9 @@ cls
 set more off
 
 *compl*exity of tasks:
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months.dta",clear
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months_fem.dta"
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_months.dta",clear
+append using "\Preliminars_months_fem.dta"
+cd ""
 
 drop if requirement==.
 
@@ -303,9 +303,9 @@ cls
 set more off
 
 *education:
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months.dta",clear
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months_fem.dta"
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_months.dta",clear
+append using "\Preliminars_months_fem.dta"
+cd ""
 
 drop if educ==.
 
@@ -328,9 +328,9 @@ cls
 set more off
 
 *education:
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months.dta",clear
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months_fem.dta"
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_months.dta",clear
+append using "\Preliminars_months_fem.dta"
+cd ""
 
 drop if educ==.
 
@@ -354,9 +354,9 @@ cls
 set more off
 *occupations econ_act 1999-2005 mini jobs?
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months.dta",clear
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months_fem.dta"
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_months.dta",clear
+append using "\Preliminars_months_fem.dta"
+cd ""
 
 codebook econ_act, all tabulate(13)
 
@@ -384,9 +384,9 @@ set more off
 
 *** all
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months.dta",clear
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months_fem.dta"
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_months.dta",clear
+append using "\Preliminars_months_fem.dta"
+cd ""
 
 drop if age==.
 
@@ -479,8 +479,8 @@ set more off
 
 *** all
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_months.dta",clear
+cd ""
 
 gen fform=1 if FT==1
 replace fform=2 if PT==1
@@ -512,8 +512,8 @@ tabulate fform if year==2005, summarize(age)
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months_fem.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_months_fem.dta",clear
+cd ""
 
 gen fform=1 if FT==1
 replace fform=2 if PT==1
@@ -545,8 +545,8 @@ tabulate fform if year==2005, summarize(age)
 *
 
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<24
 qui drop if age>55
@@ -599,8 +599,8 @@ estimates table, keep(educ aage aage2) b star
 *estimates table, keep(female educ ranking aage aage2) b star
 
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<24
 qui drop if age>55
@@ -655,8 +655,8 @@ estimates table, keep(educ aage aage2) b star
 
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<24
 qui drop if age>55
@@ -711,8 +711,8 @@ estimates table, keep(educ aage aage2) b star
 ***
 
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<24
 qui drop if age>30
@@ -765,8 +765,8 @@ estimates table, keep(educ aage) b star
 *estimates table, keep(female educ ranking aage) b star
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<24
 qui drop if age>30
@@ -820,8 +820,8 @@ estimates table, keep(educ aage) b star
 
 ***
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<40
 qui drop if age>55
@@ -874,8 +874,8 @@ estimates table, keep(educ aage) b star
 *estimates table, keep(educ aage) b star
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<40
 qui drop if age>55
@@ -932,8 +932,8 @@ estimates table, keep(educ aage) b star
 
 *** FEMALES
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<24
 qui drop if age>55
@@ -986,8 +986,8 @@ estimates table, keep(educ aage aage2) b star
 *estimates table, keep(female educ ranking aage aage2) b star
 
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<24
 qui drop if age>55
@@ -1043,8 +1043,8 @@ estimates table, keep(educ aage aage2) b star
 *
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<24
 qui drop if age>55
@@ -1099,8 +1099,8 @@ estimates table, keep(educ aage aage2) b star
 ***
 
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<24
 qui drop if age>30
@@ -1153,8 +1153,8 @@ estimates table, keep(educ aage) b star
 *estimates table, keep(female educ ranking aage) b star
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<24
 qui drop if age>30
@@ -1208,8 +1208,8 @@ estimates table, keep(educ aage) b star
 
 ***
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<40
 qui drop if age>55
@@ -1262,8 +1262,8 @@ estimates table, keep(educ aage) b star
 *estimates table, keep(educ aage) b star
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta",clear
+cd ""
 
 qui drop if age<40
 qui drop if age>55
@@ -1321,8 +1321,8 @@ estimates table, keep(educ aage) b star
 *estimates table, keep(female educ ranking aage) b star
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv.dta",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv.dta",clear
+cd ""
 
 drop if region<0
 *keep if female==0

@@ -1,11 +1,11 @@
 cls
 clear
 **set memory 4g
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\siab_r_7514_v1.dta",clear
+cd ""
+use "\siab_r_7514_v1.dta",clear
 label language en
-*use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\siab_r_7514_v1.dta", clear
-*cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+*use "\siab_r_7514_v1.dta", clear
+*cd ""
 set more off
 *
 sum persnr
@@ -208,7 +208,7 @@ qui replace west=0 if region>=11000 & region<17000
 
 drop region
 
-*save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_east.dta", replace
+*save "\Preliminars_east.dta", replace
 
 *bysort persnr: egen sum_west=sum(west)
 *qui drop if sum_west==0
@@ -1356,7 +1356,7 @@ qui egen persnr2=group(persnr)
 drop persnr
 rename persnr2 persnr
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", replace
+save "\Preliminars_Monthly_persnr.dta", replace
 
 *males
 
@@ -1370,15 +1370,15 @@ rename persnr2 persnr
 
 *egen npeople=max(persnr)
 
-outsheet using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Matlab\data_persnr_males.csv", comma nolabel replace nonames
+outsheet using "\Matlab\data_persnr_males.csv", comma nolabel replace nonames
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males.dta", replace
+save "\Preliminars_Monthly_persnr_males.dta", replace
 
 sort year month
 
-outsheet using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Matlab\data_month_males.csv", comma nolabel replace nonames
+outsheet using "\Matlab\data_month_males.csv", comma nolabel replace nonames
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_month_males.dta", replace
+save "\Preliminars_Monthly_month_males.dta", replace
 
 restore
 
@@ -1394,15 +1394,15 @@ rename persnr2 persnr
 
 *egen npeople=max(persnr)
 
-outsheet using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Matlab\data_persnr_females.csv", comma nolabel replace nonames
+outsheet using "\Matlab\data_persnr_females.csv", comma nolabel replace nonames
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_females.dta", replace
+save "\Preliminars_Monthly_persnr_females.dta", replace
 
 sort year month
 
-outsheet using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Matlab\data_month_females.csv", comma nolabel replace nonames
+outsheet using "\Matlab\data_month_females.csv", comma nolabel replace nonames
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_month_females.dta", replace
+save "\Preliminars_Monthly_month_females.dta", replace
 
 restore
 *

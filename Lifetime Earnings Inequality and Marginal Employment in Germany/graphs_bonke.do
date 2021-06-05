@@ -1,5 +1,6 @@
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_cs",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+
+use "\bonke_cs",clear
+cd ""
 sort year gini_cs_work
 
 bysort year: egen mean_var=mean(var_cs_work)
@@ -101,8 +102,8 @@ graph export perc5015_work.png, replace
 *** FEMALES
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_cs_fem",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_cs_fem",clear
+cd ""
 sort year gini_cs_work
 
 bysort year: egen mean_var=mean(var_cs_work)
@@ -202,8 +203,8 @@ graph export perc5015_work_fem.png, replace
 ***
 *** Unconditional
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_cs_unc",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_cs_unc",clear
+cd ""
 sort year gini_cs_work
 
 bysort year: egen mean_var=mean(var_cs_work)
@@ -310,8 +311,8 @@ cls
 clear
 set more off
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 ssc install fastgini
 
 *keep if female==1
@@ -403,7 +404,7 @@ cls
 clear
 set more off
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
+use "\Preliminars",clear
 ssc install fastgini
 
 keep if female==0
@@ -496,7 +497,7 @@ cls
 clear
 set more off
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
+use "\Preliminars",clear
 ssc install fastgini
 
 keep if female==1

@@ -1,11 +1,11 @@
 cls
 clear
 **set memory 16g
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\siab_r_7514_v1.dta",clear
+cd ""
+use "\siab_r_7514_v1.dta",clear
 label language en
-*use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\siab_r_7514_v1.dta", clear
-*cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+*use "\siab_r_7514_v1.dta", clear
+*cd ""
 set more off
 *
 rename ausbildung vocational_training
@@ -1212,7 +1212,7 @@ drop persnr_orig_1
 
 order unemp_ben persnr,last
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_19992002.dta", replace
+save "\Preliminars_Monthly_persnr_19992002.dta", replace
 
 *males
 
@@ -1226,9 +1226,9 @@ rename persnr2 persnr
 
 *egen npeople=max(persnr)
 
-outsheet using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Matlab\MonthlyIncome\1999-2002\data_persnr_males.csv", comma nolabel replace nonames
+outsheet using "\Matlab\MonthlyIncome\1999-2002\data_persnr_males.csv", comma nolabel replace nonames
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", replace
+save "\Preliminars_Monthly_persnr_males_19992002.dta", replace
 
 restore
 
@@ -1244,9 +1244,9 @@ rename persnr2 persnr
 
 *egen npeople=max(persnr)
 
-outsheet using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Matlab\MonthlyIncome\1999-2002\data_persnr_females.csv", comma nolabel replace nonames
+outsheet using "\Matlab\MonthlyIncome\1999-2002\data_persnr_females.csv", comma nolabel replace nonames
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_females_19992002.dta", replace
+save "\Preliminars_Monthly_persnr_females_19992002.dta", replace
 
 restore
 *

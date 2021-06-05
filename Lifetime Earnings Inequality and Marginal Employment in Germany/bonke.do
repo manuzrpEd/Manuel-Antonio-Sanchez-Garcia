@@ -1,9 +1,9 @@
 clear
 set more off
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
-*use "/panfs/panasas01/efim/ms15072/Preliminars.dta", clear
+use "\Preliminars.dta", clear
+cd ""
+*
 ssc install fastgini
 
 keep if female==0
@@ -67,7 +67,7 @@ replace var_lt_work_`i'=var_lt_work_`i'^2
 
 keep year gini* var* kurt* p*
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_lt_`i'.dta", replace
+saveold "\bonke_lt_`i'.dta", replace
 
 restore
 
@@ -87,7 +87,7 @@ restore
 clear
 set more off
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 keep if female==0
@@ -197,7 +197,7 @@ replace var_cs_full=var_cs_full^2
 
 keep year gini* var* kurt* p* form
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_cs.dta", replace
+saveold "\bonke_cs.dta", replace
 
 *
 
@@ -209,7 +209,7 @@ saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bo
 clear
 set more off
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 keep if female==1
@@ -273,7 +273,7 @@ replace var_lt_work_`i'=var_lt_work_`i'^2
 
 keep year gini* var* kurt* p*
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_lt_`i'_fem.dta", replace
+saveold "\bonke_lt_`i'_fem.dta", replace
 
 restore
 
@@ -288,7 +288,7 @@ restore
 clear
 set more off
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 keep if female==1
@@ -396,7 +396,7 @@ replace var_cs_full=var_cs_full^2
 
 keep year gini* var* kurt* p* form
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_cs_fem.dta", replace
+saveold "\bonke_cs_fem.dta", replace
 
 do job_mobility.do
 

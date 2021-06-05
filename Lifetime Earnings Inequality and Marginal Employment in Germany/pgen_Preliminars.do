@@ -4,8 +4,8 @@ set more off
 
 ***this dataset is monthly!
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\apgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\apgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1984
 *
@@ -17,10 +17,10 @@ rename *84 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_84.dta", replace
+save "\pgen_84.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\bpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\bpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1985
 *
@@ -31,10 +31,10 @@ rename *85 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_85.dta", replace
+save "\pgen_85.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\cpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\cpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1986
 *
@@ -46,10 +46,10 @@ rename *86 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_86.dta", replace
+save "\pgen_86.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\dpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\dpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1987
 *
@@ -60,10 +60,10 @@ rename *87 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_87.dta", replace
+save "\pgen_87.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\epgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\epgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1988
 *
@@ -74,10 +74,10 @@ rename *88 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_88.dta", replace
+save "\pgen_88.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\fpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\fpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1989
 *
@@ -88,10 +88,10 @@ rename *89 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_89.dta", replace
+save "\pgen_89.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\gpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\gpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1990
 *
@@ -102,10 +102,10 @@ rename *90 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_90.dta", replace
+save "\pgen_90.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\hpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\hpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1991
 *
@@ -116,10 +116,10 @@ rename *91 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_91.dta", replace
+save "\pgen_91.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\ipgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\ipgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1992
 *
@@ -130,10 +130,10 @@ rename *92 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_92.dta", replace
+save "\pgen_92.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\jpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\jpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1993
 *
@@ -144,10 +144,10 @@ rename *93 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_93.dta", replace
+save "\pgen_93.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\kpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\kpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1994
 *
@@ -158,10 +158,10 @@ rename *94 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_94.dta", replace
+save "\pgen_94.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\lpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\lpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1995
 *
@@ -172,10 +172,10 @@ rename *95 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_95.dta", replace
+save "\pgen_95.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\mpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\mpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1996
 *
@@ -186,10 +186,10 @@ rename *96 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_96.dta", replace
+save "\pgen_96.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\npgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\npgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1997
 *
@@ -200,10 +200,10 @@ rename *97 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_97.dta", replace
+save "\pgen_97.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\opgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\opgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1998
 *
@@ -214,10 +214,10 @@ rename *98 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_98.dta", replace
+save "\pgen_98.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\ppgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\ppgen.dta", clear
+cd ""
 *gen year variable:
 gen year=1999
 *
@@ -228,10 +228,10 @@ rename *99 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_99.dta", replace
+save "\pgen_99.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\qpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\qpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2000
 *
@@ -242,10 +242,10 @@ rename *00 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_00.dta", replace
+save "\pgen_00.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\rpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\rpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2001
 *
@@ -256,10 +256,10 @@ rename *01 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_01.dta", replace
+save "\pgen_01.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\spgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\spgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2002
 *
@@ -270,10 +270,10 @@ rename *02 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_02.dta", replace
+save "\pgen_02.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\tpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\tpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2003
 *
@@ -284,10 +284,10 @@ rename *03 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_03.dta", replace
+save "\pgen_03.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\upgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\upgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2004
 *
@@ -298,10 +298,10 @@ rename *04 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_04.dta", replace
+save "\pgen_04.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\vpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\vpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2005
 *
@@ -312,10 +312,10 @@ rename *05 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_05.dta", replace
+save "\pgen_05.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\wpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\wpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2006
 *
@@ -326,10 +326,10 @@ rename *06 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_06.dta", replace
+save "\pgen_06.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\xpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\xpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2007
 *
@@ -340,10 +340,10 @@ rename *07 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_07.dta", replace
+save "\pgen_07.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\ypgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\ypgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2008
 *
@@ -354,10 +354,10 @@ rename *08 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_08.dta", replace
+save "\pgen_08.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\zpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\zpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2009
 *
@@ -368,10 +368,10 @@ rename *09 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_09.dta", replace
+save "\pgen_09.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\bapgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\bapgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2010
 *
@@ -382,10 +382,10 @@ rename *10 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_10.dta", replace
+save "\pgen_10.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\bbpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\bbpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2011
 *
@@ -396,10 +396,10 @@ rename *11 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_11.dta", replace
+save "\pgen_11.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\bcpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\bcpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2012
 *
@@ -410,10 +410,10 @@ rename *12 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_12.dta", replace
+save "\pgen_12.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\bdpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\bdpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2013
 *
@@ -424,10 +424,10 @@ rename *13 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_13.dta", replace
+save "\pgen_13.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\bepgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\bepgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2014
 *
@@ -438,10 +438,10 @@ rename *14 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_14.dta", replace
+save "\pgen_14.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen\bfpgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen\bfpgen.dta", clear
+cd ""
 *gen year variable:
 gen year=2015
 *
@@ -452,41 +452,41 @@ rename *15 *
 rename *tatzeit weekly_hours
 rename *uebstd over_weekly_hours
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_15.dta", replace
+save "\pgen_15.dta", replace
 
 ***append
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_84.dta", clear
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_85.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_86.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_87.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_88.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_89.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_90.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_91.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_92.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_93.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_94.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_95.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_96.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_97.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_98.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_99.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_00.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_01.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_02.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_03.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_04.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_05.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_06.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_07.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_08.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_09.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_10.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_11.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_12.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_13.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_14.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_15.dta", nolabel
+use "\pgen_84.dta", clear
+append using "\pgen_85.dta", nolabel
+append using "\pgen_86.dta", nolabel
+append using "\pgen_87.dta", nolabel
+append using "\pgen_88.dta", nolabel
+append using "\pgen_89.dta", nolabel
+append using "\pgen_90.dta", nolabel
+append using "\pgen_91.dta", nolabel
+append using "\pgen_92.dta", nolabel
+append using "\pgen_93.dta", nolabel
+append using "\pgen_94.dta", nolabel
+append using "\pgen_95.dta", nolabel
+append using "\pgen_96.dta", nolabel
+append using "\pgen_97.dta", nolabel
+append using "\pgen_98.dta", nolabel
+append using "\pgen_99.dta", nolabel
+append using "\pgen_00.dta", nolabel
+append using "\pgen_01.dta", nolabel
+append using "\pgen_02.dta", nolabel
+append using "\pgen_03.dta", nolabel
+append using "\pgen_04.dta", nolabel
+append using "\pgen_05.dta", nolabel
+append using "\pgen_06.dta", nolabel
+append using "\pgen_07.dta", nolabel
+append using "\pgen_08.dta", nolabel
+append using "\pgen_09.dta", nolabel
+append using "\pgen_10.dta", nolabel
+append using "\pgen_11.dta", nolabel
+append using "\pgen_12.dta", nolabel
+append using "\pgen_13.dta", nolabel
+append using "\pgen_14.dta", nolabel
+append using "\pgen_15.dta", nolabel
 
 label language EN
 
@@ -507,11 +507,11 @@ rename sndjob second_earnings_month
 
 sort persnr year
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_0.dta", replace
+save "\pgen_0.dta", replace
 
-merge 1:1 persnr year using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv.dta", keepusing(female age cpi sample educ_years) nogen
+merge 1:1 persnr year using "\pequiv.dta", keepusing(female age cpi sample educ_years) nogen
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen.dta", replace
+save "\pgen.dta", replace
 
 ssc install fastgini
 ***cleaning - generate variables/statistics to compare to pequiv
@@ -572,12 +572,12 @@ drop if max_lfs_exclude>0 & max_lfs_exclude!=.
 
 sort persnr year
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_2.dta", replace
+save "\pgen_2.dta", replace
 
 ***males
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_2.dta", clear
+use "\pgen_2.dta", clear
 
 *drop if civil_servant==1
 keep if female==0
@@ -646,7 +646,7 @@ graph export mean_over_hours_soep_gen.png, replace
 ***females
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_2.dta", clear
+use "\pgen_2.dta", clear
 
 *drop if civil_servant==1
 keep if female==1
@@ -710,7 +710,7 @@ graph export mean_over_hours_soep_gen_fem.png, replace
 ***unconditional
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_2.dta", clear
+use "\pgen_2.dta", clear
 
 drop if civil_servant==1
 *keep if female==1
@@ -779,8 +779,8 @@ graph export mean_over_hours_soep_gen_unc.png, replace
 *Galasi
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_2.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen_2.dta", clear
+cd ""
 *
 tab lfs if year==2005 & age>17 & age<65 & lfs>0
 *
@@ -804,8 +804,8 @@ sum labor_earnings_month if employment_status==4 & year==2005 & age>17 & age<65 
 *Carrillo 3/43
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen.dta", clear
+cd ""
 *
 keep if sample==21
 *keep if sample==21 | sample==23
@@ -827,8 +827,8 @@ graph export mean_labor_force_soep.png, replace
 *Carrillo 3/43
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_0.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen_0.dta", clear
+cd ""
 *
 *keep if sample==21 
 *keep if sample==21 | sample==23
@@ -896,8 +896,8 @@ graph export mean_marg_emp_soep_95.png, replace
 
 ***males
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen.dta", clear
+cd ""
 *
 keep if female==0
 *keep if sample==21 
@@ -966,8 +966,8 @@ graph export mean_marg_emp_soep_99_male.png, replace
 
 ***females
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen.dta", clear
+cd ""
 *
 keep if female==1
 *keep if sample==21 
@@ -1038,8 +1038,8 @@ graph export mean_marg_emp_soep_99_fem.png, replace
 *Carrillo 36/43
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_0.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen_0.dta", clear
+cd ""
 *
 bysort persnr year: gen unemployed=1 if lfs==6
 bysort persnr year: gen employed=1 if lfs==11

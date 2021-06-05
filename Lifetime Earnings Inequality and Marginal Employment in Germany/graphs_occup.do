@@ -5,8 +5,8 @@
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 order occupational_group occupation, last
 *keep if female==0
@@ -41,8 +41,8 @@ tab occupational_group if form==3
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 order occupational_group occupation, last
 keep if female==0
@@ -77,8 +77,8 @@ tab occupational_group if form==3
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 order occupational_group occupation, last
 keep if female==1
@@ -116,8 +116,8 @@ tab occupational_group if form==3
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 order occupational_group occupation, last
 
@@ -168,8 +168,8 @@ sum sum_sq_pc
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 order occupational_group occupation, last
 
@@ -221,8 +221,8 @@ sum sum_sq_pc
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 order occupational_group occupation, last
 
@@ -274,8 +274,8 @@ sum sum_sq_pc
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 order occupational_group occupation, last
 
@@ -342,8 +342,8 @@ sum sum_sq_pc_mini
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 order occupational_group occupation, last
 
@@ -411,8 +411,8 @@ sum sum_sq_pc_mini
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 order occupational_group occupation, last
 
@@ -484,8 +484,8 @@ sum sum_sq_pc_mini
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 keep if year>=1999 & year!=.
 
@@ -516,8 +516,8 @@ sum count_end if month_endepi!=. & month_endepi<12
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 keep if year>=1999 & year!=.
 

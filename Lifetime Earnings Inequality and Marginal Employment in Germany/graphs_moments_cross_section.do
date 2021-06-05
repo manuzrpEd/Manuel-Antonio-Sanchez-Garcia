@@ -1,7 +1,7 @@
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\moments_cross_section",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\moments_cross_section",clear
+cd ""
 sort year
 
 *
@@ -238,8 +238,8 @@ graph export kdens_marginal_employment_form.png, replace
 *
 ***FEMALE***
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\moments_cross_section_fem",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\moments_cross_section_fem",clear
+cd ""
 sort year
 
 *
@@ -454,8 +454,8 @@ graph export kdens_marginal_employment_form_fem.png, replace
 
 ***Unc
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\moments_cross_section_unc",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\moments_cross_section_unc",clear
+cd ""
 sort year
 
 *
@@ -665,8 +665,8 @@ graph export kdens_marginal_employment_form_unc.png, replace
 
 *** Histogram on Days_Epi by Years
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 drop if west==0
 
@@ -693,8 +693,8 @@ graph export hist_days_2014.png, replace
 
 ***
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 drop if west==0
 
@@ -719,8 +719,8 @@ graph export hist_days_2005_fem.png, replace
 histogram days_epi if form==1 & reason_perm==1 & year==2014, xlabel(0 (90) 360, labsize(large))  bin(8) ylabel(0 (0.005) 0.02, labsize(large)) bcolor(blue) graphregion(color(white)) ytitle({bf:Density}, size(large) height(10))
 graph export hist_days_2014_fem.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 drop if west==0
 
@@ -748,8 +748,8 @@ graph export hist_days_2014_unc.png, replace
 
 *** fraction contract days above 6 months
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 keep if female==0
 
@@ -779,8 +779,8 @@ graph export mean_month_spell.png, replace
 
 ***
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 keep if female==1
 
@@ -808,8 +808,8 @@ label variable mean_below6m "< 180 Days"
 quietly twoway line mean_above6m mean_below6m year, ytitle({bf:Fraction}, size(large) height(10)) lcolor(blue blue blue) legend(position(6) rows(1)) lpattern(solid dash dash_dot) lwidth(medthick medthick medthick)  xtitle({bf:Year}, size(large) height(7))  connect(l) xlabel(1975 (5) 2014, labsize(large)) xline(1975 (5) 2014, lstyle(grid)) xline(1999, lpattern(dash) lcolor(black)) graphregion(color(white)) ylabel(0 (0.2) 1, labsize(large) angle(horizontal))
 graph export mean_month_spell_fem.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 sort year
 
@@ -837,8 +837,8 @@ graph export mean_month_spell_unc.png, replace
 
 ***
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\moments_cross_section_unc",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\moments_cross_section_unc",clear
+cd ""
 sort year
 *ssc install nsplit
 
@@ -863,8 +863,8 @@ graph bar (mean) mean_ind_marginal_empl_nomidi mean_ind_marginal_empl_midi if ye
 *blabel(bar, position(center)  format(%12.2fc ))
 graph export mean_marginal_employment_unc.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\moments_cross_section",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\moments_cross_section",clear
+cd ""
 sort year
 *ssc install nsplit
 
@@ -889,8 +889,8 @@ graph bar (mean) mean_ind_marginal_empl_nomidi mean_ind_marginal_empl_midi if ye
 *blabel(bar, position(center)  format(%12.2fc ))
 graph export mean_marginal_employment.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\moments_cross_section_fem",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\moments_cross_section_fem",clear
+cd ""
 sort year
 *ssc install nsplit
 
@@ -916,8 +916,8 @@ graph bar (mean) mean_ind_marginal_empl_nomidi mean_ind_marginal_empl_midi if ye
 graph export mean_marginal_employment_fem.png, replace
 
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\moments_cross_section",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\moments_cross_section",clear
+cd ""
 sort year
 
 label variable mean_days_epi_cont "Aggregate"
@@ -929,8 +929,8 @@ quietly twoway line mean_days_epi_full_cont mean_days_epi_part_cont mean_days_ep
 graph export mean_days_epi_cont.png, replace
 
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\moments_cross_section_fem",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\moments_cross_section_fem",clear
+cd ""
 sort year
 
 label variable mean_days_epi_cont "Aggregate"
@@ -941,8 +941,8 @@ label variable mean_days_epi_mini_cont "Mini Jobs"
 quietly twoway line mean_days_epi_full_cont mean_days_epi_part_cont mean_days_epi_mini_cont year if year<2014, ytitle({bf:Fraction}, size(large) height(10)) lcolor(blue red green) legend(position(6) rows(1)) lpattern(solid dash dash_dot) lwidth(medthick medthick medthick medthick)  xtitle({bf:Year}, size(large) height(7))  connect(l) xlabel(1975 (5) 2014, labsize(large)) xline(1975 (5) 2014, lstyle(grid)) graphregion(color(white)) ylabel(0 (90) 360, labsize(large) angle(horizontal))
 graph export mean_days_epi_cont_fem.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\moments_cross_section_unc",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\moments_cross_section_unc",clear
+cd ""
 sort year
 
 label variable mean_days_epi_cont "Aggregate"
@@ -956,8 +956,8 @@ graph export mean_days_epi_cont_unc.png, replace
 *** Carrillo 32PDF
 
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 keep if year>=1999
 sort persnr year
 
@@ -1114,8 +1114,8 @@ graph export bottom_earn_ineq.png, replace
 
 *** Histogram Days Contracted 5Years:
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 sort year
 
@@ -1209,8 +1209,8 @@ restore
 }
 *
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 sort year
 
@@ -1304,8 +1304,8 @@ restore
 }
 *
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 sort year
 

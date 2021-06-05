@@ -5,8 +5,8 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -177,8 +177,8 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -349,8 +349,8 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings

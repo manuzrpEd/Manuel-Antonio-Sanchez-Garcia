@@ -1,8 +1,8 @@
 clear
 set more off
 set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_monthly.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_monthly.dta", clear
+cd ""
 
 *bysort year: gen count_year=_n
 *keep if count_year==1
@@ -195,8 +195,8 @@ graph export tstock_CJ.png, replace
 
 ***
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_monthly_fem.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_monthly_fem.dta", clear
+cd ""
 
 *bysort year: gen count_year=_n
 *keep if count_year==1
@@ -389,8 +389,8 @@ graph export tstock_CJ_fem.png, replace
 *
 
 ***unc
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_monthly_unc.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_monthly_unc.dta", clear
+cd ""
 
 *bysort year: gen count_year=_n
 *keep if count_year==1
@@ -606,8 +606,8 @@ graph export ut_99_unc_hazard.png, replace
 *
 
 *Galasi:
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months_unc.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_months_unc.dta", clear
+cd ""
 sort persnr year month_begepi
 
 bysort persnr year month_begepi: gen monthly_earnings=days_full*def_daily_wage if FT==1
@@ -618,8 +618,8 @@ twoway (kdensity monthly_earnings if year==2002, xline(325, lpattern(dash) lwidt
 graph export kdens_monthly_earnings_unc.png, replace
 
 *Galasi:
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_months.dta", clear
+cd ""
 sort persnr year month_begepi
 
 bysort persnr year month_begepi: gen monthly_earnings=days_full*def_daily_wage if FT==1
@@ -630,8 +630,8 @@ twoway (kdensity monthly_earnings if year==2002, xline(325, lpattern(dash) lwidt
 graph export kdens_monthly_earnings.png, replace
 
 *Galasi:
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months_fem.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_months_fem.dta", clear
+cd ""
 sort persnr year month_begepi
 
 bysort persnr year month_begepi: gen monthly_earnings=days_full*def_daily_wage if FT==1

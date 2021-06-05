@@ -1,8 +1,8 @@
 clear
 set more off
 *set memory 16g
-*C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_variance_decomposition.dta", clear
+
+use "\Preliminars_variance_decomposition.dta", clear
 ssc install fastgini
 ssc install gllamm
 *

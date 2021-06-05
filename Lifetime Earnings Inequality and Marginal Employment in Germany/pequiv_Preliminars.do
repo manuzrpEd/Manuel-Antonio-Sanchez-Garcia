@@ -1,12 +1,8 @@
 clear
 set more off
-*set memory 16g
 
-*cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
-*do pgen_Preliminars.do
-
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\apequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\apequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1984
 *
@@ -16,10 +12,10 @@ drop f* m* w* e1120184
 *rename variables
 rename *84 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_84.dta", replace
+save "\pequiv_84.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\bpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\bpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1985
 *
@@ -28,10 +24,10 @@ drop f* m* w* h1110* i112* bhhnr
 *rename variables
 rename *85 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_85.dta", replace
+save "\pequiv_85.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\cpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\cpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1986
 *
@@ -40,10 +36,10 @@ drop f* m* w* h1110* i112* chhnr
 *
 *rename variables
 rename *86 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_86.dta", replace
+save "\pequiv_86.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\dpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\dpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1987
 *
@@ -52,10 +48,10 @@ drop f* m* w* h1110* i112* dhhnr
 *rename variables
 rename *87 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_87.dta", replace
+save "\pequiv_87.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\epequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\epequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1988
 *
@@ -64,10 +60,10 @@ drop f* m* w* h1110* i112* ehhnr
 *rename variables
 rename *88 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_88.dta", replace
+save "\pequiv_88.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\fpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\fpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1989
 *
@@ -76,10 +72,10 @@ drop f* m* w* h1110* i112* fhhnr
 *rename variables
 rename *89 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_89.dta", replace
+save "\pequiv_89.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\gpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\gpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1990
 *
@@ -88,10 +84,10 @@ drop f* m* w* h1110* i112* ghhnr
 *rename variables
 rename *90 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_90.dta", replace
+save "\pequiv_90.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\hpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\hpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1991
 *
@@ -100,10 +96,10 @@ drop f* m* w* h1110* i112* hhhnr
 *rename variables
 rename *91 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_91.dta", replace
+save "\pequiv_91.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\ipequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\ipequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1992
 *
@@ -112,10 +108,10 @@ drop f* m* w* h1110* i112* ihhnr
 *rename variables
 rename *92 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_92.dta", replace
+save "\pequiv_92.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\jpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\jpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1993
 *
@@ -124,10 +120,10 @@ drop f* m* w* h1110* i112* jhhnr
 *rename variables
 rename *93 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_93.dta", replace
+save "\pequiv_93.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\kpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\kpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1994
 *
@@ -136,10 +132,10 @@ drop f* m* w* h1110* i112* khhnr
 *rename variables
 rename *94 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_94.dta", replace
+save "\pequiv_94.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\lpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\lpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1995
 *
@@ -148,10 +144,10 @@ drop f* m* w* h1110* i112* lhhnr
 *rename variables
 rename *95 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_95.dta", replace
+save "\pequiv_95.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\mpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\mpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1996
 *
@@ -160,10 +156,10 @@ drop f* m* w* h1110* i112* mhhnr
 *rename variables
 rename *96 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_96.dta", replace
+save "\pequiv_96.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\npequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\npequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1997
 *
@@ -172,10 +168,10 @@ drop f* m* w* h1110* i112* nhhnr
 *rename variables
 rename *97 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_97.dta", replace
+save "\pequiv_97.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\opequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\opequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1998
 *
@@ -184,10 +180,10 @@ drop f* m* w* h1110* i112* ohhnr
 *rename variables
 rename *98 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_98.dta", replace
+save "\pequiv_98.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\ppequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\ppequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=1999
 *
@@ -196,10 +192,10 @@ drop f* m* w* h1110* i112* phhnr
 *rename variables
 rename *99 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_99.dta", replace
+save "\pequiv_99.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\qpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\qpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2000
 *
@@ -208,10 +204,10 @@ drop f* m* w* h1110* i112* qhhnr
 *rename variables
 rename *00 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_00.dta", replace
+save "\pequiv_00.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\rpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\rpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2001
 *
@@ -220,10 +216,10 @@ drop f* m* w* h1110* i112* rhhnr
 *rename variables
 rename *01 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_01.dta", replace
+save "\pequiv_01.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\spequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\spequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2002
 *
@@ -232,10 +228,10 @@ drop f* m* w* h1110* i112* shhnr
 *rename variables
 rename *02 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_02.dta", replace
+save "\pequiv_02.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\tpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\tpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2003
 *
@@ -244,10 +240,10 @@ drop f* m* w* h1110* i112* thhnr
 *rename variables
 rename *03 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_03.dta", replace
+save "\pequiv_03.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\upequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\upequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2004
 *
@@ -256,10 +252,10 @@ drop f* m* w* h1110* i112* uhhnr
 *rename variables
 rename *04 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_04.dta", replace
+save "\pequiv_04.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\vpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\vpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2005
 *
@@ -268,10 +264,10 @@ drop f* m* w* h1110* i112* vhhnr
 *rename variables
 rename *05 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_05.dta", replace
+save "\pequiv_05.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\wpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\wpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2006
 *
@@ -280,10 +276,10 @@ drop f* m* w* h1110* i112* whhnr
 *rename variables
 rename *06 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_06.dta", replace
+save "\pequiv_06.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\xpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\xpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2007
 *
@@ -292,10 +288,10 @@ drop f* m* w* h1110* i112* xhhnr
 *rename variables
 rename *07 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_07.dta", replace
+save "\pequiv_07.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\ypequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\ypequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2008
 *
@@ -304,10 +300,10 @@ drop f* m* w* h1110* i112* yhhnr
 *rename variables
 rename *08 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_08.dta", replace
+save "\pequiv_08.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\zpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\zpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2009
 *
@@ -316,10 +312,10 @@ drop f* m* w* h1110* i112* zhhnr
 *rename variables
 rename *09 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_09.dta", replace
+save "\pequiv_09.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\bapequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\bapequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2010
 *
@@ -328,10 +324,10 @@ drop f* m* w* h1110* i112* bahhnr
 *rename variables
 rename *10 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_10.dta", replace
+save "\pequiv_10.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\bbpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\bbpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2011
 *
@@ -340,10 +336,10 @@ drop f* m* w* h1110* i112* bbhhnr
 *rename variables
 rename *11 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_11.dta", replace
+save "\pequiv_11.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\bcpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\bcpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2012
 *
@@ -352,10 +348,10 @@ drop f* m* w* h1110* i112* bchhnr
 *rename variables
 rename *12 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_12.dta", replace
+save "\pequiv_12.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\bdpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\bdpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2013
 *
@@ -364,10 +360,10 @@ drop f* m* w* h1110* i112* bdhhnr
 *rename variables
 rename *13 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_13.dta", replace
+save "\pequiv_13.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\bepequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\bepequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2014
 *
@@ -376,10 +372,10 @@ drop f* m* w* h1110* i112* behhnr
 *rename variables
 rename *14 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_14.dta", replace
+save "\pequiv_14.dta", replace
 
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pequiv\bfpequiv.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv\bfpequiv.dta", clear
+cd ""
 *gen year variable:
 gen year=2015
 *
@@ -388,41 +384,41 @@ drop f* m* w* h1110* i112* bfhhnr
 *rename variables
 rename *15 *
 *
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_15.dta", replace
+save "\pequiv_15.dta", replace
 
 ***append
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_84.dta", clear
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_85.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_86.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_87.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_88.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_89.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_90.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_91.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_92.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_93.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_94.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_95.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_96.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_97.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_98.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_99.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_00.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_01.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_02.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_03.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_04.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_05.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_06.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_07.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_08.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_09.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_10.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_11.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_12.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_13.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_14.dta", nolabel
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_15.dta", nolabel
+use "\pequiv_84.dta", clear
+append using "\pequiv_85.dta", nolabel
+append using "\pequiv_86.dta", nolabel
+append using "\pequiv_87.dta", nolabel
+append using "\pequiv_88.dta", nolabel
+append using "\pequiv_89.dta", nolabel
+append using "\pequiv_90.dta", nolabel
+append using "\pequiv_91.dta", nolabel
+append using "\pequiv_92.dta", nolabel
+append using "\pequiv_93.dta", nolabel
+append using "\pequiv_94.dta", nolabel
+append using "\pequiv_95.dta", nolabel
+append using "\pequiv_96.dta", nolabel
+append using "\pequiv_97.dta", nolabel
+append using "\pequiv_98.dta", nolabel
+append using "\pequiv_99.dta", nolabel
+append using "\pequiv_00.dta", nolabel
+append using "\pequiv_01.dta", nolabel
+append using "\pequiv_02.dta", nolabel
+append using "\pequiv_03.dta", nolabel
+append using "\pequiv_04.dta", nolabel
+append using "\pequiv_05.dta", nolabel
+append using "\pequiv_06.dta", nolabel
+append using "\pequiv_07.dta", nolabel
+append using "\pequiv_08.dta", nolabel
+append using "\pequiv_09.dta", nolabel
+append using "\pequiv_10.dta", nolabel
+append using "\pequiv_11.dta", nolabel
+append using "\pequiv_12.dta", nolabel
+append using "\pequiv_13.dta", nolabel
+append using "\pequiv_14.dta", nolabel
+append using "\pequiv_15.dta", nolabel
 
 sort persnr year
 
@@ -478,7 +474,7 @@ rename e11105 occupation
 
 rename l11102 region_west_east
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_0.dta", replace
+save "\pequiv_0.dta", replace
 
 ***Cleaning to work at annual level
 
@@ -487,7 +483,7 @@ save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequi
 *i now correct for that
 gen year_new=year-1 if year>0 & year!=.
 
-merge 1:1 persnr year using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen.dta", keepusing(civil_servant nation lfs) nogen
+merge 1:1 persnr year using "\pgen.dta", keepusing(civil_servant nation lfs) nogen
 
 replace civil_servant=-2 if civil_servant==.
 bysort persnr: egen max_civil_servant=max(civil_servant)
@@ -571,11 +567,11 @@ sort persnr year
 
 order persnr year def_earnings_work
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_2.dta", replace
+save "\pequiv_2.dta", replace
 
 ***
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_2.dta", clear
+use "\pequiv_2.dta", clear
 
 tabstat persnr if sample==21, statistics(n) by(year)
 tabstat persnr if sample==23, statistics(n) by(year)
@@ -599,7 +595,7 @@ ssc install fastgini
 ***males
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_2.dta", clear
+use "\pequiv_2.dta", clear
 
 
 keep if female==0
@@ -808,7 +804,7 @@ graph export kernel_soep.png, replace
 ***females
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_2.dta", clear
+use "\pequiv_2.dta", clear
 
 
 keep if female==1
@@ -1017,7 +1013,7 @@ graph export kernel_soep_fem.png, replace
 ***unconditional
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_2.dta", clear
+use "\pequiv_2.dta", clear
 
 
 *keep if female==1
@@ -1227,7 +1223,7 @@ graph export kernel_soep_unc.png, replace
 
 
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_2.dta", clear
+use "\pequiv_2.dta", clear
 ssc install fastgini
 
 *keep if female==0
@@ -1314,7 +1310,7 @@ graph export perc8515_work_lfive_unc_soep.png, replace
 *
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_2.dta", clear
+use "\pequiv_2.dta", clear
 ssc install fastgini
 
 keep if female==0
@@ -1398,7 +1394,7 @@ quietly twoway line p85_p15_cs_work year, ytitle({bf:P{sub:85}/P{sub:15}[Earning
 graph export perc8515_work_lfive_soep.png, replace
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_2.dta", clear
+use "\pequiv_2.dta", clear
 ssc install fastgini
 
 keep if female==1
@@ -1486,8 +1482,8 @@ graph export perc8515_work_lfive_fem_soep.png, replace
 cls
 set more off
 *_2
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_0.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv_0.dta", clear
+cd ""
 
 *ssc install fastgini
 *employment status
@@ -1530,8 +1526,8 @@ graph export total_employment_soep.png, replace
 cls
 set more off
 *_2
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_2.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv_2.dta", clear
+cd ""
 
 *
 keep if sample==21 
@@ -1568,8 +1564,8 @@ graph export mean_labor_force_soep.png, replace
 cls
 set more off
 *_2
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pequiv_0.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pequiv_0.dta", clear
+cd ""
 
 *
 keep if sample==21 

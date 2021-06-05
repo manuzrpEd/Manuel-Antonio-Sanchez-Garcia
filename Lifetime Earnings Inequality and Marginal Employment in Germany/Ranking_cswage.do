@@ -7,7 +7,7 @@ forval j=1/5 {
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -128,7 +128,7 @@ keep year gini* var* p* mean* log* educ* age* year_birth* region requirement
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_unc_full_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_unc_full_r`j'.dta", replace
 
 restore
 
@@ -144,7 +144,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -259,7 +259,7 @@ keep year gini* var* p* mean* log* educ* age* year_birth* region requirement
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_unc_part_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_unc_part_r`j'.dta", replace
 
 restore
 
@@ -275,7 +275,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -390,7 +390,7 @@ keep year gini* var* p* mean* log* educ* age* year_birth* region requirement
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_unc_mini_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_unc_mini_r`j'.dta", replace
 
 restore
 
@@ -404,7 +404,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -519,7 +519,7 @@ keep year gini* var* p* mean* log* educ* age* year_birth* region requirement
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_male_full_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_male_full_r`j'.dta", replace
 
 restore
 
@@ -535,7 +535,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -650,7 +650,7 @@ keep year gini* var* p* mean* log* educ* age* year_birth* region requirement
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_male_part_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_male_part_r`j'.dta", replace
 
 restore
 
@@ -666,7 +666,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -779,7 +779,7 @@ keep year gini* var* p* mean* log* educ* age* year_birth* region requirement
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_male_mini_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_male_mini_r`j'.dta", replace
 
 restore
 
@@ -793,7 +793,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -907,7 +907,7 @@ keep year gini* var* p* mean* log* educ* age* year_birth* region requirement
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_female_full_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_female_full_r`j'.dta", replace
 
 restore
 
@@ -923,7 +923,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -1037,7 +1037,7 @@ keep year gini* var* p* mean* log* educ* age* year_birth* region requirement
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_female_part_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_female_part_r`j'.dta", replace
 
 restore
 
@@ -1053,7 +1053,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -1167,7 +1167,7 @@ keep year gini* var* p* mean* log* educ* age* year_birth* region requirement
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_female_mini_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_female_mini_r`j'.dta", replace
 
 restore
 
@@ -1188,7 +1188,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -1301,7 +1301,7 @@ keep year share*
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_unc_full_shares_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_unc_full_shares_r`j'.dta", replace
 
 restore
 
@@ -1317,7 +1317,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -1430,7 +1430,7 @@ keep year share*
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_unc_part_shares_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_unc_part_shares_r`j'.dta", replace
 
 restore
 
@@ -1447,7 +1447,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -1560,7 +1560,7 @@ keep year share*
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_unc_mini_shares_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_unc_mini_shares_r`j'.dta", replace
 
 restore
 
@@ -1579,7 +1579,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -1692,7 +1692,7 @@ keep year share*
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_male_full_shares_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_male_full_shares_r`j'.dta", replace
 
 restore
 
@@ -1708,7 +1708,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -1821,7 +1821,7 @@ keep year share*
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_male_part_shares_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_male_part_shares_r`j'.dta", replace
 
 restore
 
@@ -1838,7 +1838,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Codes\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -1951,7 +1951,7 @@ keep year share*
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_male_mini_shares_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_male_mini_shares_r`j'.dta", replace
 
 restore
 
@@ -1969,7 +1969,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -2083,7 +2083,7 @@ keep year share*
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_female_full_shares_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_female_full_shares_r`j'.dta", replace
 
 restore
 
@@ -2099,7 +2099,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -2212,7 +2212,7 @@ keep year share*
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_female_part_shares_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_female_part_shares_r`j'.dta", replace
 
 restore
 
@@ -2229,7 +2229,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -2342,7 +2342,7 @@ keep year share*
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_cswage_female_mini_shares_r`j'.dta", replace
+saveold "\bonke_`i'_cswage_female_mini_shares_r`j'.dta", replace
 
 restore
 

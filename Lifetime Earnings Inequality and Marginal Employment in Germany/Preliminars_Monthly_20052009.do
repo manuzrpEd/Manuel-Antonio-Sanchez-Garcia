@@ -1,11 +1,11 @@
 cls
 clear
 **set memory 16g
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\siab_r_7514_v1.dta",clear
+cd ""
+use "\siab_r_7514_v1.dta",clear
 label language en
-*use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\siab_r_7514_v1.dta", clear
-*cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+*use "\siab_r_7514_v1.dta", clear
+*cd ""
 set more off
 *
 rename ausbildung vocational_training
@@ -1253,7 +1253,7 @@ replace unemp_ben=0 if empstate==2 & unemp_ben==1
 replace unemp_ben=0 if empstate==3 & unemp_ben==1
 replace unemp_ben=0 if empstate==5 & unemp_ben==1
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_20052009.dta", replace
+save "\Preliminars_Monthly_persnr_20052009.dta", replace
 
 *males
 
@@ -1267,9 +1267,9 @@ rename persnr2 persnr
 
 *egen npeople=max(persnr)
 
-outsheet using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Matlab\MonthlyIncome\2005-2009\data_persnr_males.csv", comma nolabel replace nonames
+outsheet using "\Matlab\MonthlyIncome\2005-2009\data_persnr_males.csv", comma nolabel replace nonames
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", replace
+save "\Preliminars_Monthly_persnr_males_20052009.dta", replace
 
 restore
 
@@ -1285,9 +1285,9 @@ rename persnr2 persnr
 
 *egen npeople=max(persnr)
 
-outsheet using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Matlab\MonthlyIncome\2005-2009\data_persnr_females.csv", comma nolabel replace nonames
+outsheet using "\Matlab\MonthlyIncome\2005-2009\data_persnr_females.csv", comma nolabel replace nonames
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_females_20052009.dta", replace
+save "\Preliminars_Monthly_persnr_females_20052009.dta", replace
 
 restore
 *

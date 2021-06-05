@@ -5,8 +5,8 @@
 *
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time
@@ -55,8 +55,8 @@ sort year
 quietly twoway line dev_p85 dev_p50 dev_p15 year, ytitle({bf:Log Deviations}, size(large) height(10)) lcolor(black blue gray) legend(position(6) rows(1)) lpattern(solid dash dash_dot) lwidth(medthick medthick medthick medthick)  xtitle({bf:Year}, size(large) height(7))  connect(l) xlabel(1975 (5) 2014, labsize(large)) xline(1975 (5) 2014, lstyle(grid)) xline(1999, lpattern(dash) lcolor(black)) graphregion(color(white)) ylabel(-35 (5) 10, labsize(large) angle(horizontal))
 graph export dev_perc.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time
@@ -109,8 +109,8 @@ graph export dev_perc_fem.png, replace
 *Figure II
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 *only full time
 drop if female==1
@@ -158,8 +158,8 @@ sort year
 quietly twoway line p85_15_full p85_50_full p50_15_full sd_full year, ytitle({bf:Dispersion}, size(large) height(10)) lcolor(black blue gray green) legend(position(6) rows(1)) lpattern(solid dash dash_dot solid) lwidth(medthick medthick medthick medthick)  xtitle({bf:Year}, size(large) height(7))  connect(l) xlabel(1975 (5) 2014, labsize(large)) xline(1975 (5) 2014, lstyle(grid)) graphregion(color(white)) ylabel(0.3 (0.05) 0.7, labsize(large) angle(horizontal))
 graph export wage_ineq.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 *only full time
 drop if female==0
@@ -211,8 +211,8 @@ graph export wage_ineq_fem.png, replace
 *Figure III
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 *only full time
 drop if source!=1
@@ -260,8 +260,8 @@ graph export wage_ineq_samples.png, replace
 *Figure IVS
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 set matsize 11000
 sort year
 *only full time
@@ -302,8 +302,8 @@ graph export mincer_regs.png, replace
 *Figure IVS
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 set matsize 11000
 sort year
 *only full time
@@ -341,8 +341,8 @@ graph export mincer_regs_female.png, replace
 *Figure IVS
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 set matsize 11000
 sort year
 *only full time

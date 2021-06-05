@@ -1,11 +1,11 @@
 cls
 clear
 **set memory 16g
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\siab_r_7514_v1.dta",clear
+cd ""
+use "\siab_r_7514_v1.dta",clear
 label language en
-*use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\siab_r_7514_v1.dta", clear
-*cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+*use "\siab_r_7514_v1.dta", clear
+*cd ""
 set more off
 *
 rename ausbildung vocational_training
@@ -206,7 +206,7 @@ qui replace west=0 if region>=11000 & region<17000
 
 drop region
 
-*save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_east.dta", replace
+*save "\Preliminars_east.dta", replace
 
 *bysort persnr: egen sum_west=sum(west)
 *qui drop if sum_west==0
@@ -1132,4 +1132,4 @@ keep if counter==1
 gen log_tot_full_earnings=log(tot_full_earnings)
 
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Yearly.dta", replace
+save "\Preliminars_Yearly.dta", replace

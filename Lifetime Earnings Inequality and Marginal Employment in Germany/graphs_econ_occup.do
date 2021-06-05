@@ -7,8 +7,8 @@
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 *keep if female==0
 
@@ -86,8 +86,8 @@ graph export mean_econ_act_unc.png, replace
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 keep if female==0
 
@@ -165,8 +165,8 @@ graph export mean_econ_act_male.png, replace
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 keep if female==1
 
@@ -247,8 +247,8 @@ graph export mean_econ_act_female.png, replace
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 *keep if female==0
 
@@ -327,8 +327,8 @@ graph export mean_econ_act_unc_full.png, replace
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 keep if female==0
 
@@ -407,8 +407,8 @@ graph export mean_econ_act_male_full.png, replace
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 keep if female==1
 
@@ -491,8 +491,8 @@ graph export mean_econ_act_female_full.png, replace
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 *keep if female==0
 
@@ -571,8 +571,8 @@ graph export mean_econ_act_unc_part.png, replace
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 keep if female==0
 
@@ -651,8 +651,8 @@ graph export mean_econ_act_male_part.png, replace
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 keep if female==1
 
@@ -734,8 +734,8 @@ graph export mean_econ_act_female_part.png, replace
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 *keep if female==0
 
@@ -814,8 +814,8 @@ graph export mean_econ_act_unc_mini.png, replace
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 keep if female==0
 
@@ -894,8 +894,8 @@ graph export mean_econ_act_male_mini.png, replace
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 keep if female==1
 

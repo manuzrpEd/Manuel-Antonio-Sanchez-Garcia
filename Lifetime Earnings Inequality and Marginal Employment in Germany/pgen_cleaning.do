@@ -1,8 +1,8 @@
 clear
 set more off
 set memory 16g
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\GSOEP\GSOEP_Data\pgen_data\apgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen_data\apgen.dta", clear
+cd "\Codes"
 
 *gen year variable:
 
@@ -55,4 +55,4 @@ replace civil_serv_indic=0 if stib84>0 & civil_serv_indic!=1
 
 *or can use civil service variable itself...
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\clean_apgen", replace
+save "\Codes\clean_apgen", replace

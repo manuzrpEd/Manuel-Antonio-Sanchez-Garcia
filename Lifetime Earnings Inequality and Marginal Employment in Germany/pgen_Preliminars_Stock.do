@@ -1,8 +1,8 @@
 cls
 set more off
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen.dta", clear
+cd ""
 *
 ssc install fastgini
 ***cleaning - generate variables/statistics to compare to pequiv
@@ -36,9 +36,9 @@ drop if lfs==3
 *drop retirees:
 drop if lfs==2
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_stock.dta", replace
+save "\pgen_stock.dta", replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_stock.dta", clear
+use "\pgen_stock.dta", clear
 
 ***unconditional
 
@@ -101,7 +101,7 @@ graph export sec_reg_temp_soep_gen_unc.png, replace
 twoway line ave_sec_job year, ytitle({bf:Fraction}, size(large) height(5)) legend(position(6) rows(1) on) lcolor(blue red green) lpattern(solid dash shortdash) lwidth(medthick medthick medthick)  xtitle({bf:Year}, size(large) height(7))  connect(l) xlabel(1975 (5) 2014) xline(1975 (5) 2014, lstyle(grid)) graphregion(color(white)) ylabel(0 (0.02) 0.1, angle(horizontal))
 graph export sec_soep_gen_unc.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_stock.dta", clear
+use "\pgen_stock.dta", clear
 
 ***males
 
@@ -164,7 +164,7 @@ graph export sec_reg_temp_soep_gen.png, replace
 twoway line ave_sec_job year, ytitle({bf:Fraction}, size(large) height(5)) legend(position(6) rows(1) on) lcolor(blue red green) lpattern(solid dash shortdash) lwidth(medthick medthick medthick)  xtitle({bf:Year}, size(large) height(7))  connect(l) xlabel(1975 (5) 2014) xline(1975 (5) 2014, lstyle(grid)) graphregion(color(white)) ylabel(0 (0.02) 0.1, angle(horizontal))
 graph export sec_soep_gen.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_stock.dta", clear
+use "\pgen_stock.dta", clear
 
 ***female
 

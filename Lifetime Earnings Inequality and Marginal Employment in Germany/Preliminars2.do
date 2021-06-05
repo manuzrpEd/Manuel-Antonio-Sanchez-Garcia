@@ -1,13 +1,7 @@
 clear
 set memory 16g
 *** top coded extrapolation
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
-
-*first we start with the WEST
-
-*upper daily wage top coded, now we extrapolate here:
-
-* http://fdz.iab.de/en/FDZ_Overview_of_Data/working_tools.aspx
+use "\Preliminars.dta", clear
 
 forval i = 1/2 {
 
@@ -716,6 +710,6 @@ tab ind_ch,m
 order persnr female counter_spell begepi endepi year age days_epi days_year source reason_notif part_time employment_status midi_jobs counter_diff_estab_id daily_wage west requirement german year_birth school_qualification occupation
 sum persnr
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", replace
+save "\Preliminars.dta", replace
 
 do Preliminars_east.do

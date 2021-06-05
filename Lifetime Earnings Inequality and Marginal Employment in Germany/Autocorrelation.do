@@ -2,8 +2,8 @@
 cls
 clear
 **set memory 16g
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+cd ""
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 g time_var=0
 replace time_var=12 if year==2006
 replace time_var=24 if year==2007

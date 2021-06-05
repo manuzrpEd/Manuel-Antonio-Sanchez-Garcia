@@ -1,7 +1,7 @@
 clear
 set more off
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 ssc install fastgini
 *ssc install fastgini
 *ssc install ginidesc
@@ -9,21 +9,6 @@ ssc install fastgini
 *** fraction of full-time, part-time, marginal-employment over time
 
 keep if female==0
-
-/*
-*adjust daily_wage by the working form/intensity
-gen adj_daily_wage=def_daily_wage/0.4 if form==2
-replace adj_daily_wage=def_daily_wage/0.33 if form==3
-*replace adj_daily_wage=def_daily_wage/0.4 if midi_jobs==2 & source==1
-*replace adj_daily_wage=def_daily_wage/0.4 if midi_jobs==1 & source==1
-replace adj_daily_wage=def_daily_wage if form==1
-*replace adj_daily_wage=def_daily_wage if part_time==0 & employment_status!=3 & midi_jobs!=1 & midi_jobs!=2 & source==1
-*/
-
-*tabstat days_epi if inrange(form,1,3), by(year) stats(min max mean n)
-*tabstat days_epi if form==1, by(year) stats(min max mean n)
-*tabstat days_epi if form==2, by(year) stats(min max mean n)
-*tabstat days_epi if form==3, by(year) stats(min max mean n)
 
 
 qui gen reason_perm=1 if reason_notif==0 | reason_notif==6
@@ -252,11 +237,11 @@ label variable fract_unemp5 "Unemp>180 days"
 keep year mean* skew* kurt* sd* var* form log_daily_wage log_earnings_year* fract* gini* median* p85* p15* num* persnr
 *fract_unemp*
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\moments_cross_section.dta", replace
+saveold "\moments_cross_section.dta", replace
 
 ***EAST***
 /*
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_east.dta", clear
+use "\Preliminars_east.dta", clear
 
 *** fraction of full-time, part-time, marginal-employment over time
 
@@ -520,11 +505,11 @@ label variable fract_unemp5 "Unemp>180 days"
 keep year mean* skew* kurt* sd* var* form log_daily_wage log_earnings_year* fract* gini*  median* p85* p15* num* persnr
 *fract_unemp*
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\moments_cross_section_east.dta", replace
+saveold "\moments_cross_section_east.dta", replace
 */
 ***FEMALES***
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 
 *** fraction of full-time, part-time, marginal-employment over time
 
@@ -787,7 +772,7 @@ keep year mean* skew* kurt* sd* var* form log_daily_wage log_earnings_year* frac
 
 *fract_unemp*
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\moments_cross_section_fem.dta", replace
+saveold "\moments_cross_section_fem.dta", replace
 
 do bonke.do
 

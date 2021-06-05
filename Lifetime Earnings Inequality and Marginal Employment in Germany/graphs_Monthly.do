@@ -4,8 +4,8 @@
 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", replace
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", replace
+cd ""
 
 drop if empstate==4
 drop if female==1
@@ -51,8 +51,8 @@ graph export var_work_males_cs.png, replace
 ***CS 5Year Earnings Inequality
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", replace
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", replace
+cd ""
 
 drop if empstate==4
 drop if female==1
@@ -147,8 +147,8 @@ graph export var_work_5y_males_cs.png, replace
 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", replace
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", replace
+cd ""
 
 drop if empstate==4
 drop if female==1
@@ -283,8 +283,8 @@ graph export var_work_5y_males_ages.png, replace
 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", replace
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", replace
+cd ""
 
 drop if empstate==4
 drop if female==0
@@ -330,8 +330,8 @@ graph export var_work_females_cs.png, replace
 ***CS 5Year Earnings Inequality
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", replace
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", replace
+cd ""
 
 drop if empstate==4
 drop if female==0
@@ -426,8 +426,8 @@ graph export var_work_5y_females_cs.png, replace
 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", replace
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", replace
+cd ""
 
 drop if empstate==4
 drop if female==0
@@ -565,8 +565,8 @@ graph export var_work_5y_females_ages.png, replace
 *
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr",clear
+cd ""
 sort year
 
 drop if female==1
@@ -630,8 +630,8 @@ graph export dev_perc_full_males.png, replace
 *Part Time
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr",clear
+cd ""
 sort year
 
 drop if female==1
@@ -694,8 +694,8 @@ graph export dev_perc_part_males.png, replace
 *Mg
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr",clear
+cd ""
 sort year
 
 drop if female==1
@@ -765,8 +765,8 @@ graph export dev_perc_mini_males.png, replace
 *
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr",clear
+cd ""
 sort year
 
 drop if female==0
@@ -830,8 +830,8 @@ graph export dev_perc_full_females.png, replace
 *Part Time
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr",clear
+cd ""
 sort year
 
 drop if female==0
@@ -894,8 +894,8 @@ graph export dev_perc_part_females.png, replace
 *Mg
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr",clear
+cd ""
 sort year
 
 drop if female==0
@@ -960,8 +960,8 @@ graph export dev_perc_mini_females.png, replace
 *9) CS Full Time 75-14
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Yearly.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Yearly.dta", clear
+cd ""
 
 sort year
 
@@ -996,8 +996,8 @@ graph export var_full_males_cs_7514.png, replace
 *10) 5year 75-10
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Yearly.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Yearly.dta", clear
+cd ""
 
 drop if female==1
 
@@ -1065,8 +1065,8 @@ graph export var_full_males_5year_7510.png, replace
 *11) CS Full Time 75-14
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Yearly.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Yearly.dta", clear
+cd ""
 
 sort year
 
@@ -1101,8 +1101,8 @@ graph export var_full_females_cs_7514.png, replace
 *12) 5year 75-10
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Yearly.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Yearly.dta", clear
+cd ""
 
 drop if female==0
 
@@ -1278,8 +1278,8 @@ graph export stock_CJ_unc.png, replace
 *14) Males Stocks
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 *bysort year: gen count_year=_n
 *keep if count_year==1
@@ -1377,8 +1377,8 @@ graph export stock_CJ_male.png, replace
 *15) Female Stocks
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 *bysort year: gen count_year=_n
 *keep if count_year==1
@@ -1474,8 +1474,8 @@ graph export stock_CJ_female.png, replace
 *16) Unconditional OutFlows
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 sort persnr year month
 *bysort year: gen count_year=_n
@@ -1652,8 +1652,8 @@ graph export outflows_CJ_unc.png, replace
 *17) Male OutFlows
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 drop if female==1
 
@@ -1832,8 +1832,8 @@ graph export outflows_CJ_male.png, replace
 *18) Female OutFlows
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 drop if female==0
 
@@ -2012,8 +2012,8 @@ graph export outflows_CJ_female.png, replace
 *19) 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 sort persnr year month
 
@@ -2070,8 +2070,8 @@ graph export mean_month_unc.png, replace
 *20) 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 drop if female==1
 
@@ -2130,8 +2130,8 @@ graph export mean_month_male.png, replace
 *21) 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 drop if female==0
 
@@ -2191,8 +2191,8 @@ graph export mean_month_female.png, replace
 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", replace
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", replace
+cd ""
 
 drop if empstate==4
 *drop if female==1
@@ -2232,8 +2232,8 @@ graph export var_form_unc_cs.png, replace
 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", replace
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", replace
+cd ""
 
 drop if empstate==4
 drop if female==1
@@ -2273,8 +2273,8 @@ graph export var_form_male_cs.png, replace
 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", replace
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", replace
+cd ""
 
 drop if empstate==4
 drop if female==0
@@ -2319,7 +2319,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr", clear
+use "\Preliminars_Monthly_persnr", clear
 
 drop if empstate==4
 
@@ -2397,7 +2397,7 @@ keep year var* mean* log* educ* age* year_birth*
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_full.dta", replace
+saveold "\bonke_`i'_5years_unc_full.dta", replace
 
 restore
 
@@ -2413,7 +2413,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr", clear
+use "\Preliminars_Monthly_persnr", clear
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -2490,7 +2490,7 @@ keep year var* mean* log* educ* age* year_birth*
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_part.dta", replace
+saveold "\bonke_`i'_5years_unc_part.dta", replace
 
 restore
 
@@ -2505,7 +2505,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr", clear
+use "\Preliminars_Monthly_persnr", clear
 ssc install fastgini
 
 drop if empstate==4
@@ -2584,7 +2584,7 @@ keep year var* mean* log* educ* age* year_birth*
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_mini.dta", replace
+saveold "\bonke_`i'_5years_unc_mini.dta", replace
 
 restore
 
@@ -2598,7 +2598,7 @@ set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr", clear
+use "\Preliminars_Monthly_persnr", clear
 ssc install fastgini
 
 drop if empstate==4
@@ -2677,7 +2677,7 @@ keep year var* mean* log* educ* age* year_birth*
 
 display `i'
 
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_cj.dta", replace
+saveold "\bonke_`i'_5years_unc_cj.dta", replace
 
 restore
 
@@ -2686,8 +2686,8 @@ restore
 
 *Graphs * Unconditional
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_unc_full",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_unc_full",clear
+cd ""
 sort year
 
 rename var_lt_work_1999 var_lt_work_1999_full
@@ -2695,7 +2695,7 @@ rename meanlog_earnings_long_term meanlog_earnings_long_term_full
 rename meanlog_earnings_yearly meanlog_earnings_yearly_full
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_full"
+append using "\bonke_`i'_5years_unc_full"
 replace var_lt_work_1999_full=var_lt_work_`i' if year==`i' 
 replace meanlog_earnings_long_term_full=meanlog_earnings_long_term if year==`i'
 replace meanlog_earnings_yearly_full=meanlog_earnings_yearly if year==`i'
@@ -2703,12 +2703,12 @@ drop var_lt_work_`i' meanlog_earnings_long_term meanlog_earnings_yearly
 }
 *
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_unc_part"
+append using "\bonke_1999_5years_unc_part"
 rename var_lt_work_1999 var_lt_work_1999_part
 rename meanlog_earnings_long_term meanlog_earnings_long_term_part
 rename meanlog_earnings_yearly meanlog_earnings_yearly_part
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_part"
+append using "\bonke_`i'_5years_unc_part"
 replace var_lt_work_1999_part=var_lt_work_`i' if year==`i' 
 replace meanlog_earnings_long_term_part=meanlog_earnings_long_term if year==`i'
 replace meanlog_earnings_yearly_part=meanlog_earnings_yearly if year==`i'
@@ -2716,12 +2716,12 @@ drop var_lt_work_`i' meanlog_earnings_long_term meanlog_earnings_yearly
 }
 *
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_unc_mini"
+append using "\bonke_1999_5years_unc_mini"
 rename var_lt_work_1999 var_lt_work_1999_mini
 rename meanlog_earnings_long_term meanlog_earnings_long_term_mini
 rename meanlog_earnings_yearly meanlog_earnings_yearly_mini
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_mini"
+append using "\bonke_`i'_5years_unc_mini"
 replace var_lt_work_1999_mini=var_lt_work_`i' if year==`i' 
 replace meanlog_earnings_long_term_mini=meanlog_earnings_long_term if year==`i'
 replace meanlog_earnings_yearly_mini=meanlog_earnings_yearly if year==`i'
@@ -2729,12 +2729,12 @@ drop var_lt_work_`i' meanlog_earnings_long_term meanlog_earnings_yearly
 }
 *
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_unc_cj"
+append using "\bonke_1999_5years_unc_cj"
 rename var_lt_work_1999 var_lt_work_1999_cj
 rename meanlog_earnings_long_term meanlog_earnings_long_term_cj
 rename meanlog_earnings_yearly meanlog_earnings_yearly_cj
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_cj"
+append using "\bonke_`i'_5years_unc_cj"
 replace var_lt_work_1999_cj=var_lt_work_`i' if year==`i' 
 replace meanlog_earnings_long_term_cj=meanlog_earnings_long_term if year==`i'
 replace meanlog_earnings_yearly_cj=meanlog_earnings_yearly if year==`i'
@@ -2849,24 +2849,24 @@ graph export mean_work_1999_5yearly_unc_cj.png, replace
 
 *** Unconditional Shares
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_unc_full_shares",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_unc_full_shares",clear
+cd ""
 sort year
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_full_shares"
+append using "\bonke_`i'_5years_unc_full_shares"
 }
 *
 
 graph bar (mean) share_full_days share_part_days share_mini_days, over(year, label(labsize(large) angle(45))) ytitle({bf:Share}, size(large) height(10)) legend(position(6) rows(1)) graphregion(color(white)) stack  legend( label(1 "Full Time") label(2 "Part Time") label(3 "Marg. Employment") ) exclude0 yla(0(0.1)1, labsize(large))
 graph export mean_5years_unc_full_shares_days.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_unc_part_shares",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_unc_part_shares",clear
+cd ""
 sort year
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_part_shares"
+append using "\bonke_`i'_5years_unc_part_shares"
 }
 *
 
@@ -2874,12 +2874,12 @@ graph bar (mean) share_full_days share_part_days share_mini_days, over(year, lab
 graph export mean_5years_unc_part_shares_days.png, replace
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_unc_mini_shares",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_unc_mini_shares",clear
+cd ""
 sort year
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_mini_shares"
+append using "\bonke_`i'_5years_unc_mini_shares"
 }
 *
 
@@ -2889,35 +2889,35 @@ graph export mean_5years_unc_mini_shares_days.png, replace
 
 *** Female Shares
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_female_full_shares",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_female_full_shares",clear
+cd ""
 sort year
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_female_full_shares"
+append using "\bonke_`i'_5years_female_full_shares"
 }
 *
 graph bar (mean) share_full_days share_part_days share_mini_days, over(year, label(labsize(large) angle(45))) ytitle({bf:Share}, size(large) height(10)) legend(position(6) rows(1)) graphregion(color(white)) stack  legend( label(1 "Full Time") label(2 "Part Time") label(3 "Marg. Employment") ) exclude0 yla(0(0.1)1, labsize(large))
 graph export mean_5years_female_full_shares_days.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_female_part_shares",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_female_part_shares",clear
+cd ""
 sort year
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_female_part_shares"
+append using "\bonke_`i'_5years_female_part_shares"
 }
 *
 graph bar (mean) share_full_days share_part_days share_mini_days, over(year, label(labsize(large) angle(45))) ytitle({bf:Share}, size(large) height(10)) legend(position(6) rows(1)) graphregion(color(white)) stack  legend( label(1 "Full Time") label(2 "Part Time") label(3 "Marg. Employment") ) exclude0 yla(0(0.1)1, labsize(large))
 graph export mean_5years_female_part_shares_days.png, replace
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_female_mini_shares",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_female_mini_shares",clear
+cd ""
 sort year
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_female_mini_shares"
+append using "\bonke_`i'_5years_female_mini_shares"
 }
 *
 graph bar (mean) share_full_days share_part_days share_mini_days, over(year, label(labsize(large) angle(45))) ytitle({bf:Share}, size(large) height(10)) legend(position(6) rows(1)) graphregion(color(white)) stack  legend( label(1 "Full Time") label(2 "Part Time") label(3 "Marg. Employment") ) exclude0 yla(0(0.1)1, labsize(large))
@@ -2926,23 +2926,23 @@ graph export mean_5years_female_mini_shares_days.png, replace
 
 *** Male Shares
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_male_full_shares",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_male_full_shares",clear
+cd ""
 sort year
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_male_full_shares"
+append using "\bonke_`i'_5years_male_full_shares"
 }
 *
 graph bar (mean) share_full_days share_part_days share_mini_days, over(year, label(labsize(large) angle(45))) ytitle({bf:Share}, size(large) height(10)) legend(position(6) rows(1)) graphregion(color(white)) stack  legend( label(1 "Full Time") label(2 "Part Time") label(3 "Marg. Employment") ) exclude0 yla(0(0.1)1, labsize(large))
 graph export mean_5years_male_full_shares_days.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_male_part_shares",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_male_part_shares",clear
+cd ""
 sort year
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_male_part_shares"
+append using "\bonke_`i'_5years_male_part_shares"
 }
 *
 
@@ -2950,12 +2950,12 @@ graph bar (mean) share_full_days share_part_days share_mini_days, over(year, lab
 graph export mean_5years_male_part_shares_days.png, replace
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_male_mini_shares",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_male_mini_shares",clear
+cd ""
 sort year
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_male_mini_shares"
+append using "\bonke_`i'_5years_male_mini_shares"
 }
 *
 graph bar (mean) share_full_days share_part_days share_mini_days, over(year, label(labsize(large) angle(45))) ytitle({bf:Share}, size(large) height(10)) legend(position(6) rows(1)) graphregion(color(white)) stack  legend( label(1 "Full Time") label(2 "Part Time") label(3 "Marg. Employment") ) exclude0 yla(0(0.1)1, labsize(large))
@@ -2972,8 +2972,8 @@ graph export mean_5years_male_mini_shares_days.png, replace
 cls
 set more off
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_monthly",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_monthly",clear
+cd ""
 
 *keep if female==0
 
@@ -3298,8 +3298,8 @@ graph export kdens_log_sum_earnings_long_term_mini.png, replace
 cls
 ssc install fastgini
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", replace
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", replace
+cd ""
 
 drop if empstate==4
 drop if female==1
@@ -3369,8 +3369,8 @@ save gini_males.dta, replace
 cls
 ssc install fastgini
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", replace
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", replace
+cd ""
 
 drop if empstate==4
 drop if female==0
@@ -3459,7 +3459,7 @@ graph export gini.png, replace
 clear
 cls
 set more off
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+cd ""
 *
 input double year
 1999
@@ -3498,8 +3498,8 @@ graph export reforms.png, replace
 *14) Employment Stocks
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 *bysort year: gen count_year=_n
 *keep if count_year==1
@@ -3602,8 +3602,8 @@ save stocks_male.dta,replace
 *
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 *bysort year: gen count_year=_n
 *keep if count_year==1
@@ -3714,8 +3714,8 @@ graph export stock_CJ_male.png, replace
 cls
 ssc install fastgini
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_West_AllYears.dta", replace
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr_West_AllYears.dta", replace
+cd ""
 
 *drop if empstate==4
 drop if female==1
@@ -3784,8 +3784,8 @@ save gini_males_West_AllYears.dta, replace
 cls
 ssc install fastgini
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_West_AllYears.dta", replace
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr_West_AllYears.dta", replace
+cd ""
 
 *drop if empstate==4
 drop if female==0
@@ -3872,8 +3872,8 @@ graph export gini_West_AllYears.png, replace
 */
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time
@@ -3927,8 +3927,8 @@ graph export dev_perc_full.png, replace
 *Part Time
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time
@@ -3982,8 +3982,8 @@ graph export dev_perc_part.png, replace
 *Mg
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time
@@ -4037,8 +4037,8 @@ graph export dev_perc_mg.png, replace
 
 *** Females:
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time
@@ -4093,8 +4093,8 @@ graph export dev_perc_full_fem.png, replace
 *Part Time
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time
@@ -4148,8 +4148,8 @@ graph export dev_perc_part_fem.png, replace
 *Mg
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time

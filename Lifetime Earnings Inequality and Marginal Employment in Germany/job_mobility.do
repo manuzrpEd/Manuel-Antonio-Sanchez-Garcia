@@ -4,7 +4,7 @@ set more off
 *set memory 16g
 *
 *use "/panfs/panasas01/efim/ms15072/Preliminars.dta", clear
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 *ssc install fastgini
 *
 keep if female==0
@@ -471,20 +471,20 @@ bysort year: egen ave_year_CTU=mean(ave_CTU)
 bysort year: egen ave_year_CTC=mean(ave_CTC)
 
 *saveold "/panfs/panasas01/efim/ms15072/Preliminars_months.dta", replace
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months.dta", replace
+saveold "\Preliminars_months.dta", replace
 
 bysort year: gen count_year=_n
 keep if count_year==1
 
 *saveold "/panfs/panasas01/efim/ms15072/Preliminars_monthly.dta", replace
 
-*saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_monthly.dta", replace
+*saveold "\Preliminars_monthly.dta", replace
 
 *
 *** FEMALES:
 
 *use "/panfs/panasas01/efim/ms15072/Preliminars.dta", clear
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 *ssc install fastgini
 *
 keep if female==1
@@ -952,7 +952,7 @@ bysort year: egen ave_year_CTU=mean(ave_CTU)
 bysort year: egen ave_year_CTC=mean(ave_CTC)
 
 *saveold "/panfs/panasas01/efim/ms15072/Preliminars_months_fem.dta", replace
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months_fem.dta", replace
+saveold "\Preliminars_months_fem.dta", replace
 
 bysort year: gen count_year=_n
 keep if count_year==1
@@ -964,7 +964,7 @@ keep if count_year==1
 *** Unconditional:
 
 *use "/panfs/panasas01/efim/ms15072/Preliminars.dta", clear
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 *ssc install fastgini
 *
 *keep if female==0
@@ -1432,11 +1432,11 @@ bysort year: egen ave_year_CTU=mean(ave_CTU)
 bysort year: egen ave_year_CTC=mean(ave_CTC)
 
 *saveold "/panfs/panasas01/efim/ms15072/Preliminars_months_unc.dta", replace
-saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_months_unc.dta", replace
+saveold "\Preliminars_months_unc.dta", replace
 
 bysort year: gen count_year=_n
 keep if count_year==1
 *saveold "/panfs/panasas01/efim/ms15072/Preliminars_monthly_unc.dta", replace
 
-*saveold "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_monthly.dta", replace
+*saveold "\Preliminars_monthly.dta", replace
 *

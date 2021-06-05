@@ -1,6 +1,6 @@
 clear
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_east.dta", clear
+use "\Preliminars_east.dta", clear
 set more off
 
 sort persnr begepi endepi
@@ -1291,7 +1291,7 @@ sort persnr year begepi endepi source form
 order persnr female counter_spell begepi endepi year age days_epi days_year source reason_notif part_time employment_status midi_jobs counter_diff_estab_id daily_wage west requirement german year_birth school_qualification occupation
 sum persnr
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_east.dta", replace
+save "\Preliminars_east.dta", replace
 
 do moments_cross_section.do
 

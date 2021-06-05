@@ -1,8 +1,8 @@
 cls
 set more off
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen.dta", clear
+cd ""
 *
 ssc install fastgini
 ***cleaning - generate variables/statistics to compare to pequiv
@@ -38,9 +38,9 @@ drop if lfs==3
 *drop retirees:
 drop if lfs==2
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_stock.dta", replace
+save "\pgen_stock.dta", replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_stock.dta", clear
+use "\pgen_stock.dta", clear
 
 ***unconditional
 
@@ -96,8 +96,8 @@ label variable ave_Unemployed "Unemployed"
 twoway line ave_LF ave_Working year if year>1989, ytitle({bf:% of Working Age}, size(large) height(5)) legend(position(6) rows(1)) lcolor(black gray orange) lpattern(solid dash shortdash) lwidth(medthick medthick medthick)  xtitle({bf:Year}, size(large) height(7))  connect(l) xlabel(1990 (5) 2015) xline(1990 (5) 2015, lstyle(grid)) graphregion(color(white)) ylabel(0.6 (0.1) 1, angle(horizontal))
 graph export Employment_Stock_Series.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen.dta", clear
+cd ""
 *
 ssc install fastgini
 ***cleaning - generate variables/statistics to compare to pequiv
@@ -133,9 +133,9 @@ drop if lfs==3
 *drop retirees:
 drop if lfs==2
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_stock.dta", replace
+save "\pgen_stock.dta", replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_stock.dta", clear
+use "\pgen_stock.dta", clear
 
 keep if female==0
 
@@ -193,8 +193,8 @@ label variable ave_Unemployed "Unemployed"
 twoway line ave_LF ave_Working year if year>1989, ytitle({bf:% of Working Age}, size(large) height(5)) legend(position(6) rows(1)) lcolor(black gray orange) lpattern(solid dash shortdash) lwidth(medthick medthick medthick)  xtitle({bf:Year}, size(large) height(7))  connect(l) xlabel(1990 (5) 2015) xline(1990 (5) 2015, lstyle(grid)) graphregion(color(white)) ylabel(0.6 (0.1) 1, angle(horizontal))
 graph export Employment_Stock_Series_Males.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\pgen.dta", clear
+cd ""
 *
 ssc install fastgini
 ***cleaning - generate variables/statistics to compare to pequiv
@@ -230,9 +230,9 @@ drop if lfs==3
 *drop retirees:
 drop if lfs==2
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_stock.dta", replace
+save "\pgen_stock.dta", replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\pgen_stock.dta", clear
+use "\pgen_stock.dta", clear
 
 keep if female==1
 
@@ -299,8 +299,8 @@ graph export Employment_Types_Series.png, replace
 *Unconditional Stocks
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 *bysort year: gen count_year=_n
 *keep if count_year==1
@@ -394,8 +394,8 @@ graph export tstock_part_time_unc.png, replace
 *Unconditional Stocks
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 *bysort year: gen count_year=_n
 *keep if count_year==1
@@ -491,8 +491,8 @@ graph export tstock_part_time_males.png, replace
 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 *bysort year: gen count_year=_n
 *keep if count_year==1
@@ -591,8 +591,8 @@ graph export tstock_part_time_females.png, replace
 *
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time
@@ -646,8 +646,8 @@ graph export dev_perc_full.png, replace
 *Part Time
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time
@@ -700,8 +700,8 @@ graph export dev_perc_part.png, replace
 *Mg
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time
@@ -754,8 +754,8 @@ graph export dev_perc_mg.png, replace
 
 *** Females:
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time
@@ -809,8 +809,8 @@ graph export dev_perc_full_fem.png, replace
 *Part Time
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time
@@ -863,8 +863,8 @@ graph export dev_perc_part_fem.png, replace
 *Mg
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 sort year
 
 *only full time
@@ -918,8 +918,8 @@ graph export dev_perc_mg_fem.png, replace
 *graphs employment stock:
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 *bysort year: gen count_year=_n
 *keep if count_year==1
@@ -1005,8 +1005,8 @@ graph export tstock_CJ.png, replace
 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr.dta", clear
+cd ""
 
 *bysort year: gen count_year=_n
 *keep if count_year==1

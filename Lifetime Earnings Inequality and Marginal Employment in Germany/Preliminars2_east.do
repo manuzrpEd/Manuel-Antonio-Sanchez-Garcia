@@ -1,13 +1,7 @@
 clear
 set memory 16g
 *** top coded extrapolation
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_east.dta", clear
-
-*first we start with the WEST
-
-*upper daily wage top coded, now we extrapolate here:
-
-* http://fdz.iab.de/en/FDZ_Overview_of_Data/working_tools.aspx
+use "\Preliminars_east.dta", clear
 
 forval i = 1/3 {
 
@@ -532,11 +526,11 @@ local alpha8=ln((1-0.8)/(`F2'))/ln(`T'/`y8')
 replace daily_wage=`T'/((1-runiform())^(1/`alpha8')) if tc==1
 
 
-*save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", replace
+*save "\Preliminars.dta", replace
 ***
 
 ***
-*use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", replace
+*use "\Preliminars.dta", replace
 
 *second we finish with the EAST
 
@@ -925,10 +919,6 @@ qui drop if def_daily_wage<5 & source==1
 *break after 1999
 qui drop if def_daily_wage<14 & source==1 & form==2
 
-* assume >3 years is out of labor force
-* assume between<=3 years is unemployed
-* keep longest consecutive spell (employed + unemployed <=3 periods)
-
 egen persnr2=group(persnr)
 drop persnr
 rename persnr2 persnr
@@ -984,8 +974,6 @@ by persnr: replace ind_break=1 if year_distance_one>=2 & year_distance_one!=.
 *generate consecutive spells indicator
 by persnr: gen sum_breaks=sum(ind_break)
 
-*
-
 *keep the longest consecutive spell
 egen persnr2 = group(persnr sum_breaks)
 gen index =1
@@ -1004,19 +992,13 @@ by persnr: replace max_stat=1 if sum_breaks!=sum_breaks[_n-1] & count_max>1
 by persnr: gen sum_max_stat=sum(max_stat)
 qui drop if sum_max_stat!=0
 qui drop count_max sum_max_stat max_stat corner year_distance_one ind_break sum_breaks
-*drop if spell lasts less than 7 years
-*sort persnr age begepi
-*by persnr: gen max_years_spell = _N
-*qui drop if max_years_spell <7
-*qui drop max_years_spell
-
-*keep if max years > some threshold
+*
 
 sort persnr age begepi
 by persnr: egen max_year=max(year)
 by persnr: egen min_year=min(year)
 gen num_year=max_year-min_year
-*drop if num_year<5
+*
 
 sort persnr year begepi endepi source
 drop counter_spell
@@ -1044,6 +1026,6 @@ tab ind_ch,m
 order persnr female counter_spell begepi endepi year age days_epi days_year source reason_notif part_time employment_status midi_jobs counter_diff_estab_id daily_wage west requirement german year_birth school_qualification occupation
 sum persnr
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_east.dta", replace
+save "\Preliminars_east.dta", replace
 
 do moments_cross_section.do

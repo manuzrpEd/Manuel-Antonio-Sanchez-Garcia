@@ -2,8 +2,8 @@
 
 *clear
 set more off
-use "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
-cd "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars",clear
+cd ""
 
 keep if female==0
 

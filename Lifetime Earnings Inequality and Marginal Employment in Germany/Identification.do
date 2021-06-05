@@ -2,47 +2,47 @@
 /*
 cls
 clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+cd ""
 /*
 **set memory 16g
 ***Initial State 19992002
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
 bysort persnr: gen counter=_n
 g PT=0
 replace PT=1 if empstate==2
 reg PT i.educ age if counter==1
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
 bysort persnr: gen counter=_n
 g MJ=0
 replace MJ=1 if empstate==3
 reg MJ i.educ age if counter==1
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
 bysort persnr: gen counter=_n
 g CJ=0
 replace CJ=1 if empstate==5
 reg CJ i.educ age if counter==1
 ***Initial State 20052009
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 bysort persnr: gen counter=_n
 g PT=0
 replace PT=1 if empstate==2
 reg PT i.educ age if counter==1
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 bysort persnr: gen counter=_n
 g MJ=0
 replace MJ=1 if empstate==3
 reg MJ i.educ age if counter==1
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 bysort persnr: gen counter=_n
 g CJ=0
 replace CJ=1 if empstate==5
 reg CJ i.educ age if counter==1
 ***Subsequent State 19992002
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
 bysort persnr: gen counter=_n
 g FT=0
 g PT=0
@@ -66,7 +66,7 @@ replace lNE=1 if empstate[_n-1]==4 & counter>1
 replace lCJ=1 if empstate[_n-1]==5 & counter>1
 reg PT lPT lMJ lNE lCJ i.educ age if counter>1
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
 bysort persnr: gen counter=_n
 g FT=0
 g PT=0
@@ -90,7 +90,7 @@ replace lNE=1 if empstate[_n-1]==4 & counter>1
 replace lCJ=1 if empstate[_n-1]==5 & counter>1
 reg MJ lPT lMJ lNE lCJ i.educ age if counter>1
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
 bysort persnr: gen counter=_n
 g FT=0
 g PT=0
@@ -114,7 +114,7 @@ replace lNE=1 if empstate[_n-1]==4 & counter>1
 replace lCJ=1 if empstate[_n-1]==5 & counter>1
 reg NE lPT lMJ lNE lCJ i.educ age if counter>1
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
 bysort persnr: gen counter=_n
 g FT=0
 g PT=0
@@ -138,7 +138,7 @@ replace lNE=1 if empstate[_n-1]==4 & counter>1
 replace lCJ=1 if empstate[_n-1]==5 & counter>1
 reg CJ lPT lMJ lNE lCJ i.educ age if counter>1
 *** Subsequent State 20052009
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 bysort persnr: gen counter=_n
 g FT=0
 g PT=0
@@ -162,7 +162,7 @@ replace lNE=1 if empstate[_n-1]==4 & counter>1
 replace lCJ=1 if empstate[_n-1]==5 & counter>1
 reg PT lPT lMJ lNE lCJ i.educ age if counter>1
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 bysort persnr: gen counter=_n
 g FT=0
 g PT=0
@@ -186,7 +186,7 @@ replace lNE=1 if empstate[_n-1]==4 & counter>1
 replace lCJ=1 if empstate[_n-1]==5 & counter>1
 reg MJ lPT lMJ lNE lCJ i.educ age if counter>1
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 bysort persnr: gen counter=_n
 g FT=0
 g PT=0
@@ -210,7 +210,7 @@ replace lNE=1 if empstate[_n-1]==4 & counter>1
 replace lCJ=1 if empstate[_n-1]==5 & counter>1
 reg NE lPT lMJ lNE lCJ i.educ age if counter>1
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 bysort persnr: gen counter=_n
 g FT=0
 g PT=0
@@ -234,7 +234,7 @@ replace lNE=1 if empstate[_n-1]==4 & counter>1
 replace lCJ=1 if empstate[_n-1]==5 & counter>1
 reg CJ lPT lMJ lNE lCJ i.educ age if counter>1
 *** Wage Distribution 19992002
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
 g FT=0
 g PT=0
 g MJ=0
@@ -247,7 +247,7 @@ replace NE=1 if empstate==4
 replace CJ=1 if empstate==5
 reg log_ave_wage i.educ age PT MJ NE CJ
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
 g FT=0
 g PT=0
 g MJ=0
@@ -268,7 +268,7 @@ sum log_ave_wage if NE==1
 *why NE has such volatility??
 sum log_ave_wage if CJ==1
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
 bysort persnr: gen counter=_n
 g FT=0
 g PT=0
@@ -306,7 +306,7 @@ reg log_ave_wage Llog_ave_age if CJ==1 & lNE==1, nocons
 reg log_ave_wage Llog_ave_age if CJ==1 & lFT==1, nocons
 *weird NE and FT autocorrelation!
 *** Wage Distribution 20052009
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 g FT=0
 g PT=0
 g MJ=0
@@ -319,7 +319,7 @@ replace NE=1 if empstate==4
 replace CJ=1 if empstate==5
 reg log_ave_wage i.educ age PT MJ NE CJ
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 g FT=0
 g PT=0
 g MJ=0
@@ -340,7 +340,7 @@ sum log_ave_wage if NE==1
 *why NE has such volatility??
 sum log_ave_wage if CJ==1
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 bysort persnr: gen counter=_n
 g FT=0
 g PT=0
@@ -381,8 +381,8 @@ reg log_ave_wage Llog_ave_age if CJ==1 & lFT==1, nocons
 *** CS Mobility Mobility %
 *Initial
 cls
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
+cd ""
 di "Initial State"
 bysort persnr: gen counter=_n
 g FT=0 if counter==1
@@ -398,7 +398,7 @@ sum FT PT MJ NE
 
 *
 cls
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 set more off
 di "Initial State"
 bysort persnr: gen counter=_n
@@ -416,8 +416,8 @@ sum FT PT MJ NE CJ
 *Subsequent
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
+cd ""
 di "Subsequent State"
 bysort persnr: gen counter=_n
 g FT=0 if counter>1
@@ -447,8 +447,8 @@ graph export emp_stock_male_19992002_male.png,replace
 *age mean and variance by age:
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
+cd ""
 di "Subsequent State"
 bysort age: egen ave_wage=mean(log_ave_wage) if ne!=1
 line ave_wage age, graphregion(color(white)) ytitle("Log Ave Wage", size(vlarge) height(10)) xlabel(, labsize(large)) ylabel(6.5 (0.5) 8,  labsize(large)) xtitle("Age", size(vlarge) height(5)) xline(20 (5) 60, lstyle(grid)) lwidth(thick) lcolor(black)
@@ -456,8 +456,8 @@ graph export ave_wage_19992002_male.png,replace
 *
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
+cd ""
 di "Subsequent State"
 bysort persnr: gen counter=_n
 g FT=0 if counter>1
@@ -492,14 +492,14 @@ graph export emp_stock_male_20052009_male.png,replace
 *age mean and variance by age:
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
+cd ""
 di "Subsequent State"
 bysort age: egen ave_wage=mean(log_ave_wage) if ne!=1
 line ave_wage age, graphregion(color(white)) ytitle("Log Ave Wage", size(vlarge) height(10)) xlabel(, labsize(large)) ylabel(6.5 (0.5) 8,  labsize(large)) xtitle("Age", size(vlarge) height(5)) xline(20 (5) 60, lstyle(grid)) lwidth(thick) lcolor(black)
 graph export ave_wage_20052009_male.png,replace
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
 di "State Mobility"
 set more off
 bysort persnr: gen counter=_n
@@ -609,7 +609,7 @@ g fract_NE_NE=tot_NE_NE/tot_NE
 *
 sum fract*
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 di "State Mobility"
 set more off
 bysort persnr: gen counter=_n
@@ -762,7 +762,7 @@ g fract_CJ_CJ=tot_CJ_CJ/tot_CJ
 *
 sum fract*
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
 di "CS Wage Moments"
 set more off
 g elligible=1 if unemp_ben==1
@@ -789,7 +789,7 @@ sum log_ave_wage if NE==1 & elligible==1
 *
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 di "CS Wage Moments"
 set more off
 g elligible=1 if unemp_ben==1
@@ -816,7 +816,7 @@ sum log_ave_wage if MJ==1 & elligible==1
 sum log_ave_wage if NE==1 & elligible==1
 sum log_ave_wage if CJ==1 & elligible==1
 *
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
 di "Income Mobility"
 set more off
 bysort persnr: gen counter=_n
@@ -980,7 +980,7 @@ sum avg*
 *
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
 di "Income Mobility"
 set more off
 bysort persnr: gen counter=_n
@@ -1137,8 +1137,8 @@ g avg_d5_d5=tot_d5_d5/(tot_d5_d1+tot_d5_d2+tot_d5_d3+tot_d5_d4+tot_d5_d5)
 sum avg*
 */
 cls
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
+cd ""
 di "Likelihood Unemp. Benefits"
 set more off
 egen min_yr_birth=min(year_birth)
@@ -1179,8 +1179,8 @@ margins, dydx(year_birth)
 reg elligible year_birth ed2 ed3 lFT lPT lMJ lNE lelligible, nocons
 *
 cls
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
+cd ""
 di "Likelihood Unemp. Benefits"
 set more off
 egen min_yr_birth=min(year_birth)
@@ -1226,8 +1226,8 @@ reg elligible year_birth ed2 ed3 lFT lPT lMJ lNE lCJ lelligible, nocons
 ***2010-2014
 *
 cls
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20102014.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr_males_20102014.dta", clear
+cd ""
 di "Likelihood Unemp. Benefits"
 set more off
 egen min_yr_birth=min(year_birth)
@@ -1272,8 +1272,8 @@ reg elligible year_birth ed2 ed3 lFT lPT lMJ lNE lCJ lelligible, nocons
 *
 /*
 cls
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_19992002.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr_males_19992002.dta", clear
+cd ""
 di "AutoCorrelations"
 set more off
 *
@@ -1413,8 +1413,8 @@ graph export NE_NE_19992002_male.png, replace
 
 *
 cls
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20052009.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr_males_20052009.dta", clear
+cd ""
 di "AutoCorrelations"
 set more off
 *
@@ -1618,7 +1618,7 @@ graph export CJ_CJ_20052009_male.png, replace
 *
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20102014.dta", clear
+use "\Preliminars_Monthly_persnr_males_20102014.dta", clear
 di "Income Mobility"
 set more off
 bysort persnr: gen counter=_n
@@ -1776,7 +1776,7 @@ sum avg*
 
 *
 cls
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20102014.dta", clear
+use "\Preliminars_Monthly_persnr_males_20102014.dta", clear
 di "State Mobility"
 set more off
 bysort persnr: gen counter=_n
@@ -1930,7 +1930,7 @@ g fract_CJ_CJ=tot_CJ_CJ/tot_CJ
 sum fract*
 *
 cls
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20102014.dta", clear
+use "\Preliminars_Monthly_persnr_males_20102014.dta", clear
 set more off
 di "Initial State"
 bysort persnr: gen counter=_n
@@ -1948,7 +1948,7 @@ sum FT PT MJ NE CJ
 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20102014.dta", clear
+use "\Preliminars_Monthly_persnr_males_20102014.dta", clear
 di "Subsequent State"
 bysort persnr: gen counter=_n
 g FT=0 if counter>1
@@ -1965,7 +1965,7 @@ sum FT PT MJ NE CJ
 
 cls
 set more off
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20102014.dta", clear
+use "\Preliminars_Monthly_persnr_males_20102014.dta", clear
 di "CS Wage Moments"
 set more off
 g elligible=1 if unemp_ben==1
@@ -1994,8 +1994,8 @@ sum log_ave_wage if CJ==1 & elligible==1
 
 *
 cls
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_males_20102014.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars_Monthly_persnr_males_20102014.dta", clear
+cd ""
 di "AutoCorrelations"
 set more off
 *

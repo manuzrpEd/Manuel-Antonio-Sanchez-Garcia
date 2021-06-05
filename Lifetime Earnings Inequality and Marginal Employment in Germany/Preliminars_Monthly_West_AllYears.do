@@ -1,13 +1,11 @@
-*This code is for Part Time and Full Time only and for West Germany only to show increase in Long Term Earnings and replicate Bonke
-
 cls
 clear
 **set memory 16g
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\siab_r_7514_v1.dta",clear
+cd ""
+use "\siab_r_7514_v1.dta",clear
 label language en
-*use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\siab_r_7514_v1.dta", clear
-*cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+*use "\siab_r_7514_v1.dta", clear
+*cd ""
 set more off
 *
 rename ausbildung vocational_training
@@ -49,10 +47,6 @@ drop econ_sector
 
 *this is to work faster:
 keep if persnr<200000
-
-*orig spells are bigger than episodes, so I can remove them.
-*not drop them as they can recover missing daily_wages??
-*drop begorig endorig
 
 *generate year variable,  only source==2 has missing years as it can take more than one year the NEloyment
 qui gen year_begepi=year(begepi)
@@ -209,7 +203,7 @@ qui replace west=0 if region>=11000 & region<17000
 
 drop region
 
-*save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_east.dta", replace
+*save "\Preliminars_east.dta", replace
 
 bysort persnr: egen sum_west=sum(west)
 qui drop if sum_west==0
@@ -1696,4 +1690,4 @@ qui egen persnr2=group(persnr)
 drop persnr
 rename persnr2 persnr
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_Monthly_persnr_West_AllYears.dta", replace
+save "\Preliminars_Monthly_persnr_West_AllYears.dta", replace

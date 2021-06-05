@@ -5,8 +5,8 @@
 *** Unconditional
 
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_22_unc",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_99_lt_22_unc",clear
+cd ""
 sort year gini_lt_work
 
 bysort year: egen mean_var=mean(var_lt_work_22)
@@ -21,7 +21,7 @@ bysort year: egen mean_var=mean(p85_p15_lt_work_22)
 replace p85_p15_lt_work_22=mean_var
 drop mean_var
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_27_unc"
+append using "\bonke_99_lt_27_unc"
 bysort year: egen mean_var=mean(var_lt_work_27)
 replace var_lt_work_27=mean_var
 drop mean_var
@@ -31,7 +31,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_27)
 replace p85_p15_lt_work_27=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_32_unc"
+append using "\bonke_99_lt_32_unc"
 bysort year: egen mean_var=mean(var_lt_work_32)
 replace var_lt_work_32=mean_var
 drop mean_var
@@ -41,7 +41,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_32)
 replace p85_p15_lt_work_32=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_37_unc"
+append using "\bonke_99_lt_37_unc"
 bysort year: egen mean_var=mean(var_lt_work_37)
 replace var_lt_work_37=mean_var
 drop mean_var
@@ -51,7 +51,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_37)
 replace p85_p15_lt_work_37=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_42_unc"
+append using "\bonke_99_lt_42_unc"
 bysort year: egen mean_var=mean(var_lt_work_42)
 replace var_lt_work_42=mean_var
 drop mean_var
@@ -61,7 +61,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_42)
 replace p85_p15_lt_work_42=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_47_unc"
+append using "\bonke_99_lt_47_unc"
 bysort year: egen mean_var=mean(var_lt_work_47)
 replace var_lt_work_47=mean_var
 drop mean_var
@@ -71,7 +71,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_47)
 replace p85_p15_lt_work_47=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_52_unc"
+append using "\bonke_99_lt_52_unc"
 bysort year: egen mean_var=mean(var_lt_work_52)
 replace var_lt_work_52=mean_var
 drop mean_var
@@ -121,8 +121,8 @@ graph export gini_work_99_lt_unc.png, replace
 quietly twoway line p85_p15_lt_work_22 p85_p15_lt_work_27 p85_p15_lt_work_32 p85_p15_lt_work_37 p85_p15_lt_work_42 p85_p15_lt_work_47 p85_p15_lt_work_52 year, ytitle({bf:P{sub:85}/P{sub:15}[Earnings]}, size(large) height(10)) legend(position(6) rows(1)) lcolor(blue red green brown magenta gold purple) lpattern(solid dash shortdash_dot dash_dot shortdash longdash longdash_dot) lwidth(medthick medthick medthick medthick medthick medthick medthick) xtitle({bf:Year}, size(large) height(7))  connect(l) xlabel(1999 (1) 2010, labsize(large) angle(45)) xline(1999 (1) 2010, lstyle(grid)) graphregion(color(white)) ylabel(, labsize(large) angle(horizontal)) ylabel(1 (1) 4, labsize(large) angle(horizontal))
 graph export perc8515_work_99_lt_unc.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_22_male",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_99_lt_22_male",clear
+cd ""
 sort year gini_lt_work
 
 bysort year: egen mean_var=mean(var_lt_work_22)
@@ -137,7 +137,7 @@ bysort year: egen mean_var=mean(p85_p15_lt_work_22)
 replace p85_p15_lt_work_22=mean_var
 drop mean_var
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_27_male"
+append using "\bonke_99_lt_27_male"
 bysort year: egen mean_var=mean(var_lt_work_27)
 replace var_lt_work_27=mean_var
 drop mean_var
@@ -147,7 +147,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_27)
 replace p85_p15_lt_work_27=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_32_male"
+append using "\bonke_99_lt_32_male"
 bysort year: egen mean_var=mean(var_lt_work_32)
 replace var_lt_work_32=mean_var
 drop mean_var
@@ -157,7 +157,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_32)
 replace p85_p15_lt_work_32=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_37_male"
+append using "\bonke_99_lt_37_male"
 bysort year: egen mean_var=mean(var_lt_work_37)
 replace var_lt_work_37=mean_var
 drop mean_var
@@ -167,7 +167,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_37)
 replace p85_p15_lt_work_37=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_42_male"
+append using "\bonke_99_lt_42_male"
 bysort year: egen mean_var=mean(var_lt_work_42)
 replace var_lt_work_42=mean_var
 drop mean_var
@@ -177,7 +177,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_42)
 replace p85_p15_lt_work_42=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_47_male"
+append using "\bonke_99_lt_47_male"
 bysort year: egen mean_var=mean(var_lt_work_47)
 replace var_lt_work_47=mean_var
 drop mean_var
@@ -187,7 +187,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_47)
 replace p85_p15_lt_work_47=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_52_male"
+append using "\bonke_99_lt_52_male"
 bysort year: egen mean_var=mean(var_lt_work_52)
 replace var_lt_work_52=mean_var
 drop mean_var
@@ -237,8 +237,8 @@ graph export gini_work_99_lt_male.png, replace
 quietly twoway line p85_p15_lt_work_22 p85_p15_lt_work_27 p85_p15_lt_work_32 p85_p15_lt_work_37 p85_p15_lt_work_42 p85_p15_lt_work_47 p85_p15_lt_work_52 year, ytitle({bf:P{sub:85}/P{sub:15}[Earnings]}, size(large) height(10)) legend(position(6) rows(1)) lcolor(blue red green brown magenta gold purple) lpattern(solid dash shortdash_dot dash_dot shortdash longdash longdash_dot) lwidth(medthick medthick medthick medthick medthick medthick medthick) xtitle({bf:Year}, size(large) height(7))  connect(l) xlabel(1999 (1) 2010, labsize(large) angle(45)) xline(1999 (1) 2010, lstyle(grid)) graphregion(color(white)) ylabel(, labsize(large) angle(horizontal)) ylabel(1 (1) 4, labsize(large) angle(horizontal))
 graph export perc8515_work_99_lt_male.png, replace
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_22_female",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_99_lt_22_female",clear
+cd ""
 sort year gini_lt_work
 
 bysort year: egen mean_var=mean(var_lt_work_22)
@@ -253,7 +253,7 @@ bysort year: egen mean_var=mean(p85_p15_lt_work_22)
 replace p85_p15_lt_work_22=mean_var
 drop mean_var
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_27_female"
+append using "\bonke_99_lt_27_female"
 bysort year: egen mean_var=mean(var_lt_work_27)
 replace var_lt_work_27=mean_var
 drop mean_var
@@ -263,7 +263,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_27)
 replace p85_p15_lt_work_27=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_32_female"
+append using "\bonke_99_lt_32_female"
 bysort year: egen mean_var=mean(var_lt_work_32)
 replace var_lt_work_32=mean_var
 drop mean_var
@@ -273,7 +273,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_32)
 replace p85_p15_lt_work_32=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_37_female"
+append using "\bonke_99_lt_37_female"
 bysort year: egen mean_var=mean(var_lt_work_37)
 replace var_lt_work_37=mean_var
 drop mean_var
@@ -283,7 +283,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_37)
 replace p85_p15_lt_work_37=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_42_female"
+append using "\bonke_99_lt_42_female"
 bysort year: egen mean_var=mean(var_lt_work_42)
 replace var_lt_work_42=mean_var
 drop mean_var
@@ -293,7 +293,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_42)
 replace p85_p15_lt_work_42=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_47_female"
+append using "\bonke_99_lt_47_female"
 bysort year: egen mean_var=mean(var_lt_work_47)
 replace var_lt_work_47=mean_var
 drop mean_var
@@ -303,7 +303,7 @@ drop mean_var
 bysort year: egen mean_var=mean(p85_p15_lt_work_47)
 replace p85_p15_lt_work_47=mean_var
 drop mean_var
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_52_female"
+append using "\bonke_99_lt_52_female"
 bysort year: egen mean_var=mean(var_lt_work_52)
 replace var_lt_work_52=mean_var
 drop mean_var

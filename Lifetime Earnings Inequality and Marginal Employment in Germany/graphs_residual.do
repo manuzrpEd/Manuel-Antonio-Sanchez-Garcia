@@ -13,8 +13,8 @@ set more off
 
 *** Unconditional
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_unc_full",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_unc_full",clear
+cd ""
 sort year gini_lt_work
 
 rename var_lt_work_1999 var_lt_work_1999_full
@@ -26,7 +26,7 @@ rename meanlog_earnings_yearly meanlog_earnings_yearly_full
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_full
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_full"
+append using "\bonke_`i'_5years_unc_full"
 replace var_lt_work_1999_full=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_full=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_full=p85_p15_lt_work_`i' if year==`i'
@@ -38,7 +38,7 @@ drop var_lt_work_`i' gini_lt_work_`i' p85_p15_lt_work_`i' meanlog_earnings_long_
 }
 *
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_unc_part"
+append using "\bonke_1999_5years_unc_part"
 rename var_lt_work_1999 var_lt_work_1999_part
 rename gini_lt_work_1999 gini_lt_work_1999_part
 rename p85_p15_lt_work_1999 p85_p15_lt_work_1999_part
@@ -47,7 +47,7 @@ rename p85_p15_yearly_work_1999 p85_p15_yearly_work_1999_part
 rename meanlog_earnings_yearly meanlog_earnings_yearly_part
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_part
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_part"
+append using "\bonke_`i'_5years_unc_part"
 replace var_lt_work_1999_part=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_part=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_part=p85_p15_lt_work_`i' if year==`i'
@@ -59,7 +59,7 @@ drop var_lt_work_`i' gini_lt_work_`i' p85_p15_lt_work_`i' meanlog_earnings_long_
 }
 *
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_unc_mini"
+append using "\bonke_1999_5years_unc_mini"
 rename var_lt_work_1999 var_lt_work_1999_mini
 rename gini_lt_work_1999 gini_lt_work_1999_mini
 rename p85_p15_lt_work_1999 p85_p15_lt_work_1999_mini
@@ -68,7 +68,7 @@ rename p85_p15_yearly_work_1999 p85_p15_yearly_work_1999_mini
 rename meanlog_earnings_yearly meanlog_earnings_yearly_mini
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_mini
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_unc_mini"
+append using "\bonke_`i'_5years_unc_mini"
 replace var_lt_work_1999_mini=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_mini=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_mini=p85_p15_lt_work_`i' if year==`i'
@@ -194,8 +194,8 @@ graph export mincer_regs_mini_unc.png, replace
 
 *** Male
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_male_full",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_male_full",clear
+cd ""
 sort year gini_lt_work
 
 rename var_lt_work_1999 var_lt_work_1999_full
@@ -207,7 +207,7 @@ rename meanlog_earnings_yearly meanlog_earnings_yearly_full
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_full
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_male_full"
+append using "\bonke_`i'_5years_male_full"
 replace var_lt_work_1999_full=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_full=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_full=p85_p15_lt_work_`i' if year==`i'
@@ -219,7 +219,7 @@ drop var_lt_work_`i' gini_lt_work_`i' p85_p15_lt_work_`i' meanlog_earnings_long_
 }
 *
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_male_part"
+append using "\bonke_1999_5years_male_part"
 rename var_lt_work_1999 var_lt_work_1999_part
 rename gini_lt_work_1999 gini_lt_work_1999_part
 rename p85_p15_lt_work_1999 p85_p15_lt_work_1999_part
@@ -228,7 +228,7 @@ rename p85_p15_yearly_work_1999 p85_p15_yearly_work_1999_part
 rename meanlog_earnings_yearly meanlog_earnings_yearly_part
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_part
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_male_part"
+append using "\bonke_`i'_5years_male_part"
 replace var_lt_work_1999_part=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_part=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_part=p85_p15_lt_work_`i' if year==`i'
@@ -240,7 +240,7 @@ drop var_lt_work_`i' gini_lt_work_`i' p85_p15_lt_work_`i' meanlog_earnings_long_
 }
 *
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_male_mini"
+append using "\bonke_1999_5years_male_mini"
 rename var_lt_work_1999 var_lt_work_1999_mini
 rename gini_lt_work_1999 gini_lt_work_1999_mini
 rename p85_p15_lt_work_1999 p85_p15_lt_work_1999_mini
@@ -249,7 +249,7 @@ rename p85_p15_yearly_work_1999 p85_p15_yearly_work_1999_mini
 rename meanlog_earnings_yearly meanlog_earnings_yearly_mini
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_mini
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_male_mini"
+append using "\bonke_`i'_5years_male_mini"
 replace var_lt_work_1999_mini=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_mini=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_mini=p85_p15_lt_work_`i' if year==`i'
@@ -375,8 +375,8 @@ graph export mincer_regs_mini_male.png, replace
 
 *** Female
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_female_full",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_female_full",clear
+cd ""
 sort year gini_lt_work
 
 rename var_lt_work_1999 var_lt_work_1999_full
@@ -388,7 +388,7 @@ rename meanlog_earnings_yearly meanlog_earnings_yearly_full
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_full
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_female_full"
+append using "\bonke_`i'_5years_female_full"
 replace var_lt_work_1999_full=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_full=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_full=p85_p15_lt_work_`i' if year==`i'
@@ -400,7 +400,7 @@ drop var_lt_work_`i' gini_lt_work_`i' p85_p15_lt_work_`i' meanlog_earnings_long_
 }
 *
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_female_part"
+append using "\bonke_1999_5years_female_part"
 rename var_lt_work_1999 var_lt_work_1999_part
 rename gini_lt_work_1999 gini_lt_work_1999_part
 rename p85_p15_lt_work_1999 p85_p15_lt_work_1999_part
@@ -409,7 +409,7 @@ rename p85_p15_yearly_work_1999 p85_p15_yearly_work_1999_part
 rename meanlog_earnings_yearly meanlog_earnings_yearly_part
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_part
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_female_part"
+append using "\bonke_`i'_5years_female_part"
 replace var_lt_work_1999_part=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_part=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_part=p85_p15_lt_work_`i' if year==`i'
@@ -421,7 +421,7 @@ drop var_lt_work_`i' gini_lt_work_`i' p85_p15_lt_work_`i' meanlog_earnings_long_
 }
 *
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_female_mini"
+append using "\bonke_1999_5years_female_mini"
 rename var_lt_work_1999 var_lt_work_1999_mini
 rename gini_lt_work_1999 gini_lt_work_1999_mini
 rename p85_p15_lt_work_1999 p85_p15_lt_work_1999_mini
@@ -430,7 +430,7 @@ rename p85_p15_yearly_work_1999 p85_p15_yearly_work_1999_mini
 rename meanlog_earnings_yearly meanlog_earnings_yearly_mini
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_mini
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_female_mini"
+append using "\bonke_`i'_5years_female_mini"
 replace var_lt_work_1999_mini=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_mini=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_mini=p85_p15_lt_work_`i' if year==`i'
@@ -558,8 +558,8 @@ graph export mincer_regs_mini_female.png, replace
 
 *** Male
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_male_full_below30",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_male_full_below30",clear
+cd ""
 sort year gini_lt_work
 
 rename var_lt_work_1999 var_lt_work_1999_full
@@ -571,7 +571,7 @@ rename meanlog_earnings_yearly meanlog_earnings_yearly_full
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_full
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_male_full_below30"
+append using "\bonke_`i'_5years_male_full_below30"
 replace var_lt_work_1999_full=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_full=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_full=p85_p15_lt_work_`i' if year==`i'
@@ -583,7 +583,7 @@ drop var_lt_work_`i' gini_lt_work_`i' p85_p15_lt_work_`i' meanlog_earnings_long_
 }
 *
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_male_part_below30"
+append using "\bonke_1999_5years_male_part_below30"
 rename var_lt_work_1999 var_lt_work_1999_part
 rename gini_lt_work_1999 gini_lt_work_1999_part
 rename p85_p15_lt_work_1999 p85_p15_lt_work_1999_part
@@ -592,7 +592,7 @@ rename p85_p15_yearly_work_1999 p85_p15_yearly_work_1999_part
 rename meanlog_earnings_yearly meanlog_earnings_yearly_part
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_part
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_male_part_below30"
+append using "\bonke_`i'_5years_male_part_below30"
 replace var_lt_work_1999_part=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_part=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_part=p85_p15_lt_work_`i' if year==`i'
@@ -604,7 +604,7 @@ drop var_lt_work_`i' gini_lt_work_`i' p85_p15_lt_work_`i' meanlog_earnings_long_
 }
 *
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_male_mini_below30"
+append using "\bonke_1999_5years_male_mini_below30"
 rename var_lt_work_1999 var_lt_work_1999_mini
 rename gini_lt_work_1999 gini_lt_work_1999_mini
 rename p85_p15_lt_work_1999 p85_p15_lt_work_1999_mini
@@ -613,7 +613,7 @@ rename p85_p15_yearly_work_1999 p85_p15_yearly_work_1999_mini
 rename meanlog_earnings_yearly meanlog_earnings_yearly_mini
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_mini
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_male_mini_below30"
+append using "\bonke_`i'_5years_male_mini_below30"
 replace var_lt_work_1999_mini=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_mini=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_mini=p85_p15_lt_work_`i' if year==`i'
@@ -739,8 +739,8 @@ graph export mincer_regs_mini_male_below30.png, replace
 
 *** Female
 
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_female_full_below30",clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\bonke_1999_5years_female_full_below30",clear
+cd ""
 sort year gini_lt_work
 
 rename var_lt_work_1999 var_lt_work_1999_full
@@ -752,7 +752,7 @@ rename meanlog_earnings_yearly meanlog_earnings_yearly_full
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_full
 
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_female_full_below30"
+append using "\bonke_`i'_5years_female_full_below30"
 replace var_lt_work_1999_full=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_full=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_full=p85_p15_lt_work_`i' if year==`i'
@@ -764,7 +764,7 @@ drop var_lt_work_`i' gini_lt_work_`i' p85_p15_lt_work_`i' meanlog_earnings_long_
 }
 *
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_female_part_below30"
+append using "\bonke_1999_5years_female_part_below30"
 rename var_lt_work_1999 var_lt_work_1999_part
 rename gini_lt_work_1999 gini_lt_work_1999_part
 rename p85_p15_lt_work_1999 p85_p15_lt_work_1999_part
@@ -773,7 +773,7 @@ rename p85_p15_yearly_work_1999 p85_p15_yearly_work_1999_part
 rename meanlog_earnings_yearly meanlog_earnings_yearly_part
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_part
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_female_part_below30"
+append using "\bonke_`i'_5years_female_part_below30"
 replace var_lt_work_1999_part=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_part=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_part=p85_p15_lt_work_`i' if year==`i'
@@ -785,7 +785,7 @@ drop var_lt_work_`i' gini_lt_work_`i' p85_p15_lt_work_`i' meanlog_earnings_long_
 }
 *
 
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_1999_5years_female_mini_below30"
+append using "\bonke_1999_5years_female_mini_below30"
 rename var_lt_work_1999 var_lt_work_1999_mini
 rename gini_lt_work_1999 gini_lt_work_1999_mini
 rename p85_p15_lt_work_1999 p85_p15_lt_work_1999_mini
@@ -794,7 +794,7 @@ rename p85_p15_yearly_work_1999 p85_p15_yearly_work_1999_mini
 rename meanlog_earnings_yearly meanlog_earnings_yearly_mini
 rename log_sum_earnings_yearly_work log_sum_earnings_yearly_mini
 forval i=2000/2010 {
-append using "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_`i'_5years_female_mini_below30"
+append using "\bonke_`i'_5years_female_mini_below30"
 replace var_lt_work_1999_mini=var_lt_work_`i' if year==`i' 
 replace gini_lt_work_1999_mini=gini_lt_work_`i' if year==`i'
 replace p85_p15_lt_work_1999_mini=p85_p15_lt_work_`i' if year==`i'
@@ -923,7 +923,7 @@ cls
 clear
 set more off
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
+use "\Preliminars",clear
 ssc install fastgini
 
 *keep if female==1
@@ -1017,7 +1017,7 @@ cls
 clear
 set more off
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars",clear
+use "\Preliminars",clear
 ssc install fastgini
 
 drop if source!=1

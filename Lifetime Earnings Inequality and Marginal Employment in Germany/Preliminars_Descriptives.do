@@ -1,6 +1,6 @@
 clear
 set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 set more off
 
 log using Preliminars_a.log, replace
@@ -162,7 +162,7 @@ tabstat daily_wage if daily_wage<10 & form==2, by(year) statistics(n)
 log close
 
 log using Preliminars_j.log, replace
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
+use "\Preliminars.dta", clear
 gen monthly_marginal_earnings=daily_wage*30
 gen ind_daily_wage_above=0 if form==3 & daily_wage!=.
 replace ind_daily_wage_above=1 if daily_wage>15 & form==3 & daily_wage!=.

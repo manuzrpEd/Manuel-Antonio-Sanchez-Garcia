@@ -1,7 +1,7 @@
 clear
 set more off
 set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars_east.dta", clear
+use "\Preliminars_east.dta", clear
 
 *** fraction of full-time, part-time, marginal-employment over time
 
@@ -69,6 +69,6 @@ keep if counter_spell_year==1
 
 keep year mean* skew* kurt* sd*
 
-save "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\moments_cross_section_east.dta", replace
+save "\moments_cross_section_east.dta", replace
 
 *

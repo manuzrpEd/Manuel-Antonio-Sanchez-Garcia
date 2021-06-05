@@ -1,12 +1,11 @@
 *
-
 clear
 set more off
 
 *
 *set memory 16g
-use "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Preliminars.dta", clear
-cd "C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes"
+use "\Preliminars.dta", clear
+cd ""
 ssc install fastgini
 
 *** Cross Sectional Gini on Long Term Earnings
@@ -93,7 +92,7 @@ keep year gini* var* kurt* p*
 
 display `i'
 
-saveold "C:\Users\Tony\Desktop\Projects\RSIAB7514\EarningsDynamics&Institutions\Codes\bonke_99_lt_`i'_unc.dta", replace
+saveold "\bonke_99_lt_`i'_unc.dta", replace
 
 restore
 

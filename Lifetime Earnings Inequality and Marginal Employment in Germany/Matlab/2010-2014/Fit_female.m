@@ -53,7 +53,7 @@ ans =
 D5: 21 & 9 & 15 & 25 & 29
     %}
 
-cd 'C:\Users\Tony\Desktop\Projects\RSIAB7514\2005-2009'
+cd '\2005-2009'
 clc
 clear
 close all

@@ -1,5 +1,5 @@
-%matlab -nodisplay -nojvm -nosplash -nodesktop -noFigureWindows -r "try; run('C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Matlab\estimation.m'); catch; end; quit"
-cd 'C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Matlab\MonthlyIncome\2005-2009'
+%matlab -nodisplay -nojvm -nosplash -nodesktop -noFigureWindows -r "try; run('\estimation.m'); catch; end; quit"
+cd '\MonthlyIncome\2005-2009'
 clc
 clear
 close all

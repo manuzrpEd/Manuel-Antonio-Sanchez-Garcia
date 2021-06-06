@@ -1,4 +1,4 @@
-cd 'C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Matlab\GoodFitSearch\2005-2009'
+cd '\2005-2009'
 clc
 clear
 close all

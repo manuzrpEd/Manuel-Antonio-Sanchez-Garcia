@@ -1,4 +1,5 @@
-cd 'C:\Users\manuz\Desktop\RSIAB7514\EarningsDynamics&Institutions\Codes\Matlab\MonthlyIncome\1999-2002'
+
+cd '\1999-2002'
 clc
 clear
 close all

@@ -1,5 +1,5 @@
 %% Initialization and Parameteres
-%0.6528
+%0.7337
 %Reestimate reconstruct with new set of moments
 %use individuals always working to be used for estimation of "demand" side
 %data in Excel of Sekyu.
@@ -8,7 +8,7 @@ clear
 clear mex
 close all
 clc
-cd 'C:\Users\Tony\Desktop\Projects\OccupationsChile\Matlab\v3_newstats_noalpha'
+cd ''
 tic
 set(0,'DefaultFigureWindowStyle','docked')
 % set(0,'DefaultLegendAutoUpdate','off')
@@ -87,7 +87,7 @@ data_gini=y;
 disp(' ')
 disp('%% Simulation')
 
-NPAR=25;
+NPAR=24;
 load('optimum.mat','optimum')
 % optimum(1)=0;%% value of unemployment
 % optimum(2)=-0.001;%% value of unemployment
@@ -118,7 +118,7 @@ load('optimum.mat','optimum')
 % optimum(10)=0.02
 % optimum(7)=0.04%this causes trembling alone!
 % optimum(13)=0.5
-param=optimum;
+param=optimum(1:NPAR,1);
 
 [L_sim,ws_sim,JJ_sim,UE_sim,EU_sim,yd_w,V_u,V_w,xsim,EuE_change,JJ_change,ginic_baseline,var_baseline] = simulat(param,Nsim,Nwork,Ne,xgrid,Nmonths,beta);
 %% Model Features, Plots
@@ -213,7 +213,8 @@ error_sgrid=4*((wages_survey(4:end)-data_fit(:,5))./1)'*((wages_survey(4:end)-da
 error_EUE=3000*((mean(EuE_change)-data_fit(1,6))./1)'*((mean(EuE_change)-data_fit(1,6))./1)
 error_JJG=1000*((mean(JJ_change)-data_fit(1,7))./1)'*((mean(JJ_change)-data_fit(1,7))./1)
 % error_ineq=(1/4)*((ginic_baseline-data_gini(1:35))./1)'*((ginic_baseline-data_gini(1:35))./1)
-loss=error_JJ+error_UE+error_EU+error_xgrid+error_sgrid+error_EUE+error_JJG
+error_emp=1*((employment(2:end,1)-emp(:,1))./1)'*((employment(2:end,1)-emp(:,1))./1)
+loss=error_JJ+error_UE+error_EU+error_xgrid+error_sgrid+error_EUE+error_JJG+error_emp
 
 disp('Data : ')
 data_mean_JJ=mean(data_fit(:,2))
@@ -626,17 +627,18 @@ ub(24,1) = 0.0003;
 beta=0.99;
 %1.5534
 % before=loss_simulat(param,Nsim,Nwork,Ne,xgrid,data_fit)
+optimum=optimum(1:NPAR,1);
 before=loss_simulat(optimum,Nsim,Nwork,Ne,xgrid,data_fit,Nmonths,beta,emp)
 
 opts_pattern=psoptimset('Display','iter','TolMesh',1e-05,'MaxFunEvals',1000000,'MaxIter',1e6,'InitialMeshSize',1,'CompleteSearch','on','CompletePoll','on');%
 % opts_fmincon = optimoptions('fmincon','Display','iter','Algorithm','sqp','MaxFunEvals',1000000,'MaxIter',1e6,'TolFun',1e-6);
 %
-optimum=patternsearch(@(x) loss_simulat(x,Nsim,Nwork,Ne,xgrid,data_fit,Nmonths,beta),optimum,[],[],[],[],lb,ub,[],opts_pattern)
+optimum=patternsearch(@(x) loss_simulat(x,Nsim,Nwork,Ne,xgrid,data_fit,Nmonths,beta,emp),optimum,[],[],[],[],lb,ub,[],opts_pattern)
 % optimum=patternsearch(@(x) loss_simulat(x,Nsim,Nwork,Ne,xgrid,data_fit),param,[],[],[],[],lb,ub,[],opts_pattern)
 % optimum=fmincon(@(x) loss_simulat(x,Nsim,Nwork,Ne,xgrid,data_fit,Nmonths,beta),optimum,[],[],[],[],lb,ub,[],opts_fmincon)
 %
 disp(' ')
-after=loss_simulat(optimum,Nsim,Nwork,Ne,xgrid,data_fit,Nmonths,beta)
+after=loss_simulat(optimum,Nsim,Nwork,Ne,xgrid,data_fit,Nmonths,beta,emp)
 save('optimum.mat','optimum')
 
 %Simulate Optimum:
@@ -722,7 +724,8 @@ error_sgrid=4*((wages_survey(4:end)-data_fit(:,5))./1)'*((wages_survey(4:end)-da
 error_EUE=3000*((mean(EuE_change)-data_fit(1,6))./1)'*((mean(EuE_change)-data_fit(1,6))./1)
 error_JJG=1000*((mean(JJ_change)-data_fit(1,7))./1)'*((mean(JJ_change)-data_fit(1,7))./1)
 % error_ineq=(1/4)*((ginic_baseline-data_gini(1:35))./1)'*((ginic_baseline-data_gini(1:35))./1)
-loss=error_JJ+error_UE+error_EU+error_xgrid+error_sgrid+error_EUE+error_JJG
+error_emp=1*((employment(2:end,1)-emp(:,1))./1)'*((employment(2:end,1)-emp(:,1))./1)
+loss=error_JJ+error_UE+error_EU+error_xgrid+error_sgrid+error_EUE+error_JJG+error_emp
 
 mean_EuE_change=mean(EuE_change)
 data_mean_EuE_change=data_fit(1,6)

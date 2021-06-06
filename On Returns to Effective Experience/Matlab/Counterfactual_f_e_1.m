@@ -3,7 +3,7 @@ clear
 clear mex
 close all
 clc
-cd 'C:\Users\Tony\Desktop\Projects\OccupationsChile\Matlab\v3_newstats'
+cd ''
 tic
 set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultLegendAutoUpdate','off')
@@ -58,27 +58,30 @@ disp('%% Simulation')
 
 NPAR=16;
 load('optimum.mat','optimum')
-%
-b=(optimum(1)+optimum(2).*(1:Nwork)+optimum(3).*(1:Nwork).^2)';
-Sig_e=sqrt(exp(optimum(4)+optimum(5).*(1:Nwork)+optimum(6).*(1:Nwork).^2))';
-dj=(optimum(7)+optimum(8).*(1:Nwork)+optimum(9).*(1:Nwork).^2)';
-du=(optimum(10)+optimum(11).*(1:Nwork)+optimum(12).*(1:Nwork).^2)';
-fe=(optimum(13)+optimum(14).*(1:Nwork)+optimum(15).*(1:Nwork).^2)';
-fu=(optimum(16)+optimum(17).*(1:Nwork)+optimum(18).*(1:Nwork).^2)';
-ps=(optimum(19)+optimum(20).*(1:Nwork)+optimum(21).*(1:Nwork).^2)';
-pk=(optimum(22)+optimum(23).*(1:Nwork)+optimum(24).*(1:Nwork).^2)';
-sigma_a=optimum(25);
-%
-optimum(1:24)=0;
-optimum(1)=mean(b);
-optimum(4)=mean(Sig_e);
-optimum(7)=mean(dj);
-optimum(10)=mean(du);
-optimum(13)=mean(fe);
-optimum(16)=mean(fu);
-optimum(19)=mean(ps);
-optimum(22)=mean(pk);
-
+% optimum(1)=0;%% value of unemployment
+% optimum(2)=-0.001;%% value of unemployment
+% optimum(3)=-0;%% value of unemployment
+% optimum(4)=optimum(4)-2.3;%% std dev of match quality shock
+% optimum(10)=1/12;%dj prob of human k depreciation during JJ
+% optimum(11)=0;%dj prob of human k depreciation during JJ
+% optimum(12)=0;%dj prob of human k depreciation during JJ
+% optimum(8)=0;%du prob of human k depreciation during U
+% optimum(9)=0.001;%du prob of human k depreciation during U
+% optimum(10)=0;%du prob of human k depreciation during U
+% optimum(11)=0.5;%fe gamma finding prob from E JJ
+% optimum(12)=-0.01;%0
+% optimum(13)=0;
+% optimum(14)=0.5;%omega fu finding prob from U UE
+% optimum(15)=0.005;
+% optimum(16)=-0.0001;
+optimum(13)=1;%dj prob of human k depreciation during JJ
+optimum(14)=0;%dj prob of human k depreciation during JJ
+optimum(15)=0;%dj prob of human k depreciation during JJ
+% optimum(20)=0;%pk rho prob of accumulating human k 0.05
+% optimum(21)=0;%0
+% optimum(23:24)=0;
+% optimum(22)=1;
+% optimum=[optimum(1:4,1); 0;0; optimum(5:end,1)];
 % save('optimum.mat','optimum')
 param=optimum
 [L_sim,ws_sim,JJ_sim,UE_sim,EU_sim,yd_w,V_u,V_w,xsim,EuE_change,JJ_change] = simulat(param,Nsim,Nwork,Ne,xgrid,Nmonths,beta, NPP);
@@ -94,6 +97,7 @@ fe=(optimum(13)+optimum(14).*(1:Nwork)+optimum(15).*(1:Nwork).^2)';
 fu=(optimum(16)+optimum(17).*(1:Nwork)+optimum(18).*(1:Nwork).^2)';
 ps=(optimum(19)+optimum(20).*(1:Nwork)+optimum(21).*(1:Nwork).^2)';
 pk=(optimum(22)+optimum(23).*(1:Nwork)+optimum(24).*(1:Nwork).^2)';
+sigma_a=optimum(25);
 
 % From *_sim arrays, create life-cycle profiles
 
@@ -105,8 +109,8 @@ wages_demand = mean(mean(yd_w,3))';
 wages_survey = sum(ws_sim,1) ./ sum(ws_sim~=0,1);
 wages2=ws_sim;
 wages2(wages2==0)=NaN;
-ginic_const=ginicoeff(wages2,1);
-save('ginic_const.mat','ginic_const')
+ginic_f_e_1=ginicoeff(wages2,1);
+save('ginic_f_e_1.mat','ginic_f_e_1')
 job2job     =[1, sum(JJ_sim(:,2:Nmonths),1) ./ sum(L_sim(:,1:Nmonths-1)==1,1)];
 ave_V_u_a=mean(V_u,1);%average across k and hence shown by k
 ave_V_u_k=mean(V_u,2);%average across age and hence shown by age
@@ -196,6 +200,7 @@ xlabel('Age','fontsize',5,'FontWeight','bold')
 ylim([0 1])
 ytickformat('%.2f')
 set(gca,'FontSize',10)
+title('\color{black}Employment & Non-employment\color{black}, Share')
 subplot(4,2,6)
 plot(u2e(3:end),'LineWidth',1.5,'Color','cyan')
 hold on
@@ -211,10 +216,10 @@ grid on
 axis tight
 xlabel('Age','fontsize',5,'FontWeight','bold')
 %ylabel('Share','fontsize',5,'FontWeight','bold');
-ylim([0 0.7])
+% ylim([0 0.7])
 ytickformat('%.2f')
 set(gca,'FontSize',10)
-title('\color{cyan}U\rightarrowE \color{black}& \color{green}E\rightarrowU\color{black}, Share')
+title('U\rightarrowE \color{black}& E\rightarrowU\color{black}, Share')
 subplot(4,2,7)
 plot(job2job(4:end),'LineWidth',1.5,'Color','magenta')
 hold on
@@ -248,9 +253,9 @@ xlabel('Age','fontsize',5,'FontWeight','bold')
 %ylabel('Wages (%)','fontsize',12,'FontWeight','bold');
 ytickformat('%.2f')
 set(gca,'FontSize',10)
-title('Lifecycle Wages (%), \color{blue}Demand \color{black}& \color{red}Supply')
+title('Lifecycle Wages (%), Demand \color{black}& Supply')
 set(gcf, 'PaperPosition', [0 0 20 15]); % 0 0 width height
-saveas(gcf,'Counterfactual_constant.png')
+saveas(gcf,'Counterfactual_f_e_1.png')
 
 figure
 plot(wages_survey,'LineWidth',2.5,'Color','red')
@@ -258,7 +263,7 @@ hold on
 plot(model_wages_survey,'LineWidth',2.5,'LineStyle','--','Color','red')
 hold off
 grid on
-h=legend('Constant Parameters','Baseline','Location','Northwest');
+h=legend('$\bar{f}^{E}=1$','Baseline','Location','Northwest');
 legend boxoff
 set(h,'FontSize',25,'interpreter', 'latex'); 
 axis tight
@@ -267,7 +272,7 @@ xlabel('Age','fontsize',24,'FontWeight','bold')
 ylim([0 1.2])
 ytickformat('%.2f')
 set(gca,'FontSize',18)
-saveas(gcf,'Counterfactual_constant_lcsupply.png')
+saveas(gcf,'Counterfactual_f_e_1_lcsupply.png')
 
 %%
 disp('Finished!')

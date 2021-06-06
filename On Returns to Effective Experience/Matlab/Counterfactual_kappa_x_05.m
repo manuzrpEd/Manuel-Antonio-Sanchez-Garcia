@@ -3,7 +3,7 @@ clear
 clear mex
 close all
 clc
-cd 'C:\Users\Tony\Desktop\Projects\OccupationsChile\Matlab\v3_newstats'
+cd ''
 tic
 set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultLegendAutoUpdate','off')

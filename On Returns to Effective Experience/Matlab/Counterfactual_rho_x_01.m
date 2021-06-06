@@ -3,7 +3,7 @@ clear
 clear mex
 close all
 clc
-cd 'C:\Users\Tony\Desktop\Projects\OccupationsChile\Matlab\v3_newstats'
+cd ''
 tic
 set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultLegendAutoUpdate','off')
@@ -62,9 +62,9 @@ load('optimum.mat','optimum')
 % optimum(2)=-0.001;%% value of unemployment
 % optimum(3)=-0;%% value of unemployment
 % optimum(4)=optimum(4)-2.3;%% std dev of match quality shock
-% optimum(10)=1/12;%dj prob of human k depreciation during JJ
-% optimum(11)=0;%dj prob of human k depreciation during JJ
-% optimum(12)=0;%dj prob of human k depreciation during JJ
+% optimum(5)=0;%dj prob of human k depreciation during JJ
+% optimum(6)=0;%dj prob of human k depreciation during JJ
+% optimum(7)=0;%dj prob of human k depreciation during JJ
 % optimum(8)=0;%du prob of human k depreciation during U
 % optimum(9)=0.001;%du prob of human k depreciation during U
 % optimum(10)=0;%du prob of human k depreciation during U
@@ -74,13 +74,13 @@ load('optimum.mat','optimum')
 % optimum(14)=0.5;%omega fu finding prob from U UE
 % optimum(15)=0.005;
 % optimum(16)=-0.0001;
-optimum(19)=0;%dj prob of human k depreciation during JJ
-optimum(20)=0;%dj prob of human k depreciation during JJ
-optimum(21)=0;%dj prob of human k depreciation during JJ
+% optimum(17)=0.05;%pi ps separation prob EU
+% optimum(18)=-0.001;%0
+% optimum(19)=0;%0
 % optimum(20)=0;%pk rho prob of accumulating human k 0.05
 % optimum(21)=0;%0
-% optimum(23:24)=0;
-% optimum(22)=1;
+optimum(23:24)=0;
+optimum(22)=1/12;
 % optimum=[optimum(1:4,1); 0;0; optimum(5:end,1)];
 % save('optimum.mat','optimum')
 param=optimum
@@ -109,8 +109,8 @@ wages_demand = mean(mean(yd_w,3))';
 wages_survey = sum(ws_sim,1) ./ sum(ws_sim~=0,1);
 wages2=ws_sim;
 wages2(wages2==0)=NaN;
-ginic_s_0=ginicoeff(wages2,1);
-save('ginic_s_0.mat','ginic_s_0')
+ginic_rho_x_01=ginicoeff(wages2,1);
+save('ginic_rho_x_01.mat','ginic_rho_x_01')
 job2job     =[1, sum(JJ_sim(:,2:Nmonths),1) ./ sum(L_sim(:,1:Nmonths-1)==1,1)];
 ave_V_u_a=mean(V_u,1);%average across k and hence shown by k
 ave_V_u_k=mean(V_u,2);%average across age and hence shown by age
@@ -216,7 +216,7 @@ grid on
 axis tight
 xlabel('Age','fontsize',5,'FontWeight','bold')
 %ylabel('Share','fontsize',5,'FontWeight','bold');
-% ylim([0 0.7])
+ylim([0 0.7])
 ytickformat('%.2f')
 set(gca,'FontSize',10)
 title('U\rightarrowE \color{black}& E\rightarrowU\color{black}, Share')
@@ -255,7 +255,7 @@ ytickformat('%.2f')
 set(gca,'FontSize',10)
 title('Lifecycle Wages (%), Demand \color{black}& Supply')
 set(gcf, 'PaperPosition', [0 0 20 15]); % 0 0 width height
-saveas(gcf,'Counterfactual_s_0.png')
+saveas(gcf,'Counterfactual_rho_x_01.png')
 
 figure
 plot(wages_survey,'LineWidth',2.5,'Color','red')
@@ -263,7 +263,7 @@ hold on
 plot(model_wages_survey,'LineWidth',2.5,'LineStyle','--','Color','red')
 hold off
 grid on
-h=legend('$\bar{s}=0$','Baseline','Location','Northwest');
+h=legend('$\bar{\rho}_x=1/12$','Baseline','Location','Northwest');
 legend boxoff
 set(h,'FontSize',25,'interpreter', 'latex'); 
 axis tight
@@ -272,7 +272,7 @@ xlabel('Age','fontsize',24,'FontWeight','bold')
 ylim([0 1.2])
 ytickformat('%.2f')
 set(gca,'FontSize',18)
-saveas(gcf,'Counterfactual_s_0_lcsupply.png')
+saveas(gcf,'Counterfactual_rho_x_01_lcsupply.png')
 
 %%
 disp('Finished!')

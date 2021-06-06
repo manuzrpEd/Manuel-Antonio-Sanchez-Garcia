@@ -3,7 +3,7 @@ clear
 clear mex
 close all
 clc
-cd 'C:\Users\Tony\Desktop\Projects\OccupationsChile\Matlab\v3_newstats'
+cd ''
 tic
 set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultLegendAutoUpdate','off')
@@ -62,9 +62,9 @@ load('optimum.mat','optimum')
 % optimum(2)=-0.001;%% value of unemployment
 % optimum(3)=-0;%% value of unemployment
 % optimum(4)=optimum(4)-2.3;%% std dev of match quality shock
-optimum(7)=0.1;%dj prob of human k depreciation during JJ
-optimum(8)=0;%dj prob of human k depreciation during JJ
-optimum(9)=0;%dj prob of human k depreciation during JJ
+optimum(10)=1/12;%dj prob of human k depreciation during JJ
+optimum(11)=0;%dj prob of human k depreciation during JJ
+optimum(12)=0;%dj prob of human k depreciation during JJ
 % optimum(8)=0;%du prob of human k depreciation during U
 % optimum(9)=0.001;%du prob of human k depreciation during U
 % optimum(10)=0;%du prob of human k depreciation during U
@@ -107,6 +107,10 @@ JJ_change   = nanmean(JJ_change);
 unemployment = 1-employment;
 wages_demand = mean(mean(yd_w,3))';
 wages_survey = sum(ws_sim,1) ./ sum(ws_sim~=0,1);
+wages2=ws_sim;
+wages2(wages2==0)=NaN;
+ginic_delta_x_01=ginicoeff(wages2,1);
+save('ginic_delta_x_01.mat','ginic_delta_x_01')
 job2job     =[1, sum(JJ_sim(:,2:Nmonths),1) ./ sum(L_sim(:,1:Nmonths-1)==1,1)];
 ave_V_u_a=mean(V_u,1);%average across k and hence shown by k
 ave_V_u_k=mean(V_u,2);%average across age and hence shown by age
@@ -251,7 +255,7 @@ ytickformat('%.2f')
 set(gca,'FontSize',10)
 title('Lifecycle Wages (%), Demand \color{black}& Supply')
 set(gcf, 'PaperPosition', [0 0 20 15]); % 0 0 width height
-saveas(gcf,'Counterfactual_kappa_x_01.png')
+saveas(gcf,'Counterfactual_delta_x_01.png')
 
 figure
 plot(wages_survey,'LineWidth',2.5,'Color','red')
@@ -259,16 +263,16 @@ hold on
 plot(model_wages_survey,'LineWidth',2.5,'LineStyle','--','Color','red')
 hold off
 grid on
-h=legend('$\bar{\kappa}_x=0.1$','Baseline','Location','Northwest');
+h=legend('$\bar{\delta}_x=1/12$','Baseline','Location','Northwest');
 legend boxoff
-set(h,'FontSize',20,'interpreter', 'latex'); 
+set(h,'FontSize',25,'interpreter', 'latex'); 
 axis tight
 xlabel('Age','fontsize',24,'FontWeight','bold')
 %ylabel('Wages (%)','fontsize',24,'FontWeight','bold');
-% ylim([0 2])
+ylim([0 1.2])
 ytickformat('%.2f')
 set(gca,'FontSize',18)
-saveas(gcf,'Counterfactual_kappa_x_01_lcsupply.png')
+saveas(gcf,'Counterfactual_delta_x_01_lcsupply.png')
 
 %%
 disp('Finished!')

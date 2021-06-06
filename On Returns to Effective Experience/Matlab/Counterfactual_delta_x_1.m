@@ -3,13 +3,13 @@ clear
 clear mex
 close all
 clc
-cd 'C:\Users\Tony\Desktop\Projects\OccupationsChile\Matlab\v3_newstats'
+cd ''
 tic
 set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultLegendAutoUpdate','off')
 % parameters 
 Nwork   = 35;       % years of work
-Nmonths = Nwork*12;       % months of work
+Nmonths   = Nwork*12;       % months of work
 % 
 beta    = 0.99;     % discount factor
 Ne      = 500;      % Grid of log-normal match quality shocks
@@ -62,9 +62,9 @@ load('optimum.mat','optimum')
 % optimum(2)=-0.001;%% value of unemployment
 % optimum(3)=-0;%% value of unemployment
 % optimum(4)=optimum(4)-2.3;%% std dev of match quality shock
-% optimum(5)=0;%dj prob of human k depreciation during JJ
-% optimum(6)=0;%dj prob of human k depreciation during JJ
-% optimum(7)=0;%dj prob of human k depreciation during JJ
+optimum(10)=1;%dj prob of human k depreciation during JJ
+optimum(11)=0;%dj prob of human k depreciation during JJ
+optimum(12)=0;%dj prob of human k depreciation during JJ
 % optimum(8)=0;%du prob of human k depreciation during U
 % optimum(9)=0.001;%du prob of human k depreciation during U
 % optimum(10)=0;%du prob of human k depreciation during U
@@ -79,8 +79,8 @@ load('optimum.mat','optimum')
 % optimum(19)=0;%0
 % optimum(20)=0;%pk rho prob of accumulating human k 0.05
 % optimum(21)=0;%0
-optimum(23:24)=0;
-optimum(22)=0.5;
+% optimum(23:24)=0;
+% optimum(22)=1;
 % optimum=[optimum(1:4,1); 0;0; optimum(5:end,1)];
 % save('optimum.mat','optimum')
 param=optimum
@@ -97,7 +97,6 @@ fe=(optimum(13)+optimum(14).*(1:Nwork)+optimum(15).*(1:Nwork).^2)';
 fu=(optimum(16)+optimum(17).*(1:Nwork)+optimum(18).*(1:Nwork).^2)';
 ps=(optimum(19)+optimum(20).*(1:Nwork)+optimum(21).*(1:Nwork).^2)';
 pk=(optimum(22)+optimum(23).*(1:Nwork)+optimum(24).*(1:Nwork).^2)';
-sigma_a=optimum(25);
 
 % From *_sim arrays, create life-cycle profiles
 
@@ -251,7 +250,7 @@ ytickformat('%.2f')
 set(gca,'FontSize',10)
 title('Lifecycle Wages (%), Demand \color{black}& Supply')
 set(gcf, 'PaperPosition', [0 0 20 15]); % 0 0 width height
-saveas(gcf,'Counterfactual_rho_x_05.png')
+saveas(gcf,'Counterfactual_delta_x_1.png')
 
 figure
 plot(wages_survey,'LineWidth',2.5,'Color','red')
@@ -259,7 +258,7 @@ hold on
 plot(model_wages_survey,'LineWidth',2.5,'LineStyle','--','Color','red')
 hold off
 grid on
-h=legend('$\bar{\rho}_x=0.5$','Baseline','Location','Northwest');
+h=legend('$\bar{\delta}_x=1$','Baseline','Location','Northwest');
 legend boxoff
 set(h,'FontSize',20,'interpreter', 'latex'); 
 axis tight
@@ -268,7 +267,7 @@ xlabel('Age','fontsize',24,'FontWeight','bold')
 % ylim([0 2])
 ytickformat('%.2f')
 set(gca,'FontSize',18)
-saveas(gcf,'Counterfactual_rho_x_05_lcsupply.png')
+saveas(gcf,'Counterfactual_delta_x_1_lcsupply.png')
 
 %%
 disp('Finished!')

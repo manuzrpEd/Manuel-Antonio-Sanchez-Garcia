@@ -3,7 +3,7 @@ clear
 clear mex
 close all
 clc
-cd 'C:\Users\Tony\Desktop\Projects\OccupationsChile\Matlab\v3_newstats'
+cd ''
 tic
 set(0,'DefaultFigureWindowStyle','docked')
 set(0,'DefaultLegendAutoUpdate','off')
@@ -13,7 +13,7 @@ Nmonths   = Nwork*12;       % months of work
 % 
 beta    = 0.99;     % discount factor
 Ne      = 500;      % Grid of log-normal match quality shocks
-Nsim    = 10000;   % for simulation 100000 20000
+Nsim    = 5000;   % for simulation 100000 20000
 NPP = 8;% permanent heterogeneity individual-specific
 %% Data Load
 disp(' ')
@@ -52,13 +52,6 @@ data_emp=num(:,2);
 emp      = polyfit(1:34,data_emp',Npol_demand);
 emp       = polyval(emp,1:34)';
 
-% [num,~,~] = xlsread('gini_data.xlsx');
-% data_gi=[0.2597;0.3242;0.4062;0.4379;0.4376;0.4410;0.4535;0.4557];
-% data_gi=num(:,2);
-% interp(data_gi,4);
-% data_gini=[NaN;NaN;data_gi(1,:);NaN;NaN;NaN;NaN;data_gi(2,:);NaN;NaN;NaN;NaN;data_gi(3,:);NaN;NaN;NaN;NaN;data_gi(4,:);NaN;NaN;NaN;NaN;data_gi(5,:);NaN;NaN;NaN;NaN;data_gi(6,:);NaN;NaN;NaN;NaN;data_gi(7,:);NaN;NaN;NaN;NaN;data_gi(8,:);NaN;NaN];
-load('data_gini.mat')
-data_gini=y;
 %% SIMULATIONS
 disp(' ')
 disp('%% Simulation')
@@ -69,9 +62,9 @@ load('optimum.mat','optimum')
 % optimum(2)=-0.001;%% value of unemployment
 % optimum(3)=-0;%% value of unemployment
 % optimum(4)=optimum(4)-2.3;%% std dev of match quality shock
-% optimum(5)=0;%dj prob of human k depreciation during JJ
-% optimum(6)=0;%dj prob of human k depreciation during JJ
-% optimum(7)=0;%dj prob of human k depreciation during JJ
+optimum(7)=1;%dj prob of human k depreciation during JJ
+optimum(8)=0;%dj prob of human k depreciation during JJ
+optimum(9)=0;%dj prob of human k depreciation during JJ
 % optimum(8)=0;%du prob of human k depreciation during U
 % optimum(9)=0.001;%du prob of human k depreciation during U
 % optimum(10)=0;%du prob of human k depreciation during U
@@ -86,19 +79,12 @@ load('optimum.mat','optimum')
 % optimum(19)=0;%0
 % optimum(20)=0;%pk rho prob of accumulating human k 0.05
 % optimum(21)=0;%0
-optimum(22)=0.0030;
-optimum(23)=0.020;
-optimum(24)=-0.0008;
-% optimum(22)=0;
-% optimum(23)=0.021;
-% optimum(24)=-0.0009;
-% optimum(22)=0.0062;
-% optimum(23)=0.0015;
-% optimum(24)=-0.0001;
+% optimum(23:24)=0;
+% optimum(22)=1;
 % optimum=[optimum(1:4,1); 0;0; optimum(5:end,1)];
 % save('optimum.mat','optimum')
 param=optimum
-[L_sim,ws_sim,JJ_sim,UE_sim,EU_sim,yd_w,V_u,V_w,xsim,EuE_change,JJ_change] = simulat(param,Nsim,Nwork,Ne,xgrid,Nmonths,beta, NPP);
+[L_sim,ws_sim,JJ_sim,UE_sim,EU_sim,yd_w,V_u,V_w,xsim,EuE_change,JJ_change] = simulat(param,Nsim,Nwork,Ne,xgrid,Nmonths,beta,NPP);
 %% Counterfactual Features, Plots
 disp(' ')
 disp('%% Model Features, Plots')
@@ -113,19 +99,6 @@ ps=(optimum(19)+optimum(20).*(1:Nwork)+optimum(21).*(1:Nwork).^2)';
 pk=(optimum(22)+optimum(23).*(1:Nwork)+optimum(24).*(1:Nwork).^2)';
 sigma_a=optimum(25);
 
-du(du<0)=0;
-du(du>1)=1;
-dj(dj<0)=0;
-dj(dj>1)=1;
-fe(fe>1)=1;
-fu(fu>1)=1;
-fe(fe<0)=0;
-fu(fu<0)=0;
-ps(ps>1)=1;
-ps(ps<0)=0;
-pk(pk>1)=1;
-pk(pk<0)=0;
-
 % From *_sim arrays, create life-cycle profiles
 
 employment   = mean(L_sim);
@@ -134,10 +107,6 @@ JJ_change   = nanmean(JJ_change);
 unemployment = 1-employment;
 wages_demand = mean(mean(yd_w,3))';
 wages_survey = sum(ws_sim,1) ./ sum(ws_sim~=0,1);
-wages2=ws_sim;
-wages2(wages2==0)=NaN;
-ginic_rho_x_decomp=ginicoeff(wages2,1);
-save('ginic_rho_x_decomp.mat','ginic_rho_x_decomp')
 job2job     =[1, sum(JJ_sim(:,2:Nmonths),1) ./ sum(L_sim(:,1:Nmonths-1)==1,1)];
 ave_V_u_a=mean(V_u,1);%average across k and hence shown by k
 ave_V_u_k=mean(V_u,2);%average across age and hence shown by age
@@ -162,8 +131,6 @@ ave_xsim = accumarray(ceil((1:numel(ave_xsim))/12)',ave_xsim(:),[],@nanmean);
 sd_xsim = accumarray(ceil((1:numel(sd_xsim))/12)',sd_xsim(:),[],@nanmean);
 u2e = accumarray(ceil((1:numel(u2e))/12)',u2e(:),[],@nanmean);
 e2u = accumarray(ceil((1:numel(e2u))/12)',e2u(:),[],@nanmean);
-
-
 
 %% Counterfactual Graph
 load('model_wages_survey.mat','model_wages_survey')
@@ -284,12 +251,7 @@ ytickformat('%.2f')
 set(gca,'FontSize',10)
 title('Lifecycle Wages (%), Demand \color{black}& Supply')
 set(gcf, 'PaperPosition', [0 0 20 15]); % 0 0 width height
-saveas(gcf,'Counterfactual_rho_x_decomp.png')
-
-xsim_decomp=ave_xsim;
-save('xsim_decomp.mat','xsim_decomp')
-load('ave_xsim.mat','ave_xsim')
-ave_rho_x=mean(pk)
+saveas(gcf,'Counterfactual_kappa_x_1.png')
 
 figure
 plot(wages_survey,'LineWidth',2.5,'Color','red')
@@ -297,127 +259,16 @@ hold on
 plot(model_wages_survey,'LineWidth',2.5,'LineStyle','--','Color','red')
 hold off
 grid on
-h=legend(['$\rho_x=$',num2str(ave_rho_x,'%.4f')],'Baseline','Location','Northwest');
+h=legend('$\bar{\kappa}_x=1$','Baseline','Location','Northwest');
 legend boxoff
-set(h,'FontSize',25,'interpreter', 'latex'); 
+set(h,'FontSize',20,'interpreter', 'latex'); 
 axis tight
 xlabel('Age','fontsize',24,'FontWeight','bold')
 %ylabel('Wages (%)','fontsize',24,'FontWeight','bold');
 % ylim([0 2])
 ytickformat('%.2f')
 set(gca,'FontSize',18)
-saveas(gcf,'Counterfactual_rho_x_decomp_lcsupply.png')
-
-figure
-plot(ave_xsim,'LineWidth',2.5,'Color','black')
-hold on
-plot(xsim_decomp,'LineWidth',2.5,'Color','black','LineStyle','--')
-hold off
-grid on
-h=legend('Baseline',['$\rho_x=$', num2str(ave_rho_x,'%.4f')],'Location','Northwest');
-legend boxoff
-set(h,'FontSize',25,'interpreter', 'latex');
-axis tight
-xlabel('Age','fontsize',24,'FontWeight','bold')
-%ylabel('x','fontsize',24,'FontWeight','bold');
-% ylim([0 35])
-% ytickformat('%.1f')
-set(gca,'FontSize',20)
-saveas(gcf,'Optimum_xsim_decomp.png')
-
-figure
-plot(wages_demand,'LineWidth',2.5,'Color','blue')
-hold on
-plot(wages_survey,'LineWidth',2.5,'Color','red')
-hold off
-grid on
-% h=legend('Demand (firms) - Model','Supply (workers) - Model','Location','Southeast');
-% legend boxoff
-% set(h,'FontSize',25); 
-axis tight
-xlabel('Age','fontsize',24,'FontWeight','bold')
-%ylabel('Wages (%)','fontsize',24,'FontWeight','bold');
-ytickformat('%.2f')
-set(gca,'FontSize',20)
-saveas(gcf,'Counterfactual_wages_decomp.png')
-
-load('ginic_baseline.mat','ginic_baseline')
-ginic_baseline = accumarray(ceil((1:numel(ginic_baseline))/12)',ginic_baseline(:),[],@nanmean);
-load('ginic_rho_x_decomp.mat','ginic_rho_x_decomp')
-ginic_rho_x_decomp = accumarray(ceil((1:numel(ginic_rho_x_decomp))/12)',ginic_rho_x_decomp(:),[],@nanmean);
-load('ginic_const.mat','ginic_const')
-ginic_const = accumarray(ceil((1:numel(ginic_const))/12)',ginic_const(:),[],@nanmean);
-load('ginic_kappa_x_05.mat','ginic_kappa_x_05')
-ginic_kappa_x_05 = accumarray(ceil((1:numel(ginic_kappa_x_05))/12)',ginic_kappa_x_05(:),[],@nanmean);
-load('ginic_rho_x_01.mat','ginic_rho_x_01')
-ginic_rho_x_01 = accumarray(ceil((1:numel(ginic_rho_x_01))/12)',ginic_rho_x_01(:),[],@nanmean);
-load('ginic_delta_x_01.mat','ginic_delta_x_01')
-ginic_delta_x_01 = accumarray(ceil((1:numel(ginic_delta_x_01))/12)',ginic_delta_x_01(:),[],@nanmean);
-load('ginic_s_0.mat','ginic_s_0')
-ginic_s_0 = accumarray(ceil((1:numel(ginic_s_0))/12)',ginic_s_0(:),[],@nanmean);
-load('ginic_f_1.mat','ginic_f_1')
-ginic_f_1 = accumarray(ceil((1:numel(ginic_f_1))/12)',ginic_f_1(:),[],@nanmean);
-
-figure
-plot(ginic_baseline,'LineWidth',2.5,'Color','black')
-hold on
-plot(ginic_rho_x_01,'LineWidth',2.5,'Color','blue','LineStyle',':')
-hold on
-plot(ginic_rho_x_decomp,'LineWidth',2.5,'Color','red','Marker','s','LineStyle','none')
-hold on
-plot(ginic_s_0,'LineWidth',1.5,'Color','magenta','Marker','x','LineStyle','none','MarkerSize',15)
-hold on
-plot(ginic_f_1,'LineWidth',1.5,'Color',[0.9500 0.550 0.0180],'Marker','o','LineStyle','none','markerfacecolor',[0.9500 0.550 0.0180])
-hold on
-plot(ginic_delta_x_01,'LineWidth',2.5,'Color','yellow','LineStyle','--')
-hold on
-plot(ginic_kappa_x_05,'LineWidth',2.5,'Color','green','LineStyle','none','Marker','o')
-hold on
-plot(ginic_const,'LineWidth',1.5,'Color','cyan','Marker','diamond','LineStyle','none')
-hold on
-plot(data_gini(1:35),'LineWidth',2.5,'Color','black','LineStyle','--')
-hold off
-grid on
-h=legend('Baseline','$\bar{\rho}_x=1/12$',['$\bar{\rho}_x=$', num2str(ave_rho_x,'%.4f')],'$\bar{s}=0$','$\bar{f}=1$','$\bar{\delta}_x=1/12$','$\bar{\kappa}_x=1/2$','Constant','Data','Location','eastoutside');
-legend boxoff
-set(h,'FontSize',25,'interpreter', 'latex'); 
-axis tight
-xlabel('Age','fontsize',24,'FontWeight','bold')
-%ylabel('Gini','fontsize',24,'FontWeight','bold');
-ytickformat('%.1f')
-set(gca,'FontSize',20)
-saveas(gcf,'Counterfactual_ginis_data.png')
-
-figure
-plot(ginic_baseline,'LineWidth',2.5,'Color','black')
-hold on
-plot(ginic_rho_x_01,'LineWidth',2.5,'Color','blue','LineStyle',':')
-hold on
-plot(ginic_rho_x_decomp,'LineWidth',2.5,'Color','red','Marker','s','LineStyle','none')
-hold on
-plot(ginic_s_0,'LineWidth',1.5,'Color','magenta','Marker','x','LineStyle','none','MarkerSize',15)
-hold on
-plot(ginic_f_1,'LineWidth',1.5,'Color',[0.9500 0.550 0.0180],'Marker','o','LineStyle','none','markerfacecolor',[0.9500 0.550 0.0180])
-hold on
-plot(ginic_delta_x_01,'LineWidth',2.5,'Color','yellow','LineStyle','--')
-hold on
-plot(ginic_kappa_x_05,'LineWidth',2.5,'Color','green','LineStyle','none','Marker','o')
-hold on
-plot(ginic_const,'LineWidth',1.5,'Color','cyan','Marker','diamond','LineStyle','none')
-hold off
-grid on
-h=legend('Baseline','$\bar{\rho}_x=1/12$',['$\bar{\rho}_x=$', num2str(ave_rho_x,'%.4f')],'$\bar{s}=0$','$\bar{f}=1$','$\bar{\delta}_x=1/12$','$\bar{\kappa}_x=1/2$','Constant','Location','eastoutside');
-legend boxoff
-set(h,'FontSize',25,'interpreter', 'latex'); 
-axis tight
-xlabel('Age','fontsize',24,'FontWeight','bold')
-%ylabel('Gini','fontsize',24,'FontWeight','bold');
-ytickformat('%.1f')
-set(gca,'FontSize',20)
-saveas(gcf,'Counterfactual_ginis.png')
-
-ave_ginic_baseline=mean(ginic_baseline)
-ave_ginic_rho_x_decomp=mean(ginic_rho_x_decomp)
+saveas(gcf,'Counterfactual_kappa_x_1_lcsupply.png')
 
 %%
 disp('Finished!')
